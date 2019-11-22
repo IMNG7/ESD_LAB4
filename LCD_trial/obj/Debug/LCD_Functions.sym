@@ -1,0 +1,988 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 1.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000001 L
+    A                                                           =  0000E0 L
+ 16 A$LCD_Functions_Functions$162                                  000000 GR
+ 16 A$LCD_Functions_Functions$163                                  000003 GR
+ 16 A$LCD_Functions_Functions$164                                  000004 GR
+ 16 A$LCD_Functions_Functions$169                                  000007 GR
+ 16 A$LCD_Functions_Functions$184                                  000008 GR
+ 16 A$LCD_Functions_Functions$185                                  00000A GR
+ 16 A$LCD_Functions_Functions$186                                  00000C GR
+ 16 A$LCD_Functions_Functions$187                                  00000E GR
+ 16 A$LCD_Functions_Functions$188                                  00000F GR
+ 16 A$LCD_Functions_Functions$189                                  000012 GR
+ 16 A$LCD_Functions_Functions$190                                  000013 GR
+ 16 A$LCD_Functions_Functions$191                                  000014 GR
+ 16 A$LCD_Functions_Functions$192                                  000015 GR
+ 16 A$LCD_Functions_Functions$193                                  000016 GR
+ 16 A$LCD_Functions_Functions$194                                  000017 GR
+ 16 A$LCD_Functions_Functions$195                                  000018 GR
+ 16 A$LCD_Functions_Functions$196                                  000019 GR
+ 16 A$LCD_Functions_Functions$197                                  00001A GR
+ 16 A$LCD_Functions_Functions$198                                  00001B GR
+ 16 A$LCD_Functions_Functions$199                                  00001C GR
+ 16 A$LCD_Functions_Functions$202                                  00001D GR
+ 16 A$LCD_Functions_Functions$203                                  000020 GR
+ 16 A$LCD_Functions_Functions$204                                  000021 GR
+ 16 A$LCD_Functions_Functions$205                                  000022 GR
+ 16 A$LCD_Functions_Functions$206                                  000023 GR
+ 16 A$LCD_Functions_Functions$207                                  000024 GR
+ 16 A$LCD_Functions_Functions$208                                  000025 GR
+ 16 A$LCD_Functions_Functions$209                                  000026 GR
+ 16 A$LCD_Functions_Functions$210                                  000027 GR
+ 16 A$LCD_Functions_Functions$213                                  000028 GR
+ 16 A$LCD_Functions_Functions$214                                  00002B GR
+ 16 A$LCD_Functions_Functions$215                                  00002C GR
+ 16 A$LCD_Functions_Functions$216                                  00002D GR
+ 16 A$LCD_Functions_Functions$217                                  00002E GR
+ 16 A$LCD_Functions_Functions$218                                  00002F GR
+ 16 A$LCD_Functions_Functions$219                                  000030 GR
+ 16 A$LCD_Functions_Functions$220                                  000031 GR
+ 16 A$LCD_Functions_Functions$223                                  000032 GR
+ 16 A$LCD_Functions_Functions$224                                  000035 GR
+ 16 A$LCD_Functions_Functions$225                                  000036 GR
+ 16 A$LCD_Functions_Functions$226                                  000037 GR
+ 16 A$LCD_Functions_Functions$227                                  000038 GR
+ 16 A$LCD_Functions_Functions$228                                  000039 GR
+ 16 A$LCD_Functions_Functions$229                                  00003A GR
+ 16 A$LCD_Functions_Functions$230                                  00003B GR
+ 16 A$LCD_Functions_Functions$231                                  00003C GR
+ 16 A$LCD_Functions_Functions$232                                  00003F GR
+ 16 A$LCD_Functions_Functions$233                                  000040 GR
+ 16 A$LCD_Functions_Functions$234                                  000041 GR
+ 16 A$LCD_Functions_Functions$235                                  000042 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 2.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 16 A$LCD_Functions_Functions$236                                  000043 GR
+ 16 A$LCD_Functions_Functions$237                                  000044 GR
+ 16 A$LCD_Functions_Functions$238                                  000045 GR
+ 16 A$LCD_Functions_Functions$239                                  000046 GR
+ 16 A$LCD_Functions_Functions$240                                  000047 GR
+ 16 A$LCD_Functions_Functions$241                                  000048 GR
+ 16 A$LCD_Functions_Functions$242                                  000049 GR
+ 16 A$LCD_Functions_Functions$244                                  00004A GR
+ 16 A$LCD_Functions_Functions$245                                  00004D GR
+ 16 A$LCD_Functions_Functions$246                                  00004E GR
+ 16 A$LCD_Functions_Functions$247                                  00004F GR
+ 16 A$LCD_Functions_Functions$248                                  000050 GR
+ 16 A$LCD_Functions_Functions$249                                  000051 GR
+ 16 A$LCD_Functions_Functions$250                                  000052 GR
+ 16 A$LCD_Functions_Functions$251                                  000053 GR
+ 16 A$LCD_Functions_Functions$252                                  000054 GR
+ 16 A$LCD_Functions_Functions$253                                  000055 GR
+ 16 A$LCD_Functions_Functions$254                                  000056 GR
+ 16 A$LCD_Functions_Functions$255                                  000057 GR
+ 16 A$LCD_Functions_Functions$256                                  000058 GR
+ 16 A$LCD_Functions_Functions$257                                  000059 GR
+ 16 A$LCD_Functions_Functions$258                                  00005A GR
+ 16 A$LCD_Functions_Functions$259                                  00005B GR
+ 16 A$LCD_Functions_Functions$260                                  00005C GR
+ 16 A$LCD_Functions_Functions$261                                  00005D GR
+ 16 A$LCD_Functions_Functions$262                                  00005E GR
+ 16 A$LCD_Functions_Functions$263                                  00005F GR
+ 16 A$LCD_Functions_Functions$264                                  000060 GR
+ 16 A$LCD_Functions_Functions$265                                  000061 GR
+ 16 A$LCD_Functions_Functions$268                                  000063 GR
+ 16 A$LCD_Functions_Functions$269                                  000066 GR
+ 16 A$LCD_Functions_Functions$270                                  000067 GR
+ 16 A$LCD_Functions_Functions$271                                  000068 GR
+ 16 A$LCD_Functions_Functions$272                                  000069 GR
+ 16 A$LCD_Functions_Functions$273                                  00006A GR
+ 16 A$LCD_Functions_Functions$274                                  00006B GR
+ 16 A$LCD_Functions_Functions$275                                  00006C GR
+ 16 A$LCD_Functions_Functions$276                                  00006D GR
+ 16 A$LCD_Functions_Functions$278                                  00006E GR
+ 16 A$LCD_Functions_Functions$279                                  000071 GR
+ 16 A$LCD_Functions_Functions$280                                  000072 GR
+ 16 A$LCD_Functions_Functions$281                                  000073 GR
+ 16 A$LCD_Functions_Functions$282                                  000074 GR
+ 16 A$LCD_Functions_Functions$283                                  000075 GR
+ 16 A$LCD_Functions_Functions$284                                  000076 GR
+ 16 A$LCD_Functions_Functions$285                                  000077 GR
+ 16 A$LCD_Functions_Functions$286                                  000078 GR
+ 16 A$LCD_Functions_Functions$287                                  000079 GR
+ 16 A$LCD_Functions_Functions$288                                  00007A GR
+ 16 A$LCD_Functions_Functions$289                                  00007B GR
+ 16 A$LCD_Functions_Functions$290                                  00007C GR
+ 16 A$LCD_Functions_Functions$291                                  00007D GR
+ 16 A$LCD_Functions_Functions$292                                  00007E GR
+ 16 A$LCD_Functions_Functions$293                                  000080 GR
+ 16 A$LCD_Functions_Functions$294                                  000081 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 3.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 16 A$LCD_Functions_Functions$295                                  000083 GR
+ 16 A$LCD_Functions_Functions$296                                  000084 GR
+ 16 A$LCD_Functions_Functions$297                                  000086 GR
+ 16 A$LCD_Functions_Functions$298                                  000087 GR
+ 16 A$LCD_Functions_Functions$299                                  000089 GR
+ 16 A$LCD_Functions_Functions$300                                  00008B GR
+ 16 A$LCD_Functions_Functions$301                                  00008E GR
+ 16 A$LCD_Functions_Functions$302                                  00008F GR
+ 16 A$LCD_Functions_Functions$303                                  000090 GR
+ 16 A$LCD_Functions_Functions$304                                  000091 GR
+ 16 A$LCD_Functions_Functions$305                                  000092 GR
+ 16 A$LCD_Functions_Functions$306                                  000093 GR
+ 16 A$LCD_Functions_Functions$307                                  000094 GR
+ 16 A$LCD_Functions_Functions$308                                  000095 GR
+ 16 A$LCD_Functions_Functions$309                                  000096 GR
+ 16 A$LCD_Functions_Functions$310                                  000097 GR
+ 16 A$LCD_Functions_Functions$311                                  000098 GR
+ 16 A$LCD_Functions_Functions$312                                  000099 GR
+ 16 A$LCD_Functions_Functions$313                                  00009C GR
+ 16 A$LCD_Functions_Functions$314                                  00009E GR
+ 16 A$LCD_Functions_Functions$315                                  00009F GR
+ 16 A$LCD_Functions_Functions$316                                  0000A0 GR
+ 16 A$LCD_Functions_Functions$317                                  0000A1 GR
+ 16 A$LCD_Functions_Functions$318                                  0000A2 GR
+ 16 A$LCD_Functions_Functions$319                                  0000A3 GR
+ 16 A$LCD_Functions_Functions$320                                  0000A4 GR
+ 16 A$LCD_Functions_Functions$321                                  0000A5 GR
+ 16 A$LCD_Functions_Functions$322                                  0000A6 GR
+ 16 A$LCD_Functions_Functions$323                                  0000A7 GR
+ 16 A$LCD_Functions_Functions$324                                  0000A8 GR
+ 16 A$LCD_Functions_Functions$325                                  0000A9 GR
+ 16 A$LCD_Functions_Functions$326                                  0000AA GR
+ 16 A$LCD_Functions_Functions$327                                  0000AB GR
+ 16 A$LCD_Functions_Functions$328                                  0000AC GR
+ 16 A$LCD_Functions_Functions$332                                  0000AE GR
+ 16 A$LCD_Functions_Functions$333                                  0000B1 GR
+ 16 A$LCD_Functions_Functions$334                                  0000B2 GR
+ 16 A$LCD_Functions_Functions$335                                  0000B3 GR
+ 16 A$LCD_Functions_Functions$336                                  0000B4 GR
+ 16 A$LCD_Functions_Functions$337                                  0000B5 GR
+ 16 A$LCD_Functions_Functions$338                                  0000B6 GR
+ 16 A$LCD_Functions_Functions$339                                  0000B7 GR
+ 16 A$LCD_Functions_Functions$340                                  0000B8 GR
+ 16 A$LCD_Functions_Functions$341                                  0000B9 GR
+ 16 A$LCD_Functions_Functions$342                                  0000BA GR
+ 16 A$LCD_Functions_Functions$343                                  0000BB GR
+ 16 A$LCD_Functions_Functions$344                                  0000BC GR
+ 16 A$LCD_Functions_Functions$345                                  0000BF GR
+ 16 A$LCD_Functions_Functions$346                                  0000C1 GR
+ 16 A$LCD_Functions_Functions$347                                  0000C2 GR
+ 16 A$LCD_Functions_Functions$348                                  0000C3 GR
+ 16 A$LCD_Functions_Functions$349                                  0000C4 GR
+ 16 A$LCD_Functions_Functions$350                                  0000C5 GR
+ 16 A$LCD_Functions_Functions$351                                  0000C6 GR
+ 16 A$LCD_Functions_Functions$352                                  0000C7 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 4.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 16 A$LCD_Functions_Functions$353                                  0000C8 GR
+ 16 A$LCD_Functions_Functions$354                                  0000C9 GR
+ 16 A$LCD_Functions_Functions$355                                  0000CA GR
+ 16 A$LCD_Functions_Functions$356                                  0000CB GR
+ 16 A$LCD_Functions_Functions$357                                  0000CC GR
+ 16 A$LCD_Functions_Functions$358                                  0000CD GR
+ 16 A$LCD_Functions_Functions$359                                  0000CE GR
+ 16 A$LCD_Functions_Functions$360                                  0000CF GR
+ 16 A$LCD_Functions_Functions$366                                  0000D2 GR
+ 16 A$LCD_Functions_Functions$379                                  0000D3 GR
+ 16 A$LCD_Functions_Functions$380                                  0000D6 GR
+ 16 A$LCD_Functions_Functions$381                                  0000D7 GR
+ 16 A$LCD_Functions_Functions$382                                  0000D9 GR
+ 16 A$LCD_Functions_Functions$385                                  0000DC GR
+ 16 A$LCD_Functions_Functions$386                                  0000DF GR
+ 16 A$LCD_Functions_Functions$387                                  0000E1 GR
+ 16 A$LCD_Functions_Functions$390                                  0000E2 GR
+ 16 A$LCD_Functions_Functions$391                                  0000E5 GR
+ 16 A$LCD_Functions_Functions$392                                  0000E6 GR
+ 16 A$LCD_Functions_Functions$393                                  0000E8 GR
+ 16 A$LCD_Functions_Functions$396                                  0000EB GR
+ 16 A$LCD_Functions_Functions$397                                  0000EE GR
+ 16 A$LCD_Functions_Functions$398                                  0000F0 GR
+ 16 A$LCD_Functions_Functions$401                                  0000F1 GR
+ 16 A$LCD_Functions_Functions$402                                  0000F4 GR
+ 16 A$LCD_Functions_Functions$403                                  0000F5 GR
+ 16 A$LCD_Functions_Functions$404                                  0000F7 GR
+ 16 A$LCD_Functions_Functions$407                                  0000FA GR
+ 16 A$LCD_Functions_Functions$408                                  0000FD GR
+ 16 A$LCD_Functions_Functions$409                                  0000FF GR
+ 16 A$LCD_Functions_Functions$412                                  000100 GR
+ 16 A$LCD_Functions_Functions$415                                  000103 GR
+ 16 A$LCD_Functions_Functions$416                                  000106 GR
+ 16 A$LCD_Functions_Functions$417                                  000108 GR
+ 16 A$LCD_Functions_Functions$420                                  000109 GR
+ 16 A$LCD_Functions_Functions$423                                  00010C GR
+ 16 A$LCD_Functions_Functions$424                                  00010F GR
+ 16 A$LCD_Functions_Functions$425                                  000111 GR
+ 16 A$LCD_Functions_Functions$428                                  000112 GR
+ 16 A$LCD_Functions_Functions$431                                  000115 GR
+ 16 A$LCD_Functions_Functions$432                                  000118 GR
+ 16 A$LCD_Functions_Functions$433                                  00011A GR
+ 16 A$LCD_Functions_Functions$436                                  00011B GR
+ 16 A$LCD_Functions_Functions$439                                  00011E GR
+ 16 A$LCD_Functions_Functions$440                                  000121 GR
+ 16 A$LCD_Functions_Functions$441                                  000123 GR
+ 16 A$LCD_Functions_Functions$444                                  000124 GR
+ 16 A$LCD_Functions_Functions$447                                  000127 GR
+ 16 A$LCD_Functions_Functions$448                                  00012A GR
+ 16 A$LCD_Functions_Functions$449                                  00012C GR
+ 16 A$LCD_Functions_Functions$454                                  00012D GR
+ 16 A$LCD_Functions_Functions$467                                  00012E GR
+ 16 A$LCD_Functions_Functions$468                                  000130 GR
+ 16 A$LCD_Functions_Functions$469                                  000133 GR
+ 16 A$LCD_Functions_Functions$472                                  000134 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 5.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 16 A$LCD_Functions_Functions$475                                  000137 GR
+ 16 A$LCD_Functions_Functions$476                                  00013A GR
+ 16 A$LCD_Functions_Functions$477                                  00013B GR
+ 16 A$LCD_Functions_Functions$478                                  00013E GR
+ 16 A$LCD_Functions_Functions$483                                  00013F GR
+ 16 A$LCD_Functions_Functions$496                                  000140 GR
+ 16 A$LCD_Functions_Functions$497                                  000142 GR
+ 16 A$LCD_Functions_Functions$498                                  000144 GR
+ 16 A$LCD_Functions_Functions$499                                  000147 GR
+ 16 A$LCD_Functions_Functions$500                                  000148 GR
+ 16 A$LCD_Functions_Functions$501                                  000149 GR
+ 16 A$LCD_Functions_Functions$502                                  00014A GR
+ 16 A$LCD_Functions_Functions$505                                  00014B GR
+ 16 A$LCD_Functions_Functions$506                                  00014E GR
+ 16 A$LCD_Functions_Functions$507                                  00014F GR
+ 16 A$LCD_Functions_Functions$508                                  000150 GR
+ 16 A$LCD_Functions_Functions$509                                  000151 GR
+ 16 A$LCD_Functions_Functions$510                                  000152 GR
+ 16 A$LCD_Functions_Functions$512                                  000153 GR
+ 16 A$LCD_Functions_Functions$513                                  000155 GR
+ 16 A$LCD_Functions_Functions$514                                  000157 GR
+ 16 A$LCD_Functions_Functions$515                                  000158 GR
+ 16 A$LCD_Functions_Functions$516                                  00015A GR
+ 16 A$LCD_Functions_Functions$520                                  00015D GR
+ 16 A$LCD_Functions_Functions$521                                  00015F GR
+ 16 A$LCD_Functions_Functions$522                                  000161 GR
+ 16 A$LCD_Functions_Functions$523                                  000164 GR
+ 16 A$LCD_Functions_Functions$524                                  000166 GR
+ 16 A$LCD_Functions_Functions$527                                  000168 GR
+ 16 A$LCD_Functions_Functions$528                                  00016A GR
+ 16 A$LCD_Functions_Functions$529                                  00016C GR
+ 16 A$LCD_Functions_Functions$530                                  00016D GR
+ 16 A$LCD_Functions_Functions$531                                  00016E GR
+ 16 A$LCD_Functions_Functions$532                                  00016F GR
+ 16 A$LCD_Functions_Functions$533                                  000171 GR
+ 16 A$LCD_Functions_Functions$534                                  000173 GR
+ 16 A$LCD_Functions_Functions$535                                  000176 GR
+ 16 A$LCD_Functions_Functions$536                                  000177 GR
+ 16 A$LCD_Functions_Functions$537                                  000178 GR
+ 16 A$LCD_Functions_Functions$538                                  000179 GR
+ 16 A$LCD_Functions_Functions$539                                  00017A GR
+ 16 A$LCD_Functions_Functions$540                                  00017B GR
+ 16 A$LCD_Functions_Functions$541                                  00017D GR
+ 16 A$LCD_Functions_Functions$542                                  00017F GR
+ 16 A$LCD_Functions_Functions$543                                  000181 GR
+ 16 A$LCD_Functions_Functions$544                                  000184 GR
+ 16 A$LCD_Functions_Functions$545                                  000186 GR
+ 16 A$LCD_Functions_Functions$548                                  000188 GR
+ 16 A$LCD_Functions_Functions$549                                  00018B GR
+ 16 A$LCD_Functions_Functions$550                                  00018C GR
+ 16 A$LCD_Functions_Functions$551                                  00018D GR
+ 16 A$LCD_Functions_Functions$552                                  00018E GR
+ 16 A$LCD_Functions_Functions$553                                  00018F GR
+ 16 A$LCD_Functions_Functions$554                                  000190 GR
+ 16 A$LCD_Functions_Functions$555                                  000193 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 6.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 16 A$LCD_Functions_Functions$556                                  000195 GR
+ 16 A$LCD_Functions_Functions$557                                  000196 GR
+ 16 A$LCD_Functions_Functions$558                                  000197 GR
+ 16 A$LCD_Functions_Functions$559                                  000198 GR
+ 16 A$LCD_Functions_Functions$560                                  000199 GR
+ 16 A$LCD_Functions_Functions$561                                  00019A GR
+ 16 A$LCD_Functions_Functions$564                                  00019B GR
+ 16 A$LCD_Functions_Functions$565                                  00019E GR
+ 16 A$LCD_Functions_Functions$566                                  00019F GR
+ 16 A$LCD_Functions_Functions$567                                  0001A0 GR
+ 16 A$LCD_Functions_Functions$568                                  0001A1 GR
+ 16 A$LCD_Functions_Functions$569                                  0001A2 GR
+ 16 A$LCD_Functions_Functions$570                                  0001A3 GR
+ 16 A$LCD_Functions_Functions$571                                  0001A6 GR
+ 16 A$LCD_Functions_Functions$574                                  0001A9 GR
+ 16 A$LCD_Functions_Functions$575                                  0001AC GR
+ 16 A$LCD_Functions_Functions$576                                  0001AD GR
+ 16 A$LCD_Functions_Functions$577                                  0001AE GR
+ 16 A$LCD_Functions_Functions$578                                  0001AF GR
+ 16 A$LCD_Functions_Functions$579                                  0001B0 GR
+ 16 A$LCD_Functions_Functions$580                                  0001B1 GR
+ 16 A$LCD_Functions_Functions$581                                  0001B4 GR
+ 16 A$LCD_Functions_Functions$582                                  0001B6 GR
+ 16 A$LCD_Functions_Functions$583                                  0001B7 GR
+ 16 A$LCD_Functions_Functions$584                                  0001B8 GR
+ 16 A$LCD_Functions_Functions$585                                  0001B9 GR
+ 16 A$LCD_Functions_Functions$586                                  0001BA GR
+ 16 A$LCD_Functions_Functions$587                                  0001BB GR
+ 16 A$LCD_Functions_Functions$590                                  0001BC GR
+ 16 A$LCD_Functions_Functions$591                                  0001BF GR
+ 16 A$LCD_Functions_Functions$592                                  0001C0 GR
+ 16 A$LCD_Functions_Functions$593                                  0001C1 GR
+ 16 A$LCD_Functions_Functions$594                                  0001C2 GR
+ 16 A$LCD_Functions_Functions$597                                  0001C3 GR
+ 16 A$LCD_Functions_Functions$598                                  0001C6 GR
+ 16 A$LCD_Functions_Functions$599                                  0001C7 GR
+ 16 A$LCD_Functions_Functions$600                                  0001C8 GR
+ 16 A$LCD_Functions_Functions$601                                  0001C9 GR
+ 16 A$LCD_Functions_Functions$602                                  0001CA GR
+ 16 A$LCD_Functions_Functions$603                                  0001CD GR
+ 16 A$LCD_Functions_Functions$604                                  0001CE GR
+ 16 A$LCD_Functions_Functions$605                                  0001CF GR
+ 16 A$LCD_Functions_Functions$606                                  0001D0 GR
+ 16 A$LCD_Functions_Functions$607                                  0001D1 GR
+ 16 A$LCD_Functions_Functions$608                                  0001D4 GR
+ 16 A$LCD_Functions_Functions$609                                  0001D5 GR
+ 16 A$LCD_Functions_Functions$610                                  0001D6 GR
+ 16 A$LCD_Functions_Functions$611                                  0001D8 GR
+ 16 A$LCD_Functions_Functions$612                                  0001DA GR
+ 16 A$LCD_Functions_Functions$613                                  0001DC GR
+ 16 A$LCD_Functions_Functions$614                                  0001DF GR
+ 16 A$LCD_Functions_Functions$615                                  0001E1 GR
+ 16 A$LCD_Functions_Functions$616                                  0001E3 GR
+ 16 A$LCD_Functions_Functions$618                                  0001E6 GR
+ 16 A$LCD_Functions_Functions$619                                  0001E9 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 7.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 16 A$LCD_Functions_Functions$620                                  0001EA GR
+ 16 A$LCD_Functions_Functions$621                                  0001EB GR
+ 16 A$LCD_Functions_Functions$622                                  0001EC GR
+ 16 A$LCD_Functions_Functions$623                                  0001ED GR
+ 16 A$LCD_Functions_Functions$628                                  0001EE GR
+ 16 A$LCD_Functions_Functions$641                                  0001EF GR
+ 16 A$LCD_Functions_Functions$644                                  0001F2 GR
+ 16 A$LCD_Functions_Functions$645                                  0001F5 GR
+ 16 A$LCD_Functions_Functions$646                                  0001F7 GR
+ 16 A$LCD_Functions_Functions$651                                  0001F8 GR
+ 16 A$LCD_Functions_Functions$664                                  0001F9 GR
+ 16 A$LCD_Functions_Functions$665                                  0001FB GR
+ 16 A$LCD_Functions_Functions$666                                  0001FE GR
+ 16 A$LCD_Functions_Functions$669                                  0001FF GR
+ 16 A$LCD_Functions_Functions$672                                  000202 GR
+ 16 A$LCD_Functions_Functions$673                                  000205 GR
+ 16 A$LCD_Functions_Functions$674                                  000206 GR
+ 16 A$LCD_Functions_Functions$675                                  000209 GR
+ 16 A$LCD_Functions_Functions$676                                  00020B GR
+ 16 A$LCD_Functions_Functions$681                                  00020C GR
+ 16 A$LCD_Functions_Functions$695                                  00020D GR
+ 16 A$LCD_Functions_Functions$696                                  00020F GR
+ 16 A$LCD_Functions_Functions$697                                  000212 GR
+ 16 A$LCD_Functions_Functions$700                                  000213 GR
+ 16 A$LCD_Functions_Functions$701                                  000216 GR
+ 16 A$LCD_Functions_Functions$702                                  000217 GR
+ 16 A$LCD_Functions_Functions$703                                  000218 GR
+ 16 A$LCD_Functions_Functions$704                                  00021B GR
+ 16 A$LCD_Functions_Functions$705                                  00021C GR
+ 16 A$LCD_Functions_Functions$706                                  00021D GR
+ 16 A$LCD_Functions_Functions$707                                  00021E GR
+ 16 A$LCD_Functions_Functions$710                                  00021F GR
+ 16 A$LCD_Functions_Functions$711                                  000222 GR
+ 16 A$LCD_Functions_Functions$712                                  000223 GR
+ 16 A$LCD_Functions_Functions$713                                  000224 GR
+ 16 A$LCD_Functions_Functions$714                                  000227 GR
+ 16 A$LCD_Functions_Functions$715                                  000228 GR
+ 16 A$LCD_Functions_Functions$716                                  000229 GR
+ 16 A$LCD_Functions_Functions$717                                  00022A GR
+ 16 A$LCD_Functions_Functions$720                                  00022B GR
+ 16 A$LCD_Functions_Functions$721                                  00022E GR
+ 16 A$LCD_Functions_Functions$723                                  000230 GR
+ 16 A$LCD_Functions_Functions$724                                  000233 GR
+ 16 A$LCD_Functions_Functions$726                                  000235 GR
+ 16 A$LCD_Functions_Functions$727                                  000238 GR
+ 16 A$LCD_Functions_Functions$731                                  00023A GR
+ 16 A$LCD_Functions_Functions$732                                  00023D GR
+ 16 A$LCD_Functions_Functions$734                                  00023F GR
+ 16 A$LCD_Functions_Functions$735                                  000241 GR
+ 16 A$LCD_Functions_Functions$740                                  000244 GR
+ 16 A$LCD_Functions_Functions$742                                  000246 GR
+ 16 A$LCD_Functions_Functions$743                                  000248 GR
+ 16 A$LCD_Functions_Functions$744                                  00024A GR
+ 16 A$LCD_Functions_Functions$745                                  00024B GR
+ 16 A$LCD_Functions_Functions$746                                  00024D GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 8.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 16 A$LCD_Functions_Functions$751                                  000250 GR
+ 16 A$LCD_Functions_Functions$753                                  000252 GR
+ 16 A$LCD_Functions_Functions$754                                  000254 GR
+ 16 A$LCD_Functions_Functions$755                                  000256 GR
+ 16 A$LCD_Functions_Functions$756                                  000257 GR
+ 16 A$LCD_Functions_Functions$757                                  000259 GR
+ 16 A$LCD_Functions_Functions$762                                  00025C GR
+ 16 A$LCD_Functions_Functions$764                                  00025E GR
+ 16 A$LCD_Functions_Functions$765                                  000260 GR
+ 16 A$LCD_Functions_Functions$766                                  000261 GR
+ 16 A$LCD_Functions_Functions$767                                  000263 GR
+ 16 A$LCD_Functions_Functions$775                                  000266 GR
+    A.0                                                         =  0000E0 L
+    A.1                                                         =  0000E1 L
+    A.2                                                         =  0000E2 L
+    A.3                                                         =  0000E3 L
+    A.4                                                         =  0000E4 L
+    A.5                                                         =  0000E5 L
+    A.6                                                         =  0000E6 L
+    A.7                                                         =  0000E7 L
+    AC                                                          =  0000D6 L
+    ACC                                                         =  0000E0 L
+    ACC.0                                                       =  0000E0 L
+    ACC.1                                                       =  0000E1 L
+    ACC.2                                                       =  0000E2 L
+    ACC.3                                                       =  0000E3 L
+    ACC.4                                                       =  0000E4 L
+    ACC.5                                                       =  0000E5 L
+    ACC.6                                                       =  0000E6 L
+    ACC.7                                                       =  0000E7 L
+    B                                                           =  0000F0 L
+    B.0                                                         =  0000F0 L
+    B.1                                                         =  0000F1 L
+    B.2                                                         =  0000F2 L
+    B.3                                                         =  0000F3 L
+    B.4                                                         =  0000F4 L
+    B.5                                                         =  0000F5 L
+    B.6                                                         =  0000F6 L
+    B.7                                                         =  0000F7 L
+ 16 C$LCD_Functions.c$106$1_0$36                                =  000140 GR
+ 16 C$LCD_Functions.c$108$1_0$36                                =  00014B GR
+ 16 C$LCD_Functions.c$110$2_0$37                                =  00015D GR
+ 16 C$LCD_Functions.c$111$2_0$37                                =  000168 GR
+ 16 C$LCD_Functions.c$112$2_0$37                                =  000188 GR
+ 16 C$LCD_Functions.c$113$2_0$37                                =  00019B GR
+ 16 C$LCD_Functions.c$115$3_0$38                                =  0001A9 GR
+ 16 C$LCD_Functions.c$116$3_0$38                                =  0001BC GR
+ 16 C$LCD_Functions.c$117$3_0$38                                =  0001C3 GR
+ 16 C$LCD_Functions.c$120$1_0$36                                =  0001EE GR
+ 16 C$LCD_Functions.c$127$1_0$40                                =  0001EF GR
+ 16 C$LCD_Functions.c$129$1_0$40                                =  0001EF GR
+ 16 C$LCD_Functions.c$130$1_0$40                                =  0001F2 GR
+ 16 C$LCD_Functions.c$131$1_0$40                                =  0001F8 GR
+ 16 C$LCD_Functions.c$132$1_0$42                                =  0001F9 GR
+ 16 C$LCD_Functions.c$134$1_0$42                                =  0001FF GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 9.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 16 C$LCD_Functions.c$135$1_0$42                                =  000202 GR
+ 16 C$LCD_Functions.c$136$1_0$42                                =  00020C GR
+ 16 C$LCD_Functions.c$137$1_0$44                                =  00020D GR
+ 16 C$LCD_Functions.c$138$1_0$44                                =  000213 GR
+ 16 C$LCD_Functions.c$139$1_0$44                                =  00021F GR
+ 16 C$LCD_Functions.c$140$1_0$44                                =  00022B GR
+ 16 C$LCD_Functions.c$142$2_0$45                                =  00023A GR
+ 16 C$LCD_Functions.c$143$2_0$45                                =  000244 GR
+ 16 C$LCD_Functions.c$144$2_0$45                                =  000244 GR
+ 16 C$LCD_Functions.c$145$2_0$45                                =  000250 GR
+ 16 C$LCD_Functions.c$146$2_0$45                                =  000250 GR
+ 16 C$LCD_Functions.c$147$2_0$45                                =  00025C GR
+ 16 C$LCD_Functions.c$148$2_0$45                                =  00025C GR
+ 16 C$LCD_Functions.c$152$1_0$44                                =  000266 GR
+ 16 C$LCD_Functions.c$153$1_0$44                                =  000266 GR
+ 16 C$LCD_Functions.c$29$0_0$24                                 =  000000 GR
+ 16 C$LCD_Functions.c$31$1_0$24                                 =  000000 GR
+ 16 C$LCD_Functions.c$33$1_0$24                                 =  000007 GR
+ 16 C$LCD_Functions.c$39$1_0$27                                 =  000008 GR
+ 16 C$LCD_Functions.c$41$2_0$27                                 =  00001D GR
+ 16 C$LCD_Functions.c$42$2_0$27                                 =  000028 GR
+ 16 C$LCD_Functions.c$43$2_0$27                                 =  0000AE GR
+ 16 C$LCD_Functions.c$45$4_0$29                                 =  000063 GR
+ 16 C$LCD_Functions.c$50$2_0$27                                 =  0000D2 GR
+ 16 C$LCD_Functions.c$56$2_0$32                                 =  0000D3 GR
+ 16 C$LCD_Functions.c$60$1_0$32                                 =  0000D3 GR
+ 16 C$LCD_Functions.c$61$1_0$32                                 =  0000DC GR
+ 16 C$LCD_Functions.c$63$1_0$32                                 =  0000E2 GR
+ 16 C$LCD_Functions.c$64$1_0$32                                 =  0000EB GR
+ 16 C$LCD_Functions.c$66$1_0$32                                 =  0000F1 GR
+ 16 C$LCD_Functions.c$67$1_0$32                                 =  0000FA GR
+ 16 C$LCD_Functions.c$69$1_0$32                                 =  000100 GR
+ 16 C$LCD_Functions.c$71$1_0$32                                 =  000103 GR
+ 16 C$LCD_Functions.c$73$1_0$32                                 =  000109 GR
+ 16 C$LCD_Functions.c$75$1_0$32                                 =  00010C GR
+ 16 C$LCD_Functions.c$77$1_0$32                                 =  000112 GR
+ 16 C$LCD_Functions.c$79$1_0$32                                 =  000115 GR
+ 16 C$LCD_Functions.c$81$1_0$32                                 =  00011B GR
+ 16 C$LCD_Functions.c$83$1_0$32                                 =  00011E GR
+ 16 C$LCD_Functions.c$85$1_0$32                                 =  000124 GR
+ 16 C$LCD_Functions.c$87$1_0$32                                 =  000127 GR
+ 16 C$LCD_Functions.c$88$1_0$32                                 =  00012D GR
+ 16 C$LCD_Functions.c$95$1_0$34                                 =  00012E GR
+ 16 C$LCD_Functions.c$97$1_0$34                                 =  000134 GR
+ 16 C$LCD_Functions.c$98$1_0$34                                 =  000137 GR
+ 16 C$LCD_Functions.c$99$1_0$34                                 =  00013F GR
+    CPRL2                                                       =  0000C8 L
+    CT2                                                         =  0000C9 L
+    CY                                                          =  0000D7 L
+    DPH                                                         =  000083 L
+    DPL                                                         =  000082 L
+    EA                                                          =  0000AF L
+    ES                                                          =  0000AC L
+    ET0                                                         =  0000A9 L
+    ET1                                                         =  0000AB L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 10.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    ET2                                                         =  0000AD L
+    EX0                                                         =  0000A8 L
+    EX1                                                         =  0000AA L
+    EXEN2                                                       =  0000CB L
+    EXF2                                                        =  0000CE L
+    F0                                                          =  0000D5 L
+ 18 FLCD_Functions$__xinit_column_pos$0_0$0                     =  000000 GR
+ 18 FLCD_Functions$__xinit_row_pos$0_0$0                        =  000002 GR
+    G$BF_Read$0_0$0                                             =  00F200 G
+    G$DR_READ$0_0$0                                             =  00F300 G
+    G$DR_WRITE$0_0$0                                            =  00F100 G
+    G$IR_Write$0_0$0                                            =  00F000 G
+ 16 G$LCD_Init$0$0                                              =  0000D3 GR
+ 16 G$LCD_putch$0$0                                             =  00012E GR
+ 16 G$LCD_putstr$0$0                                            =  000140 GR
+  C G$column_pos$0_0$0                                          =  000000 GR
+ 16 G$delay$0$0                                                 =  000008 GR
+ 16 G$lcd_clear$0$0                                             =  0001EF GR
+ 16 G$lcd_gotoaddr$0$0                                          =  0001F9 GR
+ 16 G$lcd_gotoxy$0$0                                            =  00020D GR
+ 16 G$lcdbusywait$0$0                                           =  000000 GR
+  C G$row_pos$0_0$0                                             =  000002 GR
+    IE                                                          =  0000A8 L
+    IE.0                                                        =  0000A8 L
+    IE.1                                                        =  0000A9 L
+    IE.2                                                        =  0000AA L
+    IE.3                                                        =  0000AB L
+    IE.4                                                        =  0000AC L
+    IE.5                                                        =  0000AD L
+    IE.7                                                        =  0000AF L
+    IE0                                                         =  000089 L
+    IE1                                                         =  00008B L
+    INT0                                                        =  0000B2 L
+    INT1                                                        =  0000B3 L
+    IP                                                          =  0000B8 L
+    IP.0                                                        =  0000B8 L
+    IP.1                                                        =  0000B9 L
+    IP.2                                                        =  0000BA L
+    IP.3                                                        =  0000BB L
+    IP.4                                                        =  0000BC L
+    IP.5                                                        =  0000BD L
+    IT0                                                         =  000088 L
+    IT1                                                         =  00008A L
+  A LLCD_Functions.LCD_putch$ch$1_0$33                          =  00000C GR
+  A LLCD_Functions.LCD_putstr$str$1_0$35                        =  00000D GR
+  A LLCD_Functions.delay$i$1_0$26                               =  000004 GR
+  A LLCD_Functions.delay$n$1_0$26                               =  000008 GR
+  A LLCD_Functions.delay$time$1_0$25                            =  000000 GR
+  A LLCD_Functions.lcd_gotoaddr$addr$1_0$41                     =  00000F GR
+  A LLCD_Functions.lcd_gotoxy$column$1_0$43                     =  000010 GR
+  A LLCD_Functions.lcd_gotoxy$row$1_0$43                        =  000011 GR
+    OV                                                          =  0000D2 L
+    P                                                           =  0000D0 L
+    P0                                                          =  000080 L
+    P0.0                                                        =  000080 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 11.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    P0.1                                                        =  000081 L
+    P0.2                                                        =  000082 L
+    P0.3                                                        =  000083 L
+    P0.4                                                        =  000084 L
+    P0.5                                                        =  000085 L
+    P0.6                                                        =  000086 L
+    P0.7                                                        =  000087 L
+    P1                                                          =  000090 L
+    P1.0                                                        =  000090 L
+    P1.1                                                        =  000091 L
+    P1.2                                                        =  000092 L
+    P1.3                                                        =  000093 L
+    P1.4                                                        =  000094 L
+    P1.5                                                        =  000095 L
+    P1.6                                                        =  000096 L
+    P1.7                                                        =  000097 L
+    P2                                                          =  0000A0 L
+    P2.0                                                        =  0000A0 L
+    P2.1                                                        =  0000A1 L
+    P2.2                                                        =  0000A2 L
+    P2.3                                                        =  0000A3 L
+    P2.4                                                        =  0000A4 L
+    P2.5                                                        =  0000A5 L
+    P2.6                                                        =  0000A6 L
+    P2.7                                                        =  0000A7 L
+    P3                                                          =  0000B0 L
+    P3.0                                                        =  0000B0 L
+    P3.1                                                        =  0000B1 L
+    P3.2                                                        =  0000B2 L
+    P3.3                                                        =  0000B3 L
+    P3.4                                                        =  0000B4 L
+    P3.5                                                        =  0000B5 L
+    P3.6                                                        =  0000B6 L
+    P3.7                                                        =  0000B7 L
+    PCON                                                        =  000087 L
+    PS                                                          =  0000BC L
+    PSW                                                         =  0000D0 L
+    PSW.0                                                       =  0000D0 L
+    PSW.1                                                       =  0000D1 L
+    PSW.2                                                       =  0000D2 L
+    PSW.3                                                       =  0000D3 L
+    PSW.4                                                       =  0000D4 L
+    PSW.5                                                       =  0000D5 L
+    PSW.6                                                       =  0000D6 L
+    PSW.7                                                       =  0000D7 L
+    PT0                                                         =  0000B9 L
+    PT1                                                         =  0000BB L
+    PT2                                                         =  0000BD L
+    PX0                                                         =  0000B8 L
+    PX1                                                         =  0000BA L
+    RB8                                                         =  00009A L
+    RCAP2H                                                      =  0000CB L
+    RCAP2L                                                      =  0000CA L
+    RCLK                                                        =  0000CD L
+    REN                                                         =  00009C L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 12.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    RI                                                          =  000098 L
+    RS0                                                         =  0000D3 L
+    RS1                                                         =  0000D4 L
+    RXD                                                         =  0000B0 L
+    SBUF                                                        =  000099 L
+    SCON                                                        =  000098 L
+    SCON.0                                                      =  000098 L
+    SCON.1                                                      =  000099 L
+    SCON.2                                                      =  00009A L
+    SCON.3                                                      =  00009B L
+    SCON.4                                                      =  00009C L
+    SCON.5                                                      =  00009D L
+    SCON.6                                                      =  00009E L
+    SCON.7                                                      =  00009F L
+    SM0                                                         =  00009F L
+    SM1                                                         =  00009E L
+    SM2                                                         =  00009D L
+    SP                                                          =  000081 L
+    T2CON                                                       =  0000C8 L
+    T2CON.0                                                     =  0000C8 L
+    T2CON.1                                                     =  0000C9 L
+    T2CON.2                                                     =  0000CA L
+    T2CON.3                                                     =  0000CB L
+    T2CON.4                                                     =  0000CC L
+    T2CON.5                                                     =  0000CD L
+    T2CON.6                                                     =  0000CE L
+    T2CON.7                                                     =  0000CF L
+    TB8                                                         =  00009B L
+    TCLK                                                        =  0000CC L
+    TCON                                                        =  000088 L
+    TCON.0                                                      =  000088 L
+    TCON.1                                                      =  000089 L
+    TCON.2                                                      =  00008A L
+    TCON.3                                                      =  00008B L
+    TCON.4                                                      =  00008C L
+    TCON.5                                                      =  00008D L
+    TCON.6                                                      =  00008E L
+    TCON.7                                                      =  00008F L
+    TF0                                                         =  00008D L
+    TF1                                                         =  00008F L
+    TF2                                                         =  0000CF L
+    TH0                                                         =  00008C L
+    TH1                                                         =  00008D L
+    TH2                                                         =  0000CD L
+    TI                                                          =  000099 L
+    TL0                                                         =  00008A L
+    TL1                                                         =  00008B L
+    TL2                                                         =  0000CC L
+    TMOD                                                        =  000089 L
+    TR0                                                         =  00008C L
+    TR1                                                         =  00008E L
+    TR2                                                         =  0000CA L
+    TXD                                                         =  0000B1 L
+ 16 XG$LCD_Init$0$0                                             =  00012D GR
+ 16 XG$LCD_putch$0$0                                            =  00013F GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 13.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 16 XG$LCD_putstr$0$0                                           =  0001EE GR
+ 16 XG$delay$0$0                                                =  0000D2 GR
+ 16 XG$lcd_clear$0$0                                            =  0001F8 GR
+ 16 XG$lcd_gotoaddr$0$0                                         =  00020C GR
+ 16 XG$lcd_gotoxy$0$0                                           =  000266 GR
+ 16 XG$lcdbusywait$0$0                                          =  000007 GR
+    _BF_Read                                                    =  00F200 G
+    _DR_READ                                                    =  00F300 G
+    _DR_WRITE                                                   =  00F100 G
+    _IR_Write                                                   =  00F000 G
+ 16 _LCD_Init                                                      0000D3 GR
+ 16 _LCD_putch                                                     00012E GR
+  A _LCD_putch_ch_65536_33                                         00000C R
+ 16 _LCD_putstr                                                    000140 GR
+  A _LCD_putstr_str_65536_35                                       00000D R
+ 18 __xinit__column_pos                                            000000 R
+ 18 __xinit__row_pos                                               000002 R
+  C _column_pos                                                    000000 GR
+ 16 _delay                                                         000008 GR
+  A _delay_i_65536_26                                              000004 R
+  A _delay_n_65536_26                                              000008 R
+  A _delay_time_65536_25                                           000000 R
+ 16 _lcd_clear                                                     0001EF GR
+ 16 _lcd_gotoaddr                                                  0001F9 GR
+  A _lcd_gotoaddr_addr_65536_41                                    00000F R
+ 16 _lcd_gotoxy                                                    00020D GR
+  A _lcd_gotoxy_PARM_2                                             000010 GR
+  A _lcd_gotoxy_row_65536_43                                       000011 R
+ 16 _lcdbusywait                                                   000000 GR
+  C _row_pos                                                       000002 GR
+    a                                                           =  0000E0 L
+    a.0                                                         =  0000E0 L
+    a.1                                                         =  0000E1 L
+    a.2                                                         =  0000E2 L
+    a.3                                                         =  0000E3 L
+    a.4                                                         =  0000E4 L
+    a.5                                                         =  0000E5 L
+    a.6                                                         =  0000E6 L
+    a.7                                                         =  0000E7 L
+    ac                                                          =  0000D6 L
+    acc                                                         =  0000E0 L
+    acc.0                                                       =  0000E0 L
+    acc.1                                                       =  0000E1 L
+    acc.2                                                       =  0000E2 L
+    acc.3                                                       =  0000E3 L
+    acc.4                                                       =  0000E4 L
+    acc.5                                                       =  0000E5 L
+    acc.6                                                       =  0000E6 L
+    acc.7                                                       =  0000E7 L
+    ar0                                                         =  000000 
+    ar1                                                         =  000001 
+    ar2                                                         =  000002 
+    ar3                                                         =  000003 
+    ar4                                                         =  000004 
+    ar5                                                         =  000005 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 14.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    ar6                                                         =  000006 
+    ar7                                                         =  000007 
+    b                                                           =  0000F0 L
+    b.0                                                         =  0000F0 L
+    b.1                                                         =  0000F1 L
+    b.2                                                         =  0000F2 L
+    b.3                                                         =  0000F3 L
+    b.4                                                         =  0000F4 L
+    b.5                                                         =  0000F5 L
+    b.6                                                         =  0000F6 L
+    b.7                                                         =  0000F7 L
+    cprl2                                                       =  0000C8 L
+    ct2                                                         =  0000C9 L
+    cy                                                          =  0000D7 L
+    dph                                                         =  000083 L
+    dpl                                                         =  000082 L
+    ea                                                          =  0000AF L
+    es                                                          =  0000AC L
+    et0                                                         =  0000A9 L
+    et1                                                         =  0000AB L
+    et2                                                         =  0000AD L
+    ex0                                                         =  0000A8 L
+    ex1                                                         =  0000AA L
+    exen2                                                       =  0000CB L
+    exf2                                                        =  0000CE L
+    f0                                                          =  0000D5 L
+    ie                                                          =  0000A8 L
+    ie.0                                                        =  0000A8 L
+    ie.1                                                        =  0000A9 L
+    ie.2                                                        =  0000AA L
+    ie.3                                                        =  0000AB L
+    ie.4                                                        =  0000AC L
+    ie.5                                                        =  0000AD L
+    ie.7                                                        =  0000AF L
+    ie0                                                         =  000089 L
+    ie1                                                         =  00008B L
+    int0                                                        =  0000B2 L
+    int1                                                        =  0000B3 L
+    ip                                                          =  0000B8 L
+    ip.0                                                        =  0000B8 L
+    ip.1                                                        =  0000B9 L
+    ip.2                                                        =  0000BA L
+    ip.3                                                        =  0000BB L
+    ip.4                                                        =  0000BC L
+    ip.5                                                        =  0000BD L
+    it0                                                         =  000088 L
+    it1                                                         =  00008A L
+    ov                                                          =  0000D2 L
+    p                                                           =  0000D0 L
+    p0                                                          =  000080 L
+    p0.0                                                        =  000080 L
+    p0.1                                                        =  000081 L
+    p0.2                                                        =  000082 L
+    p0.3                                                        =  000083 L
+    p0.4                                                        =  000084 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    p0.5                                                        =  000085 L
+    p0.6                                                        =  000086 L
+    p0.7                                                        =  000087 L
+    p1                                                          =  000090 L
+    p1.0                                                        =  000090 L
+    p1.1                                                        =  000091 L
+    p1.2                                                        =  000092 L
+    p1.3                                                        =  000093 L
+    p1.4                                                        =  000094 L
+    p1.5                                                        =  000095 L
+    p1.6                                                        =  000096 L
+    p1.7                                                        =  000097 L
+    p2                                                          =  0000A0 L
+    p2.0                                                        =  0000A0 L
+    p2.1                                                        =  0000A1 L
+    p2.2                                                        =  0000A2 L
+    p2.3                                                        =  0000A3 L
+    p2.4                                                        =  0000A4 L
+    p2.5                                                        =  0000A5 L
+    p2.6                                                        =  0000A6 L
+    p2.7                                                        =  0000A7 L
+    p3                                                          =  0000B0 L
+    p3.0                                                        =  0000B0 L
+    p3.1                                                        =  0000B1 L
+    p3.2                                                        =  0000B2 L
+    p3.3                                                        =  0000B3 L
+    p3.4                                                        =  0000B4 L
+    p3.5                                                        =  0000B5 L
+    p3.6                                                        =  0000B6 L
+    p3.7                                                        =  0000B7 L
+    pcon                                                        =  000087 L
+    ps                                                          =  0000BC L
+    psw                                                         =  0000D0 L
+    psw.0                                                       =  0000D0 L
+    psw.1                                                       =  0000D1 L
+    psw.2                                                       =  0000D2 L
+    psw.3                                                       =  0000D3 L
+    psw.4                                                       =  0000D4 L
+    psw.5                                                       =  0000D5 L
+    psw.6                                                       =  0000D6 L
+    psw.7                                                       =  0000D7 L
+    pt0                                                         =  0000B9 L
+    pt1                                                         =  0000BB L
+    pt2                                                         =  0000BD L
+    px0                                                         =  0000B8 L
+    px1                                                         =  0000BA L
+    rb8                                                         =  00009A L
+    rcap2h                                                      =  0000CB L
+    rcap2l                                                      =  0000CA L
+    rclk                                                        =  0000CD L
+    ren                                                         =  00009C L
+    ri                                                          =  000098 L
+    rs0                                                         =  0000D3 L
+    rs1                                                         =  0000D4 L
+    rxd                                                         =  0000B0 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    sbuf                                                        =  000099 L
+    scon                                                        =  000098 L
+    scon.0                                                      =  000098 L
+    scon.1                                                      =  000099 L
+    scon.2                                                      =  00009A L
+    scon.3                                                      =  00009B L
+    scon.4                                                      =  00009C L
+    scon.5                                                      =  00009D L
+    scon.6                                                      =  00009E L
+    scon.7                                                      =  00009F L
+    sm0                                                         =  00009F L
+    sm1                                                         =  00009E L
+    sm2                                                         =  00009D L
+    sp                                                          =  000081 L
+    t2con                                                       =  0000C8 L
+    t2con.0                                                     =  0000C8 L
+    t2con.1                                                     =  0000C9 L
+    t2con.2                                                     =  0000CA L
+    t2con.3                                                     =  0000CB L
+    t2con.4                                                     =  0000CC L
+    t2con.5                                                     =  0000CD L
+    t2con.6                                                     =  0000CE L
+    t2con.7                                                     =  0000CF L
+    tb8                                                         =  00009B L
+    tclk                                                        =  0000CC L
+    tcon                                                        =  000088 L
+    tcon.0                                                      =  000088 L
+    tcon.1                                                      =  000089 L
+    tcon.2                                                      =  00008A L
+    tcon.3                                                      =  00008B L
+    tcon.4                                                      =  00008C L
+    tcon.5                                                      =  00008D L
+    tcon.6                                                      =  00008E L
+    tcon.7                                                      =  00008F L
+    tf0                                                         =  00008D L
+    tf1                                                         =  00008F L
+    tf2                                                         =  0000CF L
+    th0                                                         =  00008C L
+    th1                                                         =  00008D L
+    th2                                                         =  0000CD L
+    ti                                                          =  000099 L
+    tl0                                                         =  00008A L
+    tl1                                                         =  00008B L
+    tl2                                                         =  0000CC L
+    tmod                                                        =  000089 L
+    tr0                                                         =  00008C L
+    tr1                                                         =  00008E L
+    tr2                                                         =  0000CA L
+    txd                                                         =  0000B1 L
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 RSEG                                       size      0   flags    8
+   2 RSEG0                                      size      0   flags    8
+   3 RSEG1                                      size      0   flags    8
+   4 REG_BANK_0                                 size      8   flags    4
+   5 DSEG                                       size      0   flags    0
+   6 ISEG                                       size      0   flags    0
+   7 IABS                                       size      0   flags    8
+   8 BSEG                                       size      0   flags   80
+   9 PSEG                                       size      0   flags   50
+   A XSEG                                       size     12   flags   40
+   B XABS                                       size      0   flags   48
+   C XISEG                                      size      4   flags   40
+   D HOME                                       size      0   flags   20
+   E GSINIT0                                    size      0   flags   20
+   F GSINIT1                                    size      0   flags   20
+  10 GSINIT2                                    size      0   flags   20
+  11 GSINIT3                                    size      0   flags   20
+  12 GSINIT4                                    size      0   flags   20
+  13 GSINIT5                                    size      0   flags   20
+  14 GSINIT                                     size      0   flags   20
+  15 GSFINAL                                    size      0   flags   20
+  16 CSEG                                       size    267   flags   20
+  17 CONST                                      size      0   flags   20
+  18 XINIT                                      size      4   flags   20
+  19 CABS                                       size      0   flags   28
+

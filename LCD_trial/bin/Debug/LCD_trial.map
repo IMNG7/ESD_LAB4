@@ -1,0 +1,2075 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_BSEG                          
+C:   00000000  l_BSEG_BYTES                    
+C:   00000000  l_CABS                          
+C:   00000000  l_GSINIT                        
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_OSEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000003  l_GSFINAL                       
+C:   00000003  l_GSINIT0                       
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000009  s_SSEG                          
+C:   0000000A  l_GSINIT2                       
+C:   00000010  l_XINIT                         
+C:   00000010  l_XISEG                         
+C:   00000010  s_REG_BANK_2                    
+C:   00000011  l_HOME                          
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_OSEG                          
+C:   00000018  s_REG_BANK_3                    
+C:   0000001A  l_CONST                         
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000022  l_GSINIT3                       
+C:   0000002A  l_GSINIT4                       
+C:   0000004B  l_XSEG                          
+C:   00000080  l_DSEG                          
+C:   000000F7  l_SSEG                          
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000100  l_IRAM                          
+C:   00000400  s_PSEG                          
+C:   00000400  s_XSEG                          
+C:   0000044B  s_XISEG                         
+C:   00000903  l_CSEG                          
+C:   00002200  s_HOME                          
+C:   00002211  s_GSINIT0                       
+C:   00002214  s_GSINIT1                       
+C:   00002214  s_GSINIT2                       
+C:   0000221E  s_GSINIT3                       
+C:   00002240  s_GSINIT4                       
+C:   0000226A  s_GSFINAL                       
+C:   0000226A  s_GSINIT                        
+C:   0000226A  s_GSINIT5                       
+C:   0000226D  s_CSEG                          
+C:   00002B70  s_CONST                         
+C:   00002B8A  s_XINIT                         
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _startup
+     00000080  G$P0$0_0$0                         UART
+     00000080  G$P0_0$0_0$0                       UART
+     00000080  _P0                                UART
+     00000080  _P0_0                              UART
+     00000081  G$P0_1$0_0$0                       UART
+     00000081  G$SP$0_0$0                         UART
+     00000081  _P0_1                              UART
+     00000081  _SP                                UART
+     00000082  G$DPL$0_0$0                        UART
+     00000082  G$P0_2$0_0$0                       UART
+     00000082  _DPL                               UART
+     00000082  _P0_2                              UART
+     00000083  G$DPH$0_0$0                        UART
+     00000083  G$P0_3$0_0$0                       UART
+     00000083  _DPH                               UART
+     00000083  _P0_3                              UART
+     00000084  G$P0_4$0_0$0                       UART
+     00000084  _P0_4                              UART
+     00000085  G$P0_5$0_0$0                       UART
+     00000085  _P0_5                              UART
+     00000086  G$P0_6$0_0$0                       UART
+     00000086  _P0_6                              UART
+     00000087  G$P0_7$0_0$0                       UART
+     00000087  G$PCON$0_0$0                       UART
+     00000087  _P0_7                              UART
+     00000087  _PCON                              UART
+     00000088  G$IT0$0_0$0                        UART
+     00000088  G$TCON$0_0$0                       UART
+     00000088  _IT0                               UART
+     00000088  _TCON                              UART
+     00000089  G$IE0$0_0$0                        UART
+     00000089  G$TMOD$0_0$0                       UART
+     00000089  _IE0                               UART
+     00000089  _TMOD                              UART
+     0000008A  G$IT1$0_0$0                        UART
+     0000008A  G$TL0$0_0$0                        UART
+     0000008A  _IT1                               UART
+     0000008A  _TL0                               UART
+     0000008B  G$IE1$0_0$0                        UART
+     0000008B  G$TL1$0_0$0                        UART
+     0000008B  _IE1                               UART
+     0000008B  _TL1                               UART
+     0000008C  G$TH0$0_0$0                        UART
+     0000008C  G$TR0$0_0$0                        UART
+     0000008C  _TH0                               UART
+     0000008C  _TR0                               UART
+     0000008D  G$TF0$0_0$0                        UART
+     0000008D  G$TH1$0_0$0                        UART
+     0000008D  _TF0                               UART
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000008D  _TH1                               UART
+     0000008E  G$AUXR$0_0$0                       UART
+     0000008E  G$TR1$0_0$0                        UART
+     0000008E  _AUXR                              UART
+     0000008E  _TR1                               UART
+     0000008F  G$CKCON0$0_0$0                     UART
+     0000008F  G$TF1$0_0$0                        UART
+     0000008F  _CKCON0                            UART
+     0000008F  _TF1                               UART
+     00000090  G$P1$0_0$0                         UART
+     00000090  G$P1_0$0_0$0                       UART
+     00000090  _P1                                UART
+     00000090  _P1_0                              UART
+     00000091  G$P1_1$0_0$0                       UART
+     00000091  _P1_1                              UART
+     00000092  G$P1_2$0_0$0                       UART
+     00000092  _P1_2                              UART
+     00000093  G$P1_3$0_0$0                       UART
+     00000093  _P1_3                              UART
+     00000094  G$P1_4$0_0$0                       UART
+     00000094  _P1_4                              UART
+     00000095  G$P1_5$0_0$0                       UART
+     00000095  _P1_5                              UART
+     00000096  G$P1_6$0_0$0                       UART
+     00000096  _P1_6                              UART
+     00000097  G$CKRL$0_0$0                       UART
+     00000097  G$P1_7$0_0$0                       UART
+     00000097  _CKRL                              UART
+     00000097  _P1_7                              UART
+     00000098  G$RI$0_0$0                         UART
+     00000098  G$SCON$0_0$0                       UART
+     00000098  _RI                                UART
+     00000098  _SCON                              UART
+     00000099  G$SBUF$0_0$0                       UART
+     00000099  G$TI$0_0$0                         UART
+     00000099  _SBUF                              UART
+     00000099  _TI                                UART
+     0000009A  G$BRL$0_0$0                        UART
+     0000009A  G$RB8$0_0$0                        UART
+     0000009A  _BRL                               UART
+     0000009A  _RB8                               UART
+     0000009B  G$BDRCON$0_0$0                     UART
+     0000009B  G$TB8$0_0$0                        UART
+     0000009B  _BDRCON                            UART
+     0000009B  _TB8                               UART
+     0000009C  G$KBLS$0_0$0                       UART
+     0000009C  G$REN$0_0$0                        UART
+     0000009C  _KBLS                              UART
+     0000009C  _REN                               UART
+     0000009D  G$KBE$0_0$0                        UART
+     0000009D  G$SM2$0_0$0                        UART
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000009D  _KBE                               UART
+     0000009D  _SM2                               UART
+     0000009E  G$KBF$0_0$0                        UART
+     0000009E  G$SM1$0_0$0                        UART
+     0000009E  _KBF                               UART
+     0000009E  _SM1                               UART
+     0000009F  G$SM0$0_0$0                        UART
+     0000009F  _SM0                               UART
+     000000A0  G$P2$0_0$0                         UART
+     000000A0  G$P2_0$0_0$0                       UART
+     000000A0  _P2                                UART
+     000000A0  _P2_0                              UART
+     000000A0  __XPAGE                            
+     000000A1  G$P2_1$0_0$0                       UART
+     000000A1  _P2_1                              UART
+     000000A2  G$AUXR1$0_0$0                      UART
+     000000A2  G$P2_2$0_0$0                       UART
+     000000A2  _AUXR1                             UART
+     000000A2  _P2_2                              UART
+     000000A3  G$P2_3$0_0$0                       UART
+     000000A3  _P2_3                              UART
+     000000A4  G$P2_4$0_0$0                       UART
+     000000A4  _P2_4                              UART
+     000000A5  G$P2_5$0_0$0                       UART
+     000000A5  _P2_5                              UART
+     000000A6  G$P2_6$0_0$0                       UART
+     000000A6  G$WDTRST$0_0$0                     UART
+     000000A6  _P2_6                              UART
+     000000A6  _WDTRST                            UART
+     000000A7  G$P2_7$0_0$0                       UART
+     000000A7  G$WDTPRG$0_0$0                     UART
+     000000A7  _P2_7                              UART
+     000000A7  _WDTPRG                            UART
+     000000A8  G$EX0$0_0$0                        UART
+     000000A8  G$IE$0_0$0                         UART
+     000000A8  G$IEN0$0_0$0                       UART
+     000000A8  _EX0                               UART
+     000000A8  _IE                                UART
+     000000A8  _IEN0                              UART
+     000000A9  G$ET0$0_0$0                        UART
+     000000A9  G$SADDR$0_0$0                      UART
+     000000A9  _ET0                               UART
+     000000A9  _SADDR                             UART
+     000000AA  G$EX1$0_0$0                        UART
+     000000AA  _EX1                               UART
+     000000AB  G$ET1$0_0$0                        UART
+     000000AB  _ET1                               UART
+     000000AC  G$ES$0_0$0                         UART
+     000000AC  _ES                                UART
+     000000AD  G$ET2$0_0$0                        UART
+     000000AD  _ET2                               UART
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000AE  G$EC$0_0$0                         UART
+     000000AE  _EC                                UART
+     000000AF  G$CKCON1$0_0$0                     UART
+     000000AF  G$EA$0_0$0                         UART
+     000000AF  _CKCON1                            UART
+     000000AF  _EA                                UART
+     000000B0  G$P3$0_0$0                         UART
+     000000B0  G$P3_0$0_0$0                       UART
+     000000B0  G$RXD$0_0$0                        UART
+     000000B0  _P3                                UART
+     000000B0  _P3_0                              UART
+     000000B0  _RXD                               UART
+     000000B1  G$IEN1$0_0$0                       UART
+     000000B1  G$P3_1$0_0$0                       UART
+     000000B1  G$TXD$0_0$0                        UART
+     000000B1  _IEN1                              UART
+     000000B1  _P3_1                              UART
+     000000B1  _TXD                               UART
+     000000B2  G$INT0$0_0$0                       UART
+     000000B2  G$IPL1$0_0$0                       UART
+     000000B2  G$P3_2$0_0$0                       UART
+     000000B2  _INT0                              UART
+     000000B2  _IPL1                              UART
+     000000B2  _P3_2                              UART
+     000000B3  G$INT1$0_0$0                       UART
+     000000B3  G$IPH1$0_0$0                       UART
+     000000B3  G$P3_3$0_0$0                       UART
+     000000B3  _INT1                              UART
+     000000B3  _IPH1                              UART
+     000000B3  _P3_3                              UART
+     000000B4  G$P3_4$0_0$0                       UART
+     000000B4  G$T0$0_0$0                         UART
+     000000B4  _P3_4                              UART
+     000000B4  _T0                                UART
+     000000B5  G$P3_5$0_0$0                       UART
+     000000B5  G$T1$0_0$0                         UART
+     000000B5  _P3_5                              UART
+     000000B5  _T1                                UART
+     000000B6  G$P3_6$0_0$0                       UART
+     000000B6  G$WR$0_0$0                         UART
+     000000B6  _P3_6                              UART
+     000000B6  _WR                                UART
+     000000B7  G$IPH0$0_0$0                       UART
+     000000B7  G$P3_7$0_0$0                       UART
+     000000B7  G$RD$0_0$0                         UART
+     000000B7  _IPH0                              UART
+     000000B7  _P3_7                              UART
+     000000B7  _RD                                UART
+     000000B8  G$IP$0_0$0                         UART
+     000000B8  G$IPL0$0_0$0                       UART
+     000000B8  G$PX0$0_0$0                        UART
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000B8  G$PX0L$0_0$0                       UART
+     000000B8  _IP                                UART
+     000000B8  _IPL0                              UART
+     000000B8  _PX0                               UART
+     000000B8  _PX0L                              UART
+     000000B9  G$PT0$0_0$0                        UART
+     000000B9  G$PT0L$0_0$0                       UART
+     000000B9  G$SADEN$0_0$0                      UART
+     000000B9  _PT0                               UART
+     000000B9  _PT0L                              UART
+     000000B9  _SADEN                             UART
+     000000BA  G$PX1$0_0$0                        UART
+     000000BA  G$PX1L$0_0$0                       UART
+     000000BA  _PX1                               UART
+     000000BA  _PX1L                              UART
+     000000BB  G$PT1$0_0$0                        UART
+     000000BB  G$PT1L$0_0$0                       UART
+     000000BB  _PT1                               UART
+     000000BB  _PT1L                              UART
+     000000BC  G$PS$0_0$0                         UART
+     000000BC  G$PSL$0_0$0                        UART
+     000000BC  _PS                                UART
+     000000BC  _PSL                               UART
+     000000BD  G$PT2$0_0$0                        UART
+     000000BD  G$PT2L$0_0$0                       UART
+     000000BD  _PT2                               UART
+     000000BD  _PT2L                              UART
+     000000BE  G$PPCL$0_0$0                       UART
+     000000BE  _PPCL                              UART
+     000000C0  G$P4$0_0$0                         UART
+     000000C0  G$P4_0$0_0$0                       UART
+     000000C0  _P4                                UART
+     000000C0  _P4_0                              UART
+     000000C1  G$P4_1$0_0$0                       UART
+     000000C1  _P4_1                              UART
+     000000C2  G$P4_2$0_0$0                       UART
+     000000C2  _P4_2                              UART
+     000000C3  G$P4_3$0_0$0                       UART
+     000000C3  G$SPCON$0_0$0                      UART
+     000000C3  _P4_3                              UART
+     000000C3  _SPCON                             UART
+     000000C4  G$P4_4$0_0$0                       UART
+     000000C4  G$SPSTA$0_0$0                      UART
+     000000C4  _P4_4                              UART
+     000000C4  _SPSTA                             UART
+     000000C5  G$P4_5$0_0$0                       UART
+     000000C5  G$SPDAT$0_0$0                      UART
+     000000C5  _P4_5                              UART
+     000000C5  _SPDAT                             UART
+     000000C6  G$P4_6$0_0$0                       UART
+     000000C6  _P4_6                              UART
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000C7  G$P4_7$0_0$0                       UART
+     000000C7  _P4_7                              UART
+     000000C8  G$CP_RL2$0_0$0                     UART
+     000000C8  G$T2CON$0_0$0                      UART
+     000000C8  G$T2CON_0$0_0$0                    UART
+     000000C8  _CP_RL2                            UART
+     000000C8  _T2CON                             UART
+     000000C8  _T2CON_0                           UART
+     000000C9  G$C_T2$0_0$0                       UART
+     000000C9  G$T2CON_1$0_0$0                    UART
+     000000C9  G$T2MOD$0_0$0                      UART
+     000000C9  _C_T2                              UART
+     000000C9  _T2CON_1                           UART
+     000000C9  _T2MOD                             UART
+     000000CA  G$RCAP2L$0_0$0                     UART
+     000000CA  G$T2CON_2$0_0$0                    UART
+     000000CA  G$TR2$0_0$0                        UART
+     000000CA  _RCAP2L                            UART
+     000000CA  _T2CON_2                           UART
+     000000CA  _TR2                               UART
+     000000CB  G$EXEN2$0_0$0                      UART
+     000000CB  G$RCAP2H$0_0$0                     UART
+     000000CB  G$T2CON_3$0_0$0                    UART
+     000000CB  _EXEN2                             UART
+     000000CB  _RCAP2H                            UART
+     000000CB  _T2CON_3                           UART
+     000000CC  G$T2CON_4$0_0$0                    UART
+     000000CC  G$TCLK$0_0$0                       UART
+     000000CC  G$TL2$0_0$0                        UART
+     000000CC  _T2CON_4                           UART
+     000000CC  _TCLK                              UART
+     000000CC  _TL2                               UART
+     000000CD  G$RCLK$0_0$0                       UART
+     000000CD  G$T2CON_5$0_0$0                    UART
+     000000CD  G$TH2$0_0$0                        UART
+     000000CD  _RCLK                              UART
+     000000CD  _T2CON_5                           UART
+     000000CD  _TH2                               UART
+     000000CE  G$EXF2$0_0$0                       UART
+     000000CE  G$T2CON_6$0_0$0                    UART
+     000000CE  _EXF2                              UART
+     000000CE  _T2CON_6                           UART
+     000000CF  G$T2CON_7$0_0$0                    UART
+     000000CF  G$TF2$0_0$0                        UART
+     000000CF  _T2CON_7                           UART
+     000000CF  _TF2                               UART
+     000000D0  G$P$0_0$0                          UART
+     000000D0  G$PSW$0_0$0                        UART
+     000000D0  _P                                 UART
+     000000D0  _PSW                               UART
+     000000D1  G$F1$0_0$0                         UART
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000D1  _F1                                UART
+     000000D2  G$EECON$0_0$0                      UART
+     000000D2  G$OV$0_0$0                         UART
+     000000D2  _EECON                             UART
+     000000D2  _OV                                UART
+     000000D3  G$RS0$0_0$0                        UART
+     000000D3  _RS0                               UART
+     000000D4  G$RS1$0_0$0                        UART
+     000000D4  _RS1                               UART
+     000000D5  G$F0$0_0$0                         UART
+     000000D5  _F0                                UART
+     000000D6  G$AC$0_0$0                         UART
+     000000D6  _AC                                UART
+     000000D7  G$CY$0_0$0                         UART
+     000000D7  _CY                                UART
+     000000D8  G$CCF0$0_0$0                       UART
+     000000D8  G$CCON$0_0$0                       UART
+     000000D8  _CCF0                              UART
+     000000D8  _CCON                              UART
+     000000D9  G$CCF1$0_0$0                       UART
+     000000D9  G$CMOD$0_0$0                       UART
+     000000D9  _CCF1                              UART
+     000000D9  _CMOD                              UART
+     000000DA  G$CCAPM0$0_0$0                     UART
+     000000DA  G$CCF2$0_0$0                       UART
+     000000DA  _CCAPM0                            UART
+     000000DA  _CCF2                              UART
+     000000DB  G$CCAPM1$0_0$0                     UART
+     000000DB  G$CCF3$0_0$0                       UART
+     000000DB  _CCAPM1                            UART
+     000000DB  _CCF3                              UART
+     000000DC  G$CCAPM2$0_0$0                     UART
+     000000DC  G$CCF4$0_0$0                       UART
+     000000DC  _CCAPM2                            UART
+     000000DC  _CCF4                              UART
+     000000DD  G$CCAPM3$0_0$0                     UART
+     000000DD  _CCAPM3                            UART
+     000000DE  G$CCAPM4$0_0$0                     UART
+     000000DE  G$CR$0_0$0                         UART
+     000000DE  _CCAPM4                            UART
+     000000DE  _CR                                UART
+     000000DF  G$CF$0_0$0                         UART
+     000000DF  _CF                                UART
+     000000E0  G$ACC$0_0$0                        UART
+     000000E0  _ACC                               UART
+     000000E8  G$P5$0_0$0                         UART
+     000000E8  G$P5_0$0_0$0                       UART
+     000000E8  _P5                                UART
+     000000E8  _P5_0                              UART
+     000000E9  G$CL$0_0$0                         UART
+     000000E9  G$P5_1$0_0$0                       UART
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000E9  _CL                                UART
+     000000E9  _P5_1                              UART
+     000000EA  G$CCAP0L$0_0$0                     UART
+     000000EA  G$P5_2$0_0$0                       UART
+     000000EA  _CCAP0L                            UART
+     000000EA  _P5_2                              UART
+     000000EB  G$CCAP1L$0_0$0                     UART
+     000000EB  G$P5_3$0_0$0                       UART
+     000000EB  _CCAP1L                            UART
+     000000EB  _P5_3                              UART
+     000000EC  G$CCAP2L$0_0$0                     UART
+     000000EC  G$P5_4$0_0$0                       UART
+     000000EC  _CCAP2L                            UART
+     000000EC  _P5_4                              UART
+     000000ED  G$CCAP3L$0_0$0                     UART
+     000000ED  G$P5_5$0_0$0                       UART
+     000000ED  _CCAP3L                            UART
+     000000ED  _P5_5                              UART
+     000000EE  G$CCAP4L$0_0$0                     UART
+     000000EE  G$P5_6$0_0$0                       UART
+     000000EE  _CCAP4L                            UART
+     000000EE  _P5_6                              UART
+     000000EF  G$P5_7$0_0$0                       UART
+     000000EF  _P5_7                              UART
+     000000F0  G$B$0_0$0                          UART
+     000000F0  _B                                 UART
+     000000F5  _B_5                               _gptrget
+     000000F6  _B_6                               _gptrget
+     000000F7  _B_7                               _gptrget
+     000000F9  G$CH$0_0$0                         UART
+     000000F9  _CH                                UART
+     000000FA  G$CCAP0H$0_0$0                     UART
+     000000FA  _CCAP0H                            UART
+     000000FB  G$CCAP1H$0_0$0                     UART
+     000000FB  _CCAP1H                            UART
+     000000FC  G$CCAP2H$0_0$0                     UART
+     000000FC  _CCAP2H                            UART
+     000000FD  G$CCAP3H$0_0$0                     UART
+     000000FD  _CCAP3H                            UART
+     000000FE  G$CCAP4H$0_0$0                     UART
+     000000FE  _CCAP4H                            UART
+     0000F000  G$IR_Write$0_0$0                   main
+     0000F000  _IR_Write                          main
+     0000F100  G$DR_WRITE$0_0$0                   main
+     0000F100  _DR_WRITE                          main
+     0000F200  G$BF_Read$0_0$0                    main
+     0000F200  _BF_Read                           main
+     0000F300  G$DR_READ$0_0$0                    main
+     0000F300  _DR_READ                           main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    00000080 =         128. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000008  _bp                                _bp
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                00000009    000000F7 =         247. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000009  __start__stack                     main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XSEG                                00000400    0000004B =          75. bytes (REL,CON,XDATA)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+D:   00000400  LLCD_Functions.delay$time$1_0$25   LCD_Functions
+D:   00000404  LLCD_Functions.delay$i$1_0$26      LCD_Functions
+D:   00000408  LLCD_Functions.delay$n$1_0$26      LCD_Functions
+D:   0000040C  LLCD_Functions.LCD_putch$ch$1_0$   LCD_Functions
+D:   0000040D  LLCD_Functions.LCD_putstr$str$1_   LCD_Functions
+D:   0000040F  LLCD_Functions.lcd_gotoaddr$addr   LCD_Functions
+D:   00000410  LLCD_Functions.lcd_gotoxy$column   LCD_Functions
+D:   00000410  _lcd_gotoxy_PARM_2                 LCD_Functions
+D:   00000411  LLCD_Functions.lcd_gotoxy$row$1_   LCD_Functions
+D:   00000412  G$hours$0_0$0                      main
+D:   00000412  _hours                             main
+D:   00000413  Lmain.inttostr$a$1_0$27            main
+D:   00000414  Lmain.inttostr$b$1_0$28            main
+D:   00000417  Lmain.main$a$1_0$37                main
+D:   0000042F  Lmain.main$b$1_0$37                main
+D:   00000435  LUART.putchar$c$1_0$2              UART
+D:   00000437  __modsint_PARM_2                   _modsint
+D:   0000043B  __moduint_PARM_2                   _moduint
+D:   00000440  __divsint_PARM_2                   _divsint
+D:   00000444  __divuint_PARM_2                   _divuint
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XISEG                               0000044B    00000010 =          16. bytes (REL,CON,XDATA)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+D:   0000044B  G$column_pos$0_0$0                 LCD_Functions
+D:   0000044B  _column_pos                        LCD_Functions
+D:   0000044D  G$row_pos$0_0$0                    LCD_Functions
+D:   0000044D  _row_pos                           LCD_Functions
+D:   0000044F  G$count$0_0$0                      main
+D:   0000044F  _count                             main
+D:   00000457  G$flag$0_0$0                       main
+D:   00000457  _flag                              main
+D:   00000458  G$milli$0_0$0                      main
+D:   00000458  _milli                             main
+D:   00000459  G$seconds$0_0$0                    main
+D:   00000459  _seconds                           main
+D:   0000045A  G$minutes$0_0$0                    main
+D:   0000045A  _minutes                           main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00002200    00000011 =          17. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002200  A$mainDebug\main$732               main
+C:   00002203  A$mainDebug\main$733               main
+C:   0000220B  A$mainDebug\main$735               main
+C:   0000220E  A$mainDebug\main$757               main
+C:   0000220E  __sdcc_program_startup             main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT0                             00002211    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002211  __sdcc_gsinit_startup              
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT2                             00002214    0000000A =          10. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT3                             0000221E    00000022 =          34. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000221E  __mcs51_genXINIT                   
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT4                             00002240    0000002A =          42. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002240  __mcs51_genRAMCLEAR                
+C:   00002246  __mcs51_genXRAMCLEAR               
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             0000226A    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000226A  A$mainDebug\main$750               main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000226D  A$LCD_Functions_Functions$162      LCD_Functions
+C:   0000226D  C$LCD_Functions.c$29$0_0$24        LCD_Functions
+C:   0000226D  C$LCD_Functions.c$31$1_0$24        LCD_Functions
+C:   0000226D  G$lcdbusywait$0$0                  LCD_Functions
+C:   0000226D  _lcdbusywait                       LCD_Functions
+C:   00002270  A$LCD_Functions_Functions$163      LCD_Functions
+C:   00002271  A$LCD_Functions_Functions$164      LCD_Functions
+C:   00002274  A$LCD_Functions_Functions$169      LCD_Functions
+C:   00002274  C$LCD_Functions.c$33$1_0$24        LCD_Functions
+C:   00002274  XG$lcdbusywait$0$0                 LCD_Functions
+C:   00002275  A$LCD_Functions_Functions$184      LCD_Functions
+C:   00002275  C$LCD_Functions.c$39$1_0$27        LCD_Functions
+C:   00002275  G$delay$0$0                        LCD_Functions
+C:   00002275  _delay                             LCD_Functions
+C:   00002277  A$LCD_Functions_Functions$185      LCD_Functions
+C:   00002279  A$LCD_Functions_Functions$186      LCD_Functions
+C:   0000227B  A$LCD_Functions_Functions$187      LCD_Functions
+C:   0000227C  A$LCD_Functions_Functions$188      LCD_Functions
+C:   0000227F  A$LCD_Functions_Functions$189      LCD_Functions
+C:   00002280  A$LCD_Functions_Functions$190      LCD_Functions
+C:   00002281  A$LCD_Functions_Functions$191      LCD_Functions
+C:   00002282  A$LCD_Functions_Functions$192      LCD_Functions
+C:   00002283  A$LCD_Functions_Functions$193      LCD_Functions
+C:   00002284  A$LCD_Functions_Functions$194      LCD_Functions
+C:   00002285  A$LCD_Functions_Functions$195      LCD_Functions
+C:   00002286  A$LCD_Functions_Functions$196      LCD_Functions
+C:   00002287  A$LCD_Functions_Functions$197      LCD_Functions
+C:   00002288  A$LCD_Functions_Functions$198      LCD_Functions
+C:   00002289  A$LCD_Functions_Functions$199      LCD_Functions
+C:   0000228A  A$LCD_Functions_Functions$202      LCD_Functions
+C:   0000228A  C$LCD_Functions.c$41$2_0$27        LCD_Functions
+C:   0000228D  A$LCD_Functions_Functions$203      LCD_Functions
+C:   0000228E  A$LCD_Functions_Functions$204      LCD_Functions
+C:   0000228F  A$LCD_Functions_Functions$205      LCD_Functions
+C:   00002290  A$LCD_Functions_Functions$206      LCD_Functions
+C:   00002291  A$LCD_Functions_Functions$207      LCD_Functions
+C:   00002292  A$LCD_Functions_Functions$208      LCD_Functions
+C:   00002293  A$LCD_Functions_Functions$209      LCD_Functions
+C:   00002294  A$LCD_Functions_Functions$210      LCD_Functions
+C:   00002295  A$LCD_Functions_Functions$213      LCD_Functions
+C:   00002295  C$LCD_Functions.c$42$2_0$27        LCD_Functions
+C:   00002298  A$LCD_Functions_Functions$214      LCD_Functions
+C:   00002299  A$LCD_Functions_Functions$215      LCD_Functions
+C:   0000229A  A$LCD_Functions_Functions$216      LCD_Functions
+C:   0000229B  A$LCD_Functions_Functions$217      LCD_Functions
+C:   0000229C  A$LCD_Functions_Functions$218      LCD_Functions
+C:   0000229D  A$LCD_Functions_Functions$219      LCD_Functions
+C:   0000229E  A$LCD_Functions_Functions$220      LCD_Functions
+C:   0000229F  A$LCD_Functions_Functions$223      LCD_Functions
+C:   000022A2  A$LCD_Functions_Functions$224      LCD_Functions
+ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000022A3  A$LCD_Functions_Functions$225      LCD_Functions
+C:   000022A4  A$LCD_Functions_Functions$226      LCD_Functions
+C:   000022A5  A$LCD_Functions_Functions$227      LCD_Functions
+C:   000022A6  A$LCD_Functions_Functions$228      LCD_Functions
+C:   000022A7  A$LCD_Functions_Functions$229      LCD_Functions
+C:   000022A8  A$LCD_Functions_Functions$230      LCD_Functions
+C:   000022A9  A$LCD_Functions_Functions$231      LCD_Functions
+C:   000022AC  A$LCD_Functions_Functions$232      LCD_Functions
+C:   000022AD  A$LCD_Functions_Functions$233      LCD_Functions
+C:   000022AE  A$LCD_Functions_Functions$234      LCD_Functions
+C:   000022AF  A$LCD_Functions_Functions$235      LCD_Functions
+C:   000022B0  A$LCD_Functions_Functions$236      LCD_Functions
+C:   000022B1  A$LCD_Functions_Functions$237      LCD_Functions
+C:   000022B2  A$LCD_Functions_Functions$238      LCD_Functions
+C:   000022B3  A$LCD_Functions_Functions$239      LCD_Functions
+C:   000022B4  A$LCD_Functions_Functions$240      LCD_Functions
+C:   000022B5  A$LCD_Functions_Functions$241      LCD_Functions
+C:   000022B6  A$LCD_Functions_Functions$242      LCD_Functions
+C:   000022B7  A$LCD_Functions_Functions$244      LCD_Functions
+C:   000022BA  A$LCD_Functions_Functions$245      LCD_Functions
+C:   000022BB  A$LCD_Functions_Functions$246      LCD_Functions
+C:   000022BC  A$LCD_Functions_Functions$247      LCD_Functions
+C:   000022BD  A$LCD_Functions_Functions$248      LCD_Functions
+C:   000022BE  A$LCD_Functions_Functions$249      LCD_Functions
+C:   000022BF  A$LCD_Functions_Functions$250      LCD_Functions
+C:   000022C0  A$LCD_Functions_Functions$251      LCD_Functions
+C:   000022C1  A$LCD_Functions_Functions$252      LCD_Functions
+C:   000022C2  A$LCD_Functions_Functions$253      LCD_Functions
+C:   000022C3  A$LCD_Functions_Functions$254      LCD_Functions
+C:   000022C4  A$LCD_Functions_Functions$255      LCD_Functions
+C:   000022C5  A$LCD_Functions_Functions$256      LCD_Functions
+C:   000022C6  A$LCD_Functions_Functions$257      LCD_Functions
+C:   000022C7  A$LCD_Functions_Functions$258      LCD_Functions
+C:   000022C8  A$LCD_Functions_Functions$259      LCD_Functions
+C:   000022C9  A$LCD_Functions_Functions$260      LCD_Functions
+C:   000022CA  A$LCD_Functions_Functions$261      LCD_Functions
+C:   000022CB  A$LCD_Functions_Functions$262      LCD_Functions
+C:   000022CC  A$LCD_Functions_Functions$263      LCD_Functions
+C:   000022CD  A$LCD_Functions_Functions$264      LCD_Functions
+C:   000022CE  A$LCD_Functions_Functions$265      LCD_Functions
+C:   000022D0  A$LCD_Functions_Functions$268      LCD_Functions
+C:   000022D0  C$LCD_Functions.c$45$4_0$29        LCD_Functions
+C:   000022D3  A$LCD_Functions_Functions$269      LCD_Functions
+C:   000022D4  A$LCD_Functions_Functions$270      LCD_Functions
+C:   000022D5  A$LCD_Functions_Functions$271      LCD_Functions
+C:   000022D6  A$LCD_Functions_Functions$272      LCD_Functions
+C:   000022D7  A$LCD_Functions_Functions$273      LCD_Functions
+C:   000022D8  A$LCD_Functions_Functions$274      LCD_Functions
+C:   000022D9  A$LCD_Functions_Functions$275      LCD_Functions
+C:   000022DA  A$LCD_Functions_Functions$276      LCD_Functions
+C:   000022DB  A$LCD_Functions_Functions$278      LCD_Functions
+ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000022DE  A$LCD_Functions_Functions$279      LCD_Functions
+C:   000022DF  A$LCD_Functions_Functions$280      LCD_Functions
+C:   000022E0  A$LCD_Functions_Functions$281      LCD_Functions
+C:   000022E1  A$LCD_Functions_Functions$282      LCD_Functions
+C:   000022E2  A$LCD_Functions_Functions$283      LCD_Functions
+C:   000022E3  A$LCD_Functions_Functions$284      LCD_Functions
+C:   000022E4  A$LCD_Functions_Functions$285      LCD_Functions
+C:   000022E5  A$LCD_Functions_Functions$286      LCD_Functions
+C:   000022E6  A$LCD_Functions_Functions$287      LCD_Functions
+C:   000022E7  A$LCD_Functions_Functions$288      LCD_Functions
+C:   000022E8  A$LCD_Functions_Functions$289      LCD_Functions
+C:   000022E9  A$LCD_Functions_Functions$290      LCD_Functions
+C:   000022EA  A$LCD_Functions_Functions$291      LCD_Functions
+C:   000022EB  A$LCD_Functions_Functions$292      LCD_Functions
+C:   000022ED  A$LCD_Functions_Functions$293      LCD_Functions
+C:   000022EE  A$LCD_Functions_Functions$294      LCD_Functions
+C:   000022F0  A$LCD_Functions_Functions$295      LCD_Functions
+C:   000022F1  A$LCD_Functions_Functions$296      LCD_Functions
+C:   000022F3  A$LCD_Functions_Functions$297      LCD_Functions
+C:   000022F4  A$LCD_Functions_Functions$298      LCD_Functions
+C:   000022F6  A$LCD_Functions_Functions$299      LCD_Functions
+C:   000022F8  A$LCD_Functions_Functions$300      LCD_Functions
+C:   000022FB  A$LCD_Functions_Functions$301      LCD_Functions
+C:   000022FC  A$LCD_Functions_Functions$302      LCD_Functions
+C:   000022FD  A$LCD_Functions_Functions$303      LCD_Functions
+C:   000022FE  A$LCD_Functions_Functions$304      LCD_Functions
+C:   000022FF  A$LCD_Functions_Functions$305      LCD_Functions
+C:   00002300  A$LCD_Functions_Functions$306      LCD_Functions
+C:   00002301  A$LCD_Functions_Functions$307      LCD_Functions
+C:   00002302  A$LCD_Functions_Functions$308      LCD_Functions
+C:   00002303  A$LCD_Functions_Functions$309      LCD_Functions
+C:   00002304  A$LCD_Functions_Functions$310      LCD_Functions
+C:   00002305  A$LCD_Functions_Functions$311      LCD_Functions
+C:   00002306  A$LCD_Functions_Functions$312      LCD_Functions
+C:   00002309  A$LCD_Functions_Functions$313      LCD_Functions
+C:   0000230B  A$LCD_Functions_Functions$314      LCD_Functions
+C:   0000230C  A$LCD_Functions_Functions$315      LCD_Functions
+C:   0000230D  A$LCD_Functions_Functions$316      LCD_Functions
+C:   0000230E  A$LCD_Functions_Functions$317      LCD_Functions
+C:   0000230F  A$LCD_Functions_Functions$318      LCD_Functions
+C:   00002310  A$LCD_Functions_Functions$319      LCD_Functions
+C:   00002311  A$LCD_Functions_Functions$320      LCD_Functions
+C:   00002312  A$LCD_Functions_Functions$321      LCD_Functions
+C:   00002313  A$LCD_Functions_Functions$322      LCD_Functions
+C:   00002314  A$LCD_Functions_Functions$323      LCD_Functions
+C:   00002315  A$LCD_Functions_Functions$324      LCD_Functions
+C:   00002316  A$LCD_Functions_Functions$325      LCD_Functions
+C:   00002317  A$LCD_Functions_Functions$326      LCD_Functions
+C:   00002318  A$LCD_Functions_Functions$327      LCD_Functions
+C:   00002319  A$LCD_Functions_Functions$328      LCD_Functions
+C:   0000231B  A$LCD_Functions_Functions$332      LCD_Functions
+ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000231B  C$LCD_Functions.c$43$2_0$27        LCD_Functions
+C:   0000231E  A$LCD_Functions_Functions$333      LCD_Functions
+C:   0000231F  A$LCD_Functions_Functions$334      LCD_Functions
+C:   00002320  A$LCD_Functions_Functions$335      LCD_Functions
+C:   00002321  A$LCD_Functions_Functions$336      LCD_Functions
+C:   00002322  A$LCD_Functions_Functions$337      LCD_Functions
+C:   00002323  A$LCD_Functions_Functions$338      LCD_Functions
+C:   00002324  A$LCD_Functions_Functions$339      LCD_Functions
+C:   00002325  A$LCD_Functions_Functions$340      LCD_Functions
+C:   00002326  A$LCD_Functions_Functions$341      LCD_Functions
+C:   00002327  A$LCD_Functions_Functions$342      LCD_Functions
+C:   00002328  A$LCD_Functions_Functions$343      LCD_Functions
+C:   00002329  A$LCD_Functions_Functions$344      LCD_Functions
+C:   0000232C  A$LCD_Functions_Functions$345      LCD_Functions
+C:   0000232E  A$LCD_Functions_Functions$346      LCD_Functions
+C:   0000232F  A$LCD_Functions_Functions$347      LCD_Functions
+C:   00002330  A$LCD_Functions_Functions$348      LCD_Functions
+C:   00002331  A$LCD_Functions_Functions$349      LCD_Functions
+C:   00002332  A$LCD_Functions_Functions$350      LCD_Functions
+C:   00002333  A$LCD_Functions_Functions$351      LCD_Functions
+C:   00002334  A$LCD_Functions_Functions$352      LCD_Functions
+C:   00002335  A$LCD_Functions_Functions$353      LCD_Functions
+C:   00002336  A$LCD_Functions_Functions$354      LCD_Functions
+C:   00002337  A$LCD_Functions_Functions$355      LCD_Functions
+C:   00002338  A$LCD_Functions_Functions$356      LCD_Functions
+C:   00002339  A$LCD_Functions_Functions$357      LCD_Functions
+C:   0000233A  A$LCD_Functions_Functions$358      LCD_Functions
+C:   0000233B  A$LCD_Functions_Functions$359      LCD_Functions
+C:   0000233C  A$LCD_Functions_Functions$360      LCD_Functions
+C:   0000233F  A$LCD_Functions_Functions$366      LCD_Functions
+C:   0000233F  C$LCD_Functions.c$50$2_0$27        LCD_Functions
+C:   0000233F  XG$delay$0$0                       LCD_Functions
+C:   00002340  A$LCD_Functions_Functions$379      LCD_Functions
+C:   00002340  C$LCD_Functions.c$56$2_0$32        LCD_Functions
+C:   00002340  C$LCD_Functions.c$60$1_0$32        LCD_Functions
+C:   00002340  G$LCD_Init$0$0                     LCD_Functions
+C:   00002340  _LCD_Init                          LCD_Functions
+C:   00002343  A$LCD_Functions_Functions$380      LCD_Functions
+C:   00002344  A$LCD_Functions_Functions$381      LCD_Functions
+C:   00002346  A$LCD_Functions_Functions$382      LCD_Functions
+C:   00002349  A$LCD_Functions_Functions$385      LCD_Functions
+C:   00002349  C$LCD_Functions.c$61$1_0$32        LCD_Functions
+C:   0000234C  A$LCD_Functions_Functions$386      LCD_Functions
+C:   0000234E  A$LCD_Functions_Functions$387      LCD_Functions
+C:   0000234F  A$LCD_Functions_Functions$390      LCD_Functions
+C:   0000234F  C$LCD_Functions.c$63$1_0$32        LCD_Functions
+C:   00002352  A$LCD_Functions_Functions$391      LCD_Functions
+C:   00002353  A$LCD_Functions_Functions$392      LCD_Functions
+C:   00002355  A$LCD_Functions_Functions$393      LCD_Functions
+C:   00002358  A$LCD_Functions_Functions$396      LCD_Functions
+C:   00002358  C$LCD_Functions.c$64$1_0$32        LCD_Functions
+ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000235B  A$LCD_Functions_Functions$397      LCD_Functions
+C:   0000235D  A$LCD_Functions_Functions$398      LCD_Functions
+C:   0000235E  A$LCD_Functions_Functions$401      LCD_Functions
+C:   0000235E  C$LCD_Functions.c$66$1_0$32        LCD_Functions
+C:   00002361  A$LCD_Functions_Functions$402      LCD_Functions
+C:   00002362  A$LCD_Functions_Functions$403      LCD_Functions
+C:   00002364  A$LCD_Functions_Functions$404      LCD_Functions
+C:   00002367  A$LCD_Functions_Functions$407      LCD_Functions
+C:   00002367  C$LCD_Functions.c$67$1_0$32        LCD_Functions
+C:   0000236A  A$LCD_Functions_Functions$408      LCD_Functions
+C:   0000236C  A$LCD_Functions_Functions$409      LCD_Functions
+C:   0000236D  A$LCD_Functions_Functions$412      LCD_Functions
+C:   0000236D  C$LCD_Functions.c$69$1_0$32        LCD_Functions
+C:   00002370  A$LCD_Functions_Functions$415      LCD_Functions
+C:   00002370  C$LCD_Functions.c$71$1_0$32        LCD_Functions
+C:   00002373  A$LCD_Functions_Functions$416      LCD_Functions
+C:   00002375  A$LCD_Functions_Functions$417      LCD_Functions
+C:   00002376  A$LCD_Functions_Functions$420      LCD_Functions
+C:   00002376  C$LCD_Functions.c$73$1_0$32        LCD_Functions
+C:   00002379  A$LCD_Functions_Functions$423      LCD_Functions
+C:   00002379  C$LCD_Functions.c$75$1_0$32        LCD_Functions
+C:   0000237C  A$LCD_Functions_Functions$424      LCD_Functions
+C:   0000237E  A$LCD_Functions_Functions$425      LCD_Functions
+C:   0000237F  A$LCD_Functions_Functions$428      LCD_Functions
+C:   0000237F  C$LCD_Functions.c$77$1_0$32        LCD_Functions
+C:   00002382  A$LCD_Functions_Functions$431      LCD_Functions
+C:   00002382  C$LCD_Functions.c$79$1_0$32        LCD_Functions
+C:   00002385  A$LCD_Functions_Functions$432      LCD_Functions
+C:   00002387  A$LCD_Functions_Functions$433      LCD_Functions
+C:   00002388  A$LCD_Functions_Functions$436      LCD_Functions
+C:   00002388  C$LCD_Functions.c$81$1_0$32        LCD_Functions
+C:   0000238B  A$LCD_Functions_Functions$439      LCD_Functions
+C:   0000238B  C$LCD_Functions.c$83$1_0$32        LCD_Functions
+C:   0000238E  A$LCD_Functions_Functions$440      LCD_Functions
+C:   00002390  A$LCD_Functions_Functions$441      LCD_Functions
+C:   00002391  A$LCD_Functions_Functions$444      LCD_Functions
+C:   00002391  C$LCD_Functions.c$85$1_0$32        LCD_Functions
+C:   00002394  A$LCD_Functions_Functions$447      LCD_Functions
+C:   00002394  C$LCD_Functions.c$87$1_0$32        LCD_Functions
+C:   00002397  A$LCD_Functions_Functions$448      LCD_Functions
+C:   00002399  A$LCD_Functions_Functions$449      LCD_Functions
+C:   0000239A  A$LCD_Functions_Functions$454      LCD_Functions
+C:   0000239A  C$LCD_Functions.c$88$1_0$32        LCD_Functions
+C:   0000239A  XG$LCD_Init$0$0                    LCD_Functions
+C:   0000239B  A$LCD_Functions_Functions$467      LCD_Functions
+C:   0000239B  C$LCD_Functions.c$95$1_0$34        LCD_Functions
+C:   0000239B  G$LCD_putch$0$0                    LCD_Functions
+C:   0000239B  _LCD_putch                         LCD_Functions
+C:   0000239D  A$LCD_Functions_Functions$468      LCD_Functions
+C:   000023A0  A$LCD_Functions_Functions$469      LCD_Functions
+C:   000023A1  A$LCD_Functions_Functions$472      LCD_Functions
+ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000023A1  C$LCD_Functions.c$97$1_0$34        LCD_Functions
+C:   000023A4  A$LCD_Functions_Functions$475      LCD_Functions
+C:   000023A4  C$LCD_Functions.c$98$1_0$34        LCD_Functions
+C:   000023A7  A$LCD_Functions_Functions$476      LCD_Functions
+C:   000023A8  A$LCD_Functions_Functions$477      LCD_Functions
+C:   000023AB  A$LCD_Functions_Functions$478      LCD_Functions
+C:   000023AC  A$LCD_Functions_Functions$483      LCD_Functions
+C:   000023AC  C$LCD_Functions.c$99$1_0$34        LCD_Functions
+C:   000023AC  XG$LCD_putch$0$0                   LCD_Functions
+C:   000023AD  A$LCD_Functions_Functions$496      LCD_Functions
+C:   000023AD  C$LCD_Functions.c$106$1_0$36       LCD_Functions
+C:   000023AD  G$LCD_putstr$0$0                   LCD_Functions
+C:   000023AD  _LCD_putstr                        LCD_Functions
+C:   000023AF  A$LCD_Functions_Functions$497      LCD_Functions
+C:   000023B1  A$LCD_Functions_Functions$498      LCD_Functions
+C:   000023B4  A$LCD_Functions_Functions$499      LCD_Functions
+C:   000023B5  A$LCD_Functions_Functions$500      LCD_Functions
+C:   000023B6  A$LCD_Functions_Functions$501      LCD_Functions
+C:   000023B7  A$LCD_Functions_Functions$502      LCD_Functions
+C:   000023B8  A$LCD_Functions_Functions$505      LCD_Functions
+C:   000023B8  C$LCD_Functions.c$108$1_0$36       LCD_Functions
+C:   000023BB  A$LCD_Functions_Functions$506      LCD_Functions
+C:   000023BC  A$LCD_Functions_Functions$507      LCD_Functions
+C:   000023BD  A$LCD_Functions_Functions$508      LCD_Functions
+C:   000023BE  A$LCD_Functions_Functions$509      LCD_Functions
+C:   000023BF  A$LCD_Functions_Functions$510      LCD_Functions
+C:   000023C0  A$LCD_Functions_Functions$512      LCD_Functions
+C:   000023C2  A$LCD_Functions_Functions$513      LCD_Functions
+C:   000023C4  A$LCD_Functions_Functions$514      LCD_Functions
+C:   000023C5  A$LCD_Functions_Functions$515      LCD_Functions
+C:   000023C7  A$LCD_Functions_Functions$516      LCD_Functions
+C:   000023CA  A$LCD_Functions_Functions$520      LCD_Functions
+C:   000023CA  C$LCD_Functions.c$110$2_0$37       LCD_Functions
+C:   000023CC  A$LCD_Functions_Functions$521      LCD_Functions
+C:   000023CE  A$LCD_Functions_Functions$522      LCD_Functions
+C:   000023D1  A$LCD_Functions_Functions$523      LCD_Functions
+C:   000023D3  A$LCD_Functions_Functions$524      LCD_Functions
+C:   000023D5  A$LCD_Functions_Functions$527      LCD_Functions
+C:   000023D5  C$LCD_Functions.c$111$2_0$37       LCD_Functions
+C:   000023D7  A$LCD_Functions_Functions$528      LCD_Functions
+C:   000023D9  A$LCD_Functions_Functions$529      LCD_Functions
+C:   000023DA  A$LCD_Functions_Functions$530      LCD_Functions
+C:   000023DB  A$LCD_Functions_Functions$531      LCD_Functions
+C:   000023DC  A$LCD_Functions_Functions$532      LCD_Functions
+C:   000023DE  A$LCD_Functions_Functions$533      LCD_Functions
+C:   000023E0  A$LCD_Functions_Functions$534      LCD_Functions
+C:   000023E3  A$LCD_Functions_Functions$535      LCD_Functions
+C:   000023E4  A$LCD_Functions_Functions$536      LCD_Functions
+C:   000023E5  A$LCD_Functions_Functions$537      LCD_Functions
+C:   000023E6  A$LCD_Functions_Functions$538      LCD_Functions
+C:   000023E7  A$LCD_Functions_Functions$539      LCD_Functions
+ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000023E8  A$LCD_Functions_Functions$540      LCD_Functions
+C:   000023EA  A$LCD_Functions_Functions$541      LCD_Functions
+C:   000023EC  A$LCD_Functions_Functions$542      LCD_Functions
+C:   000023EE  A$LCD_Functions_Functions$543      LCD_Functions
+C:   000023F1  A$LCD_Functions_Functions$544      LCD_Functions
+C:   000023F3  A$LCD_Functions_Functions$545      LCD_Functions
+C:   000023F5  A$LCD_Functions_Functions$548      LCD_Functions
+C:   000023F5  C$LCD_Functions.c$112$2_0$37       LCD_Functions
+C:   000023F8  A$LCD_Functions_Functions$549      LCD_Functions
+C:   000023F9  A$LCD_Functions_Functions$550      LCD_Functions
+C:   000023FA  A$LCD_Functions_Functions$551      LCD_Functions
+C:   000023FB  A$LCD_Functions_Functions$552      LCD_Functions
+C:   000023FC  A$LCD_Functions_Functions$553      LCD_Functions
+C:   000023FD  A$LCD_Functions_Functions$554      LCD_Functions
+C:   00002400  A$LCD_Functions_Functions$555      LCD_Functions
+C:   00002402  A$LCD_Functions_Functions$556      LCD_Functions
+C:   00002403  A$LCD_Functions_Functions$557      LCD_Functions
+C:   00002404  A$LCD_Functions_Functions$558      LCD_Functions
+C:   00002405  A$LCD_Functions_Functions$559      LCD_Functions
+C:   00002406  A$LCD_Functions_Functions$560      LCD_Functions
+C:   00002407  A$LCD_Functions_Functions$561      LCD_Functions
+C:   00002408  A$LCD_Functions_Functions$564      LCD_Functions
+C:   00002408  C$LCD_Functions.c$113$2_0$37       LCD_Functions
+C:   0000240B  A$LCD_Functions_Functions$565      LCD_Functions
+C:   0000240C  A$LCD_Functions_Functions$566      LCD_Functions
+C:   0000240D  A$LCD_Functions_Functions$567      LCD_Functions
+C:   0000240E  A$LCD_Functions_Functions$568      LCD_Functions
+C:   0000240F  A$LCD_Functions_Functions$569      LCD_Functions
+C:   00002410  A$LCD_Functions_Functions$570      LCD_Functions
+C:   00002413  A$LCD_Functions_Functions$571      LCD_Functions
+C:   00002416  A$LCD_Functions_Functions$574      LCD_Functions
+C:   00002416  C$LCD_Functions.c$115$3_0$38       LCD_Functions
+C:   00002419  A$LCD_Functions_Functions$575      LCD_Functions
+C:   0000241A  A$LCD_Functions_Functions$576      LCD_Functions
+C:   0000241B  A$LCD_Functions_Functions$577      LCD_Functions
+C:   0000241C  A$LCD_Functions_Functions$578      LCD_Functions
+C:   0000241D  A$LCD_Functions_Functions$579      LCD_Functions
+C:   0000241E  A$LCD_Functions_Functions$580      LCD_Functions
+C:   00002421  A$LCD_Functions_Functions$581      LCD_Functions
+C:   00002423  A$LCD_Functions_Functions$582      LCD_Functions
+C:   00002424  A$LCD_Functions_Functions$583      LCD_Functions
+C:   00002425  A$LCD_Functions_Functions$584      LCD_Functions
+C:   00002426  A$LCD_Functions_Functions$585      LCD_Functions
+C:   00002427  A$LCD_Functions_Functions$586      LCD_Functions
+C:   00002428  A$LCD_Functions_Functions$587      LCD_Functions
+C:   00002429  A$LCD_Functions_Functions$590      LCD_Functions
+C:   00002429  C$LCD_Functions.c$116$3_0$38       LCD_Functions
+C:   0000242C  A$LCD_Functions_Functions$591      LCD_Functions
+C:   0000242D  A$LCD_Functions_Functions$592      LCD_Functions
+C:   0000242E  A$LCD_Functions_Functions$593      LCD_Functions
+C:   0000242F  A$LCD_Functions_Functions$594      LCD_Functions
+ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002430  A$LCD_Functions_Functions$597      LCD_Functions
+C:   00002430  C$LCD_Functions.c$117$3_0$38       LCD_Functions
+C:   00002433  A$LCD_Functions_Functions$598      LCD_Functions
+C:   00002434  A$LCD_Functions_Functions$599      LCD_Functions
+C:   00002435  A$LCD_Functions_Functions$600      LCD_Functions
+C:   00002436  A$LCD_Functions_Functions$601      LCD_Functions
+C:   00002437  A$LCD_Functions_Functions$602      LCD_Functions
+C:   0000243A  A$LCD_Functions_Functions$603      LCD_Functions
+C:   0000243B  A$LCD_Functions_Functions$604      LCD_Functions
+C:   0000243C  A$LCD_Functions_Functions$605      LCD_Functions
+C:   0000243D  A$LCD_Functions_Functions$606      LCD_Functions
+C:   0000243E  A$LCD_Functions_Functions$607      LCD_Functions
+C:   00002441  A$LCD_Functions_Functions$608      LCD_Functions
+C:   00002442  A$LCD_Functions_Functions$609      LCD_Functions
+C:   00002443  A$LCD_Functions_Functions$610      LCD_Functions
+C:   00002445  A$LCD_Functions_Functions$611      LCD_Functions
+C:   00002447  A$LCD_Functions_Functions$612      LCD_Functions
+C:   00002449  A$LCD_Functions_Functions$613      LCD_Functions
+C:   0000244C  A$LCD_Functions_Functions$614      LCD_Functions
+C:   0000244E  A$LCD_Functions_Functions$615      LCD_Functions
+C:   00002450  A$LCD_Functions_Functions$616      LCD_Functions
+C:   00002453  A$LCD_Functions_Functions$618      LCD_Functions
+C:   00002456  A$LCD_Functions_Functions$619      LCD_Functions
+C:   00002457  A$LCD_Functions_Functions$620      LCD_Functions
+C:   00002458  A$LCD_Functions_Functions$621      LCD_Functions
+C:   00002459  A$LCD_Functions_Functions$622      LCD_Functions
+C:   0000245A  A$LCD_Functions_Functions$623      LCD_Functions
+C:   0000245B  A$LCD_Functions_Functions$628      LCD_Functions
+C:   0000245B  C$LCD_Functions.c$120$1_0$36       LCD_Functions
+C:   0000245B  XG$LCD_putstr$0$0                  LCD_Functions
+C:   0000245C  A$LCD_Functions_Functions$641      LCD_Functions
+C:   0000245C  C$LCD_Functions.c$127$1_0$40       LCD_Functions
+C:   0000245C  C$LCD_Functions.c$129$1_0$40       LCD_Functions
+C:   0000245C  G$lcd_clear$0$0                    LCD_Functions
+C:   0000245C  _lcd_clear                         LCD_Functions
+C:   0000245F  A$LCD_Functions_Functions$644      LCD_Functions
+C:   0000245F  C$LCD_Functions.c$130$1_0$40       LCD_Functions
+C:   00002462  A$LCD_Functions_Functions$645      LCD_Functions
+C:   00002464  A$LCD_Functions_Functions$646      LCD_Functions
+C:   00002465  A$LCD_Functions_Functions$651      LCD_Functions
+C:   00002465  C$LCD_Functions.c$131$1_0$40       LCD_Functions
+C:   00002465  XG$lcd_clear$0$0                   LCD_Functions
+C:   00002466  A$LCD_Functions_Functions$664      LCD_Functions
+C:   00002466  C$LCD_Functions.c$132$1_0$42       LCD_Functions
+C:   00002466  G$lcd_gotoaddr$0$0                 LCD_Functions
+C:   00002466  _lcd_gotoaddr                      LCD_Functions
+C:   00002468  A$LCD_Functions_Functions$665      LCD_Functions
+C:   0000246B  A$LCD_Functions_Functions$666      LCD_Functions
+C:   0000246C  A$LCD_Functions_Functions$669      LCD_Functions
+C:   0000246C  C$LCD_Functions.c$134$1_0$42       LCD_Functions
+C:   0000246F  A$LCD_Functions_Functions$672      LCD_Functions
+ASxxxx Linker V03.00 + NoICE + sdld,  page 30.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000246F  C$LCD_Functions.c$135$1_0$42       LCD_Functions
+C:   00002472  A$LCD_Functions_Functions$673      LCD_Functions
+C:   00002473  A$LCD_Functions_Functions$674      LCD_Functions
+C:   00002476  A$LCD_Functions_Functions$675      LCD_Functions
+C:   00002478  A$LCD_Functions_Functions$676      LCD_Functions
+C:   00002479  A$LCD_Functions_Functions$681      LCD_Functions
+C:   00002479  C$LCD_Functions.c$136$1_0$42       LCD_Functions
+C:   00002479  XG$lcd_gotoaddr$0$0                LCD_Functions
+C:   0000247A  A$LCD_Functions_Functions$695      LCD_Functions
+C:   0000247A  C$LCD_Functions.c$137$1_0$44       LCD_Functions
+C:   0000247A  G$lcd_gotoxy$0$0                   LCD_Functions
+C:   0000247A  _lcd_gotoxy                        LCD_Functions
+C:   0000247C  A$LCD_Functions_Functions$696      LCD_Functions
+C:   0000247F  A$LCD_Functions_Functions$697      LCD_Functions
+C:   00002480  A$LCD_Functions_Functions$700      LCD_Functions
+C:   00002480  C$LCD_Functions.c$138$1_0$44       LCD_Functions
+C:   00002483  A$LCD_Functions_Functions$701      LCD_Functions
+C:   00002484  A$LCD_Functions_Functions$702      LCD_Functions
+C:   00002485  A$LCD_Functions_Functions$703      LCD_Functions
+C:   00002488  A$LCD_Functions_Functions$704      LCD_Functions
+C:   00002489  A$LCD_Functions_Functions$705      LCD_Functions
+C:   0000248A  A$LCD_Functions_Functions$706      LCD_Functions
+C:   0000248B  A$LCD_Functions_Functions$707      LCD_Functions
+C:   0000248C  A$LCD_Functions_Functions$710      LCD_Functions
+C:   0000248C  C$LCD_Functions.c$139$1_0$44       LCD_Functions
+C:   0000248F  A$LCD_Functions_Functions$711      LCD_Functions
+C:   00002490  A$LCD_Functions_Functions$712      LCD_Functions
+C:   00002491  A$LCD_Functions_Functions$713      LCD_Functions
+C:   00002494  A$LCD_Functions_Functions$714      LCD_Functions
+C:   00002495  A$LCD_Functions_Functions$715      LCD_Functions
+C:   00002496  A$LCD_Functions_Functions$716      LCD_Functions
+C:   00002497  A$LCD_Functions_Functions$717      LCD_Functions
+C:   00002498  A$LCD_Functions_Functions$720      LCD_Functions
+C:   00002498  C$LCD_Functions.c$140$1_0$44       LCD_Functions
+C:   0000249B  A$LCD_Functions_Functions$721      LCD_Functions
+C:   0000249D  A$LCD_Functions_Functions$723      LCD_Functions
+C:   000024A0  A$LCD_Functions_Functions$724      LCD_Functions
+C:   000024A2  A$LCD_Functions_Functions$726      LCD_Functions
+C:   000024A5  A$LCD_Functions_Functions$727      LCD_Functions
+C:   000024A7  A$LCD_Functions_Functions$731      LCD_Functions
+C:   000024A7  C$LCD_Functions.c$142$2_0$45       LCD_Functions
+C:   000024AA  A$LCD_Functions_Functions$732      LCD_Functions
+C:   000024AC  A$LCD_Functions_Functions$734      LCD_Functions
+C:   000024AE  A$LCD_Functions_Functions$735      LCD_Functions
+C:   000024B1  A$LCD_Functions_Functions$740      LCD_Functions
+C:   000024B1  C$LCD_Functions.c$143$2_0$45       LCD_Functions
+C:   000024B1  C$LCD_Functions.c$144$2_0$45       LCD_Functions
+C:   000024B3  A$LCD_Functions_Functions$742      LCD_Functions
+C:   000024B5  A$LCD_Functions_Functions$743      LCD_Functions
+C:   000024B7  A$LCD_Functions_Functions$744      LCD_Functions
+C:   000024B8  A$LCD_Functions_Functions$745      LCD_Functions
+ASxxxx Linker V03.00 + NoICE + sdld,  page 31.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000024BA  A$LCD_Functions_Functions$746      LCD_Functions
+C:   000024BD  A$LCD_Functions_Functions$751      LCD_Functions
+C:   000024BD  C$LCD_Functions.c$145$2_0$45       LCD_Functions
+C:   000024BD  C$LCD_Functions.c$146$2_0$45       LCD_Functions
+C:   000024BF  A$LCD_Functions_Functions$753      LCD_Functions
+C:   000024C1  A$LCD_Functions_Functions$754      LCD_Functions
+C:   000024C3  A$LCD_Functions_Functions$755      LCD_Functions
+C:   000024C4  A$LCD_Functions_Functions$756      LCD_Functions
+C:   000024C6  A$LCD_Functions_Functions$757      LCD_Functions
+C:   000024C9  A$LCD_Functions_Functions$762      LCD_Functions
+C:   000024C9  C$LCD_Functions.c$147$2_0$45       LCD_Functions
+C:   000024C9  C$LCD_Functions.c$148$2_0$45       LCD_Functions
+C:   000024CB  A$LCD_Functions_Functions$764      LCD_Functions
+C:   000024CD  A$LCD_Functions_Functions$765      LCD_Functions
+C:   000024CE  A$LCD_Functions_Functions$766      LCD_Functions
+C:   000024D0  A$LCD_Functions_Functions$767      LCD_Functions
+C:   000024D3  A$LCD_Functions_Functions$775      LCD_Functions
+C:   000024D3  C$LCD_Functions.c$152$1_0$44       LCD_Functions
+C:   000024D3  C$LCD_Functions.c$153$1_0$44       LCD_Functions
+C:   000024D3  XG$lcd_gotoxy$0$0                  LCD_Functions
+C:   000024D4  A$mainDebug\main$781               main
+C:   000024D4  C$main.c$24$0_0$24                 main
+C:   000024D4  G$timer0_ISR$0$0                   main
+C:   000024D4  _timer0_ISR                        main
+C:   000024D6  A$mainDebug\main$782               main
+C:   000024D8  A$mainDebug\main$783               main
+C:   000024DA  A$mainDebug\main$784               main
+C:   000024DC  A$mainDebug\main$785               main
+C:   000024DE  A$mainDebug\main$786               main
+C:   000024E0  A$mainDebug\main$787               main
+C:   000024E2  A$mainDebug\main$788               main
+C:   000024E4  A$mainDebug\main$789               main
+C:   000024E6  A$mainDebug\main$790               main
+C:   000024E8  A$mainDebug\main$791               main
+C:   000024EA  A$mainDebug\main$792               main
+C:   000024EC  A$mainDebug\main$793               main
+C:   000024EF  A$mainDebug\main$797               main
+C:   000024EF  C$main.c$25$1_0$24                 main
+C:   000024F1  A$mainDebug\main$801               main
+C:   000024F1  C$main.c$26$1_0$24                 main
+C:   000024F3  A$mainDebug\main$805               main
+C:   000024F3  C$main.c$27$1_0$24                 main
+C:   000024F5  A$mainDebug\main$808               main
+C:   000024F5  C$main.c$28$1_0$24                 main
+C:   000024F8  A$mainDebug\main$811               main
+C:   000024F8  C$main.c$29$1_0$24                 main
+C:   000024FB  A$mainDebug\main$814               main
+C:   000024FB  C$main.c$30$1_0$24                 main
+C:   000024FD  A$mainDebug\main$818               main
+C:   000024FD  C$main.c$31$1_0$24                 main
+C:   000024FF  A$mainDebug\main$822               main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000024FF  C$main.c$32$1_0$24                 main
+C:   00002501  A$mainDebug\main$825               main
+C:   00002501  C$main.c$33$1_0$24                 main
+C:   00002504  A$mainDebug\main$826               main
+C:   00002505  A$mainDebug\main$827               main
+C:   00002506  A$mainDebug\main$828               main
+C:   00002507  A$mainDebug\main$829               main
+C:   00002508  A$mainDebug\main$830               main
+C:   00002509  A$mainDebug\main$831               main
+C:   0000250A  A$mainDebug\main$832               main
+C:   0000250B  A$mainDebug\main$833               main
+C:   0000250C  A$mainDebug\main$834               main
+C:   0000250D  A$mainDebug\main$835               main
+C:   0000250E  A$mainDebug\main$836               main
+C:   0000250F  A$mainDebug\main$837               main
+C:   00002510  A$mainDebug\main$838               main
+C:   00002511  A$mainDebug\main$839               main
+C:   00002512  A$mainDebug\main$840               main
+C:   00002513  A$mainDebug\main$841               main
+C:   00002514  A$mainDebug\main$842               main
+C:   00002515  A$mainDebug\main$843               main
+C:   00002516  A$mainDebug\main$844               main
+C:   00002517  A$mainDebug\main$845               main
+C:   00002518  A$mainDebug\main$846               main
+C:   00002519  A$mainDebug\main$847               main
+C:   0000251A  A$mainDebug\main$848               main
+C:   0000251B  A$mainDebug\main$849               main
+C:   0000251E  A$mainDebug\main$850               main
+C:   00002520  A$mainDebug\main$851               main
+C:   00002521  A$mainDebug\main$852               main
+C:   00002522  A$mainDebug\main$853               main
+C:   00002523  A$mainDebug\main$854               main
+C:   00002524  A$mainDebug\main$855               main
+C:   00002525  A$mainDebug\main$856               main
+C:   00002526  A$mainDebug\main$857               main
+C:   00002527  A$mainDebug\main$858               main
+C:   00002528  A$mainDebug\main$859               main
+C:   00002529  A$mainDebug\main$860               main
+C:   0000252A  A$mainDebug\main$861               main
+C:   0000252B  A$mainDebug\main$862               main
+C:   0000252C  A$mainDebug\main$863               main
+C:   0000252D  A$mainDebug\main$864               main
+C:   0000252E  A$mainDebug\main$865               main
+C:   0000252F  A$mainDebug\main$866               main
+C:   00002530  A$mainDebug\main$867               main
+C:   00002531  A$mainDebug\main$868               main
+C:   00002532  A$mainDebug\main$869               main
+C:   00002533  A$mainDebug\main$870               main
+C:   00002534  A$mainDebug\main$871               main
+C:   00002535  A$mainDebug\main$872               main
+C:   00002536  A$mainDebug\main$873               main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002537  A$mainDebug\main$874               main
+C:   00002538  A$mainDebug\main$875               main
+C:   00002539  A$mainDebug\main$876               main
+C:   0000253A  A$mainDebug\main$877               main
+C:   0000253B  A$mainDebug\main$878               main
+C:   0000253C  A$mainDebug\main$879               main
+C:   0000253D  A$mainDebug\main$880               main
+C:   0000253E  A$mainDebug\main$883               main
+C:   0000253E  C$main.c$34$1_0$24                 main
+C:   00002541  A$mainDebug\main$884               main
+C:   00002542  A$mainDebug\main$885               main
+C:   00002543  A$mainDebug\main$886               main
+C:   00002544  A$mainDebug\main$887               main
+C:   00002545  A$mainDebug\main$888               main
+C:   00002546  A$mainDebug\main$889               main
+C:   00002547  A$mainDebug\main$890               main
+C:   00002548  A$mainDebug\main$891               main
+C:   00002549  A$mainDebug\main$892               main
+C:   0000254A  A$mainDebug\main$893               main
+C:   0000254B  A$mainDebug\main$894               main
+C:   0000254C  A$mainDebug\main$895               main
+C:   0000254D  A$mainDebug\main$896               main
+C:   0000254E  A$mainDebug\main$897               main
+C:   0000254F  A$mainDebug\main$898               main
+C:   00002550  A$mainDebug\main$899               main
+C:   00002551  A$mainDebug\main$900               main
+C:   00002552  A$mainDebug\main$901               main
+C:   00002555  A$mainDebug\main$904               main
+C:   00002555  C$main.c$36$2_0$25                 main
+C:   00002558  A$mainDebug\main$905               main
+C:   0000255A  A$mainDebug\main$906               main
+C:   0000255B  A$mainDebug\main$909               main
+C:   0000255B  C$main.c$37$2_0$25                 main
+C:   0000255E  A$mainDebug\main$910               main
+C:   0000255F  A$mainDebug\main$911               main
+C:   00002560  A$mainDebug\main$912               main
+C:   00002561  A$mainDebug\main$913               main
+C:   00002562  A$mainDebug\main$914               main
+C:   00002563  A$mainDebug\main$915               main
+C:   00002564  A$mainDebug\main$916               main
+C:   00002565  A$mainDebug\main$917               main
+C:   00002566  A$mainDebug\main$918               main
+C:   00002567  A$mainDebug\main$919               main
+C:   00002568  A$mainDebug\main$920               main
+C:   00002569  A$mainDebug\main$921               main
+C:   0000256A  A$mainDebug\main$922               main
+C:   0000256B  A$mainDebug\main$923               main
+C:   0000256C  A$mainDebug\main$924               main
+C:   0000256D  A$mainDebug\main$925               main
+C:   0000256E  A$mainDebug\main$926               main
+C:   00002570  A$mainDebug\main$930               main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002570  C$main.c$41$2_0$26                 main
+C:   00002573  A$mainDebug\main$931               main
+C:   00002574  A$mainDebug\main$932               main
+C:   00002575  A$mainDebug\main$936               main
+C:   00002577  A$mainDebug\main$937               main
+C:   00002579  A$mainDebug\main$938               main
+C:   0000257B  A$mainDebug\main$939               main
+C:   0000257D  A$mainDebug\main$940               main
+C:   0000257F  A$mainDebug\main$941               main
+C:   00002581  A$mainDebug\main$942               main
+C:   00002583  A$mainDebug\main$943               main
+C:   00002585  A$mainDebug\main$944               main
+C:   00002587  A$mainDebug\main$945               main
+C:   00002589  A$mainDebug\main$946               main
+C:   0000258B  A$mainDebug\main$947               main
+C:   0000258D  A$mainDebug\main$950               main
+C:   0000258D  C$main.c$43$1_0$24                 main
+C:   0000258D  XG$timer0_ISR$0$0                  main
+C:   0000258E  A$mainDebug\main$967               main
+C:   0000258E  C$main.c$44$1_0$28                 main
+C:   0000258E  G$inttostr$0$0                     main
+C:   0000258E  _inttostr                          main
+C:   00002590  A$mainDebug\main$968               main
+C:   00002593  A$mainDebug\main$969               main
+C:   00002594  A$mainDebug\main$972               main
+C:   00002594  C$main.c$46$2_0$29                 main
+C:   00002596  A$mainDebug\main$974               main
+C:   00002599  A$mainDebug\main$975               main
+C:   0000259A  A$mainDebug\main$976               main
+C:   0000259B  A$mainDebug\main$977               main
+C:   0000259C  A$mainDebug\main$978               main
+C:   0000259E  A$mainDebug\main$981               main
+C:   0000259E  C$main.c$47$2_0$29                 main
+C:   0000259F  A$mainDebug\main$984               main
+C:   0000259F  C$main.c$48$2_0$29                 main
+C:   000025A0  A$mainDebug\main$985               main
+C:   000025A2  A$mainDebug\main$986               main
+C:   000025A3  A$mainDebug\main$987               main
+C:   000025A4  A$mainDebug\main$988               main
+C:   000025A6  A$mainDebug\main$989               main
+C:   000025A7  A$mainDebug\main$990               main
+C:   000025A9  A$mainDebug\main$991               main
+C:   000025AC  A$mainDebug\main$992               main
+C:   000025AE  A$mainDebug\main$993               main
+C:   000025AF  A$mainDebug\main$994               main
+C:   000025B0  A$mainDebug\main$995               main
+C:   000025B1  A$mainDebug\main$996               main
+C:   000025B2  A$mainDebug\main$997               main
+C:   000025B4  A$mainDebug\main$998               main
+C:   000025B6  A$mainDebug\main$999               main
+C:   000025B8  A$mainDebug\main$1000              main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000025BA  A$mainDebug\main$1001              main
+C:   000025BC  A$mainDebug\main$1002              main
+C:   000025BE  A$mainDebug\main$1003              main
+C:   000025C0  A$mainDebug\main$1004              main
+C:   000025C3  A$mainDebug\main$1005              main
+C:   000025C5  A$mainDebug\main$1006              main
+C:   000025C7  A$mainDebug\main$1007              main
+C:   000025C9  A$mainDebug\main$1008              main
+C:   000025CB  A$mainDebug\main$1009              main
+C:   000025CD  A$mainDebug\main$1010              main
+C:   000025CF  A$mainDebug\main$1011              main
+C:   000025D0  A$mainDebug\main$1012              main
+C:   000025D2  A$mainDebug\main$1013              main
+C:   000025D4  A$mainDebug\main$1014              main
+C:   000025D5  A$mainDebug\main$1017              main
+C:   000025D5  C$main.c$49$1_0$28                 main
+C:   000025D8  A$mainDebug\main$1018              main
+C:   000025DA  A$mainDebug\main$1019              main
+C:   000025DB  A$mainDebug\main$1020              main
+C:   000025DC  A$mainDebug\main$1021              main
+C:   000025DD  A$mainDebug\main$1022              main
+C:   000025DE  A$mainDebug\main$1023              main
+C:   000025E0  A$mainDebug\main$1024              main
+C:   000025E2  A$mainDebug\main$1025              main
+C:   000025E5  A$mainDebug\main$1026              main
+C:   000025E7  A$mainDebug\main$1027              main
+C:   000025E9  A$mainDebug\main$1028              main
+C:   000025EB  A$mainDebug\main$1029              main
+C:   000025EE  A$mainDebug\main$1030              main
+C:   000025EF  A$mainDebug\main$1031              main
+C:   000025F0  A$mainDebug\main$1032              main
+C:   000025F2  A$mainDebug\main$1036              main
+C:   000025F2  C$main.c$51$1_0$28                 main
+C:   000025F4  A$mainDebug\main$1037              main
+C:   000025F6  A$mainDebug\main$1038              main
+C:   000025F8  A$mainDebug\main$1039              main
+C:   000025FA  A$mainDebug\main$1040              main
+C:   000025FC  A$mainDebug\main$1041              main
+C:   000025FF  A$mainDebug\main$1042              main
+C:   00002601  A$mainDebug\main$1043              main
+C:   00002603  A$mainDebug\main$1044              main
+C:   00002605  A$mainDebug\main$1047              main
+C:   00002605  C$main.c$52$3_0$31                 main
+C:   00002607  A$mainDebug\main$1049              main
+C:   00002608  A$mainDebug\main$1050              main
+C:   00002609  A$mainDebug\main$1051              main
+C:   0000260A  A$mainDebug\main$1052              main
+C:   0000260C  A$mainDebug\main$1055              main
+C:   0000260C  C$main.c$53$3_0$31                 main
+C:   0000260D  A$mainDebug\main$1056              main
+C:   0000260F  A$mainDebug\main$1057              main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002611  A$mainDebug\main$1058              main
+C:   00002612  A$mainDebug\main$1059              main
+C:   00002614  A$mainDebug\main$1060              main
+C:   00002616  A$mainDebug\main$1061              main
+C:   00002618  A$mainDebug\main$1062              main
+C:   00002619  A$mainDebug\main$1065              main
+C:   00002619  C$main.c$52$2_0$30                 main
+C:   0000261A  A$mainDebug\main$1066              main
+C:   0000261C  A$mainDebug\main$1070              main
+C:   0000261C  C$main.c$55$1_0$28                 main
+C:   0000261F  A$mainDebug\main$1073              main
+C:   0000261F  C$main.c$56$1_0$28                 main
+C:   00002622  A$mainDebug\main$1074              main
+C:   00002625  A$mainDebug\main$1077              main
+C:   00002625  C$main.c$57$1_0$28                 main
+C:   00002628  A$mainDebug\main$1080              main
+C:   00002628  C$main.c$58$1_0$28                 main
+C:   0000262B  A$mainDebug\main$1081              main
+C:   0000262D  A$mainDebug\main$1082              main
+C:   0000262E  A$mainDebug\main$1087              main
+C:   0000262E  C$main.c$59$1_0$28                 main
+C:   0000262E  XG$inttostr$0$0                    main
+C:   0000262F  A$mainDebug\main$1100              main
+C:   0000262F  C$main.c$60$1_0$32                 main
+C:   0000262F  C$main.c$62$1_0$32                 main
+C:   0000262F  G$time_show$0$0                    main
+C:   0000262F  _time_show                         main
+C:   00002632  A$mainDebug\main$1101              main
+C:   00002633  A$mainDebug\main$1102              main
+C:   00002634  A$mainDebug\main$1103              main
+C:   00002637  A$mainDebug\main$1104              main
+C:   00002639  A$mainDebug\main$1106              main
+C:   0000263C  A$mainDebug\main$1110              main
+C:   0000263C  C$main.c$64$2_0$33                 main
+C:   0000263F  A$mainDebug\main$1111              main
+C:   00002640  A$mainDebug\main$1112              main
+C:   00002641  A$mainDebug\main$1115              main
+C:   00002641  C$main.c$65$2_0$33                 main
+C:   00002644  A$mainDebug\main$1116              main
+C:   00002645  A$mainDebug\main$1117              main
+C:   00002646  A$mainDebug\main$1118              main
+C:   00002647  A$mainDebug\main$1121              main
+C:   00002647  C$main.c$66$2_0$33                 main
+C:   00002648  A$mainDebug\main$1122              main
+C:   00002649  A$mainDebug\main$1123              main
+C:   0000264C  A$mainDebug\main$1126              main
+C:   0000264C  C$main.c$68$3_0$34                 main
+C:   0000264F  A$mainDebug\main$1127              main
+C:   00002650  A$mainDebug\main$1128              main
+C:   00002651  A$mainDebug\main$1129              main
+C:   00002652  A$mainDebug\main$1132              main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002652  C$main.c$69$3_0$34                 main
+C:   00002655  A$mainDebug\main$1133              main
+C:   00002656  A$mainDebug\main$1134              main
+C:   00002657  A$mainDebug\main$1138              main
+C:   00002657  C$main.c$71$2_0$33                 main
+C:   0000265A  A$mainDebug\main$1139              main
+C:   0000265B  A$mainDebug\main$1140              main
+C:   0000265C  A$mainDebug\main$1141              main
+C:   0000265F  A$mainDebug\main$1144              main
+C:   0000265F  C$main.c$73$3_0$35                 main
+C:   00002662  A$mainDebug\main$1145              main
+C:   00002663  A$mainDebug\main$1146              main
+C:   00002664  A$mainDebug\main$1147              main
+C:   00002665  A$mainDebug\main$1150              main
+C:   00002665  C$main.c$74$3_0$35                 main
+C:   00002668  A$mainDebug\main$1151              main
+C:   00002669  A$mainDebug\main$1152              main
+C:   0000266A  A$mainDebug\main$1156              main
+C:   0000266A  C$main.c$76$2_0$33                 main
+C:   0000266D  A$mainDebug\main$1157              main
+C:   0000266E  A$mainDebug\main$1158              main
+C:   0000266F  A$mainDebug\main$1159              main
+C:   00002671  A$mainDebug\main$1160              main
+C:   00002674  A$mainDebug\main$1161              main
+C:   00002676  A$mainDebug\main$1162              main
+C:   00002677  A$mainDebug\main$1163              main
+C:   00002678  A$mainDebug\main$1164              main
+C:   00002679  A$mainDebug\main$1165              main
+C:   0000267A  A$mainDebug\main$1166              main
+C:   0000267C  A$mainDebug\main$1167              main
+C:   0000267E  A$mainDebug\main$1168              main
+C:   00002681  A$mainDebug\main$1169              main
+C:   00002683  A$mainDebug\main$1170              main
+C:   00002686  A$mainDebug\main$1171              main
+C:   00002687  A$mainDebug\main$1172              main
+C:   00002688  A$mainDebug\main$1175              main
+C:   00002688  C$main.c$77$2_0$33                 main
+C:   0000268B  A$mainDebug\main$1176              main
+C:   0000268D  A$mainDebug\main$1177              main
+C:   0000268E  A$mainDebug\main$1178              main
+C:   00002691  A$mainDebug\main$1179              main
+C:   00002694  A$mainDebug\main$1182              main
+C:   00002694  C$main.c$78$2_0$33                 main
+C:   00002697  A$mainDebug\main$1183              main
+C:   00002698  A$mainDebug\main$1184              main
+C:   0000269A  A$mainDebug\main$1185              main
+C:   0000269D  A$mainDebug\main$1188              main
+C:   0000269D  C$main.c$79$2_0$33                 main
+C:   000026A0  A$mainDebug\main$1189              main
+C:   000026A1  A$mainDebug\main$1190              main
+C:   000026A3  A$mainDebug\main$1191              main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000026A6  A$mainDebug\main$1194              main
+C:   000026A6  C$main.c$80$2_0$33                 main
+C:   000026A9  A$mainDebug\main$1195              main
+C:   000026AA  A$mainDebug\main$1196              main
+C:   000026AC  A$mainDebug\main$1197              main
+C:   000026AF  A$mainDebug\main$1200              main
+C:   000026AF  C$main.c$81$2_0$33                 main
+C:   000026B2  A$mainDebug\main$1201              main
+C:   000026B3  A$mainDebug\main$1202              main
+C:   000026B5  A$mainDebug\main$1203              main
+C:   000026B8  A$mainDebug\main$1209              main
+C:   000026B8  C$main.c$83$1_0$32                 main
+C:   000026B8  XG$time_show$0$0                   main
+C:   000026B9  A$mainDebug\main$1225              main
+C:   000026B9  C$main.c$84$1_0$37                 main
+C:   000026B9  C$main.c$85$2_0$37                 main
+C:   000026B9  G$main$0$0                         main
+C:   000026B9  _main                              main
+C:   000026BC  A$mainDebug\main$1226              main
+C:   000026BE  A$mainDebug\main$1227              main
+C:   000026BF  A$mainDebug\main$1228              main
+C:   000026C2  A$mainDebug\main$1229              main
+C:   000026C4  A$mainDebug\main$1230              main
+C:   000026C5  A$mainDebug\main$1231              main
+C:   000026C8  A$mainDebug\main$1232              main
+C:   000026CA  A$mainDebug\main$1233              main
+C:   000026CB  A$mainDebug\main$1234              main
+C:   000026CE  A$mainDebug\main$1235              main
+C:   000026D0  A$mainDebug\main$1236              main
+C:   000026D1  A$mainDebug\main$1237              main
+C:   000026D4  A$mainDebug\main$1238              main
+C:   000026D6  A$mainDebug\main$1239              main
+C:   000026D7  A$mainDebug\main$1240              main
+C:   000026DA  A$mainDebug\main$1241              main
+C:   000026DC  A$mainDebug\main$1242              main
+C:   000026DD  A$mainDebug\main$1243              main
+C:   000026E0  A$mainDebug\main$1244              main
+C:   000026E2  A$mainDebug\main$1245              main
+C:   000026E3  A$mainDebug\main$1246              main
+C:   000026E6  A$mainDebug\main$1247              main
+C:   000026E8  A$mainDebug\main$1248              main
+C:   000026E9  A$mainDebug\main$1249              main
+C:   000026EC  A$mainDebug\main$1250              main
+C:   000026EE  A$mainDebug\main$1251              main
+C:   000026EF  A$mainDebug\main$1252              main
+C:   000026F2  A$mainDebug\main$1253              main
+C:   000026F4  A$mainDebug\main$1254              main
+C:   000026F5  A$mainDebug\main$1255              main
+C:   000026F8  A$mainDebug\main$1256              main
+C:   000026FA  A$mainDebug\main$1257              main
+C:   000026FB  A$mainDebug\main$1258              main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000026FE  A$mainDebug\main$1259              main
+C:   00002700  A$mainDebug\main$1260              main
+C:   00002701  A$mainDebug\main$1261              main
+C:   00002704  A$mainDebug\main$1262              main
+C:   00002706  A$mainDebug\main$1263              main
+C:   00002707  A$mainDebug\main$1264              main
+C:   0000270A  A$mainDebug\main$1265              main
+C:   0000270C  A$mainDebug\main$1266              main
+C:   0000270D  A$mainDebug\main$1267              main
+C:   00002710  A$mainDebug\main$1268              main
+C:   00002712  A$mainDebug\main$1269              main
+C:   00002713  A$mainDebug\main$1270              main
+C:   00002716  A$mainDebug\main$1271              main
+C:   00002718  A$mainDebug\main$1272              main
+C:   00002719  A$mainDebug\main$1273              main
+C:   0000271C  A$mainDebug\main$1274              main
+C:   0000271E  A$mainDebug\main$1275              main
+C:   0000271F  A$mainDebug\main$1276              main
+C:   00002722  A$mainDebug\main$1277              main
+C:   00002724  A$mainDebug\main$1278              main
+C:   00002725  A$mainDebug\main$1279              main
+C:   00002728  A$mainDebug\main$1280              main
+C:   0000272A  A$mainDebug\main$1281              main
+C:   0000272B  A$mainDebug\main$1282              main
+C:   0000272E  A$mainDebug\main$1283              main
+C:   00002730  A$mainDebug\main$1284              main
+C:   00002731  A$mainDebug\main$1285              main
+C:   00002734  A$mainDebug\main$1286              main
+C:   00002736  A$mainDebug\main$1287              main
+C:   00002737  A$mainDebug\main$1288              main
+C:   0000273A  A$mainDebug\main$1289              main
+C:   0000273C  A$mainDebug\main$1290              main
+C:   0000273D  A$mainDebug\main$1291              main
+C:   00002740  A$mainDebug\main$1292              main
+C:   00002742  A$mainDebug\main$1293              main
+C:   00002743  A$mainDebug\main$1294              main
+C:   00002746  A$mainDebug\main$1295              main
+C:   00002747  A$mainDebug\main$1296              main
+C:   00002748  A$mainDebug\main$1299              main
+C:   00002748  C$main.c$86$2_0$37                 main
+C:   0000274B  A$mainDebug\main$1300              main
+C:   0000274D  A$mainDebug\main$1301              main
+C:   0000274E  A$mainDebug\main$1302              main
+C:   00002751  A$mainDebug\main$1303              main
+C:   00002753  A$mainDebug\main$1304              main
+C:   00002754  A$mainDebug\main$1305              main
+C:   00002757  A$mainDebug\main$1306              main
+C:   00002759  A$mainDebug\main$1307              main
+C:   0000275A  A$mainDebug\main$1308              main
+C:   0000275D  A$mainDebug\main$1309              main
+C:   0000275F  A$mainDebug\main$1310              main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002760  A$mainDebug\main$1311              main
+C:   00002763  A$mainDebug\main$1312              main
+C:   00002765  A$mainDebug\main$1313              main
+C:   00002766  A$mainDebug\main$1314              main
+C:   00002769  A$mainDebug\main$1315              main
+C:   0000276A  A$mainDebug\main$1316              main
+C:   0000276B  A$mainDebug\main$1319              main
+C:   0000276B  C$main.c$87$1_0$37                 main
+C:   0000276E  A$mainDebug\main$1320              main
+C:   0000276F  A$mainDebug\main$1321              main
+C:   00002772  A$mainDebug\main$1322              main
+C:   00002773  A$mainDebug\main$1323              main
+C:   00002776  A$mainDebug\main$1324              main
+C:   00002777  A$mainDebug\main$1327              main
+C:   00002777  C$main.c$88$1_0$37                 main
+C:   0000277A  A$mainDebug\main$1330              main
+C:   0000277A  C$main.c$89$1_0$37                 main
+C:   0000277C  A$mainDebug\main$1331              main
+C:   0000277E  A$mainDebug\main$1332              main
+C:   00002780  A$mainDebug\main$1333              main
+C:   00002782  A$mainDebug\main$1334              main
+C:   00002785  A$mainDebug\main$1335              main
+C:   00002787  A$mainDebug\main$1336              main
+C:   00002789  A$mainDebug\main$1339              main
+C:   00002789  C$main.c$90$1_0$37                 main
+C:   0000278C  A$mainDebug\main$1340              main
+C:   0000278D  A$mainDebug\main$1341              main
+C:   0000278F  A$mainDebug\main$1342              main
+C:   00002792  A$mainDebug\main$1345              main
+C:   00002792  C$main.c$92$1_0$37                 main
+C:   00002795  A$mainDebug\main$1348              main
+C:   00002795  C$main.c$93$1_0$37                 main
+C:   00002797  A$mainDebug\main$1349              main
+C:   00002799  A$mainDebug\main$1350              main
+C:   0000279B  A$mainDebug\main$1351              main
+C:   0000279D  A$mainDebug\main$1352              main
+C:   000027A0  A$mainDebug\main$1353              main
+C:   000027A2  A$mainDebug\main$1354              main
+C:   000027A4  A$mainDebug\main$1357              main
+C:   000027A4  C$main.c$94$1_0$37                 main
+C:   000027A7  A$mainDebug\main$1358              main
+C:   000027A8  A$mainDebug\main$1359              main
+C:   000027AA  A$mainDebug\main$1360              main
+C:   000027AD  A$mainDebug\main$1363              main
+C:   000027AD  C$main.c$97$1_0$37                 main
+C:   000027B0  A$mainDebug\main$1364              main
+C:   000027B2  A$mainDebug\main$1365              main
+C:   000027B3  A$mainDebug\main$1368              main
+C:   000027B3  C$main.c$98$1_0$37                 main
+C:   000027B6  A$mainDebug\main$1371              main
+C:   000027B6  C$main.c$99$1_0$37                 main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000027B9  A$mainDebug\main$1372              main
+C:   000027BA  A$mainDebug\main$1373              main
+C:   000027BB  A$mainDebug\main$1374              main
+C:   000027BE  A$mainDebug\main$1375              main
+C:   000027C1  A$mainDebug\main$1378              main
+C:   000027C1  C$main.c$100$1_0$37                main
+C:   000027C4  A$mainDebug\main$1379              main
+C:   000027C7  A$mainDebug\main$1382              main
+C:   000027C7  C$main.c$101$1_0$37                main
+C:   000027CA  A$mainDebug\main$1383              main
+C:   000027CC  A$mainDebug\main$1384              main
+C:   000027CD  A$mainDebug\main$1385              main
+C:   000027D0  A$mainDebug\main$1386              main
+C:   000027D3  A$mainDebug\main$1389              main
+C:   000027D3  C$main.c$102$1_0$37                main
+C:   000027D6  A$mainDebug\main$1390              main
+C:   000027D9  A$mainDebug\main$1396              main
+C:   000027D9  C$main.c$103$1_0$37                main
+C:   000027D9  C$main.c$105$2_0$38                main
+C:   000027DC  A$mainDebug\main$1397              main
+C:   000027DE  A$mainDebug\main$1402              main
+C:   000027DE  C$main.c$107$1_0$37                main
+C:   000027DE  XG$main$0$0                        main
+C:   000027DF  A$Timerebug\Timer$697              Timer
+C:   000027DF  C$Timer.c$4$0_0$1                  Timer
+C:   000027DF  C$Timer.c$7$1_0$1                  Timer
+C:   000027DF  Fmain$__str_3$0_0$0                main
+C:   000027DF  Fmain$__str_4$0_0$0                main
+C:   000027DF  G$timer_init$0$0                   Timer
+C:   000027DF  _timer_init                        Timer
+C:   000027E2  A$Timerebug\Timer$700              Timer
+C:   000027E2  C$Timer.c$9$1_0$1                  Timer
+C:   000027E5  A$Timerebug\Timer$703              Timer
+C:   000027E5  C$Timer.c$10$1_0$1                 Timer
+C:   000027E8  A$Timerebug\Timer$707              Timer
+C:   000027E8  C$Timer.c$11$1_0$1                 Timer
+C:   000027EA  A$Timerebug\Timer$710              Timer
+C:   000027EA  C$Timer.c$12$1_0$1                 Timer
+C:   000027EC  A$Timerebug\Timer$711              Timer
+C:   000027EE  A$Timerebug\Timer$713              Timer
+C:   000027EF  A$Timerebug\Timer$714              Timer
+C:   000027F1  A$Timerebug\Timer$715              Timer
+C:   000027F3  A$Timerebug\Timer$718              Timer
+C:   000027F3  C$Timer.c$13$1_0$1                 Timer
+C:   000027F5  A$Timerebug\Timer$719              Timer
+C:   000027F7  A$Timerebug\Timer$721              Timer
+C:   000027F8  A$Timerebug\Timer$722              Timer
+C:   000027FA  A$Timerebug\Timer$723              Timer
+C:   000027FC  A$Timerebug\Timer$728              Timer
+C:   000027FC  C$Timer.c$14$1_0$1                 Timer
+C:   000027FC  XG$timer_init$0$0                  Timer
+ASxxxx Linker V03.00 + NoICE + sdld,  page 42.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000027FD  A$UARTDebug\UART$702               UART
+C:   000027FD  C$UART.c$3$0_0$1                   UART
+C:   000027FD  C$UART.c$5$1_0$1                   UART
+C:   000027FD  G$uartinit$0$0                     UART
+C:   000027FD  _uartinit                          UART
+C:   00002800  A$UARTDebug\UART$705               UART
+C:   00002800  C$UART.c$6$1_0$1                   UART
+C:   00002803  A$UARTDebug\UART$708               UART
+C:   00002803  C$UART.c$7$1_0$1                   UART
+C:   00002806  A$UARTDebug\UART$712               UART
+C:   00002806  C$UART.c$8$1_0$1                   UART
+C:   00002808  A$UARTDebug\UART$717               UART
+C:   00002808  C$UART.c$9$1_0$1                   UART
+C:   00002808  XG$uartinit$0$0                    UART
+C:   00002809  A$UARTDebug\UART$730               UART
+C:   00002809  C$UART.c$10$1_0$3                  UART
+C:   00002809  G$putchar$0$0                      UART
+C:   00002809  _putchar                           UART
+C:   0000280B  A$UARTDebug\UART$731               UART
+C:   0000280D  A$UARTDebug\UART$732               UART
+C:   00002810  A$UARTDebug\UART$733               UART
+C:   00002811  A$UARTDebug\UART$734               UART
+C:   00002812  A$UARTDebug\UART$735               UART
+C:   00002813  A$UARTDebug\UART$736               UART
+C:   00002814  A$UARTDebug\UART$743               UART
+C:   00002814  C$UART.c$12$1_0$3                  UART
+C:   00002814  C$UART.c$13$1_0$3                  UART
+C:   00002817  A$UARTDebug\UART$744               UART
+C:   00002819  A$UARTDebug\UART$748               UART
+C:   00002819  C$UART.c$14$1_0$3                  UART
+C:   0000281C  A$UARTDebug\UART$749               UART
+C:   0000281D  A$UARTDebug\UART$750               UART
+C:   0000281E  A$UARTDebug\UART$751               UART
+C:   0000281F  A$UARTDebug\UART$752               UART
+C:   00002820  A$UARTDebug\UART$753               UART
+C:   00002822  A$UARTDebug\UART$756               UART
+C:   00002822  C$UART.c$15$1_0$3                  UART
+C:   00002825  A$UARTDebug\UART$761               UART
+C:   00002825  C$UART.c$16$1_0$3                  UART
+C:   00002825  XG$putchar$0$0                     UART
+C:   00002826  A$UARTDebug\UART$778               UART
+C:   00002826  C$UART.c$17$1_0$4                  UART
+C:   00002826  C$UART.c$19$1_0$4                  UART
+C:   00002826  C$UART.c$21$1_0$4                  UART
+C:   00002826  G$getchar$0$0                      UART
+C:   00002826  _getchar                           UART
+C:   00002829  A$UARTDebug\UART$779               UART
+C:   0000282B  A$UARTDebug\UART$783               UART
+C:   0000282B  C$UART.c$22$1_0$4                  UART
+C:   0000282D  A$UARTDebug\UART$784               UART
+C:   0000282F  A$UARTDebug\UART$785               UART
+ASxxxx Linker V03.00 + NoICE + sdld,  page 43.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002831  A$UARTDebug\UART$786               UART
+C:   00002833  A$UARTDebug\UART$791               UART
+C:   00002833  C$UART.c$23$1_0$4                  UART
+C:   00002833  XG$getchar$0$0                     UART
+C:   00002834  _printf_tiny                       printf_tiny
+C:   0000293D  __modsint                          _modsint
+C:   000029A5  __moduint                          _moduint
+C:   00002A51  __divsint                          _divsint
+C:   00002AC3  __divuint                          _divuint
+C:   00002B50  __gptrget                          _gptrget
+C:   00002B6C  __sdcc_external_startup            _startup
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 44.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CONST                               00002B70    0000001A =          26. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002B70  Fmain$__str_0$0_0$0                main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 45.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XINIT                               00002B8A    00000010 =          16. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002B8A  FLCD_Functions$__xinit_column_po   LCD_Functions
+C:   00002B8C  FLCD_Functions$__xinit_row_pos$0   LCD_Functions
+C:   00002B8E  Fmain$__xinit_count$0_0$0          main
+C:   00002B96  Fmain$__xinit_flag$0_0$0           main
+C:   00002B97  Fmain$__xinit_milli$0_0$0          main
+C:   00002B98  Fmain$__xinit_seconds$0_0$0        main
+C:   00002B99  Fmain$__xinit_minutes$0_0$0        main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 46.
+
+Files Linked                              [ module(s) ]
+
+obj\Debug\LCD_Functions.rel               [  ]
+obj\Debug\main.rel                        [  ]
+obj\Debug\Timer.rel                       [  ]
+obj\Debug\UART.rel                        [  ]
+
+
+Libraries Linked                          [ object file ]
+
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtxinit.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ printf_tiny.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libint.lib
+                                          [ _modsint.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libint.lib
+                                          [ _moduint.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtxclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libint.lib
+                                          [ _divsint.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libint.lib
+                                          [ _divuint.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _bp.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtpagesfr.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtstart.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _gptrget.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _startup.rel ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
+
+User Base Address Definitions
+
+HOME = 0x2200
+XSEG = 0x0400
+PSEG = 0x0400
+ISEG = 0x0000
+BSEG = 0x0000
+
+

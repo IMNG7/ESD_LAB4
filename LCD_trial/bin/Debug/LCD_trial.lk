@@ -1,0 +1,26 @@
+-muwx
+-i bin\Debug\LCD_trial.ihx
+-M
+-Y
+-I 0x0100
+-X 0x8000
+-C 0x5dff
+-y
+-b HOME = 0x2200
+-b XSEG = 0x0400
+-b PSEG = 0x0400
+-b ISEG = 0x0000
+-b BSEG = 0x0000
+-k C:\Program Files\SDCC\lib
+-k C:\Program Files\SDCC\bin\..\lib\large
+-l mcs51
+-l libsdcc
+-l libint
+-l liblong
+-l libfloat
+obj\Debug\LCD_Functions.rel
+obj\Debug\main.rel
+obj\Debug\Timer.rel
+obj\Debug\UART.rel
+
+-e
