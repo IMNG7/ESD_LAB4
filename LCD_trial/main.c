@@ -41,22 +41,6 @@ void timer0_ISR() __interrupt(1)
         flag=0;
     }
 }
-void inttostr(uint8_t a)
-{   unsigned char b[3],i=2,j;
-    while(a!=0)
-    {   i--;
-        b[i]=(a%10)+'0';
-        a=a/10;
-    }
-    printf_tiny("\n\r");
-    for(j=0;j<i;j++)
-    {   b[j]='0';
-    }
-    lcdbusywait();
-    LCD_putstr(b);
-    lcdbusywait();
-    DR_WRITE=':';
-}
 void time_show()
 {
     if(flag==1)
@@ -81,28 +65,111 @@ void time_show()
         inttostr(milli);
     }
 }
+void help()
+{
+    printf_tiny("\n\r Welcome to the World Of working(maybe) LCD.");
+    printf_tiny("\n\r There are some instructions to read before to proceed.");
+    printf_tiny("\n\r This lab was aimed to allow the students to learn the implementation of the LCD.");
+    printf_tiny("\n\r The LCD has 4 rows and 16 columns.");
+    printf_tiny("\n\r Trying to go beyond that will give you an error.");
+    printf_tiny("\n\r if you want to print a character, we have an option for you.");
+    printf_tiny("\n\r As soon as you enter the program, the timer will start.");
+    printf_tiny("\n\r If you are here for the first time, The timer is stopped for now.");
+    printf_tiny("\n\r The timer is running continuously, if you want to print the character at timer's place, its impossible.");
+    printf_tiny("\n\r Press Enter to Continue");
+    getchar();
+}
 void main(void)
 {   char a[]={"Ye Bik Gayi Hai gormint"};
-    char b[]={"Nitik"};
+    char b[]={"My Name is Nitik Gupta"};
+    char ch;
     milli=0,seconds=0,minutes=0;
+    volatile uint8_t choice=1,row_value,column1,column2,column_value;
+    help();
     timer_init();
-    printf_tiny("\n\rNitik");
-    delay(100);
-   // Insert code
+//    printf_tiny("\n\rNitik");
+//    delay(100);
+//   // Insert code
     LCD_Init();
-    printf_tiny("\n\r Hello World");
-    delay(100);
-    //lcdbusywait();
-    //lcdbusywait();
-    DR_WRITE='A';
-    lcd_clear();
-    lcd_gotoxy(1,0);
-    LCD_putstr(a);
-    lcd_gotoxy(4,6);
-    LCD_putstr(b);
-   while(1)
-   {
-       time_show();
-   };
+//    printf_tiny("\n\r Hello World");
+//    delay(100);
+//        lcd_gotoaddr(66);
+//        LCD_putch('a');
+//    //lcdbusywait();
+//    //lcdbusywait();
+//    lcd_clear();
+//    lcd_gotoxy(1,0);
+//    LCD_putstr(a);
+//    lcd_gotoxy(4,0);
+//    LCD_putstr(b);
+    do
+    {   if(choice!=0)
+        {   printf_tiny("\n\r Your Options Are:");
+            printf_tiny("\n\r 1. Print the character at the starting.");
+            printf_tiny("\n\r 2. Print the character at your place of choosing.");
+            printf_tiny("\n\r 3. Help Menu");
+            printf_tiny("\n\r 4. Clear the Screen.");
+            printf_tiny("\n\r 5. Exit");
+            printf_tiny("\n\r Enter your choice:");
+        }
+        choice=0;
+        choice=getchar_nonblock();
+        switch(choice)
+        {   case '0':
+                        break;
+            case '1':   printf_tiny("\n\rEnter the character:");
+                        ch=getchar();
+                        printf_tiny("%c",ch);
+                        lcd_gotoxy(1,1);
+                        LCD_putch(ch);
+                        break;
+            case '2':
+                        printf_tiny("\n\rEnter the row:");
+                        do
+                        {
+                            row_value=getchar();
+                            if(row_value>'5' || row_value =='0')
+                            {
+                                printf_tiny("\n\r Sorry wrong choice, Enter Again.");
+                            }
+                        }while(!(row_value>'0' && row_value<'5'));
+                        printf_tiny("%c",row_value);
+                        printf_tiny("\n\rEnter the column:");
+                        do
+                        {
+                            column1=getchar();
+                            column1=column1-'0';
+                            if(column1==1||column1==0)
+                            {   column2=getchar();
+                                column2=column2-'0';
+                                column_value=column1*10+column2;
+                            }
+                            else
+                            {
+                                column2=0;
+                                column_value=column1;
+                            }
+
+
+                            if(column_value>16)
+                            {
+                                printf_tiny("\n\r Sorry wrong choice, Enter Again.");
+                            }
+                        }while((column_value>16));
+                        printf_tiny("%d",column_value);
+                        printf_tiny("\n\rEnter the character:");
+                        ch=getchar();
+                        printf_tiny("%c",ch);
+                        lcd_gotoxy(row_value-'0',column_value);
+                        LCD_putch(ch);
+                        break;
+            case '3': break;
+            case '4': break;
+            case '5': break;
+            default :
+                        break;
+        }
+        time_show();
+    }while(choice!='5');
 }
 

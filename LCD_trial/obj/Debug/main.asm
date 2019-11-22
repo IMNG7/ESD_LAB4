@@ -9,15 +9,14 @@
 ; Public variables in this module
 ;--------------------------------------------------------
 	.globl _main
-	.globl _time_show
-	.globl _inttostr
+	.globl _help
 	.globl _timer0_ISR
+	.globl _inttostr
 	.globl _timer_init
+	.globl _getchar_nonblock
+	.globl _getchar
 	.globl _lcd_gotoxy
-	.globl _delay
-	.globl _lcd_clear
-	.globl _LCD_putstr
-	.globl _lcdbusywait
+	.globl _LCD_putch
 	.globl _LCD_Init
 	.globl _printf_tiny
 	.globl _P5_7
@@ -226,6 +225,7 @@
 	.globl _BF_Read
 	.globl _IR_Write
 	.globl _hours
+	.globl _time_show
 ;--------------------------------------------------------
 ; special function registers
 ;--------------------------------------------------------
@@ -679,18 +679,27 @@ G$DR_WRITE$0_0$0 == 0xf100
 _DR_WRITE	=	0xf100
 G$DR_READ$0_0$0 == 0xf300
 _DR_READ	=	0xf300
-Lmain.inttostr$a$1_0$27==.
-_inttostr_a_65536_27:
-	.ds 1
-Lmain.inttostr$b$1_0$28==.
-_inttostr_b_65536_28:
-	.ds 3
-Lmain.main$a$1_0$37==.
-_main_a_65536_37:
+Lmain.main$a$1_0$34==.
+_main_a_65536_34:
 	.ds 24
-Lmain.main$b$1_0$37==.
-_main_b_65536_37:
+Lmain.main$b$1_0$34==.
+_main_b_65536_34:
 	.ds 6
+Lmain.main$choice$1_1$35==.
+_main_choice_65537_35:
+	.ds 1
+Lmain.main$row_value$1_1$35==.
+_main_row_value_65537_35:
+	.ds 1
+Lmain.main$column1$1_1$35==.
+_main_column1_65537_35:
+	.ds 1
+Lmain.main$column2$1_1$35==.
+_main_column2_65537_35:
+	.ds 1
+Lmain.main$column_value$1_1$35==.
+_main_column_value_65537_35:
+	.ds 1
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -764,7 +773,7 @@ __sdcc_program_startup:
 ;Allocation info for local variables in function 'timer0_ISR'
 ;------------------------------------------------------------
 	G$timer0_ISR$0$0 ==.
-	C$main.c$24$0_0$24 ==.
+	C$main.c$24$0_0$25 ==.
 ;	main.c:24: void timer0_ISR() __interrupt(1)
 ;	-----------------------------------------
 ;	 function timer0_ISR
@@ -791,36 +800,36 @@ _timer0_ISR:
 	push	ar0
 	push	psw
 	mov	psw,#0x00
-	C$main.c$25$1_0$24 ==.
+	C$main.c$25$1_0$25 ==.
 ;	main.c:25: {   EA=0;
 ;	assignBit
 	clr	_EA
-	C$main.c$26$1_0$24 ==.
+	C$main.c$26$1_0$25 ==.
 ;	main.c:26: TR0=0;
 ;	assignBit
 	clr	_TR0
-	C$main.c$27$1_0$24 ==.
+	C$main.c$27$1_0$25 ==.
 ;	main.c:27: TF0=0;
 ;	assignBit
 	clr	_TF0
-	C$main.c$28$1_0$24 ==.
+	C$main.c$28$1_0$25 ==.
 ;	main.c:28: TH0=0x4B;
 	mov	_TH0,#0x4b
-	C$main.c$29$1_0$24 ==.
+	C$main.c$29$1_0$25 ==.
 ;	main.c:29: TL0=0xFC;
 	mov	_TL0,#0xfc
-	C$main.c$30$1_0$24 ==.
+	C$main.c$30$1_0$25 ==.
 ;	main.c:30: P1_1=!P1_1;
 	cpl	_P1_1
-	C$main.c$31$1_0$24 ==.
+	C$main.c$31$1_0$25 ==.
 ;	main.c:31: TR0=1;
 ;	assignBit
 	setb	_TR0
-	C$main.c$32$1_0$24 ==.
+	C$main.c$32$1_0$25 ==.
 ;	main.c:32: EA=1;
 ;	assignBit
 	setb	_EA
-	C$main.c$33$1_0$24 ==.
+	C$main.c$33$1_0$25 ==.
 ;	main.c:33: count++;
 	mov	dptr,#_count
 	movx	a,@dptr
@@ -878,7 +887,7 @@ _timer0_ISR:
 	addc	a,r7
 	inc	dptr
 	movx	@dptr,a
-	C$main.c$34$1_0$24 ==.
+	C$main.c$34$1_0$25 ==.
 ;	main.c:34: if(count%2==0)
 	mov	dptr,#_count
 	movx	a,@dptr
@@ -899,12 +908,12 @@ _timer0_ISR:
 	movx	a,@dptr
 	mov	a,r0
 	jb	acc.0,00102$
-	C$main.c$36$2_0$25 ==.
+	C$main.c$36$2_0$26 ==.
 ;	main.c:36: flag=1;
 	mov	dptr,#_flag
 	mov	a,#0x01
 	movx	@dptr,a
-	C$main.c$37$2_0$25 ==.
+	C$main.c$37$2_0$26 ==.
 ;	main.c:37: count=0;
 	mov	dptr,#_count
 	clr	a
@@ -925,13 +934,13 @@ _timer0_ISR:
 	movx	@dptr,a
 	sjmp	00104$
 00102$:
-	C$main.c$41$2_0$26 ==.
+	C$main.c$41$2_0$27 ==.
 ;	main.c:41: flag=0;
 	mov	dptr,#_flag
 	clr	a
 	movx	@dptr,a
 00104$:
-	C$main.c$43$1_0$24 ==.
+	C$main.c$43$1_0$25 ==.
 ;	main.c:43: }
 	pop	psw
 	pop	ar0
@@ -945,158 +954,22 @@ _timer0_ISR:
 	pop	dph
 	pop	dpl
 	pop	acc
-	C$main.c$43$1_0$24 ==.
+	C$main.c$43$1_0$25 ==.
 	XG$timer0_ISR$0$0 ==.
 	reti
 ;	eliminated unneeded push/pop b
 ;------------------------------------------------------------
-;Allocation info for local variables in function 'inttostr'
-;------------------------------------------------------------
-;a                         Allocated with name '_inttostr_a_65536_27'
-;b                         Allocated with name '_inttostr_b_65536_28'
-;i                         Allocated with name '_inttostr_i_65536_28'
-;j                         Allocated with name '_inttostr_j_65536_28'
-;------------------------------------------------------------
-	G$inttostr$0$0 ==.
-	C$main.c$44$1_0$28 ==.
-;	main.c:44: void inttostr(uint8_t a)
-;	-----------------------------------------
-;	 function inttostr
-;	-----------------------------------------
-_inttostr:
-	mov	a,dpl
-	mov	dptr,#_inttostr_a_65536_27
-	movx	@dptr,a
-	C$main.c$46$2_0$29 ==.
-;	main.c:46: while(a!=0)
-	mov	r7,#0x02
-00101$:
-	mov	dptr,#_inttostr_a_65536_27
-	movx	a,@dptr
-	mov	r6,a
-	movx	a,@dptr
-	jz	00103$
-	C$main.c$47$2_0$29 ==.
-;	main.c:47: {   i--;
-	dec	r7
-	C$main.c$48$2_0$29 ==.
-;	main.c:48: b[i]=(a%10)+'0';
-	mov	a,r7
-	add	a,#_inttostr_b_65536_28
-	mov	r4,a
-	clr	a
-	addc	a,#(_inttostr_b_65536_28 >> 8)
-	mov	r5,a
-	mov	r3,#0x00
-	mov	dptr,#__modsint_PARM_2
-	mov	a,#0x0a
-	movx	@dptr,a
-	clr	a
-	inc	dptr
-	movx	@dptr,a
-	mov	dpl,r6
-	mov	dph,r3
-	push	ar7
-	push	ar6
-	push	ar5
-	push	ar4
-	push	ar3
-	lcall	__modsint
-	mov	r1,dpl
-	pop	ar3
-	pop	ar4
-	pop	ar5
-	pop	ar6
-	mov	a,#0x30
-	add	a,r1
-	mov	dpl,r4
-	mov	dph,r5
-	movx	@dptr,a
-	C$main.c$49$1_0$28 ==.
-;	main.c:49: a=a/10;
-	mov	dptr,#__divsint_PARM_2
-	mov	a,#0x0a
-	movx	@dptr,a
-	clr	a
-	inc	dptr
-	movx	@dptr,a
-	mov	dpl,r6
-	mov	dph,r3
-	lcall	__divsint
-	mov	r5,dpl
-	mov	r6,dph
-	pop	ar7
-	mov	dptr,#_inttostr_a_65536_27
-	mov	a,r5
-	movx	@dptr,a
-	sjmp	00101$
-00103$:
-	C$main.c$51$1_0$28 ==.
-;	main.c:51: printf_tiny("\n\r");
-	push	ar7
-	mov	a,#___str_0
-	push	acc
-	mov	a,#(___str_0 >> 8)
-	push	acc
-	lcall	_printf_tiny
-	dec	sp
-	dec	sp
-	pop	ar7
-	C$main.c$52$3_0$31 ==.
-;	main.c:52: for(j=0;j<i;j++)
-	mov	r6,#0x00
-00106$:
-	clr	c
-	mov	a,r6
-	subb	a,r7
-	jnc	00104$
-	C$main.c$53$3_0$31 ==.
-;	main.c:53: {   b[j]='0';
-	mov	a,r6
-	add	a,#_inttostr_b_65536_28
-	mov	dpl,a
-	clr	a
-	addc	a,#(_inttostr_b_65536_28 >> 8)
-	mov	dph,a
-	mov	a,#0x30
-	movx	@dptr,a
-	C$main.c$52$2_0$30 ==.
-;	main.c:52: for(j=0;j<i;j++)
-	inc	r6
-	sjmp	00106$
-00104$:
-	C$main.c$55$1_0$28 ==.
-;	main.c:55: lcdbusywait();
-	lcall	_lcdbusywait
-	C$main.c$56$1_0$28 ==.
-;	main.c:56: LCD_putstr(b);
-	mov	dptr,#_inttostr_b_65536_28
-	lcall	_LCD_putstr
-	C$main.c$57$1_0$28 ==.
-;	main.c:57: lcdbusywait();
-	lcall	_lcdbusywait
-	C$main.c$58$1_0$28 ==.
-;	main.c:58: DR_WRITE=':';
-	mov	dptr,#_DR_WRITE
-	mov	a,#0x3a
-	movx	@dptr,a
-	C$main.c$59$1_0$28 ==.
-;	main.c:59: }
-	C$main.c$59$1_0$28 ==.
-	XG$inttostr$0$0 ==.
-	ret
-;------------------------------------------------------------
 ;Allocation info for local variables in function 'time_show'
 ;------------------------------------------------------------
 	G$time_show$0$0 ==.
-	C$main.c$60$1_0$32 ==.
-;	main.c:60: void time_show()
+	C$main.c$44$1_0$28 ==.
+;	main.c:44: void time_show()
 ;	-----------------------------------------
 ;	 function time_show
 ;	-----------------------------------------
 _time_show:
-	C$main.c$62$1_0$32 ==.
-;	main.c:62: if(flag==1)
+	C$main.c$46$1_0$28 ==.
+;	main.c:46: if(flag==1)
 	mov	dptr,#_flag
 	movx	a,@dptr
 	mov	r7,a
@@ -1105,54 +978,54 @@ _time_show:
 00121$:
 	ljmp	00107$
 00122$:
-	C$main.c$64$2_0$33 ==.
-;	main.c:64: flag=0;
+	C$main.c$48$2_0$29 ==.
+;	main.c:48: flag=0;
 	mov	dptr,#_flag
 	clr	a
 	movx	@dptr,a
-	C$main.c$65$2_0$33 ==.
-;	main.c:65: milli++;
+	C$main.c$49$2_0$29 ==.
+;	main.c:49: milli++;
 	mov	dptr,#_milli
 	movx	a,@dptr
 	inc	a
 	movx	@dptr,a
-	C$main.c$66$2_0$33 ==.
-;	main.c:66: if(milli==10)
+	C$main.c$50$2_0$29 ==.
+;	main.c:50: if(milli==10)
 	movx	a,@dptr
 	mov	r7,a
 	cjne	r7,#0x0a,00102$
-	C$main.c$68$3_0$34 ==.
-;	main.c:68: seconds++;
+	C$main.c$52$3_0$30 ==.
+;	main.c:52: seconds++;
 	mov	dptr,#_seconds
 	movx	a,@dptr
 	inc	a
 	movx	@dptr,a
-	C$main.c$69$3_0$34 ==.
-;	main.c:69: milli=0;
+	C$main.c$53$3_0$30 ==.
+;	main.c:53: milli=0;
 	mov	dptr,#_milli
 	clr	a
 	movx	@dptr,a
 00102$:
-	C$main.c$71$2_0$33 ==.
-;	main.c:71: if(seconds==60)
+	C$main.c$55$2_0$29 ==.
+;	main.c:55: if(seconds==60)
 	mov	dptr,#_seconds
 	movx	a,@dptr
 	mov	r7,a
 	cjne	r7,#0x3c,00104$
-	C$main.c$73$3_0$35 ==.
-;	main.c:73: minutes++;
+	C$main.c$57$3_0$31 ==.
+;	main.c:57: minutes++;
 	mov	dptr,#_minutes
 	movx	a,@dptr
 	inc	a
 	movx	@dptr,a
-	C$main.c$74$3_0$35 ==.
-;	main.c:74: seconds=0;
+	C$main.c$58$3_0$31 ==.
+;	main.c:58: seconds=0;
 	mov	dptr,#_seconds
 	clr	a
 	movx	@dptr,a
 00104$:
-	C$main.c$76$2_0$33 ==.
-;	main.c:76: hours=minutes/60;
+	C$main.c$60$2_0$29 ==.
+;	main.c:60: hours=minutes/60;
 	mov	dptr,#_minutes
 	movx	a,@dptr
 	mov	r7,a
@@ -1170,163 +1043,82 @@ _time_show:
 	mov	dptr,#_hours
 	mov	a,r6
 	movx	@dptr,a
-	C$main.c$77$2_0$33 ==.
-;	main.c:77: lcd_gotoxy(4,6);
+	C$main.c$61$2_0$29 ==.
+;	main.c:61: lcd_gotoxy(4,6);
 	mov	dptr,#_lcd_gotoxy_PARM_2
 	mov	a,#0x06
 	movx	@dptr,a
 	mov	dpl,#0x04
 	lcall	_lcd_gotoxy
-	C$main.c$78$2_0$33 ==.
-;	main.c:78: inttostr(hours);
+	C$main.c$62$2_0$29 ==.
+;	main.c:62: inttostr(hours);
 	mov	dptr,#_hours
 	movx	a,@dptr
 	mov	dpl,a
 	lcall	_inttostr
-	C$main.c$79$2_0$33 ==.
-;	main.c:79: inttostr(minutes);
+	C$main.c$63$2_0$29 ==.
+;	main.c:63: inttostr(minutes);
 	mov	dptr,#_minutes
 	movx	a,@dptr
 	mov	dpl,a
 	lcall	_inttostr
-	C$main.c$80$2_0$33 ==.
-;	main.c:80: inttostr(seconds);
+	C$main.c$64$2_0$29 ==.
+;	main.c:64: inttostr(seconds);
 	mov	dptr,#_seconds
 	movx	a,@dptr
 	mov	dpl,a
 	lcall	_inttostr
-	C$main.c$81$2_0$33 ==.
-;	main.c:81: inttostr(milli);
+	C$main.c$65$2_0$29 ==.
+;	main.c:65: inttostr(milli);
 	mov	dptr,#_milli
 	movx	a,@dptr
 	mov	dpl,a
 	lcall	_inttostr
 00107$:
-	C$main.c$83$1_0$32 ==.
-;	main.c:83: }
-	C$main.c$83$1_0$32 ==.
+	C$main.c$67$1_0$28 ==.
+;	main.c:67: }
+	C$main.c$67$1_0$28 ==.
 	XG$time_show$0$0 ==.
 	ret
 ;------------------------------------------------------------
-;Allocation info for local variables in function 'main'
+;Allocation info for local variables in function 'help'
 ;------------------------------------------------------------
-;a                         Allocated with name '_main_a_65536_37'
-;b                         Allocated with name '_main_b_65536_37'
-;------------------------------------------------------------
-	G$main$0$0 ==.
-	C$main.c$84$1_0$37 ==.
-;	main.c:84: void main(void)
+	G$help$0$0 ==.
+	C$main.c$68$1_0$32 ==.
+;	main.c:68: void help()
 ;	-----------------------------------------
-;	 function main
+;	 function help
 ;	-----------------------------------------
-_main:
-	C$main.c$85$2_0$37 ==.
-;	main.c:85: {   char a[]={"Ye Bik Gayi Hai gormint"};
-	mov	dptr,#_main_a_65536_37
-	mov	a,#0x59
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0001)
-	mov	a,#0x65
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0002)
-	mov	a,#0x20
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0003)
-	mov	a,#0x42
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0004)
-	mov	a,#0x69
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0005)
-	mov	a,#0x6b
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0006)
-	mov	a,#0x20
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0007)
-	mov	a,#0x47
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0008)
-	mov	a,#0x61
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0009)
-	mov	a,#0x79
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x000a)
-	mov	a,#0x69
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x000b)
-	mov	a,#0x20
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x000c)
-	mov	a,#0x48
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x000d)
-	mov	a,#0x61
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x000e)
-	mov	a,#0x69
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x000f)
-	mov	a,#0x20
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0010)
-	mov	a,#0x67
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0011)
-	mov	a,#0x6f
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0012)
-	mov	a,#0x72
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0013)
-	mov	a,#0x6d
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0014)
-	mov	a,#0x69
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0015)
-	mov	a,#0x6e
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0016)
-	mov	a,#0x74
-	movx	@dptr,a
-	mov	dptr,#(_main_a_65536_37 + 0x0017)
-	clr	a
-	movx	@dptr,a
-	C$main.c$86$2_0$37 ==.
-;	main.c:86: char b[]={"Nitik"};
-	mov	dptr,#_main_b_65536_37
-	mov	a,#0x4e
-	movx	@dptr,a
-	mov	dptr,#(_main_b_65536_37 + 0x0001)
-	mov	a,#0x69
-	movx	@dptr,a
-	mov	dptr,#(_main_b_65536_37 + 0x0002)
-	mov	a,#0x74
-	movx	@dptr,a
-	mov	dptr,#(_main_b_65536_37 + 0x0003)
-	mov	a,#0x69
-	movx	@dptr,a
-	mov	dptr,#(_main_b_65536_37 + 0x0004)
-	mov	a,#0x6b
-	movx	@dptr,a
-	mov	dptr,#(_main_b_65536_37 + 0x0005)
-	clr	a
-	movx	@dptr,a
-	C$main.c$87$1_0$37 ==.
-;	main.c:87: milli=0,seconds=0,minutes=0;
-	mov	dptr,#_milli
-	movx	@dptr,a
-	mov	dptr,#_seconds
-	movx	@dptr,a
-	mov	dptr,#_minutes
-	movx	@dptr,a
-	C$main.c$88$1_0$37 ==.
-;	main.c:88: timer_init();
-	lcall	_timer_init
-	C$main.c$89$1_0$37 ==.
-;	main.c:89: printf_tiny("\n\rNitik");
+_help:
+	C$main.c$70$1_0$32 ==.
+;	main.c:70: printf_tiny("\n\r Welcome to the World Of working(maybe) LCD.");
+	mov	a,#___str_0
+	push	acc
+	mov	a,#(___str_0 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$71$1_0$32 ==.
+;	main.c:71: printf_tiny("\n\r There are some instructions to read before to proceed.");
+	mov	a,#___str_1
+	push	acc
+	mov	a,#(___str_1 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$72$1_0$32 ==.
+;	main.c:72: printf_tiny("\n\r This lab was aimed to allow the students to learn the implementation of the LCD.");
+	mov	a,#___str_2
+	push	acc
+	mov	a,#(___str_2 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$73$1_0$32 ==.
+;	main.c:73: printf_tiny("\n\r The LCD has 4 rows and 16 columns.");
 	mov	a,#___str_3
 	push	acc
 	mov	a,#(___str_3 >> 8)
@@ -1334,17 +1126,8 @@ _main:
 	lcall	_printf_tiny
 	dec	sp
 	dec	sp
-	C$main.c$90$1_0$37 ==.
-;	main.c:90: delay(100);
-	mov	dptr,#(0x64&0x00ff)
-	clr	a
-	mov	b,a
-	lcall	_delay
-	C$main.c$92$1_0$37 ==.
-;	main.c:92: LCD_Init();
-	lcall	_LCD_Init
-	C$main.c$93$1_0$37 ==.
-;	main.c:93: printf_tiny("\n\r Hello World");
+	C$main.c$74$1_0$32 ==.
+;	main.c:74: printf_tiny("\n\r Trying to go beyond that will give you an error.");
 	mov	a,#___str_4
 	push	acc
 	mov	a,#(___str_4 >> 8)
@@ -1352,52 +1135,583 @@ _main:
 	lcall	_printf_tiny
 	dec	sp
 	dec	sp
-	C$main.c$94$1_0$37 ==.
-;	main.c:94: delay(100);
-	mov	dptr,#(0x64&0x00ff)
-	clr	a
-	mov	b,a
-	lcall	_delay
-	C$main.c$97$1_0$37 ==.
-;	main.c:97: DR_WRITE='A';
-	mov	dptr,#_DR_WRITE
-	mov	a,#0x41
+	C$main.c$75$1_0$32 ==.
+;	main.c:75: printf_tiny("\n\r if you want to print a character, we have an option for you.");
+	mov	a,#___str_5
+	push	acc
+	mov	a,#(___str_5 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$76$1_0$32 ==.
+;	main.c:76: printf_tiny("\n\r As soon as you enter the program, the timer will start.");
+	mov	a,#___str_6
+	push	acc
+	mov	a,#(___str_6 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$77$1_0$32 ==.
+;	main.c:77: printf_tiny("\n\r If you are here for the first time, The timer is stopped for now.");
+	mov	a,#___str_7
+	push	acc
+	mov	a,#(___str_7 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$78$1_0$32 ==.
+;	main.c:78: printf_tiny("\n\r The timer is running continuously, if you want to print the character at timer's place, its impossible.");
+	mov	a,#___str_8
+	push	acc
+	mov	a,#(___str_8 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$79$1_0$32 ==.
+;	main.c:79: printf_tiny("\n\r Press Enter to Continue");
+	mov	a,#___str_9
+	push	acc
+	mov	a,#(___str_9 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$80$1_0$32 ==.
+;	main.c:80: getchar();
+	lcall	_getchar
+	C$main.c$81$1_0$32 ==.
+;	main.c:81: }
+	C$main.c$81$1_0$32 ==.
+	XG$help$0$0 ==.
+	ret
+;------------------------------------------------------------
+;Allocation info for local variables in function 'main'
+;------------------------------------------------------------
+;a                         Allocated with name '_main_a_65536_34'
+;b                         Allocated with name '_main_b_65536_34'
+;ch                        Allocated with name '_main_ch_65536_34'
+;choice                    Allocated with name '_main_choice_65537_35'
+;row_value                 Allocated with name '_main_row_value_65537_35'
+;column1                   Allocated with name '_main_column1_65537_35'
+;column2                   Allocated with name '_main_column2_65537_35'
+;column_value              Allocated with name '_main_column_value_65537_35'
+;------------------------------------------------------------
+	G$main$0$0 ==.
+	C$main.c$82$1_0$34 ==.
+;	main.c:82: void main(void)
+;	-----------------------------------------
+;	 function main
+;	-----------------------------------------
+_main:
+	C$main.c$83$2_0$34 ==.
+;	main.c:83: {   char a[]={"Ye Bik Gayi Hai gormint"};
+	mov	dptr,#_main_a_65536_34
+	mov	a,#0x59
 	movx	@dptr,a
-	C$main.c$98$1_0$37 ==.
-;	main.c:98: lcd_clear();
-	lcall	_lcd_clear
-	C$main.c$99$1_0$37 ==.
-;	main.c:99: lcd_gotoxy(1,0);
-	mov	dptr,#_lcd_gotoxy_PARM_2
+	mov	dptr,#(_main_a_65536_34 + 0x0001)
+	mov	a,#0x65
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0002)
+	mov	a,#0x20
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0003)
+	mov	a,#0x42
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0004)
+	mov	a,#0x69
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0005)
+	mov	a,#0x6b
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0006)
+	mov	a,#0x20
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0007)
+	mov	a,#0x47
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0008)
+	mov	a,#0x61
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0009)
+	mov	a,#0x79
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x000a)
+	mov	a,#0x69
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x000b)
+	mov	a,#0x20
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x000c)
+	mov	a,#0x48
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x000d)
+	mov	a,#0x61
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x000e)
+	mov	a,#0x69
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x000f)
+	mov	a,#0x20
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0010)
+	mov	a,#0x67
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0011)
+	mov	a,#0x6f
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0012)
+	mov	a,#0x72
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0013)
+	mov	a,#0x6d
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0014)
+	mov	a,#0x69
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0015)
+	mov	a,#0x6e
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0016)
+	mov	a,#0x74
+	movx	@dptr,a
+	mov	dptr,#(_main_a_65536_34 + 0x0017)
 	clr	a
+	movx	@dptr,a
+	C$main.c$84$2_0$34 ==.
+;	main.c:84: char b[]={"Nitik"};
+	mov	dptr,#_main_b_65536_34
+	mov	a,#0x4e
+	movx	@dptr,a
+	mov	dptr,#(_main_b_65536_34 + 0x0001)
+	mov	a,#0x69
+	movx	@dptr,a
+	mov	dptr,#(_main_b_65536_34 + 0x0002)
+	mov	a,#0x74
+	movx	@dptr,a
+	mov	dptr,#(_main_b_65536_34 + 0x0003)
+	mov	a,#0x69
+	movx	@dptr,a
+	mov	dptr,#(_main_b_65536_34 + 0x0004)
+	mov	a,#0x6b
+	movx	@dptr,a
+	mov	dptr,#(_main_b_65536_34 + 0x0005)
+	clr	a
+	movx	@dptr,a
+	C$main.c$86$1_0$34 ==.
+;	main.c:86: milli=0,seconds=0,minutes=0;
+	mov	dptr,#_milli
+	movx	@dptr,a
+	mov	dptr,#_seconds
+	movx	@dptr,a
+	mov	dptr,#_minutes
+	movx	@dptr,a
+	C$main.c$87$2_0$35 ==.
+;	main.c:87: volatile uint8_t choice=1,row_value,column1,column2,column_value;
+	mov	dptr,#_main_choice_65537_35
+	inc	a
+	movx	@dptr,a
+	C$main.c$88$1_1$35 ==.
+;	main.c:88: help();
+	lcall	_help
+	C$main.c$89$1_1$35 ==.
+;	main.c:89: timer_init();
+	lcall	_timer_init
+	C$main.c$93$1_1$35 ==.
+;	main.c:93: LCD_Init();
+	lcall	_LCD_Init
+	C$main.c$105$1_1$35 ==.
+;	main.c:105: do
+00127$:
+	C$main.c$106$2_1$36 ==.
+;	main.c:106: {   if(choice!=0)
+	mov	dptr,#_main_choice_65537_35
+	movx	a,@dptr
+	jz	00102$
+	C$main.c$107$3_1$37 ==.
+;	main.c:107: {   printf_tiny("\n\r Your Options Are:");
+	mov	a,#___str_12
+	push	acc
+	mov	a,#(___str_12 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$108$3_1$37 ==.
+;	main.c:108: printf_tiny("\n\r 1. Print the character at the starting.");
+	mov	a,#___str_13
+	push	acc
+	mov	a,#(___str_13 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$109$3_1$37 ==.
+;	main.c:109: printf_tiny("\n\r 2. Print the character at your place of choosing.");
+	mov	a,#___str_14
+	push	acc
+	mov	a,#(___str_14 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$110$3_1$37 ==.
+;	main.c:110: printf_tiny("\n\r 3. Print the string at the starting.");
+	mov	a,#___str_15
+	push	acc
+	mov	a,#(___str_15 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$111$3_1$37 ==.
+;	main.c:111: printf_tiny("\n\r 4. Clear the Screen.");
+	mov	a,#___str_16
+	push	acc
+	mov	a,#(___str_16 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$112$3_1$37 ==.
+;	main.c:112: printf_tiny("\n\r 5. Exit");
+	mov	a,#___str_17
+	push	acc
+	mov	a,#(___str_17 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$113$3_1$37 ==.
+;	main.c:113: printf_tiny("\n\r Enter your choice:");
+	mov	a,#___str_18
+	push	acc
+	mov	a,#(___str_18 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+00102$:
+	C$main.c$115$2_1$36 ==.
+;	main.c:115: choice=0;
+	mov	dptr,#_main_choice_65537_35
+	clr	a
+	movx	@dptr,a
+	C$main.c$116$2_1$36 ==.
+;	main.c:116: choice=getchar_nonblock();
+	lcall	_getchar_nonblock
+	mov	r6,dpl
+	mov	dptr,#_main_choice_65537_35
+	mov	a,r6
+	movx	@dptr,a
+	C$main.c$117$2_1$36 ==.
+;	main.c:117: switch(choice)
+	movx	a,@dptr
+	mov	r7,a
+	cjne	r7,#0x30,00188$
+	ljmp	00126$
+00188$:
+	cjne	r7,#0x31,00189$
+	sjmp	00104$
+00189$:
+	cjne	r7,#0x32,00190$
+	sjmp	00105$
+00190$:
+	ljmp	00126$
+	C$main.c$120$3_1$38 ==.
+;	main.c:120: case '1':   printf_tiny("\n\rEnter the character:");
+00104$:
+	mov	a,#___str_19
+	push	acc
+	mov	a,#(___str_19 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$121$3_1$38 ==.
+;	main.c:121: ch=getchar();
+	lcall	_getchar
+	mov	r6,dpl
+	C$main.c$122$3_1$38 ==.
+;	main.c:122: printf_tiny("%c",ch);
+	mov	ar5,r6
+	mov	r7,#0x00
+	push	ar6
+	push	ar5
+	push	ar7
+	mov	a,#___str_20
+	push	acc
+	mov	a,#(___str_20 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	mov	a,sp
+	add	a,#0xfc
+	mov	sp,a
+	C$main.c$123$3_1$38 ==.
+;	main.c:123: lcd_gotoxy(1,1);
+	mov	dptr,#_lcd_gotoxy_PARM_2
+	mov	a,#0x01
 	movx	@dptr,a
 	mov	dpl,#0x01
 	lcall	_lcd_gotoxy
-	C$main.c$100$1_0$37 ==.
-;	main.c:100: LCD_putstr(a);
-	mov	dptr,#_main_a_65536_37
-	lcall	_LCD_putstr
-	C$main.c$101$1_0$37 ==.
-;	main.c:101: lcd_gotoxy(4,6);
-	mov	dptr,#_lcd_gotoxy_PARM_2
-	mov	a,#0x06
+	pop	ar6
+	C$main.c$124$3_1$38 ==.
+;	main.c:124: LCD_putch(ch);
+	mov	dpl,r6
+	lcall	_LCD_putch
+	C$main.c$125$3_1$38 ==.
+;	main.c:125: break;
+	ljmp	00126$
+	C$main.c$126$3_1$38 ==.
+;	main.c:126: case '2':
+00105$:
+	C$main.c$127$3_1$38 ==.
+;	main.c:127: printf_tiny("\n\rEnter the row:");
+	mov	a,#___str_21
+	push	acc
+	mov	a,#(___str_21 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$128$3_1$38 ==.
+;	main.c:128: do
+00110$:
+	C$main.c$130$4_1$39 ==.
+;	main.c:130: row_value=getchar();
+	lcall	_getchar
+	mov	r6,dpl
+	mov	dptr,#_main_row_value_65537_35
+	mov	a,r6
 	movx	@dptr,a
-	mov	dpl,#0x04
+	C$main.c$131$4_1$39 ==.
+;	main.c:131: if(row_value>'5' || row_value =='0')
+	movx	a,@dptr
+	add	a,#0xff - 0x35
+	jc	00106$
+	mov	dptr,#_main_row_value_65537_35
+	movx	a,@dptr
+	mov	r7,a
+	cjne	r7,#0x30,00111$
+00106$:
+	C$main.c$133$5_1$40 ==.
+;	main.c:133: printf_tiny("\n\r Sorry wrong choice, Enter Again.");
+	mov	a,#___str_22
+	push	acc
+	mov	a,#(___str_22 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+00111$:
+	C$main.c$135$3_1$38 ==.
+;	main.c:135: }while(!(row_value>'0' && row_value<'5'));
+	mov	dptr,#_main_row_value_65537_35
+	movx	a,@dptr
+	mov  r7,a
+	add	a,#0xff - 0x30
+	jnc	00110$
+	mov	dptr,#_main_row_value_65537_35
+	movx	a,@dptr
+	mov	r7,a
+	cjne	r7,#0x35,00195$
+00195$:
+	jnc	00110$
+	C$main.c$136$3_1$38 ==.
+;	main.c:136: printf_tiny("%c",row_value);
+	mov	dptr,#_main_row_value_65537_35
+	movx	a,@dptr
+	mov	r7,a
+	mov	r6,#0x00
+	push	ar7
+	push	ar6
+	mov	a,#___str_20
+	push	acc
+	mov	a,#(___str_20 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	mov	a,sp
+	add	a,#0xfc
+	mov	sp,a
+	C$main.c$137$3_1$38 ==.
+;	main.c:137: printf_tiny("\n\rEnter the column:");
+	mov	a,#___str_23
+	push	acc
+	mov	a,#(___str_23 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$138$3_1$38 ==.
+;	main.c:138: do
+00119$:
+	C$main.c$140$4_1$41 ==.
+;	main.c:140: column1=getchar();
+	lcall	_getchar
+	mov	r6,dpl
+	mov	dptr,#_main_column1_65537_35
+	mov	a,r6
+	movx	@dptr,a
+	C$main.c$141$4_1$41 ==.
+;	main.c:141: column1=column1-'0';
+	movx	a,@dptr
+	add	a,#0xd0
+	movx	@dptr,a
+	C$main.c$142$4_1$41 ==.
+;	main.c:142: if(column1==1||column1==0)
+	movx	a,@dptr
+	mov	r7,a
+	cjne	r7,#0x01,00197$
+	sjmp	00113$
+00197$:
+	mov	dptr,#_main_column1_65537_35
+	movx	a,@dptr
+	jnz	00114$
+00113$:
+	C$main.c$143$5_1$42 ==.
+;	main.c:143: {   column2=getchar();
+	lcall	_getchar
+	mov	r6,dpl
+	mov	dptr,#_main_column2_65537_35
+	mov	a,r6
+	movx	@dptr,a
+	C$main.c$144$5_1$42 ==.
+;	main.c:144: column2=column2-'0';
+	movx	a,@dptr
+	add	a,#0xd0
+	movx	@dptr,a
+	C$main.c$145$5_1$42 ==.
+;	main.c:145: column_value=column1*10+column2;
+	mov	dptr,#_main_column1_65537_35
+	movx	a,@dptr
+	mov	b,#0x0a
+	mul	ab
+	mov	r7,a
+	mov	dptr,#_main_column2_65537_35
+	movx	a,@dptr
+	mov	r6,a
+	mov	dptr,#_main_column_value_65537_35
+	add	a,r7
+	movx	@dptr,a
+	sjmp	00115$
+00114$:
+	C$main.c$149$5_1$43 ==.
+;	main.c:149: column2=0;
+	mov	dptr,#_main_column2_65537_35
+	clr	a
+	movx	@dptr,a
+	C$main.c$150$5_1$43 ==.
+;	main.c:150: column_value=column1;
+	mov	dptr,#_main_column1_65537_35
+	movx	a,@dptr
+	mov	dptr,#_main_column_value_65537_35
+	movx	@dptr,a
+00115$:
+	C$main.c$154$4_1$41 ==.
+;	main.c:154: if(column_value>16)
+	mov	dptr,#_main_column_value_65537_35
+	movx	a,@dptr
+	add	a,#0xff - 0x10
+	jnc	00120$
+	C$main.c$156$5_1$44 ==.
+;	main.c:156: printf_tiny("\n\r Sorry wrong choice, Enter Again.");
+	mov	a,#___str_22
+	push	acc
+	mov	a,#(___str_22 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+00120$:
+	C$main.c$158$3_1$38 ==.
+;	main.c:158: }while((column_value>16));
+	mov	dptr,#_main_column_value_65537_35
+	movx	a,@dptr
+	add	a,#0xff - 0x10
+	jc	00119$
+	C$main.c$159$3_1$38 ==.
+;	main.c:159: printf_tiny("%d",column_value);
+	mov	dptr,#_main_column_value_65537_35
+	movx	a,@dptr
+	mov	r7,a
+	mov	r6,#0x00
+	push	ar7
+	push	ar6
+	mov	a,#___str_24
+	push	acc
+	mov	a,#(___str_24 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	mov	a,sp
+	add	a,#0xfc
+	mov	sp,a
+	C$main.c$160$3_1$38 ==.
+;	main.c:160: printf_tiny("\n\rEnter the character:");
+	mov	a,#___str_19
+	push	acc
+	mov	a,#(___str_19 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	dec	sp
+	dec	sp
+	C$main.c$161$3_1$38 ==.
+;	main.c:161: ch=getchar();
+	lcall	_getchar
+	mov	r6,dpl
+	C$main.c$162$3_1$38 ==.
+;	main.c:162: printf_tiny("%c",ch);
+	mov	ar5,r6
+	mov	r7,#0x00
+	push	ar6
+	push	ar5
+	push	ar7
+	mov	a,#___str_20
+	push	acc
+	mov	a,#(___str_20 >> 8)
+	push	acc
+	lcall	_printf_tiny
+	mov	a,sp
+	add	a,#0xfc
+	mov	sp,a
+	C$main.c$163$3_1$38 ==.
+;	main.c:163: lcd_gotoxy(row_value-'0',column_value);
+	mov	dptr,#_main_row_value_65537_35
+	movx	a,@dptr
+	add	a,#0xd0
+	mov	r7,a
+	mov	dptr,#_main_column_value_65537_35
+	movx	a,@dptr
+	mov	dptr,#_lcd_gotoxy_PARM_2
+	movx	@dptr,a
+	mov	dpl,r7
 	lcall	_lcd_gotoxy
-	C$main.c$102$1_0$37 ==.
-;	main.c:102: LCD_putstr(b);
-	mov	dptr,#_main_b_65536_37
-	lcall	_LCD_putstr
-	C$main.c$103$1_0$37 ==.
-;	main.c:103: while(1)
-00102$:
-	C$main.c$105$2_0$38 ==.
-;	main.c:105: time_show();
+	pop	ar6
+	C$main.c$164$3_1$38 ==.
+;	main.c:164: LCD_putch(ch);
+	mov	dpl,r6
+	lcall	_LCD_putch
+	C$main.c$171$2_1$36 ==.
+;	main.c:171: }
+00126$:
+	C$main.c$172$2_1$36 ==.
+;	main.c:172: time_show();
 	lcall	_time_show
-	sjmp	00102$
-	C$main.c$107$1_0$37 ==.
-;	main.c:107: }
-	C$main.c$107$1_0$37 ==.
+	C$main.c$173$1_1$35 ==.
+;	main.c:173: }while(choice!='5');
+	mov	dptr,#_main_choice_65537_35
+	movx	a,@dptr
+	mov	r7,a
+	cjne	r7,#0x35,00201$
+	sjmp	00202$
+00201$:
+	ljmp	00127$
+00202$:
+	C$main.c$175$1_1$34 ==.
+;	main.c:175: }
+	C$main.c$175$1_1$34 ==.
 	XG$main$0$0 ==.
 	ret
 	.area CSEG    (CODE)
@@ -1407,6 +1721,24 @@ Fmain$__str_0$0_0$0 == .
 ___str_0:
 	.db 0x0a
 	.db 0x0d
+	.ascii " Welcome to the World Of working(maybe) LCD."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_1$0_0$0 == .
+	.area CONST   (CODE)
+___str_1:
+	.db 0x0a
+	.db 0x0d
+	.ascii " There are some instructions to read before to proceed."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_2$0_0$0 == .
+	.area CONST   (CODE)
+___str_2:
+	.db 0x0a
+	.db 0x0d
+	.ascii " This lab was aimed to allow the students to learn the imple"
+	.ascii "mentation of the LCD."
 	.db 0x00
 	.area CSEG    (CODE)
 Fmain$__str_3$0_0$0 == .
@@ -1414,7 +1746,7 @@ Fmain$__str_3$0_0$0 == .
 ___str_3:
 	.db 0x0a
 	.db 0x0d
-	.ascii "Nitik"
+	.ascii " The LCD has 4 rows and 16 columns."
 	.db 0x00
 	.area CSEG    (CODE)
 Fmain$__str_4$0_0$0 == .
@@ -1422,7 +1754,150 @@ Fmain$__str_4$0_0$0 == .
 ___str_4:
 	.db 0x0a
 	.db 0x0d
-	.ascii " Hello World"
+	.ascii " Trying to go beyond that will give you an error."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_5$0_0$0 == .
+	.area CONST   (CODE)
+___str_5:
+	.db 0x0a
+	.db 0x0d
+	.ascii " if you want to print a character, we have an option for you"
+	.ascii "."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_6$0_0$0 == .
+	.area CONST   (CODE)
+___str_6:
+	.db 0x0a
+	.db 0x0d
+	.ascii " As soon as you enter the program, the timer will start."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_7$0_0$0 == .
+	.area CONST   (CODE)
+___str_7:
+	.db 0x0a
+	.db 0x0d
+	.ascii " If you are here for the first time, The timer is stopped fo"
+	.ascii "r now."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_8$0_0$0 == .
+	.area CONST   (CODE)
+___str_8:
+	.db 0x0a
+	.db 0x0d
+	.ascii " The timer is running continuously, if you want to print the"
+	.ascii " character at timer's place, its impossible."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_9$0_0$0 == .
+	.area CONST   (CODE)
+___str_9:
+	.db 0x0a
+	.db 0x0d
+	.ascii " Press Enter to Continue"
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_12$0_0$0 == .
+	.area CONST   (CODE)
+___str_12:
+	.db 0x0a
+	.db 0x0d
+	.ascii " Your Options Are:"
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_13$0_0$0 == .
+	.area CONST   (CODE)
+___str_13:
+	.db 0x0a
+	.db 0x0d
+	.ascii " 1. Print the character at the starting."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_14$0_0$0 == .
+	.area CONST   (CODE)
+___str_14:
+	.db 0x0a
+	.db 0x0d
+	.ascii " 2. Print the character at your place of choosing."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_15$0_0$0 == .
+	.area CONST   (CODE)
+___str_15:
+	.db 0x0a
+	.db 0x0d
+	.ascii " 3. Print the string at the starting."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_16$0_0$0 == .
+	.area CONST   (CODE)
+___str_16:
+	.db 0x0a
+	.db 0x0d
+	.ascii " 4. Clear the Screen."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_17$0_0$0 == .
+	.area CONST   (CODE)
+___str_17:
+	.db 0x0a
+	.db 0x0d
+	.ascii " 5. Exit"
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_18$0_0$0 == .
+	.area CONST   (CODE)
+___str_18:
+	.db 0x0a
+	.db 0x0d
+	.ascii " Enter your choice:"
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_19$0_0$0 == .
+	.area CONST   (CODE)
+___str_19:
+	.db 0x0a
+	.db 0x0d
+	.ascii "Enter the character:"
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_20$0_0$0 == .
+	.area CONST   (CODE)
+___str_20:
+	.ascii "%c"
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_21$0_0$0 == .
+	.area CONST   (CODE)
+___str_21:
+	.db 0x0a
+	.db 0x0d
+	.ascii "Enter the row:"
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_22$0_0$0 == .
+	.area CONST   (CODE)
+___str_22:
+	.db 0x0a
+	.db 0x0d
+	.ascii " Sorry wrong choice, Enter Again."
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_23$0_0$0 == .
+	.area CONST   (CODE)
+___str_23:
+	.db 0x0a
+	.db 0x0d
+	.ascii "Enter the column:"
+	.db 0x00
+	.area CSEG    (CODE)
+Fmain$__str_24$0_0$0 == .
+	.area CONST   (CODE)
+___str_24:
+	.ascii "%d"
 	.db 0x00
 	.area CSEG    (CODE)
 	.area XINIT   (CODE)

@@ -8,9 +8,9 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
-	.globl _getchar
-	.globl _putchar
+	.globl _getchar_nonblock
 	.globl _uartinit
+	.globl _time_show
 	.globl _P5_7
 	.globl _P5_6
 	.globl _P5_5
@@ -207,6 +207,8 @@
 	.globl _DPL
 	.globl _SP
 	.globl _P0
+	.globl _putchar
+	.globl _getchar
 ;--------------------------------------------------------
 ; special function registers
 ;--------------------------------------------------------
@@ -642,8 +644,8 @@ _P5_7	=	0x00ef
 ; external ram data
 ;--------------------------------------------------------
 	.area XSEG    (XDATA)
-LUART.putchar$c$1_0$2==.
-_putchar_c_65536_2:
+LUART.putchar$c$1_0$17==.
+_putchar_c_65536_17:
 	.ds 2
 ;--------------------------------------------------------
 ; absolute external ram data
@@ -683,8 +685,8 @@ _putchar_c_65536_2:
 ;Allocation info for local variables in function 'uartinit'
 ;------------------------------------------------------------
 	G$uartinit$0$0 ==.
-	C$UART.c$3$0_0$1 ==.
-;	UART.c:3: void uartinit()
+	C$UART.c$5$0_0$16 ==.
+;	UART.c:5: void uartinit()
 ;	-----------------------------------------
 ;	 function uartinit
 ;	-----------------------------------------
@@ -697,97 +699,139 @@ _uartinit:
 	ar2 = 0x02
 	ar1 = 0x01
 	ar0 = 0x00
-	C$UART.c$5$1_0$1 ==.
-;	UART.c:5: TMOD = 0x20;
+	C$UART.c$7$1_0$16 ==.
+;	UART.c:7: TMOD = 0x20;
 	mov	_TMOD,#0x20
-	C$UART.c$6$1_0$1 ==.
-;	UART.c:6: SCON = 0x50;
+	C$UART.c$8$1_0$16 ==.
+;	UART.c:8: SCON = 0x50;
 	mov	_SCON,#0x50
-	C$UART.c$7$1_0$1 ==.
-;	UART.c:7: TH1 = 0xFD;
+	C$UART.c$9$1_0$16 ==.
+;	UART.c:9: TH1 = 0xFD;
 	mov	_TH1,#0xfd
-	C$UART.c$8$1_0$1 ==.
-;	UART.c:8: TR1 =1;
+	C$UART.c$10$1_0$16 ==.
+;	UART.c:10: TR1 =1;
 ;	assignBit
 	setb	_TR1
-	C$UART.c$9$1_0$1 ==.
-;	UART.c:9: }
-	C$UART.c$9$1_0$1 ==.
+	C$UART.c$11$1_0$16 ==.
+;	UART.c:11: }
+	C$UART.c$11$1_0$16 ==.
 	XG$uartinit$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'putchar'
 ;------------------------------------------------------------
-;c                         Allocated with name '_putchar_c_65536_2'
+;c                         Allocated with name '_putchar_c_65536_17'
 ;------------------------------------------------------------
 	G$putchar$0$0 ==.
-	C$UART.c$10$1_0$3 ==.
-;	UART.c:10: int putchar(int c)
+	C$UART.c$12$1_0$18 ==.
+;	UART.c:12: int putchar(int c)
 ;	-----------------------------------------
 ;	 function putchar
 ;	-----------------------------------------
 _putchar:
 	mov	r7,dph
 	mov	a,dpl
-	mov	dptr,#_putchar_c_65536_2
+	mov	dptr,#_putchar_c_65536_17
 	movx	@dptr,a
 	mov	a,r7
 	inc	dptr
 	movx	@dptr,a
-	C$UART.c$12$1_0$3 ==.
-;	UART.c:12: while(!TI);                         // checking the TI interrupt bit, when it sets, the data is sent
+	C$UART.c$14$1_0$18 ==.
+;	UART.c:14: while(!TI);                         // checking the TI interrupt bit, when it sets, the data is sent
 00101$:
-	C$UART.c$13$1_0$3 ==.
-;	UART.c:13: TI=0;
+	C$UART.c$15$1_0$18 ==.
+;	UART.c:15: TI=0;
 ;	assignBit
 	jbc	_TI,00114$
 	sjmp	00101$
 00114$:
-	C$UART.c$14$1_0$3 ==.
-;	UART.c:14: SBUF = c;
-	mov	dptr,#_putchar_c_65536_2
+	C$UART.c$16$1_0$18 ==.
+;	UART.c:16: SBUF = c;
+	mov	dptr,#_putchar_c_65536_17
 	movx	a,@dptr
 	mov	r6,a
 	inc	dptr
 	movx	a,@dptr
 	mov	_SBUF,r6
-	C$UART.c$15$1_0$3 ==.
-;	UART.c:15: return 1;
+	C$UART.c$17$1_0$18 ==.
+;	UART.c:17: return 1;
 	mov	dptr,#0x0001
-	C$UART.c$16$1_0$3 ==.
-;	UART.c:16: }
-	C$UART.c$16$1_0$3 ==.
+	C$UART.c$18$1_0$18 ==.
+;	UART.c:18: }
+	C$UART.c$18$1_0$18 ==.
 	XG$putchar$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'getchar'
 ;------------------------------------------------------------
 	G$getchar$0$0 ==.
-	C$UART.c$17$1_0$4 ==.
-;	UART.c:17: int getchar()
+	C$UART.c$19$1_0$19 ==.
+;	UART.c:19: int getchar()
 ;	-----------------------------------------
 ;	 function getchar
 ;	-----------------------------------------
 _getchar:
-	C$UART.c$19$1_0$4 ==.
-;	UART.c:19: while(!RI);
+	C$UART.c$21$1_0$19 ==.
+;	UART.c:21: while(!RI)
 00101$:
-	C$UART.c$21$1_0$4 ==.
-;	UART.c:21: RI=0;
-;	assignBit
-	jbc	_RI,00114$
+	jb	_RI,00103$
+	C$UART.c$23$2_0$20 ==.
+;	UART.c:23: time_show();
+	lcall	_time_show
 	sjmp	00101$
-00114$:
-	C$UART.c$22$1_0$4 ==.
-;	UART.c:22: return SBUF;
+00103$:
+	C$UART.c$25$1_0$19 ==.
+;	UART.c:25: RI=0;
+;	assignBit
+	clr	_RI
+	C$UART.c$26$1_0$19 ==.
+;	UART.c:26: return SBUF;
 	mov	r6,_SBUF
 	mov	r7,#0x00
 	mov	dpl,r6
 	mov	dph,r7
-	C$UART.c$23$1_0$4 ==.
-;	UART.c:23: }
-	C$UART.c$23$1_0$4 ==.
+	C$UART.c$27$1_0$19 ==.
+;	UART.c:27: }
+	C$UART.c$27$1_0$19 ==.
 	XG$getchar$0$0 ==.
+	ret
+;------------------------------------------------------------
+;Allocation info for local variables in function 'getchar_nonblock'
+;------------------------------------------------------------
+	G$getchar_nonblock$0$0 ==.
+	C$UART.c$28$1_0$21 ==.
+;	UART.c:28: int getchar_nonblock()
+;	-----------------------------------------
+;	 function getchar_nonblock
+;	-----------------------------------------
+_getchar_nonblock:
+	C$UART.c$30$1_0$21 ==.
+;	UART.c:30: if(RI)
+	C$UART.c$32$2_0$22 ==.
+;	UART.c:32: RI=0;
+;	assignBit
+	jbc	_RI,00110$
+	sjmp	00102$
+00110$:
+	C$UART.c$33$2_0$22 ==.
+;	UART.c:33: return SBUF;
+	mov	r6,_SBUF
+	mov	r7,#0x00
+	mov	dpl,r6
+	mov	dph,r7
+	sjmp	00104$
+00102$:
+	C$UART.c$38$2_0$23 ==.
+;	UART.c:38: time_show();
+	lcall	_time_show
+	C$UART.c$39$2_0$23 ==.
+;	UART.c:39: return 0;
+	mov	dptr,#0x0000
+00104$:
+	C$UART.c$42$1_0$21 ==.
+;	UART.c:42: }
+	C$UART.c$42$1_0$21 ==.
+	XG$getchar_nonblock$0$0 ==.
 	ret
 	.area CSEG    (CODE)
 	.area CONST   (CODE)

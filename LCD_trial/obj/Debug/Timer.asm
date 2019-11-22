@@ -8,6 +8,8 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
+	.globl _LCD_putstr
+	.globl _lcdbusywait
 	.globl _P5_7
 	.globl _P5_6
 	.globl _P5_5
@@ -204,7 +206,12 @@
 	.globl _DPL
 	.globl _SP
 	.globl _P0
+	.globl _DR_READ
+	.globl _DR_WRITE
+	.globl _BF_Read
+	.globl _IR_Write
 	.globl _timer_init
+	.globl _inttostr
 ;--------------------------------------------------------
 ; special function registers
 ;--------------------------------------------------------
@@ -640,6 +647,20 @@ _P5_7	=	0x00ef
 ; external ram data
 ;--------------------------------------------------------
 	.area XSEG    (XDATA)
+G$IR_Write$0_0$0 == 0xf000
+_IR_Write	=	0xf000
+G$BF_Read$0_0$0 == 0xf200
+_BF_Read	=	0xf200
+G$DR_WRITE$0_0$0 == 0xf100
+_DR_WRITE	=	0xf100
+G$DR_READ$0_0$0 == 0xf300
+_DR_READ	=	0xf300
+LTimer.inttostr$a$1_0$11==.
+_inttostr_a_65536_11:
+	.ds 1
+LTimer.inttostr$b$1_0$12==.
+_inttostr_b_65536_12:
+	.ds 3
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -678,8 +699,8 @@ _P5_7	=	0x00ef
 ;Allocation info for local variables in function 'timer_init'
 ;------------------------------------------------------------
 	G$timer_init$0$0 ==.
-	C$Timer.c$4$0_0$1 ==.
-;	Timer.c:4: void timer_init()
+	C$Timer.c$13$0_0$10 ==.
+;	Timer.c:13: void timer_init()
 ;	-----------------------------------------
 ;	 function timer_init
 ;	-----------------------------------------
@@ -692,39 +713,164 @@ _timer_init:
 	ar2 = 0x02
 	ar1 = 0x01
 	ar0 = 0x00
-	C$Timer.c$7$1_0$1 ==.
-;	Timer.c:7: TMOD|=0x01;
+	C$Timer.c$16$1_0$10 ==.
+;	Timer.c:16: TMOD|=0x01;
 	orl	_TMOD,#0x01
-	C$Timer.c$9$1_0$1 ==.
-;	Timer.c:9: TH0=0x4B;
+	C$Timer.c$18$1_0$10 ==.
+;	Timer.c:18: TH0=0x4B;
 	mov	_TH0,#0x4b
-	C$Timer.c$10$1_0$1 ==.
-;	Timer.c:10: TL0=0xFC;
+	C$Timer.c$19$1_0$10 ==.
+;	Timer.c:19: TL0=0xFC;
 	mov	_TL0,#0xfc
-	C$Timer.c$11$1_0$1 ==.
-;	Timer.c:11: TR0=1;
+	C$Timer.c$20$1_0$10 ==.
+;	Timer.c:20: TR0=1;
 ;	assignBit
 	setb	_TR0
-	C$Timer.c$12$1_0$1 ==.
-;	Timer.c:12: ET0|=1;
+	C$Timer.c$21$1_0$10 ==.
+;	Timer.c:21: ET0|=1;
 	mov	r7,#0x01
 	mov	c,_ET0
 ;	assignBit
 	mov	a,r7
 	add	a,#0xff
 	mov	_ET0,c
-	C$Timer.c$13$1_0$1 ==.
-;	Timer.c:13: EA|=1;
+	C$Timer.c$22$1_0$10 ==.
+;	Timer.c:22: EA|=1;
 	mov	r7,#0x01
 	mov	c,_EA
 ;	assignBit
 	mov	a,r7
 	add	a,#0xff
 	mov	_EA,c
-	C$Timer.c$14$1_0$1 ==.
-;	Timer.c:14: }
-	C$Timer.c$14$1_0$1 ==.
+	C$Timer.c$23$1_0$10 ==.
+;	Timer.c:23: }
+	C$Timer.c$23$1_0$10 ==.
 	XG$timer_init$0$0 ==.
+	ret
+;------------------------------------------------------------
+;Allocation info for local variables in function 'inttostr'
+;------------------------------------------------------------
+;a                         Allocated with name '_inttostr_a_65536_11'
+;b                         Allocated with name '_inttostr_b_65536_12'
+;i                         Allocated with name '_inttostr_i_65536_12'
+;j                         Allocated with name '_inttostr_j_65536_12'
+;------------------------------------------------------------
+	G$inttostr$0$0 ==.
+	C$Timer.c$25$1_0$12 ==.
+;	Timer.c:25: void inttostr(uint8_t a)
+;	-----------------------------------------
+;	 function inttostr
+;	-----------------------------------------
+_inttostr:
+	mov	a,dpl
+	mov	dptr,#_inttostr_a_65536_11
+	movx	@dptr,a
+	C$Timer.c$27$2_0$13 ==.
+;	Timer.c:27: while(a!=0)
+	mov	r7,#0x02
+00101$:
+	mov	dptr,#_inttostr_a_65536_11
+	movx	a,@dptr
+	mov	r6,a
+	movx	a,@dptr
+	jz	00103$
+	C$Timer.c$28$2_0$13 ==.
+;	Timer.c:28: {   i--;
+	dec	r7
+	C$Timer.c$29$2_0$13 ==.
+;	Timer.c:29: b[i]=(a%10)+'0';
+	mov	a,r7
+	add	a,#_inttostr_b_65536_12
+	mov	r4,a
+	clr	a
+	addc	a,#(_inttostr_b_65536_12 >> 8)
+	mov	r5,a
+	mov	r3,#0x00
+	mov	dptr,#__modsint_PARM_2
+	mov	a,#0x0a
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,r6
+	mov	dph,r3
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	push	ar3
+	lcall	__modsint
+	mov	r1,dpl
+	pop	ar3
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	mov	a,#0x30
+	add	a,r1
+	mov	dpl,r4
+	mov	dph,r5
+	movx	@dptr,a
+	C$Timer.c$30$1_0$12 ==.
+;	Timer.c:30: a=a/10;
+	mov	dptr,#__divsint_PARM_2
+	mov	a,#0x0a
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,r6
+	mov	dph,r3
+	lcall	__divsint
+	mov	r5,dpl
+	mov	r6,dph
+	pop	ar7
+	mov	dptr,#_inttostr_a_65536_11
+	mov	a,r5
+	movx	@dptr,a
+	sjmp	00101$
+00103$:
+	C$Timer.c$32$3_0$15 ==.
+;	Timer.c:32: for(j=0;j<i;j++)
+	mov	r6,#0x00
+00106$:
+	clr	c
+	mov	a,r6
+	subb	a,r7
+	jnc	00104$
+	C$Timer.c$33$3_0$15 ==.
+;	Timer.c:33: {   b[j]='0';
+	mov	a,r6
+	add	a,#_inttostr_b_65536_12
+	mov	dpl,a
+	clr	a
+	addc	a,#(_inttostr_b_65536_12 >> 8)
+	mov	dph,a
+	mov	a,#0x30
+	movx	@dptr,a
+	C$Timer.c$32$2_0$14 ==.
+;	Timer.c:32: for(j=0;j<i;j++)
+	inc	r6
+	sjmp	00106$
+00104$:
+	C$Timer.c$35$1_0$12 ==.
+;	Timer.c:35: lcdbusywait();
+	lcall	_lcdbusywait
+	C$Timer.c$36$1_0$12 ==.
+;	Timer.c:36: LCD_putstr(b);
+	mov	dptr,#_inttostr_b_65536_12
+	lcall	_LCD_putstr
+	C$Timer.c$37$1_0$12 ==.
+;	Timer.c:37: lcdbusywait();
+	lcall	_lcdbusywait
+	C$Timer.c$38$1_0$12 ==.
+;	Timer.c:38: DR_WRITE=':';
+	mov	dptr,#_DR_WRITE
+	mov	a,#0x3a
+	movx	@dptr,a
+	C$Timer.c$39$1_0$12 ==.
+;	Timer.c:39: }
+	C$Timer.c$39$1_0$12 ==.
+	XG$inttostr$0$0 ==.
 	ret
 	.area CSEG    (CODE)
 	.area CONST   (CODE)

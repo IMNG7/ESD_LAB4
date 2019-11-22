@@ -1,5 +1,14 @@
 M:Timer
 F:G$timer_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$inttostr$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:G$IR_Write$0_0$0({1}SC:U),F,0,0
+S:G$BF_Read$0_0$0({1}SC:U),F,0,0
+S:G$DR_WRITE$0_0$0({1}SC:U),F,0,0
+S:G$DR_READ$0_0$0({1}SC:U),F,0,0
+S:LTimer.inttostr$a$1_0$11({1}SC:U),F,0,0
+S:LTimer.inttostr$b$1_0$12({3}DA3d,SC:U),F,0,0
+S:LTimer.inttostr$i$1_0$12({1}SC:U),F,0,0
+S:LTimer.inttostr$j$1_0$12({1}SC:U),F,0,0
 S:G$P0$0_0$0({1}SC:U),I,0,0
 S:G$SP$0_0$0({1}SC:U),I,0,0
 S:G$DPL$0_0$0({1}SC:U),I,0,0
@@ -196,3 +205,12 @@ S:G$P5_4$0_0$0({1}SX:U),J,0,0
 S:G$P5_5$0_0$0({1}SX:U),J,0,0
 S:G$P5_6$0_0$0({1}SX:U),J,0,0
 S:G$P5_7$0_0$0({1}SX:U),J,0,0
+S:G$time_show$0_0$0({2}DF,SV:S),C,0,0
+S:G$LCD_Init$0_0$0({2}DF,SV:S),C,0,0
+S:G$lcdbusywait$0_0$0({2}DF,SV:S),C,0,0
+S:G$LCD_putch$0_0$0({2}DF,SV:S),C,0,0
+S:G$LCD_putstr$0_0$0({2}DF,SV:S),C,0,0
+S:G$lcd_clear$0_0$0({2}DF,SV:S),C,0,0
+S:G$delay$0_0$0({2}DF,SV:S),C,0,0
+S:G$lcd_gotoaddr$0_0$0({2}DF,SV:S),C,0,0
+S:G$lcd_gotoxy$0_0$0({2}DF,SV:S),C,0,0

@@ -1,5 +1,7 @@
 #include <mcs51/8051.h>
 #include <mcs51/at89c51ed2.h>
+#include <stdio.h>
+#include "timer.h"
 void uartinit()
 {
    TMOD = 0x20;
@@ -16,8 +18,10 @@ int putchar(int c)
 }
 int getchar()
 {
-    while(!RI);
-                        // checking the RI interrupt bit, when it sets, the data is received
+    while(!RI)
+    {
+        time_show();
+    };// checking the RI interrupt bit, when it sets, the data is received
     RI=0;
     return SBUF;
 }

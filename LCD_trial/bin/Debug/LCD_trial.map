@@ -49,14 +49,14 @@ C:   00000011  l_HOME
 C:   00000018  s_BIT_BANK                      
 C:   00000018  s_OSEG                          
 C:   00000018  s_REG_BANK_3                    
-C:   0000001A  l_CONST                         
 C:   00000020  s_BSEG_BYTES                    
 C:   00000020  s__CODE                         
 C:   00000022  l_GSINIT3                       
 C:   0000002A  l_GSINIT4                       
-C:   0000004B  l_XSEG                          
+C:   00000050  l_XSEG                          
 C:   00000080  l_DSEG                          
 C:   000000F7  l_SSEG                          
+C:   00000100  l_IRAM                          
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,11 +66,11 @@ CABS                                00000000    00000000 =           0. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00000100  l_IRAM                          
+C:   00000399  l_CONST                         
 C:   00000400  s_PSEG                          
 C:   00000400  s_XSEG                          
-C:   0000044B  s_XISEG                         
-C:   00000903  l_CSEG                          
+C:   00000450  s_XISEG                         
+C:   00000B77  l_CSEG                          
 C:   00002200  s_HOME                          
 C:   00002211  s_GSINIT0                       
 C:   00002214  s_GSINIT1                       
@@ -81,8 +81,8 @@ C:   0000226A  s_GSFINAL
 C:   0000226A  s_GSINIT                        
 C:   0000226A  s_GSINIT5                       
 C:   0000226D  s_CSEG                          
-C:   00002B70  s_CONST                         
-C:   00002B8A  s_XINIT                         
+C:   00002DE4  s_CONST                         
+C:   0000317D  s_XINIT                         
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
@@ -553,14 +553,14 @@ Area                                    Addr        Size        Decimal Bytes (A
      000000FD  _CCAP3H                            UART
      000000FE  G$CCAP4H$0_0$0                     UART
      000000FE  _CCAP4H                            UART
-     0000F000  G$IR_Write$0_0$0                   main
-     0000F000  _IR_Write                          main
-     0000F100  G$DR_WRITE$0_0$0                   main
-     0000F100  _DR_WRITE                          main
-     0000F200  G$BF_Read$0_0$0                    main
-     0000F200  _BF_Read                           main
-     0000F300  G$DR_READ$0_0$0                    main
-     0000F300  _DR_READ                           main
+     0000F000  G$IR_Write$0_0$0                   Timer
+     0000F000  _IR_Write                          Timer
+     0000F100  G$DR_WRITE$0_0$0                   Timer
+     0000F100  _DR_WRITE                          Timer
+     0000F200  G$BF_Read$0_0$0                    Timer
+     0000F200  _BF_Read                           Timer
+     0000F300  G$DR_READ$0_0$0                    Timer
+     0000F300  _DR_READ                           Timer
 ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
 Hexadecimal  [32-Bits]
 
@@ -597,7 +597,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-XSEG                                00000400    0000004B =          75. bytes (REL,CON,XDATA)
+XSEG                                00000400    00000050 =          80. bytes (REL,CON,XDATA)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -612,39 +612,44 @@ D:   00000410  _lcd_gotoxy_PARM_2                 LCD_Functions
 D:   00000411  LLCD_Functions.lcd_gotoxy$row$1_   LCD_Functions
 D:   00000412  G$hours$0_0$0                      main
 D:   00000412  _hours                             main
-D:   00000413  Lmain.inttostr$a$1_0$27            main
-D:   00000414  Lmain.inttostr$b$1_0$28            main
-D:   00000417  Lmain.main$a$1_0$37                main
-D:   0000042F  Lmain.main$b$1_0$37                main
-D:   00000435  LUART.putchar$c$1_0$2              UART
-D:   00000437  __modsint_PARM_2                   _modsint
-D:   0000043B  __moduint_PARM_2                   _moduint
-D:   00000440  __divsint_PARM_2                   _divsint
-D:   00000444  __divuint_PARM_2                   _divuint
+D:   00000413  Lmain.main$a$1_0$34                main
+D:   0000042B  Lmain.main$b$1_0$34                main
+D:   00000431  Lmain.main$choice$1_1$35           main
+D:   00000432  Lmain.main$row_value$1_1$35        main
+D:   00000433  Lmain.main$column1$1_1$35          main
+D:   00000434  Lmain.main$column2$1_1$35          main
+D:   00000435  Lmain.main$column_value$1_1$35     main
+D:   00000436  LTimer.inttostr$a$1_0$11           Timer
+D:   00000437  LTimer.inttostr$b$1_0$12           Timer
+D:   0000043A  LUART.putchar$c$1_0$17             UART
+D:   0000043C  __modsint_PARM_2                   _modsint
+D:   00000440  __moduint_PARM_2                   _moduint
+D:   00000445  __divsint_PARM_2                   _divsint
+D:   00000449  __divuint_PARM_2                   _divuint
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-XISEG                               0000044B    00000010 =          16. bytes (REL,CON,XDATA)
+XISEG                               00000450    00000010 =          16. bytes (REL,CON,XDATA)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-D:   0000044B  G$column_pos$0_0$0                 LCD_Functions
-D:   0000044B  _column_pos                        LCD_Functions
-D:   0000044D  G$row_pos$0_0$0                    LCD_Functions
-D:   0000044D  _row_pos                           LCD_Functions
-D:   0000044F  G$count$0_0$0                      main
-D:   0000044F  _count                             main
-D:   00000457  G$flag$0_0$0                       main
-D:   00000457  _flag                              main
-D:   00000458  G$milli$0_0$0                      main
-D:   00000458  _milli                             main
-D:   00000459  G$seconds$0_0$0                    main
-D:   00000459  _seconds                           main
-D:   0000045A  G$minutes$0_0$0                    main
-D:   0000045A  _minutes                           main
+D:   00000450  G$column_pos$0_0$0                 LCD_Functions
+D:   00000450  _column_pos                        LCD_Functions
+D:   00000452  G$row_pos$0_0$0                    LCD_Functions
+D:   00000452  _row_pos                           LCD_Functions
+D:   00000454  G$count$0_0$0                      main
+D:   00000454  _count                             main
+D:   0000045C  G$flag$0_0$0                       main
+D:   0000045C  _flag                              main
+D:   0000045D  G$milli$0_0$0                      main
+D:   0000045D  _milli                             main
+D:   0000045E  G$seconds$0_0$0                    main
+D:   0000045E  _seconds                           main
+D:   0000045F  G$minutes$0_0$0                    main
+D:   0000045F  _minutes                           main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
 Hexadecimal  [32-Bits]
@@ -655,10 +660,10 @@ HOME                                00002200    00000011 =          17. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00002200  A$mainDebug\main$732               main
-C:   00002203  A$mainDebug\main$733               main
-C:   0000220B  A$mainDebug\main$735               main
-C:   0000220E  A$mainDebug\main$757               main
+C:   00002200  A$mainDebug\main$741               main
+C:   00002203  A$mainDebug\main$742               main
+C:   0000220B  A$mainDebug\main$744               main
+C:   0000220E  A$mainDebug\main$766               main
 C:   0000220E  __sdcc_program_startup             main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
@@ -713,14 +718,14 @@ GSFINAL                             0000226A    00000003 =           3. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   0000226A  A$mainDebug\main$750               main
+C:   0000226A  A$mainDebug\main$759               main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -779,7 +784,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -839,7 +844,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -899,7 +904,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -959,7 +964,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1019,7 +1024,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1079,7 +1084,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1139,7 +1144,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1199,7 +1204,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1259,7 +1264,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1283,747 +1288,1201 @@ C:   000024D3  A$LCD_Functions_Functions$775      LCD_Functions
 C:   000024D3  C$LCD_Functions.c$152$1_0$44       LCD_Functions
 C:   000024D3  C$LCD_Functions.c$153$1_0$44       LCD_Functions
 C:   000024D3  XG$lcd_gotoxy$0$0                  LCD_Functions
-C:   000024D4  A$mainDebug\main$781               main
-C:   000024D4  C$main.c$24$0_0$24                 main
+C:   000024D4  A$mainDebug\main$790               main
+C:   000024D4  C$main.c$24$0_0$25                 main
 C:   000024D4  G$timer0_ISR$0$0                   main
 C:   000024D4  _timer0_ISR                        main
-C:   000024D6  A$mainDebug\main$782               main
-C:   000024D8  A$mainDebug\main$783               main
-C:   000024DA  A$mainDebug\main$784               main
-C:   000024DC  A$mainDebug\main$785               main
-C:   000024DE  A$mainDebug\main$786               main
-C:   000024E0  A$mainDebug\main$787               main
-C:   000024E2  A$mainDebug\main$788               main
-C:   000024E4  A$mainDebug\main$789               main
-C:   000024E6  A$mainDebug\main$790               main
-C:   000024E8  A$mainDebug\main$791               main
-C:   000024EA  A$mainDebug\main$792               main
-C:   000024EC  A$mainDebug\main$793               main
-C:   000024EF  A$mainDebug\main$797               main
-C:   000024EF  C$main.c$25$1_0$24                 main
-C:   000024F1  A$mainDebug\main$801               main
-C:   000024F1  C$main.c$26$1_0$24                 main
-C:   000024F3  A$mainDebug\main$805               main
-C:   000024F3  C$main.c$27$1_0$24                 main
-C:   000024F5  A$mainDebug\main$808               main
-C:   000024F5  C$main.c$28$1_0$24                 main
-C:   000024F8  A$mainDebug\main$811               main
-C:   000024F8  C$main.c$29$1_0$24                 main
-C:   000024FB  A$mainDebug\main$814               main
-C:   000024FB  C$main.c$30$1_0$24                 main
-C:   000024FD  A$mainDebug\main$818               main
-C:   000024FD  C$main.c$31$1_0$24                 main
-C:   000024FF  A$mainDebug\main$822               main
+C:   000024D6  A$mainDebug\main$791               main
+C:   000024D8  A$mainDebug\main$792               main
+C:   000024DA  A$mainDebug\main$793               main
+C:   000024DC  A$mainDebug\main$794               main
+C:   000024DE  A$mainDebug\main$795               main
+C:   000024E0  A$mainDebug\main$796               main
+C:   000024E2  A$mainDebug\main$797               main
+C:   000024E4  A$mainDebug\main$798               main
+C:   000024E6  A$mainDebug\main$799               main
+C:   000024E8  A$mainDebug\main$800               main
+C:   000024EA  A$mainDebug\main$801               main
+C:   000024EC  A$mainDebug\main$802               main
+C:   000024EF  A$mainDebug\main$806               main
+C:   000024EF  C$main.c$25$1_0$25                 main
+C:   000024F1  A$mainDebug\main$810               main
+C:   000024F1  C$main.c$26$1_0$25                 main
+C:   000024F3  A$mainDebug\main$814               main
+C:   000024F3  C$main.c$27$1_0$25                 main
+C:   000024F5  A$mainDebug\main$817               main
+C:   000024F5  C$main.c$28$1_0$25                 main
+C:   000024F8  A$mainDebug\main$820               main
+C:   000024F8  C$main.c$29$1_0$25                 main
+C:   000024FB  A$mainDebug\main$823               main
+C:   000024FB  C$main.c$30$1_0$25                 main
+C:   000024FD  A$mainDebug\main$827               main
+C:   000024FD  C$main.c$31$1_0$25                 main
+C:   000024FF  A$mainDebug\main$831               main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   000024FF  C$main.c$32$1_0$24                 main
-C:   00002501  A$mainDebug\main$825               main
-C:   00002501  C$main.c$33$1_0$24                 main
-C:   00002504  A$mainDebug\main$826               main
-C:   00002505  A$mainDebug\main$827               main
-C:   00002506  A$mainDebug\main$828               main
-C:   00002507  A$mainDebug\main$829               main
-C:   00002508  A$mainDebug\main$830               main
-C:   00002509  A$mainDebug\main$831               main
-C:   0000250A  A$mainDebug\main$832               main
-C:   0000250B  A$mainDebug\main$833               main
-C:   0000250C  A$mainDebug\main$834               main
-C:   0000250D  A$mainDebug\main$835               main
-C:   0000250E  A$mainDebug\main$836               main
-C:   0000250F  A$mainDebug\main$837               main
-C:   00002510  A$mainDebug\main$838               main
-C:   00002511  A$mainDebug\main$839               main
-C:   00002512  A$mainDebug\main$840               main
-C:   00002513  A$mainDebug\main$841               main
-C:   00002514  A$mainDebug\main$842               main
-C:   00002515  A$mainDebug\main$843               main
-C:   00002516  A$mainDebug\main$844               main
-C:   00002517  A$mainDebug\main$845               main
-C:   00002518  A$mainDebug\main$846               main
-C:   00002519  A$mainDebug\main$847               main
-C:   0000251A  A$mainDebug\main$848               main
-C:   0000251B  A$mainDebug\main$849               main
-C:   0000251E  A$mainDebug\main$850               main
-C:   00002520  A$mainDebug\main$851               main
-C:   00002521  A$mainDebug\main$852               main
-C:   00002522  A$mainDebug\main$853               main
-C:   00002523  A$mainDebug\main$854               main
-C:   00002524  A$mainDebug\main$855               main
-C:   00002525  A$mainDebug\main$856               main
-C:   00002526  A$mainDebug\main$857               main
-C:   00002527  A$mainDebug\main$858               main
-C:   00002528  A$mainDebug\main$859               main
-C:   00002529  A$mainDebug\main$860               main
-C:   0000252A  A$mainDebug\main$861               main
-C:   0000252B  A$mainDebug\main$862               main
-C:   0000252C  A$mainDebug\main$863               main
-C:   0000252D  A$mainDebug\main$864               main
-C:   0000252E  A$mainDebug\main$865               main
-C:   0000252F  A$mainDebug\main$866               main
-C:   00002530  A$mainDebug\main$867               main
-C:   00002531  A$mainDebug\main$868               main
-C:   00002532  A$mainDebug\main$869               main
-C:   00002533  A$mainDebug\main$870               main
-C:   00002534  A$mainDebug\main$871               main
-C:   00002535  A$mainDebug\main$872               main
-C:   00002536  A$mainDebug\main$873               main
+C:   000024FF  C$main.c$32$1_0$25                 main
+C:   00002501  A$mainDebug\main$834               main
+C:   00002501  C$main.c$33$1_0$25                 main
+C:   00002504  A$mainDebug\main$835               main
+C:   00002505  A$mainDebug\main$836               main
+C:   00002506  A$mainDebug\main$837               main
+C:   00002507  A$mainDebug\main$838               main
+C:   00002508  A$mainDebug\main$839               main
+C:   00002509  A$mainDebug\main$840               main
+C:   0000250A  A$mainDebug\main$841               main
+C:   0000250B  A$mainDebug\main$842               main
+C:   0000250C  A$mainDebug\main$843               main
+C:   0000250D  A$mainDebug\main$844               main
+C:   0000250E  A$mainDebug\main$845               main
+C:   0000250F  A$mainDebug\main$846               main
+C:   00002510  A$mainDebug\main$847               main
+C:   00002511  A$mainDebug\main$848               main
+C:   00002512  A$mainDebug\main$849               main
+C:   00002513  A$mainDebug\main$850               main
+C:   00002514  A$mainDebug\main$851               main
+C:   00002515  A$mainDebug\main$852               main
+C:   00002516  A$mainDebug\main$853               main
+C:   00002517  A$mainDebug\main$854               main
+C:   00002518  A$mainDebug\main$855               main
+C:   00002519  A$mainDebug\main$856               main
+C:   0000251A  A$mainDebug\main$857               main
+C:   0000251B  A$mainDebug\main$858               main
+C:   0000251E  A$mainDebug\main$859               main
+C:   00002520  A$mainDebug\main$860               main
+C:   00002521  A$mainDebug\main$861               main
+C:   00002522  A$mainDebug\main$862               main
+C:   00002523  A$mainDebug\main$863               main
+C:   00002524  A$mainDebug\main$864               main
+C:   00002525  A$mainDebug\main$865               main
+C:   00002526  A$mainDebug\main$866               main
+C:   00002527  A$mainDebug\main$867               main
+C:   00002528  A$mainDebug\main$868               main
+C:   00002529  A$mainDebug\main$869               main
+C:   0000252A  A$mainDebug\main$870               main
+C:   0000252B  A$mainDebug\main$871               main
+C:   0000252C  A$mainDebug\main$872               main
+C:   0000252D  A$mainDebug\main$873               main
+C:   0000252E  A$mainDebug\main$874               main
+C:   0000252F  A$mainDebug\main$875               main
+C:   00002530  A$mainDebug\main$876               main
+C:   00002531  A$mainDebug\main$877               main
+C:   00002532  A$mainDebug\main$878               main
+C:   00002533  A$mainDebug\main$879               main
+C:   00002534  A$mainDebug\main$880               main
+C:   00002535  A$mainDebug\main$881               main
+C:   00002536  A$mainDebug\main$882               main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00002537  A$mainDebug\main$874               main
-C:   00002538  A$mainDebug\main$875               main
-C:   00002539  A$mainDebug\main$876               main
-C:   0000253A  A$mainDebug\main$877               main
-C:   0000253B  A$mainDebug\main$878               main
-C:   0000253C  A$mainDebug\main$879               main
-C:   0000253D  A$mainDebug\main$880               main
-C:   0000253E  A$mainDebug\main$883               main
-C:   0000253E  C$main.c$34$1_0$24                 main
-C:   00002541  A$mainDebug\main$884               main
-C:   00002542  A$mainDebug\main$885               main
-C:   00002543  A$mainDebug\main$886               main
-C:   00002544  A$mainDebug\main$887               main
-C:   00002545  A$mainDebug\main$888               main
-C:   00002546  A$mainDebug\main$889               main
-C:   00002547  A$mainDebug\main$890               main
-C:   00002548  A$mainDebug\main$891               main
-C:   00002549  A$mainDebug\main$892               main
-C:   0000254A  A$mainDebug\main$893               main
-C:   0000254B  A$mainDebug\main$894               main
-C:   0000254C  A$mainDebug\main$895               main
-C:   0000254D  A$mainDebug\main$896               main
-C:   0000254E  A$mainDebug\main$897               main
-C:   0000254F  A$mainDebug\main$898               main
-C:   00002550  A$mainDebug\main$899               main
-C:   00002551  A$mainDebug\main$900               main
-C:   00002552  A$mainDebug\main$901               main
-C:   00002555  A$mainDebug\main$904               main
-C:   00002555  C$main.c$36$2_0$25                 main
-C:   00002558  A$mainDebug\main$905               main
-C:   0000255A  A$mainDebug\main$906               main
-C:   0000255B  A$mainDebug\main$909               main
-C:   0000255B  C$main.c$37$2_0$25                 main
-C:   0000255E  A$mainDebug\main$910               main
-C:   0000255F  A$mainDebug\main$911               main
-C:   00002560  A$mainDebug\main$912               main
-C:   00002561  A$mainDebug\main$913               main
-C:   00002562  A$mainDebug\main$914               main
-C:   00002563  A$mainDebug\main$915               main
-C:   00002564  A$mainDebug\main$916               main
-C:   00002565  A$mainDebug\main$917               main
-C:   00002566  A$mainDebug\main$918               main
-C:   00002567  A$mainDebug\main$919               main
-C:   00002568  A$mainDebug\main$920               main
-C:   00002569  A$mainDebug\main$921               main
-C:   0000256A  A$mainDebug\main$922               main
-C:   0000256B  A$mainDebug\main$923               main
-C:   0000256C  A$mainDebug\main$924               main
-C:   0000256D  A$mainDebug\main$925               main
-C:   0000256E  A$mainDebug\main$926               main
-C:   00002570  A$mainDebug\main$930               main
+C:   00002537  A$mainDebug\main$883               main
+C:   00002538  A$mainDebug\main$884               main
+C:   00002539  A$mainDebug\main$885               main
+C:   0000253A  A$mainDebug\main$886               main
+C:   0000253B  A$mainDebug\main$887               main
+C:   0000253C  A$mainDebug\main$888               main
+C:   0000253D  A$mainDebug\main$889               main
+C:   0000253E  A$mainDebug\main$892               main
+C:   0000253E  C$main.c$34$1_0$25                 main
+C:   00002541  A$mainDebug\main$893               main
+C:   00002542  A$mainDebug\main$894               main
+C:   00002543  A$mainDebug\main$895               main
+C:   00002544  A$mainDebug\main$896               main
+C:   00002545  A$mainDebug\main$897               main
+C:   00002546  A$mainDebug\main$898               main
+C:   00002547  A$mainDebug\main$899               main
+C:   00002548  A$mainDebug\main$900               main
+C:   00002549  A$mainDebug\main$901               main
+C:   0000254A  A$mainDebug\main$902               main
+C:   0000254B  A$mainDebug\main$903               main
+C:   0000254C  A$mainDebug\main$904               main
+C:   0000254D  A$mainDebug\main$905               main
+C:   0000254E  A$mainDebug\main$906               main
+C:   0000254F  A$mainDebug\main$907               main
+C:   00002550  A$mainDebug\main$908               main
+C:   00002551  A$mainDebug\main$909               main
+C:   00002552  A$mainDebug\main$910               main
+C:   00002555  A$mainDebug\main$913               main
+C:   00002555  C$main.c$36$2_0$26                 main
+C:   00002558  A$mainDebug\main$914               main
+C:   0000255A  A$mainDebug\main$915               main
+C:   0000255B  A$mainDebug\main$918               main
+C:   0000255B  C$main.c$37$2_0$26                 main
+C:   0000255E  A$mainDebug\main$919               main
+C:   0000255F  A$mainDebug\main$920               main
+C:   00002560  A$mainDebug\main$921               main
+C:   00002561  A$mainDebug\main$922               main
+C:   00002562  A$mainDebug\main$923               main
+C:   00002563  A$mainDebug\main$924               main
+C:   00002564  A$mainDebug\main$925               main
+C:   00002565  A$mainDebug\main$926               main
+C:   00002566  A$mainDebug\main$927               main
+C:   00002567  A$mainDebug\main$928               main
+C:   00002568  A$mainDebug\main$929               main
+C:   00002569  A$mainDebug\main$930               main
+C:   0000256A  A$mainDebug\main$931               main
+C:   0000256B  A$mainDebug\main$932               main
+C:   0000256C  A$mainDebug\main$933               main
+C:   0000256D  A$mainDebug\main$934               main
+C:   0000256E  A$mainDebug\main$935               main
+C:   00002570  A$mainDebug\main$939               main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00002570  C$main.c$41$2_0$26                 main
-C:   00002573  A$mainDebug\main$931               main
-C:   00002574  A$mainDebug\main$932               main
-C:   00002575  A$mainDebug\main$936               main
-C:   00002577  A$mainDebug\main$937               main
-C:   00002579  A$mainDebug\main$938               main
-C:   0000257B  A$mainDebug\main$939               main
-C:   0000257D  A$mainDebug\main$940               main
-C:   0000257F  A$mainDebug\main$941               main
-C:   00002581  A$mainDebug\main$942               main
-C:   00002583  A$mainDebug\main$943               main
-C:   00002585  A$mainDebug\main$944               main
-C:   00002587  A$mainDebug\main$945               main
-C:   00002589  A$mainDebug\main$946               main
-C:   0000258B  A$mainDebug\main$947               main
-C:   0000258D  A$mainDebug\main$950               main
-C:   0000258D  C$main.c$43$1_0$24                 main
+C:   00002570  C$main.c$41$2_0$27                 main
+C:   00002573  A$mainDebug\main$940               main
+C:   00002574  A$mainDebug\main$941               main
+C:   00002575  A$mainDebug\main$945               main
+C:   00002577  A$mainDebug\main$946               main
+C:   00002579  A$mainDebug\main$947               main
+C:   0000257B  A$mainDebug\main$948               main
+C:   0000257D  A$mainDebug\main$949               main
+C:   0000257F  A$mainDebug\main$950               main
+C:   00002581  A$mainDebug\main$951               main
+C:   00002583  A$mainDebug\main$952               main
+C:   00002585  A$mainDebug\main$953               main
+C:   00002587  A$mainDebug\main$954               main
+C:   00002589  A$mainDebug\main$955               main
+C:   0000258B  A$mainDebug\main$956               main
+C:   0000258D  A$mainDebug\main$959               main
+C:   0000258D  C$main.c$43$1_0$25                 main
 C:   0000258D  XG$timer0_ISR$0$0                  main
-C:   0000258E  A$mainDebug\main$967               main
+C:   0000258E  A$mainDebug\main$973               main
 C:   0000258E  C$main.c$44$1_0$28                 main
-C:   0000258E  G$inttostr$0$0                     main
-C:   0000258E  _inttostr                          main
-C:   00002590  A$mainDebug\main$968               main
-C:   00002593  A$mainDebug\main$969               main
-C:   00002594  A$mainDebug\main$972               main
-C:   00002594  C$main.c$46$2_0$29                 main
-C:   00002596  A$mainDebug\main$974               main
-C:   00002599  A$mainDebug\main$975               main
-C:   0000259A  A$mainDebug\main$976               main
-C:   0000259B  A$mainDebug\main$977               main
-C:   0000259C  A$mainDebug\main$978               main
-C:   0000259E  A$mainDebug\main$981               main
-C:   0000259E  C$main.c$47$2_0$29                 main
-C:   0000259F  A$mainDebug\main$984               main
-C:   0000259F  C$main.c$48$2_0$29                 main
-C:   000025A0  A$mainDebug\main$985               main
-C:   000025A2  A$mainDebug\main$986               main
-C:   000025A3  A$mainDebug\main$987               main
-C:   000025A4  A$mainDebug\main$988               main
-C:   000025A6  A$mainDebug\main$989               main
-C:   000025A7  A$mainDebug\main$990               main
-C:   000025A9  A$mainDebug\main$991               main
-C:   000025AC  A$mainDebug\main$992               main
-C:   000025AE  A$mainDebug\main$993               main
-C:   000025AF  A$mainDebug\main$994               main
-C:   000025B0  A$mainDebug\main$995               main
-C:   000025B1  A$mainDebug\main$996               main
-C:   000025B2  A$mainDebug\main$997               main
-C:   000025B4  A$mainDebug\main$998               main
-C:   000025B6  A$mainDebug\main$999               main
-C:   000025B8  A$mainDebug\main$1000              main
+C:   0000258E  C$main.c$46$1_0$28                 main
+C:   0000258E  G$time_show$0$0                    main
+C:   0000258E  _time_show                         main
+C:   00002591  A$mainDebug\main$974               main
+C:   00002592  A$mainDebug\main$975               main
+C:   00002593  A$mainDebug\main$976               main
+C:   00002596  A$mainDebug\main$977               main
+C:   00002598  A$mainDebug\main$979               main
+C:   0000259B  A$mainDebug\main$983               main
+C:   0000259B  C$main.c$48$2_0$29                 main
+C:   0000259E  A$mainDebug\main$984               main
+C:   0000259F  A$mainDebug\main$985               main
+C:   000025A0  A$mainDebug\main$988               main
+C:   000025A0  C$main.c$49$2_0$29                 main
+C:   000025A3  A$mainDebug\main$989               main
+C:   000025A4  A$mainDebug\main$990               main
+C:   000025A5  A$mainDebug\main$991               main
+C:   000025A6  A$mainDebug\main$994               main
+C:   000025A6  C$main.c$50$2_0$29                 main
+C:   000025A7  A$mainDebug\main$995               main
+C:   000025A8  A$mainDebug\main$996               main
+C:   000025AB  A$mainDebug\main$999               main
+C:   000025AB  C$main.c$52$3_0$30                 main
+C:   000025AE  A$mainDebug\main$1000              main
+C:   000025AF  A$mainDebug\main$1001              main
+C:   000025B0  A$mainDebug\main$1002              main
+C:   000025B1  A$mainDebug\main$1005              main
+C:   000025B1  C$main.c$53$3_0$30                 main
+C:   000025B4  A$mainDebug\main$1006              main
+C:   000025B5  A$mainDebug\main$1007              main
+C:   000025B6  A$mainDebug\main$1011              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   000025BA  A$mainDebug\main$1001              main
-C:   000025BC  A$mainDebug\main$1002              main
-C:   000025BE  A$mainDebug\main$1003              main
-C:   000025C0  A$mainDebug\main$1004              main
-C:   000025C3  A$mainDebug\main$1005              main
-C:   000025C5  A$mainDebug\main$1006              main
-C:   000025C7  A$mainDebug\main$1007              main
-C:   000025C9  A$mainDebug\main$1008              main
-C:   000025CB  A$mainDebug\main$1009              main
-C:   000025CD  A$mainDebug\main$1010              main
-C:   000025CF  A$mainDebug\main$1011              main
-C:   000025D0  A$mainDebug\main$1012              main
-C:   000025D2  A$mainDebug\main$1013              main
-C:   000025D4  A$mainDebug\main$1014              main
-C:   000025D5  A$mainDebug\main$1017              main
-C:   000025D5  C$main.c$49$1_0$28                 main
-C:   000025D8  A$mainDebug\main$1018              main
-C:   000025DA  A$mainDebug\main$1019              main
-C:   000025DB  A$mainDebug\main$1020              main
-C:   000025DC  A$mainDebug\main$1021              main
-C:   000025DD  A$mainDebug\main$1022              main
-C:   000025DE  A$mainDebug\main$1023              main
-C:   000025E0  A$mainDebug\main$1024              main
-C:   000025E2  A$mainDebug\main$1025              main
-C:   000025E5  A$mainDebug\main$1026              main
-C:   000025E7  A$mainDebug\main$1027              main
-C:   000025E9  A$mainDebug\main$1028              main
-C:   000025EB  A$mainDebug\main$1029              main
-C:   000025EE  A$mainDebug\main$1030              main
-C:   000025EF  A$mainDebug\main$1031              main
-C:   000025F0  A$mainDebug\main$1032              main
-C:   000025F2  A$mainDebug\main$1036              main
-C:   000025F2  C$main.c$51$1_0$28                 main
-C:   000025F4  A$mainDebug\main$1037              main
-C:   000025F6  A$mainDebug\main$1038              main
-C:   000025F8  A$mainDebug\main$1039              main
-C:   000025FA  A$mainDebug\main$1040              main
-C:   000025FC  A$mainDebug\main$1041              main
-C:   000025FF  A$mainDebug\main$1042              main
-C:   00002601  A$mainDebug\main$1043              main
-C:   00002603  A$mainDebug\main$1044              main
-C:   00002605  A$mainDebug\main$1047              main
-C:   00002605  C$main.c$52$3_0$31                 main
-C:   00002607  A$mainDebug\main$1049              main
-C:   00002608  A$mainDebug\main$1050              main
-C:   00002609  A$mainDebug\main$1051              main
-C:   0000260A  A$mainDebug\main$1052              main
-C:   0000260C  A$mainDebug\main$1055              main
-C:   0000260C  C$main.c$53$3_0$31                 main
-C:   0000260D  A$mainDebug\main$1056              main
-C:   0000260F  A$mainDebug\main$1057              main
+C:   000025B6  C$main.c$55$2_0$29                 main
+C:   000025B9  A$mainDebug\main$1012              main
+C:   000025BA  A$mainDebug\main$1013              main
+C:   000025BB  A$mainDebug\main$1014              main
+C:   000025BE  A$mainDebug\main$1017              main
+C:   000025BE  C$main.c$57$3_0$31                 main
+C:   000025C1  A$mainDebug\main$1018              main
+C:   000025C2  A$mainDebug\main$1019              main
+C:   000025C3  A$mainDebug\main$1020              main
+C:   000025C4  A$mainDebug\main$1023              main
+C:   000025C4  C$main.c$58$3_0$31                 main
+C:   000025C7  A$mainDebug\main$1024              main
+C:   000025C8  A$mainDebug\main$1025              main
+C:   000025C9  A$mainDebug\main$1029              main
+C:   000025C9  C$main.c$60$2_0$29                 main
+C:   000025CC  A$mainDebug\main$1030              main
+C:   000025CD  A$mainDebug\main$1031              main
+C:   000025CE  A$mainDebug\main$1032              main
+C:   000025D0  A$mainDebug\main$1033              main
+C:   000025D3  A$mainDebug\main$1034              main
+C:   000025D5  A$mainDebug\main$1035              main
+C:   000025D6  A$mainDebug\main$1036              main
+C:   000025D7  A$mainDebug\main$1037              main
+C:   000025D8  A$mainDebug\main$1038              main
+C:   000025D9  A$mainDebug\main$1039              main
+C:   000025DB  A$mainDebug\main$1040              main
+C:   000025DD  A$mainDebug\main$1041              main
+C:   000025E0  A$mainDebug\main$1042              main
+C:   000025E2  A$mainDebug\main$1043              main
+C:   000025E5  A$mainDebug\main$1044              main
+C:   000025E6  A$mainDebug\main$1045              main
+C:   000025E7  A$mainDebug\main$1048              main
+C:   000025E7  C$main.c$61$2_0$29                 main
+C:   000025EA  A$mainDebug\main$1049              main
+C:   000025EC  A$mainDebug\main$1050              main
+C:   000025ED  A$mainDebug\main$1051              main
+C:   000025F0  A$mainDebug\main$1052              main
+C:   000025F3  A$mainDebug\main$1055              main
+C:   000025F3  C$main.c$62$2_0$29                 main
+C:   000025F6  A$mainDebug\main$1056              main
+C:   000025F7  A$mainDebug\main$1057              main
+C:   000025F9  A$mainDebug\main$1058              main
+C:   000025FC  A$mainDebug\main$1061              main
+C:   000025FC  C$main.c$63$2_0$29                 main
+C:   000025FF  A$mainDebug\main$1062              main
+C:   00002600  A$mainDebug\main$1063              main
+C:   00002602  A$mainDebug\main$1064              main
+C:   00002605  A$mainDebug\main$1067              main
+C:   00002605  C$main.c$64$2_0$29                 main
+C:   00002608  A$mainDebug\main$1068              main
+C:   00002609  A$mainDebug\main$1069              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00002611  A$mainDebug\main$1058              main
-C:   00002612  A$mainDebug\main$1059              main
-C:   00002614  A$mainDebug\main$1060              main
-C:   00002616  A$mainDebug\main$1061              main
-C:   00002618  A$mainDebug\main$1062              main
-C:   00002619  A$mainDebug\main$1065              main
-C:   00002619  C$main.c$52$2_0$30                 main
-C:   0000261A  A$mainDebug\main$1066              main
-C:   0000261C  A$mainDebug\main$1070              main
-C:   0000261C  C$main.c$55$1_0$28                 main
-C:   0000261F  A$mainDebug\main$1073              main
-C:   0000261F  C$main.c$56$1_0$28                 main
-C:   00002622  A$mainDebug\main$1074              main
-C:   00002625  A$mainDebug\main$1077              main
-C:   00002625  C$main.c$57$1_0$28                 main
-C:   00002628  A$mainDebug\main$1080              main
-C:   00002628  C$main.c$58$1_0$28                 main
-C:   0000262B  A$mainDebug\main$1081              main
-C:   0000262D  A$mainDebug\main$1082              main
-C:   0000262E  A$mainDebug\main$1087              main
-C:   0000262E  C$main.c$59$1_0$28                 main
-C:   0000262E  XG$inttostr$0$0                    main
-C:   0000262F  A$mainDebug\main$1100              main
-C:   0000262F  C$main.c$60$1_0$32                 main
-C:   0000262F  C$main.c$62$1_0$32                 main
-C:   0000262F  G$time_show$0$0                    main
-C:   0000262F  _time_show                         main
-C:   00002632  A$mainDebug\main$1101              main
-C:   00002633  A$mainDebug\main$1102              main
-C:   00002634  A$mainDebug\main$1103              main
-C:   00002637  A$mainDebug\main$1104              main
-C:   00002639  A$mainDebug\main$1106              main
-C:   0000263C  A$mainDebug\main$1110              main
-C:   0000263C  C$main.c$64$2_0$33                 main
-C:   0000263F  A$mainDebug\main$1111              main
-C:   00002640  A$mainDebug\main$1112              main
-C:   00002641  A$mainDebug\main$1115              main
-C:   00002641  C$main.c$65$2_0$33                 main
-C:   00002644  A$mainDebug\main$1116              main
-C:   00002645  A$mainDebug\main$1117              main
-C:   00002646  A$mainDebug\main$1118              main
-C:   00002647  A$mainDebug\main$1121              main
-C:   00002647  C$main.c$66$2_0$33                 main
-C:   00002648  A$mainDebug\main$1122              main
-C:   00002649  A$mainDebug\main$1123              main
-C:   0000264C  A$mainDebug\main$1126              main
-C:   0000264C  C$main.c$68$3_0$34                 main
-C:   0000264F  A$mainDebug\main$1127              main
-C:   00002650  A$mainDebug\main$1128              main
-C:   00002651  A$mainDebug\main$1129              main
-C:   00002652  A$mainDebug\main$1132              main
+C:   0000260B  A$mainDebug\main$1070              main
+C:   0000260E  A$mainDebug\main$1073              main
+C:   0000260E  C$main.c$65$2_0$29                 main
+C:   00002611  A$mainDebug\main$1074              main
+C:   00002612  A$mainDebug\main$1075              main
+C:   00002614  A$mainDebug\main$1076              main
+C:   00002617  A$mainDebug\main$1082              main
+C:   00002617  C$main.c$67$1_0$28                 main
+C:   00002617  XG$time_show$0$0                   main
+C:   00002618  A$mainDebug\main$1095              main
+C:   00002618  C$main.c$68$1_0$32                 main
+C:   00002618  C$main.c$70$1_0$32                 main
+C:   00002618  G$help$0$0                         main
+C:   00002618  _help                              main
+C:   0000261A  A$mainDebug\main$1096              main
+C:   0000261C  A$mainDebug\main$1097              main
+C:   0000261E  A$mainDebug\main$1098              main
+C:   00002620  A$mainDebug\main$1099              main
+C:   00002623  A$mainDebug\main$1100              main
+C:   00002625  A$mainDebug\main$1101              main
+C:   00002627  A$mainDebug\main$1104              main
+C:   00002627  C$main.c$71$1_0$32                 main
+C:   00002629  A$mainDebug\main$1105              main
+C:   0000262B  A$mainDebug\main$1106              main
+C:   0000262D  A$mainDebug\main$1107              main
+C:   0000262F  A$mainDebug\main$1108              main
+C:   00002632  A$mainDebug\main$1109              main
+C:   00002634  A$mainDebug\main$1110              main
+C:   00002636  A$mainDebug\main$1113              main
+C:   00002636  C$main.c$72$1_0$32                 main
+C:   00002638  A$mainDebug\main$1114              main
+C:   0000263A  A$mainDebug\main$1115              main
+C:   0000263C  A$mainDebug\main$1116              main
+C:   0000263E  A$mainDebug\main$1117              main
+C:   00002641  A$mainDebug\main$1118              main
+C:   00002643  A$mainDebug\main$1119              main
+C:   00002645  A$mainDebug\main$1122              main
+C:   00002645  C$main.c$73$1_0$32                 main
+C:   00002647  A$mainDebug\main$1123              main
+C:   00002649  A$mainDebug\main$1124              main
+C:   0000264B  A$mainDebug\main$1125              main
+C:   0000264D  A$mainDebug\main$1126              main
+C:   00002650  A$mainDebug\main$1127              main
+C:   00002652  A$mainDebug\main$1128              main
+C:   00002654  A$mainDebug\main$1131              main
+C:   00002654  C$main.c$74$1_0$32                 main
+C:   00002656  A$mainDebug\main$1132              main
+C:   00002658  A$mainDebug\main$1133              main
+C:   0000265A  A$mainDebug\main$1134              main
+C:   0000265C  A$mainDebug\main$1135              main
+C:   0000265F  A$mainDebug\main$1136              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00002652  C$main.c$69$3_0$34                 main
-C:   00002655  A$mainDebug\main$1133              main
-C:   00002656  A$mainDebug\main$1134              main
-C:   00002657  A$mainDebug\main$1138              main
-C:   00002657  C$main.c$71$2_0$33                 main
-C:   0000265A  A$mainDebug\main$1139              main
-C:   0000265B  A$mainDebug\main$1140              main
-C:   0000265C  A$mainDebug\main$1141              main
-C:   0000265F  A$mainDebug\main$1144              main
-C:   0000265F  C$main.c$73$3_0$35                 main
-C:   00002662  A$mainDebug\main$1145              main
-C:   00002663  A$mainDebug\main$1146              main
-C:   00002664  A$mainDebug\main$1147              main
-C:   00002665  A$mainDebug\main$1150              main
-C:   00002665  C$main.c$74$3_0$35                 main
-C:   00002668  A$mainDebug\main$1151              main
-C:   00002669  A$mainDebug\main$1152              main
-C:   0000266A  A$mainDebug\main$1156              main
-C:   0000266A  C$main.c$76$2_0$33                 main
-C:   0000266D  A$mainDebug\main$1157              main
-C:   0000266E  A$mainDebug\main$1158              main
-C:   0000266F  A$mainDebug\main$1159              main
-C:   00002671  A$mainDebug\main$1160              main
-C:   00002674  A$mainDebug\main$1161              main
-C:   00002676  A$mainDebug\main$1162              main
-C:   00002677  A$mainDebug\main$1163              main
-C:   00002678  A$mainDebug\main$1164              main
-C:   00002679  A$mainDebug\main$1165              main
-C:   0000267A  A$mainDebug\main$1166              main
-C:   0000267C  A$mainDebug\main$1167              main
-C:   0000267E  A$mainDebug\main$1168              main
-C:   00002681  A$mainDebug\main$1169              main
-C:   00002683  A$mainDebug\main$1170              main
-C:   00002686  A$mainDebug\main$1171              main
-C:   00002687  A$mainDebug\main$1172              main
-C:   00002688  A$mainDebug\main$1175              main
-C:   00002688  C$main.c$77$2_0$33                 main
-C:   0000268B  A$mainDebug\main$1176              main
-C:   0000268D  A$mainDebug\main$1177              main
-C:   0000268E  A$mainDebug\main$1178              main
-C:   00002691  A$mainDebug\main$1179              main
-C:   00002694  A$mainDebug\main$1182              main
-C:   00002694  C$main.c$78$2_0$33                 main
-C:   00002697  A$mainDebug\main$1183              main
-C:   00002698  A$mainDebug\main$1184              main
-C:   0000269A  A$mainDebug\main$1185              main
-C:   0000269D  A$mainDebug\main$1188              main
-C:   0000269D  C$main.c$79$2_0$33                 main
-C:   000026A0  A$mainDebug\main$1189              main
-C:   000026A1  A$mainDebug\main$1190              main
-C:   000026A3  A$mainDebug\main$1191              main
+C:   00002661  A$mainDebug\main$1137              main
+C:   00002663  A$mainDebug\main$1140              main
+C:   00002663  C$main.c$75$1_0$32                 main
+C:   00002665  A$mainDebug\main$1141              main
+C:   00002667  A$mainDebug\main$1142              main
+C:   00002669  A$mainDebug\main$1143              main
+C:   0000266B  A$mainDebug\main$1144              main
+C:   0000266E  A$mainDebug\main$1145              main
+C:   00002670  A$mainDebug\main$1146              main
+C:   00002672  A$mainDebug\main$1149              main
+C:   00002672  C$main.c$76$1_0$32                 main
+C:   00002674  A$mainDebug\main$1150              main
+C:   00002676  A$mainDebug\main$1151              main
+C:   00002678  A$mainDebug\main$1152              main
+C:   0000267A  A$mainDebug\main$1153              main
+C:   0000267D  A$mainDebug\main$1154              main
+C:   0000267F  A$mainDebug\main$1155              main
+C:   00002681  A$mainDebug\main$1158              main
+C:   00002681  C$main.c$77$1_0$32                 main
+C:   00002683  A$mainDebug\main$1159              main
+C:   00002685  A$mainDebug\main$1160              main
+C:   00002687  A$mainDebug\main$1161              main
+C:   00002689  A$mainDebug\main$1162              main
+C:   0000268C  A$mainDebug\main$1163              main
+C:   0000268E  A$mainDebug\main$1164              main
+C:   00002690  A$mainDebug\main$1167              main
+C:   00002690  C$main.c$78$1_0$32                 main
+C:   00002692  A$mainDebug\main$1168              main
+C:   00002694  A$mainDebug\main$1169              main
+C:   00002696  A$mainDebug\main$1170              main
+C:   00002698  A$mainDebug\main$1171              main
+C:   0000269B  A$mainDebug\main$1172              main
+C:   0000269D  A$mainDebug\main$1173              main
+C:   0000269F  A$mainDebug\main$1176              main
+C:   0000269F  C$main.c$79$1_0$32                 main
+C:   000026A1  A$mainDebug\main$1177              main
+C:   000026A3  A$mainDebug\main$1178              main
+C:   000026A5  A$mainDebug\main$1179              main
+C:   000026A7  A$mainDebug\main$1180              main
+C:   000026AA  A$mainDebug\main$1181              main
+C:   000026AC  A$mainDebug\main$1182              main
+C:   000026AE  A$mainDebug\main$1185              main
+C:   000026AE  C$main.c$80$1_0$32                 main
+C:   000026B1  A$mainDebug\main$1190              main
+C:   000026B1  C$main.c$81$1_0$32                 main
+C:   000026B1  XG$help$0$0                        main
+C:   000026B2  A$mainDebug\main$1212              main
+C:   000026B2  C$main.c$82$1_0$34                 main
+C:   000026B2  C$main.c$83$2_0$34                 main
+C:   000026B2  G$main$0$0                         main
+C:   000026B2  _main                              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   000026A6  A$mainDebug\main$1194              main
-C:   000026A6  C$main.c$80$2_0$33                 main
-C:   000026A9  A$mainDebug\main$1195              main
-C:   000026AA  A$mainDebug\main$1196              main
-C:   000026AC  A$mainDebug\main$1197              main
-C:   000026AF  A$mainDebug\main$1200              main
-C:   000026AF  C$main.c$81$2_0$33                 main
-C:   000026B2  A$mainDebug\main$1201              main
-C:   000026B3  A$mainDebug\main$1202              main
-C:   000026B5  A$mainDebug\main$1203              main
-C:   000026B8  A$mainDebug\main$1209              main
-C:   000026B8  C$main.c$83$1_0$32                 main
-C:   000026B8  XG$time_show$0$0                   main
-C:   000026B9  A$mainDebug\main$1225              main
-C:   000026B9  C$main.c$84$1_0$37                 main
-C:   000026B9  C$main.c$85$2_0$37                 main
-C:   000026B9  G$main$0$0                         main
-C:   000026B9  _main                              main
-C:   000026BC  A$mainDebug\main$1226              main
-C:   000026BE  A$mainDebug\main$1227              main
-C:   000026BF  A$mainDebug\main$1228              main
-C:   000026C2  A$mainDebug\main$1229              main
-C:   000026C4  A$mainDebug\main$1230              main
-C:   000026C5  A$mainDebug\main$1231              main
-C:   000026C8  A$mainDebug\main$1232              main
-C:   000026CA  A$mainDebug\main$1233              main
-C:   000026CB  A$mainDebug\main$1234              main
-C:   000026CE  A$mainDebug\main$1235              main
-C:   000026D0  A$mainDebug\main$1236              main
-C:   000026D1  A$mainDebug\main$1237              main
-C:   000026D4  A$mainDebug\main$1238              main
-C:   000026D6  A$mainDebug\main$1239              main
-C:   000026D7  A$mainDebug\main$1240              main
-C:   000026DA  A$mainDebug\main$1241              main
-C:   000026DC  A$mainDebug\main$1242              main
-C:   000026DD  A$mainDebug\main$1243              main
-C:   000026E0  A$mainDebug\main$1244              main
-C:   000026E2  A$mainDebug\main$1245              main
-C:   000026E3  A$mainDebug\main$1246              main
-C:   000026E6  A$mainDebug\main$1247              main
-C:   000026E8  A$mainDebug\main$1248              main
-C:   000026E9  A$mainDebug\main$1249              main
-C:   000026EC  A$mainDebug\main$1250              main
-C:   000026EE  A$mainDebug\main$1251              main
-C:   000026EF  A$mainDebug\main$1252              main
-C:   000026F2  A$mainDebug\main$1253              main
-C:   000026F4  A$mainDebug\main$1254              main
-C:   000026F5  A$mainDebug\main$1255              main
-C:   000026F8  A$mainDebug\main$1256              main
-C:   000026FA  A$mainDebug\main$1257              main
-C:   000026FB  A$mainDebug\main$1258              main
+C:   000026B5  A$mainDebug\main$1213              main
+C:   000026B7  A$mainDebug\main$1214              main
+C:   000026B8  A$mainDebug\main$1215              main
+C:   000026BB  A$mainDebug\main$1216              main
+C:   000026BD  A$mainDebug\main$1217              main
+C:   000026BE  A$mainDebug\main$1218              main
+C:   000026C1  A$mainDebug\main$1219              main
+C:   000026C3  A$mainDebug\main$1220              main
+C:   000026C4  A$mainDebug\main$1221              main
+C:   000026C7  A$mainDebug\main$1222              main
+C:   000026C9  A$mainDebug\main$1223              main
+C:   000026CA  A$mainDebug\main$1224              main
+C:   000026CD  A$mainDebug\main$1225              main
+C:   000026CF  A$mainDebug\main$1226              main
+C:   000026D0  A$mainDebug\main$1227              main
+C:   000026D3  A$mainDebug\main$1228              main
+C:   000026D5  A$mainDebug\main$1229              main
+C:   000026D6  A$mainDebug\main$1230              main
+C:   000026D9  A$mainDebug\main$1231              main
+C:   000026DB  A$mainDebug\main$1232              main
+C:   000026DC  A$mainDebug\main$1233              main
+C:   000026DF  A$mainDebug\main$1234              main
+C:   000026E1  A$mainDebug\main$1235              main
+C:   000026E2  A$mainDebug\main$1236              main
+C:   000026E5  A$mainDebug\main$1237              main
+C:   000026E7  A$mainDebug\main$1238              main
+C:   000026E8  A$mainDebug\main$1239              main
+C:   000026EB  A$mainDebug\main$1240              main
+C:   000026ED  A$mainDebug\main$1241              main
+C:   000026EE  A$mainDebug\main$1242              main
+C:   000026F1  A$mainDebug\main$1243              main
+C:   000026F3  A$mainDebug\main$1244              main
+C:   000026F4  A$mainDebug\main$1245              main
+C:   000026F7  A$mainDebug\main$1246              main
+C:   000026F9  A$mainDebug\main$1247              main
+C:   000026FA  A$mainDebug\main$1248              main
+C:   000026FD  A$mainDebug\main$1249              main
+C:   000026FF  A$mainDebug\main$1250              main
+C:   00002700  A$mainDebug\main$1251              main
+C:   00002703  A$mainDebug\main$1252              main
+C:   00002705  A$mainDebug\main$1253              main
+C:   00002706  A$mainDebug\main$1254              main
+C:   00002709  A$mainDebug\main$1255              main
+C:   0000270B  A$mainDebug\main$1256              main
+C:   0000270C  A$mainDebug\main$1257              main
+C:   0000270F  A$mainDebug\main$1258              main
+C:   00002711  A$mainDebug\main$1259              main
+C:   00002712  A$mainDebug\main$1260              main
+C:   00002715  A$mainDebug\main$1261              main
+C:   00002717  A$mainDebug\main$1262              main
+C:   00002718  A$mainDebug\main$1263              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   000026FE  A$mainDebug\main$1259              main
-C:   00002700  A$mainDebug\main$1260              main
-C:   00002701  A$mainDebug\main$1261              main
-C:   00002704  A$mainDebug\main$1262              main
-C:   00002706  A$mainDebug\main$1263              main
-C:   00002707  A$mainDebug\main$1264              main
-C:   0000270A  A$mainDebug\main$1265              main
-C:   0000270C  A$mainDebug\main$1266              main
-C:   0000270D  A$mainDebug\main$1267              main
-C:   00002710  A$mainDebug\main$1268              main
-C:   00002712  A$mainDebug\main$1269              main
-C:   00002713  A$mainDebug\main$1270              main
-C:   00002716  A$mainDebug\main$1271              main
-C:   00002718  A$mainDebug\main$1272              main
-C:   00002719  A$mainDebug\main$1273              main
-C:   0000271C  A$mainDebug\main$1274              main
-C:   0000271E  A$mainDebug\main$1275              main
-C:   0000271F  A$mainDebug\main$1276              main
-C:   00002722  A$mainDebug\main$1277              main
-C:   00002724  A$mainDebug\main$1278              main
-C:   00002725  A$mainDebug\main$1279              main
-C:   00002728  A$mainDebug\main$1280              main
-C:   0000272A  A$mainDebug\main$1281              main
-C:   0000272B  A$mainDebug\main$1282              main
-C:   0000272E  A$mainDebug\main$1283              main
-C:   00002730  A$mainDebug\main$1284              main
-C:   00002731  A$mainDebug\main$1285              main
-C:   00002734  A$mainDebug\main$1286              main
-C:   00002736  A$mainDebug\main$1287              main
-C:   00002737  A$mainDebug\main$1288              main
-C:   0000273A  A$mainDebug\main$1289              main
-C:   0000273C  A$mainDebug\main$1290              main
-C:   0000273D  A$mainDebug\main$1291              main
-C:   00002740  A$mainDebug\main$1292              main
-C:   00002742  A$mainDebug\main$1293              main
-C:   00002743  A$mainDebug\main$1294              main
-C:   00002746  A$mainDebug\main$1295              main
-C:   00002747  A$mainDebug\main$1296              main
-C:   00002748  A$mainDebug\main$1299              main
-C:   00002748  C$main.c$86$2_0$37                 main
-C:   0000274B  A$mainDebug\main$1300              main
-C:   0000274D  A$mainDebug\main$1301              main
-C:   0000274E  A$mainDebug\main$1302              main
-C:   00002751  A$mainDebug\main$1303              main
-C:   00002753  A$mainDebug\main$1304              main
-C:   00002754  A$mainDebug\main$1305              main
-C:   00002757  A$mainDebug\main$1306              main
-C:   00002759  A$mainDebug\main$1307              main
-C:   0000275A  A$mainDebug\main$1308              main
-C:   0000275D  A$mainDebug\main$1309              main
-C:   0000275F  A$mainDebug\main$1310              main
+C:   0000271B  A$mainDebug\main$1264              main
+C:   0000271D  A$mainDebug\main$1265              main
+C:   0000271E  A$mainDebug\main$1266              main
+C:   00002721  A$mainDebug\main$1267              main
+C:   00002723  A$mainDebug\main$1268              main
+C:   00002724  A$mainDebug\main$1269              main
+C:   00002727  A$mainDebug\main$1270              main
+C:   00002729  A$mainDebug\main$1271              main
+C:   0000272A  A$mainDebug\main$1272              main
+C:   0000272D  A$mainDebug\main$1273              main
+C:   0000272F  A$mainDebug\main$1274              main
+C:   00002730  A$mainDebug\main$1275              main
+C:   00002733  A$mainDebug\main$1276              main
+C:   00002735  A$mainDebug\main$1277              main
+C:   00002736  A$mainDebug\main$1278              main
+C:   00002739  A$mainDebug\main$1279              main
+C:   0000273B  A$mainDebug\main$1280              main
+C:   0000273C  A$mainDebug\main$1281              main
+C:   0000273F  A$mainDebug\main$1282              main
+C:   00002740  A$mainDebug\main$1283              main
+C:   00002741  A$mainDebug\main$1286              main
+C:   00002741  C$main.c$84$2_0$34                 main
+C:   00002744  A$mainDebug\main$1287              main
+C:   00002746  A$mainDebug\main$1288              main
+C:   00002747  A$mainDebug\main$1289              main
+C:   0000274A  A$mainDebug\main$1290              main
+C:   0000274C  A$mainDebug\main$1291              main
+C:   0000274D  A$mainDebug\main$1292              main
+C:   00002750  A$mainDebug\main$1293              main
+C:   00002752  A$mainDebug\main$1294              main
+C:   00002753  A$mainDebug\main$1295              main
+C:   00002756  A$mainDebug\main$1296              main
+C:   00002758  A$mainDebug\main$1297              main
+C:   00002759  A$mainDebug\main$1298              main
+C:   0000275C  A$mainDebug\main$1299              main
+C:   0000275E  A$mainDebug\main$1300              main
+C:   0000275F  A$mainDebug\main$1301              main
+C:   00002762  A$mainDebug\main$1302              main
+C:   00002763  A$mainDebug\main$1303              main
+C:   00002764  A$mainDebug\main$1306              main
+C:   00002764  C$main.c$86$1_0$34                 main
+C:   00002767  A$mainDebug\main$1307              main
+C:   00002768  A$mainDebug\main$1308              main
+C:   0000276B  A$mainDebug\main$1309              main
+C:   0000276C  A$mainDebug\main$1310              main
+C:   0000276F  A$mainDebug\main$1311              main
+C:   00002770  A$mainDebug\main$1314              main
+C:   00002770  C$main.c$87$2_0$35                 main
+C:   00002773  A$mainDebug\main$1315              main
+C:   00002774  A$mainDebug\main$1316              main
+C:   00002775  A$mainDebug\main$1319              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00002760  A$mainDebug\main$1311              main
-C:   00002763  A$mainDebug\main$1312              main
-C:   00002765  A$mainDebug\main$1313              main
-C:   00002766  A$mainDebug\main$1314              main
-C:   00002769  A$mainDebug\main$1315              main
-C:   0000276A  A$mainDebug\main$1316              main
-C:   0000276B  A$mainDebug\main$1319              main
-C:   0000276B  C$main.c$87$1_0$37                 main
-C:   0000276E  A$mainDebug\main$1320              main
-C:   0000276F  A$mainDebug\main$1321              main
-C:   00002772  A$mainDebug\main$1322              main
-C:   00002773  A$mainDebug\main$1323              main
-C:   00002776  A$mainDebug\main$1324              main
-C:   00002777  A$mainDebug\main$1327              main
-C:   00002777  C$main.c$88$1_0$37                 main
-C:   0000277A  A$mainDebug\main$1330              main
-C:   0000277A  C$main.c$89$1_0$37                 main
-C:   0000277C  A$mainDebug\main$1331              main
-C:   0000277E  A$mainDebug\main$1332              main
-C:   00002780  A$mainDebug\main$1333              main
-C:   00002782  A$mainDebug\main$1334              main
-C:   00002785  A$mainDebug\main$1335              main
-C:   00002787  A$mainDebug\main$1336              main
-C:   00002789  A$mainDebug\main$1339              main
-C:   00002789  C$main.c$90$1_0$37                 main
+C:   00002775  C$main.c$88$1_1$35                 main
+C:   00002778  A$mainDebug\main$1322              main
+C:   00002778  C$main.c$89$1_1$35                 main
+C:   0000277B  A$mainDebug\main$1325              main
+C:   0000277B  C$main.c$93$1_1$35                 main
+C:   0000277E  A$mainDebug\main$1331              main
+C:   0000277E  C$main.c$105$1_1$35                main
+C:   0000277E  C$main.c$106$2_1$36                main
+C:   00002781  A$mainDebug\main$1332              main
+C:   00002782  A$mainDebug\main$1333              main
+C:   00002784  A$mainDebug\main$1336              main
+C:   00002784  C$main.c$107$3_1$37                main
+C:   00002786  A$mainDebug\main$1337              main
+C:   00002788  A$mainDebug\main$1338              main
+C:   0000278A  A$mainDebug\main$1339              main
 C:   0000278C  A$mainDebug\main$1340              main
-C:   0000278D  A$mainDebug\main$1341              main
-C:   0000278F  A$mainDebug\main$1342              main
-C:   00002792  A$mainDebug\main$1345              main
-C:   00002792  C$main.c$92$1_0$37                 main
-C:   00002795  A$mainDebug\main$1348              main
-C:   00002795  C$main.c$93$1_0$37                 main
-C:   00002797  A$mainDebug\main$1349              main
-C:   00002799  A$mainDebug\main$1350              main
-C:   0000279B  A$mainDebug\main$1351              main
-C:   0000279D  A$mainDebug\main$1352              main
-C:   000027A0  A$mainDebug\main$1353              main
+C:   0000278F  A$mainDebug\main$1341              main
+C:   00002791  A$mainDebug\main$1342              main
+C:   00002793  A$mainDebug\main$1345              main
+C:   00002793  C$main.c$108$3_1$37                main
+C:   00002795  A$mainDebug\main$1346              main
+C:   00002797  A$mainDebug\main$1347              main
+C:   00002799  A$mainDebug\main$1348              main
+C:   0000279B  A$mainDebug\main$1349              main
+C:   0000279E  A$mainDebug\main$1350              main
+C:   000027A0  A$mainDebug\main$1351              main
 C:   000027A2  A$mainDebug\main$1354              main
-C:   000027A4  A$mainDebug\main$1357              main
-C:   000027A4  C$main.c$94$1_0$37                 main
-C:   000027A7  A$mainDebug\main$1358              main
-C:   000027A8  A$mainDebug\main$1359              main
-C:   000027AA  A$mainDebug\main$1360              main
-C:   000027AD  A$mainDebug\main$1363              main
-C:   000027AD  C$main.c$97$1_0$37                 main
-C:   000027B0  A$mainDebug\main$1364              main
-C:   000027B2  A$mainDebug\main$1365              main
-C:   000027B3  A$mainDebug\main$1368              main
-C:   000027B3  C$main.c$98$1_0$37                 main
-C:   000027B6  A$mainDebug\main$1371              main
-C:   000027B6  C$main.c$99$1_0$37                 main
+C:   000027A2  C$main.c$109$3_1$37                main
+C:   000027A4  A$mainDebug\main$1355              main
+C:   000027A6  A$mainDebug\main$1356              main
+C:   000027A8  A$mainDebug\main$1357              main
+C:   000027AA  A$mainDebug\main$1358              main
+C:   000027AD  A$mainDebug\main$1359              main
+C:   000027AF  A$mainDebug\main$1360              main
+C:   000027B1  A$mainDebug\main$1363              main
+C:   000027B1  C$main.c$110$3_1$37                main
+C:   000027B3  A$mainDebug\main$1364              main
+C:   000027B5  A$mainDebug\main$1365              main
+C:   000027B7  A$mainDebug\main$1366              main
+C:   000027B9  A$mainDebug\main$1367              main
+C:   000027BC  A$mainDebug\main$1368              main
+C:   000027BE  A$mainDebug\main$1369              main
+C:   000027C0  A$mainDebug\main$1372              main
+C:   000027C0  C$main.c$111$3_1$37                main
+C:   000027C2  A$mainDebug\main$1373              main
+C:   000027C4  A$mainDebug\main$1374              main
+C:   000027C6  A$mainDebug\main$1375              main
+C:   000027C8  A$mainDebug\main$1376              main
+C:   000027CB  A$mainDebug\main$1377              main
+C:   000027CD  A$mainDebug\main$1378              main
+C:   000027CF  A$mainDebug\main$1381              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   000027B9  A$mainDebug\main$1372              main
-C:   000027BA  A$mainDebug\main$1373              main
-C:   000027BB  A$mainDebug\main$1374              main
-C:   000027BE  A$mainDebug\main$1375              main
-C:   000027C1  A$mainDebug\main$1378              main
-C:   000027C1  C$main.c$100$1_0$37                main
-C:   000027C4  A$mainDebug\main$1379              main
-C:   000027C7  A$mainDebug\main$1382              main
-C:   000027C7  C$main.c$101$1_0$37                main
-C:   000027CA  A$mainDebug\main$1383              main
-C:   000027CC  A$mainDebug\main$1384              main
-C:   000027CD  A$mainDebug\main$1385              main
-C:   000027D0  A$mainDebug\main$1386              main
-C:   000027D3  A$mainDebug\main$1389              main
-C:   000027D3  C$main.c$102$1_0$37                main
-C:   000027D6  A$mainDebug\main$1390              main
-C:   000027D9  A$mainDebug\main$1396              main
-C:   000027D9  C$main.c$103$1_0$37                main
-C:   000027D9  C$main.c$105$2_0$38                main
-C:   000027DC  A$mainDebug\main$1397              main
-C:   000027DE  A$mainDebug\main$1402              main
-C:   000027DE  C$main.c$107$1_0$37                main
-C:   000027DE  XG$main$0$0                        main
-C:   000027DF  A$Timerebug\Timer$697              Timer
-C:   000027DF  C$Timer.c$4$0_0$1                  Timer
-C:   000027DF  C$Timer.c$7$1_0$1                  Timer
-C:   000027DF  Fmain$__str_3$0_0$0                main
-C:   000027DF  Fmain$__str_4$0_0$0                main
-C:   000027DF  G$timer_init$0$0                   Timer
-C:   000027DF  _timer_init                        Timer
-C:   000027E2  A$Timerebug\Timer$700              Timer
-C:   000027E2  C$Timer.c$9$1_0$1                  Timer
-C:   000027E5  A$Timerebug\Timer$703              Timer
-C:   000027E5  C$Timer.c$10$1_0$1                 Timer
-C:   000027E8  A$Timerebug\Timer$707              Timer
-C:   000027E8  C$Timer.c$11$1_0$1                 Timer
-C:   000027EA  A$Timerebug\Timer$710              Timer
-C:   000027EA  C$Timer.c$12$1_0$1                 Timer
-C:   000027EC  A$Timerebug\Timer$711              Timer
-C:   000027EE  A$Timerebug\Timer$713              Timer
-C:   000027EF  A$Timerebug\Timer$714              Timer
-C:   000027F1  A$Timerebug\Timer$715              Timer
-C:   000027F3  A$Timerebug\Timer$718              Timer
-C:   000027F3  C$Timer.c$13$1_0$1                 Timer
-C:   000027F5  A$Timerebug\Timer$719              Timer
-C:   000027F7  A$Timerebug\Timer$721              Timer
-C:   000027F8  A$Timerebug\Timer$722              Timer
-C:   000027FA  A$Timerebug\Timer$723              Timer
-C:   000027FC  A$Timerebug\Timer$728              Timer
-C:   000027FC  C$Timer.c$14$1_0$1                 Timer
-C:   000027FC  XG$timer_init$0$0                  Timer
+C:   000027CF  C$main.c$112$3_1$37                main
+C:   000027D1  A$mainDebug\main$1382              main
+C:   000027D3  A$mainDebug\main$1383              main
+C:   000027D5  A$mainDebug\main$1384              main
+C:   000027D7  A$mainDebug\main$1385              main
+C:   000027DA  A$mainDebug\main$1386              main
+C:   000027DC  A$mainDebug\main$1387              main
+C:   000027DE  A$mainDebug\main$1390              main
+C:   000027DE  C$main.c$113$3_1$37                main
+C:   000027E0  A$mainDebug\main$1391              main
+C:   000027E2  A$mainDebug\main$1392              main
+C:   000027E4  A$mainDebug\main$1393              main
+C:   000027E6  A$mainDebug\main$1394              main
+C:   000027E9  A$mainDebug\main$1395              main
+C:   000027EB  A$mainDebug\main$1396              main
+C:   000027ED  A$mainDebug\main$1400              main
+C:   000027ED  C$main.c$115$2_1$36                main
+C:   000027F0  A$mainDebug\main$1401              main
+C:   000027F1  A$mainDebug\main$1402              main
+C:   000027F2  A$mainDebug\main$1405              main
+C:   000027F2  C$main.c$116$2_1$36                main
+C:   000027F5  A$mainDebug\main$1406              main
+C:   000027F7  A$mainDebug\main$1407              main
+C:   000027FA  A$mainDebug\main$1408              main
+C:   000027FB  A$mainDebug\main$1409              main
+C:   000027FC  A$mainDebug\main$1412              main
+C:   000027FC  C$main.c$117$2_1$36                main
+C:   000027FD  A$mainDebug\main$1413              main
+C:   000027FE  A$mainDebug\main$1414              main
+C:   00002801  A$mainDebug\main$1415              main
+C:   00002804  A$mainDebug\main$1417              main
+C:   00002807  A$mainDebug\main$1418              main
+C:   00002809  A$mainDebug\main$1420              main
+C:   0000280C  A$mainDebug\main$1421              main
+C:   0000280E  A$mainDebug\main$1423              main
+C:   00002811  A$mainDebug\main$1427              main
+C:   00002811  C$main.c$120$3_1$38                main
+C:   00002813  A$mainDebug\main$1428              main
+C:   00002815  A$mainDebug\main$1429              main
+C:   00002817  A$mainDebug\main$1430              main
+C:   00002819  A$mainDebug\main$1431              main
+C:   0000281C  A$mainDebug\main$1432              main
+C:   0000281E  A$mainDebug\main$1433              main
+C:   00002820  A$mainDebug\main$1436              main
+C:   00002820  C$main.c$121$3_1$38                main
+C:   00002823  A$mainDebug\main$1437              main
+C:   00002825  A$mainDebug\main$1440              main
+C:   00002825  C$main.c$122$3_1$38                main
+C:   00002827  A$mainDebug\main$1441              main
+C:   00002829  A$mainDebug\main$1442              main
+C:   0000282B  A$mainDebug\main$1443              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 42.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   000027FD  A$UARTDebug\UART$702               UART
-C:   000027FD  C$UART.c$3$0_0$1                   UART
-C:   000027FD  C$UART.c$5$1_0$1                   UART
-C:   000027FD  G$uartinit$0$0                     UART
-C:   000027FD  _uartinit                          UART
-C:   00002800  A$UARTDebug\UART$705               UART
-C:   00002800  C$UART.c$6$1_0$1                   UART
-C:   00002803  A$UARTDebug\UART$708               UART
-C:   00002803  C$UART.c$7$1_0$1                   UART
-C:   00002806  A$UARTDebug\UART$712               UART
-C:   00002806  C$UART.c$8$1_0$1                   UART
-C:   00002808  A$UARTDebug\UART$717               UART
-C:   00002808  C$UART.c$9$1_0$1                   UART
-C:   00002808  XG$uartinit$0$0                    UART
-C:   00002809  A$UARTDebug\UART$730               UART
-C:   00002809  C$UART.c$10$1_0$3                  UART
-C:   00002809  G$putchar$0$0                      UART
-C:   00002809  _putchar                           UART
-C:   0000280B  A$UARTDebug\UART$731               UART
-C:   0000280D  A$UARTDebug\UART$732               UART
-C:   00002810  A$UARTDebug\UART$733               UART
-C:   00002811  A$UARTDebug\UART$734               UART
-C:   00002812  A$UARTDebug\UART$735               UART
-C:   00002813  A$UARTDebug\UART$736               UART
-C:   00002814  A$UARTDebug\UART$743               UART
-C:   00002814  C$UART.c$12$1_0$3                  UART
-C:   00002814  C$UART.c$13$1_0$3                  UART
-C:   00002817  A$UARTDebug\UART$744               UART
-C:   00002819  A$UARTDebug\UART$748               UART
-C:   00002819  C$UART.c$14$1_0$3                  UART
-C:   0000281C  A$UARTDebug\UART$749               UART
-C:   0000281D  A$UARTDebug\UART$750               UART
-C:   0000281E  A$UARTDebug\UART$751               UART
-C:   0000281F  A$UARTDebug\UART$752               UART
-C:   00002820  A$UARTDebug\UART$753               UART
-C:   00002822  A$UARTDebug\UART$756               UART
-C:   00002822  C$UART.c$15$1_0$3                  UART
-C:   00002825  A$UARTDebug\UART$761               UART
-C:   00002825  C$UART.c$16$1_0$3                  UART
-C:   00002825  XG$putchar$0$0                     UART
-C:   00002826  A$UARTDebug\UART$778               UART
-C:   00002826  C$UART.c$17$1_0$4                  UART
-C:   00002826  C$UART.c$19$1_0$4                  UART
-C:   00002826  C$UART.c$21$1_0$4                  UART
-C:   00002826  G$getchar$0$0                      UART
-C:   00002826  _getchar                           UART
-C:   00002829  A$UARTDebug\UART$779               UART
-C:   0000282B  A$UARTDebug\UART$783               UART
-C:   0000282B  C$UART.c$22$1_0$4                  UART
-C:   0000282D  A$UARTDebug\UART$784               UART
-C:   0000282F  A$UARTDebug\UART$785               UART
+C:   0000282D  A$mainDebug\main$1444              main
+C:   0000282F  A$mainDebug\main$1445              main
+C:   00002831  A$mainDebug\main$1446              main
+C:   00002833  A$mainDebug\main$1447              main
+C:   00002835  A$mainDebug\main$1448              main
+C:   00002837  A$mainDebug\main$1449              main
+C:   0000283A  A$mainDebug\main$1450              main
+C:   0000283C  A$mainDebug\main$1451              main
+C:   0000283E  A$mainDebug\main$1452              main
+C:   00002840  A$mainDebug\main$1455              main
+C:   00002840  C$main.c$123$3_1$38                main
+C:   00002843  A$mainDebug\main$1456              main
+C:   00002845  A$mainDebug\main$1457              main
+C:   00002846  A$mainDebug\main$1458              main
+C:   00002849  A$mainDebug\main$1459              main
+C:   0000284C  A$mainDebug\main$1460              main
+C:   0000284E  A$mainDebug\main$1463              main
+C:   0000284E  C$main.c$124$3_1$38                main
+C:   00002850  A$mainDebug\main$1464              main
+C:   00002853  A$mainDebug\main$1467              main
+C:   00002853  C$main.c$125$3_1$38                main
+C:   00002856  A$mainDebug\main$1473              main
+C:   00002856  C$main.c$126$3_1$38                main
+C:   00002856  C$main.c$127$3_1$38                main
+C:   00002858  A$mainDebug\main$1474              main
+C:   0000285A  A$mainDebug\main$1475              main
+C:   0000285C  A$mainDebug\main$1476              main
+C:   0000285E  A$mainDebug\main$1477              main
+C:   00002861  A$mainDebug\main$1478              main
+C:   00002863  A$mainDebug\main$1479              main
+C:   00002865  A$mainDebug\main$1485              main
+C:   00002865  C$main.c$128$3_1$38                main
+C:   00002865  C$main.c$130$4_1$39                main
+C:   00002868  A$mainDebug\main$1486              main
+C:   0000286A  A$mainDebug\main$1487              main
+C:   0000286D  A$mainDebug\main$1488              main
+C:   0000286E  A$mainDebug\main$1489              main
+C:   0000286F  A$mainDebug\main$1492              main
+C:   0000286F  C$main.c$131$4_1$39                main
+C:   00002870  A$mainDebug\main$1493              main
+C:   00002872  A$mainDebug\main$1494              main
+C:   00002874  A$mainDebug\main$1495              main
+C:   00002877  A$mainDebug\main$1496              main
+C:   00002878  A$mainDebug\main$1497              main
+C:   00002879  A$mainDebug\main$1498              main
+C:   0000287C  A$mainDebug\main$1502              main
+C:   0000287C  C$main.c$133$5_1$40                main
+C:   0000287E  A$mainDebug\main$1503              main
+C:   00002880  A$mainDebug\main$1504              main
+C:   00002882  A$mainDebug\main$1505              main
+C:   00002884  A$mainDebug\main$1506              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 43.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000226D    00000903 =        2307. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00002831  A$UARTDebug\UART$786               UART
-C:   00002833  A$UARTDebug\UART$791               UART
-C:   00002833  C$UART.c$23$1_0$4                  UART
-C:   00002833  XG$getchar$0$0                     UART
-C:   00002834  _printf_tiny                       printf_tiny
-C:   0000293D  __modsint                          _modsint
-C:   000029A5  __moduint                          _moduint
-C:   00002A51  __divsint                          _divsint
-C:   00002AC3  __divuint                          _divuint
-C:   00002B50  __gptrget                          _gptrget
-C:   00002B6C  __sdcc_external_startup            _startup
-
+C:   00002887  A$mainDebug\main$1507              main
+C:   00002889  A$mainDebug\main$1508              main
+C:   0000288B  A$mainDebug\main$1512              main
+C:   0000288B  C$main.c$135$3_1$38                main
+C:   0000288E  A$mainDebug\main$1513              main
+C:   0000288F  A$mainDebug\main$1514              main
+C:   00002890  A$mainDebug\main$1515              main
+C:   00002892  A$mainDebug\main$1516              main
+C:   00002894  A$mainDebug\main$1517              main
+C:   00002897  A$mainDebug\main$1518              main
+C:   00002898  A$mainDebug\main$1519              main
+C:   00002899  A$mainDebug\main$1520              main
+C:   0000289C  A$mainDebug\main$1522              main
+C:   0000289E  A$mainDebug\main$1525              main
+C:   0000289E  C$main.c$136$3_1$38                main
+C:   000028A1  A$mainDebug\main$1526              main
+C:   000028A2  A$mainDebug\main$1527              main
+C:   000028A3  A$mainDebug\main$1528              main
+C:   000028A5  A$mainDebug\main$1529              main
+C:   000028A7  A$mainDebug\main$1530              main
+C:   000028A9  A$mainDebug\main$1531              main
+C:   000028AB  A$mainDebug\main$1532              main
+C:   000028AD  A$mainDebug\main$1533              main
+C:   000028AF  A$mainDebug\main$1534              main
+C:   000028B1  A$mainDebug\main$1535              main
+C:   000028B4  A$mainDebug\main$1536              main
+C:   000028B6  A$mainDebug\main$1537              main
+C:   000028B8  A$mainDebug\main$1538              main
+C:   000028BA  A$mainDebug\main$1541              main
+C:   000028BA  C$main.c$137$3_1$38                main
+C:   000028BC  A$mainDebug\main$1542              main
+C:   000028BE  A$mainDebug\main$1543              main
+C:   000028C0  A$mainDebug\main$1544              main
+C:   000028C2  A$mainDebug\main$1545              main
+C:   000028C5  A$mainDebug\main$1546              main
+C:   000028C7  A$mainDebug\main$1547              main
+C:   000028C9  A$mainDebug\main$1553              main
+C:   000028C9  C$main.c$138$3_1$38                main
+C:   000028C9  C$main.c$140$4_1$41                main
+C:   000028CC  A$mainDebug\main$1554              main
+C:   000028CE  A$mainDebug\main$1555              main
+C:   000028D1  A$mainDebug\main$1556              main
+C:   000028D2  A$mainDebug\main$1557              main
+C:   000028D3  A$mainDebug\main$1560              main
+C:   000028D3  C$main.c$141$4_1$41                main
+C:   000028D4  A$mainDebug\main$1561              main
+C:   000028D6  A$mainDebug\main$1562              main
+C:   000028D7  A$mainDebug\main$1565              main
+C:   000028D7  C$main.c$142$4_1$41                main
+C:   000028D8  A$mainDebug\main$1566              main
+C:   000028D9  A$mainDebug\main$1567              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 44.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CONST                               00002B70    0000001A =          26. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00002B70  Fmain$__str_0$0_0$0                main
-
+C:   000028DC  A$mainDebug\main$1568              main
+C:   000028DE  A$mainDebug\main$1570              main
+C:   000028E1  A$mainDebug\main$1571              main
+C:   000028E2  A$mainDebug\main$1572              main
+C:   000028E4  A$mainDebug\main$1576              main
+C:   000028E4  C$main.c$143$5_1$42                main
+C:   000028E7  A$mainDebug\main$1577              main
+C:   000028E9  A$mainDebug\main$1578              main
+C:   000028EC  A$mainDebug\main$1579              main
+C:   000028ED  A$mainDebug\main$1580              main
+C:   000028EE  A$mainDebug\main$1583              main
+C:   000028EE  C$main.c$144$5_1$42                main
+C:   000028EF  A$mainDebug\main$1584              main
+C:   000028F1  A$mainDebug\main$1585              main
+C:   000028F2  A$mainDebug\main$1588              main
+C:   000028F2  C$main.c$145$5_1$42                main
+C:   000028F5  A$mainDebug\main$1589              main
+C:   000028F6  A$mainDebug\main$1590              main
+C:   000028F9  A$mainDebug\main$1591              main
+C:   000028FA  A$mainDebug\main$1592              main
+C:   000028FB  A$mainDebug\main$1593              main
+C:   000028FE  A$mainDebug\main$1594              main
+C:   000028FF  A$mainDebug\main$1595              main
+C:   00002900  A$mainDebug\main$1596              main
+C:   00002903  A$mainDebug\main$1597              main
+C:   00002904  A$mainDebug\main$1598              main
+C:   00002905  A$mainDebug\main$1599              main
+C:   00002907  A$mainDebug\main$1603              main
+C:   00002907  C$main.c$149$5_1$43                main
+C:   0000290A  A$mainDebug\main$1604              main
+C:   0000290B  A$mainDebug\main$1605              main
+C:   0000290C  A$mainDebug\main$1608              main
+C:   0000290C  C$main.c$150$5_1$43                main
+C:   0000290F  A$mainDebug\main$1609              main
+C:   00002910  A$mainDebug\main$1610              main
+C:   00002913  A$mainDebug\main$1611              main
+C:   00002914  A$mainDebug\main$1615              main
+C:   00002914  C$main.c$154$4_1$41                main
+C:   00002917  A$mainDebug\main$1616              main
+C:   00002918  A$mainDebug\main$1617              main
+C:   0000291A  A$mainDebug\main$1618              main
+C:   0000291C  A$mainDebug\main$1621              main
+C:   0000291C  C$main.c$156$5_1$44                main
+C:   0000291E  A$mainDebug\main$1622              main
+C:   00002920  A$mainDebug\main$1623              main
+C:   00002922  A$mainDebug\main$1624              main
+C:   00002924  A$mainDebug\main$1625              main
+C:   00002927  A$mainDebug\main$1626              main
+C:   00002929  A$mainDebug\main$1627              main
+C:   0000292B  A$mainDebug\main$1631              main
+C:   0000292B  C$main.c$158$3_1$38                main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 45.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-XINIT                               00002B8A    00000010 =          16. bytes (REL,CON,CODE)
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00002B8A  FLCD_Functions$__xinit_column_po   LCD_Functions
-C:   00002B8C  FLCD_Functions$__xinit_row_pos$0   LCD_Functions
-C:   00002B8E  Fmain$__xinit_count$0_0$0          main
-C:   00002B96  Fmain$__xinit_flag$0_0$0           main
-C:   00002B97  Fmain$__xinit_milli$0_0$0          main
-C:   00002B98  Fmain$__xinit_seconds$0_0$0        main
-C:   00002B99  Fmain$__xinit_minutes$0_0$0        main
-
+C:   0000292E  A$mainDebug\main$1632              main
+C:   0000292F  A$mainDebug\main$1633              main
+C:   00002931  A$mainDebug\main$1634              main
+C:   00002933  A$mainDebug\main$1637              main
+C:   00002933  C$main.c$159$3_1$38                main
+C:   00002936  A$mainDebug\main$1638              main
+C:   00002937  A$mainDebug\main$1639              main
+C:   00002938  A$mainDebug\main$1640              main
+C:   0000293A  A$mainDebug\main$1641              main
+C:   0000293C  A$mainDebug\main$1642              main
+C:   0000293E  A$mainDebug\main$1643              main
+C:   00002940  A$mainDebug\main$1644              main
+C:   00002942  A$mainDebug\main$1645              main
+C:   00002944  A$mainDebug\main$1646              main
+C:   00002946  A$mainDebug\main$1647              main
+C:   00002949  A$mainDebug\main$1648              main
+C:   0000294B  A$mainDebug\main$1649              main
+C:   0000294D  A$mainDebug\main$1650              main
+C:   0000294F  A$mainDebug\main$1653              main
+C:   0000294F  C$main.c$160$3_1$38                main
+C:   00002951  A$mainDebug\main$1654              main
+C:   00002953  A$mainDebug\main$1655              main
+C:   00002955  A$mainDebug\main$1656              main
+C:   00002957  A$mainDebug\main$1657              main
+C:   0000295A  A$mainDebug\main$1658              main
+C:   0000295C  A$mainDebug\main$1659              main
+C:   0000295E  A$mainDebug\main$1662              main
+C:   0000295E  C$main.c$161$3_1$38                main
+C:   00002961  A$mainDebug\main$1663              main
+C:   00002963  A$mainDebug\main$1666              main
+C:   00002963  C$main.c$162$3_1$38                main
+C:   00002965  A$mainDebug\main$1667              main
+C:   00002967  A$mainDebug\main$1668              main
+C:   00002969  A$mainDebug\main$1669              main
+C:   0000296B  A$mainDebug\main$1670              main
+C:   0000296D  A$mainDebug\main$1671              main
+C:   0000296F  A$mainDebug\main$1672              main
+C:   00002971  A$mainDebug\main$1673              main
+C:   00002973  A$mainDebug\main$1674              main
+C:   00002975  A$mainDebug\main$1675              main
+C:   00002978  A$mainDebug\main$1676              main
+C:   0000297A  A$mainDebug\main$1677              main
+C:   0000297C  A$mainDebug\main$1678              main
+C:   0000297E  A$mainDebug\main$1681              main
+C:   0000297E  C$main.c$163$3_1$38                main
+C:   00002981  A$mainDebug\main$1682              main
+C:   00002982  A$mainDebug\main$1683              main
+C:   00002984  A$mainDebug\main$1684              main
+C:   00002985  A$mainDebug\main$1685              main
+C:   00002988  A$mainDebug\main$1686              main
+C:   00002989  A$mainDebug\main$1687              main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 46.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000298C  A$mainDebug\main$1688              main
+C:   0000298D  A$mainDebug\main$1689              main
+C:   0000298F  A$mainDebug\main$1690              main
+C:   00002992  A$mainDebug\main$1691              main
+C:   00002994  A$mainDebug\main$1694              main
+C:   00002994  C$main.c$164$3_1$38                main
+C:   00002996  A$mainDebug\main$1695              main
+C:   00002999  A$mainDebug\main$1701              main
+C:   00002999  C$main.c$171$2_1$36                main
+C:   00002999  C$main.c$172$2_1$36                main
+C:   0000299C  A$mainDebug\main$1704              main
+C:   0000299C  C$main.c$173$1_1$35                main
+C:   0000299F  A$mainDebug\main$1705              main
+C:   000029A0  A$mainDebug\main$1706              main
+C:   000029A1  A$mainDebug\main$1707              main
+C:   000029A4  A$mainDebug\main$1708              main
+C:   000029A6  A$mainDebug\main$1710              main
+C:   000029A9  A$mainDebug\main$1716              main
+C:   000029A9  C$main.c$175$1_1$34                main
+C:   000029A9  XG$main$0$0                        main
+C:   000029AA  A$Timerebug\Timer$718              Timer
+C:   000029AA  C$Timer.c$13$0_0$10                Timer
+C:   000029AA  C$Timer.c$16$1_0$10                Timer
+C:   000029AA  Fmain$__str_1$0_0$0                main
+C:   000029AA  Fmain$__str_12$0_0$0               main
+C:   000029AA  Fmain$__str_13$0_0$0               main
+C:   000029AA  Fmain$__str_14$0_0$0               main
+C:   000029AA  Fmain$__str_15$0_0$0               main
+C:   000029AA  Fmain$__str_16$0_0$0               main
+C:   000029AA  Fmain$__str_17$0_0$0               main
+C:   000029AA  Fmain$__str_18$0_0$0               main
+C:   000029AA  Fmain$__str_19$0_0$0               main
+C:   000029AA  Fmain$__str_2$0_0$0                main
+C:   000029AA  Fmain$__str_20$0_0$0               main
+C:   000029AA  Fmain$__str_21$0_0$0               main
+C:   000029AA  Fmain$__str_22$0_0$0               main
+C:   000029AA  Fmain$__str_23$0_0$0               main
+C:   000029AA  Fmain$__str_24$0_0$0               main
+C:   000029AA  Fmain$__str_3$0_0$0                main
+C:   000029AA  Fmain$__str_4$0_0$0                main
+C:   000029AA  Fmain$__str_5$0_0$0                main
+C:   000029AA  Fmain$__str_6$0_0$0                main
+C:   000029AA  Fmain$__str_7$0_0$0                main
+C:   000029AA  Fmain$__str_8$0_0$0                main
+C:   000029AA  Fmain$__str_9$0_0$0                main
+C:   000029AA  G$timer_init$0$0                   Timer
+C:   000029AA  _timer_init                        Timer
+C:   000029AD  A$Timerebug\Timer$721              Timer
+C:   000029AD  C$Timer.c$18$1_0$10                Timer
+C:   000029B0  A$Timerebug\Timer$724              Timer
+C:   000029B0  C$Timer.c$19$1_0$10                Timer
+ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000029B3  A$Timerebug\Timer$728              Timer
+C:   000029B3  C$Timer.c$20$1_0$10                Timer
+C:   000029B5  A$Timerebug\Timer$731              Timer
+C:   000029B5  C$Timer.c$21$1_0$10                Timer
+C:   000029B7  A$Timerebug\Timer$732              Timer
+C:   000029B9  A$Timerebug\Timer$734              Timer
+C:   000029BA  A$Timerebug\Timer$735              Timer
+C:   000029BC  A$Timerebug\Timer$736              Timer
+C:   000029BE  A$Timerebug\Timer$739              Timer
+C:   000029BE  C$Timer.c$22$1_0$10                Timer
+C:   000029C0  A$Timerebug\Timer$740              Timer
+C:   000029C2  A$Timerebug\Timer$742              Timer
+C:   000029C3  A$Timerebug\Timer$743              Timer
+C:   000029C5  A$Timerebug\Timer$744              Timer
+C:   000029C7  A$Timerebug\Timer$749              Timer
+C:   000029C7  C$Timer.c$23$1_0$10                Timer
+C:   000029C7  XG$timer_init$0$0                  Timer
+C:   000029C8  A$Timerebug\Timer$765              Timer
+C:   000029C8  C$Timer.c$25$1_0$12                Timer
+C:   000029C8  G$inttostr$0$0                     Timer
+C:   000029C8  _inttostr                          Timer
+C:   000029CA  A$Timerebug\Timer$766              Timer
+C:   000029CD  A$Timerebug\Timer$767              Timer
+C:   000029CE  A$Timerebug\Timer$770              Timer
+C:   000029CE  C$Timer.c$27$2_0$13                Timer
+C:   000029D0  A$Timerebug\Timer$772              Timer
+C:   000029D3  A$Timerebug\Timer$773              Timer
+C:   000029D4  A$Timerebug\Timer$774              Timer
+C:   000029D5  A$Timerebug\Timer$775              Timer
+C:   000029D6  A$Timerebug\Timer$776              Timer
+C:   000029D8  A$Timerebug\Timer$779              Timer
+C:   000029D8  C$Timer.c$28$2_0$13                Timer
+C:   000029D9  A$Timerebug\Timer$782              Timer
+C:   000029D9  C$Timer.c$29$2_0$13                Timer
+C:   000029DA  A$Timerebug\Timer$783              Timer
+C:   000029DC  A$Timerebug\Timer$784              Timer
+C:   000029DD  A$Timerebug\Timer$785              Timer
+C:   000029DE  A$Timerebug\Timer$786              Timer
+C:   000029E0  A$Timerebug\Timer$787              Timer
+C:   000029E1  A$Timerebug\Timer$788              Timer
+C:   000029E3  A$Timerebug\Timer$789              Timer
+C:   000029E6  A$Timerebug\Timer$790              Timer
+C:   000029E8  A$Timerebug\Timer$791              Timer
+C:   000029E9  A$Timerebug\Timer$792              Timer
+C:   000029EA  A$Timerebug\Timer$793              Timer
+C:   000029EB  A$Timerebug\Timer$794              Timer
+C:   000029EC  A$Timerebug\Timer$795              Timer
+C:   000029EE  A$Timerebug\Timer$796              Timer
+C:   000029F0  A$Timerebug\Timer$797              Timer
+C:   000029F2  A$Timerebug\Timer$798              Timer
+C:   000029F4  A$Timerebug\Timer$799              Timer
+ASxxxx Linker V03.00 + NoICE + sdld,  page 48.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000029F6  A$Timerebug\Timer$800              Timer
+C:   000029F8  A$Timerebug\Timer$801              Timer
+C:   000029FA  A$Timerebug\Timer$802              Timer
+C:   000029FD  A$Timerebug\Timer$803              Timer
+C:   000029FF  A$Timerebug\Timer$804              Timer
+C:   00002A01  A$Timerebug\Timer$805              Timer
+C:   00002A03  A$Timerebug\Timer$806              Timer
+C:   00002A05  A$Timerebug\Timer$807              Timer
+C:   00002A07  A$Timerebug\Timer$808              Timer
+C:   00002A09  A$Timerebug\Timer$809              Timer
+C:   00002A0A  A$Timerebug\Timer$810              Timer
+C:   00002A0C  A$Timerebug\Timer$811              Timer
+C:   00002A0E  A$Timerebug\Timer$812              Timer
+C:   00002A0F  A$Timerebug\Timer$815              Timer
+C:   00002A0F  C$Timer.c$30$1_0$12                Timer
+C:   00002A12  A$Timerebug\Timer$816              Timer
+C:   00002A14  A$Timerebug\Timer$817              Timer
+C:   00002A15  A$Timerebug\Timer$818              Timer
+C:   00002A16  A$Timerebug\Timer$819              Timer
+C:   00002A17  A$Timerebug\Timer$820              Timer
+C:   00002A18  A$Timerebug\Timer$821              Timer
+C:   00002A1A  A$Timerebug\Timer$822              Timer
+C:   00002A1C  A$Timerebug\Timer$823              Timer
+C:   00002A1F  A$Timerebug\Timer$824              Timer
+C:   00002A21  A$Timerebug\Timer$825              Timer
+C:   00002A23  A$Timerebug\Timer$826              Timer
+C:   00002A25  A$Timerebug\Timer$827              Timer
+C:   00002A28  A$Timerebug\Timer$828              Timer
+C:   00002A29  A$Timerebug\Timer$829              Timer
+C:   00002A2A  A$Timerebug\Timer$830              Timer
+C:   00002A2C  A$Timerebug\Timer$834              Timer
+C:   00002A2C  C$Timer.c$32$3_0$15                Timer
+C:   00002A2E  A$Timerebug\Timer$836              Timer
+C:   00002A2F  A$Timerebug\Timer$837              Timer
+C:   00002A30  A$Timerebug\Timer$838              Timer
+C:   00002A31  A$Timerebug\Timer$839              Timer
+C:   00002A33  A$Timerebug\Timer$842              Timer
+C:   00002A33  C$Timer.c$33$3_0$15                Timer
+C:   00002A34  A$Timerebug\Timer$843              Timer
+C:   00002A36  A$Timerebug\Timer$844              Timer
+C:   00002A38  A$Timerebug\Timer$845              Timer
+C:   00002A39  A$Timerebug\Timer$846              Timer
+C:   00002A3B  A$Timerebug\Timer$847              Timer
+C:   00002A3D  A$Timerebug\Timer$848              Timer
+C:   00002A3F  A$Timerebug\Timer$849              Timer
+C:   00002A40  A$Timerebug\Timer$852              Timer
+C:   00002A40  C$Timer.c$32$2_0$14                Timer
+C:   00002A41  A$Timerebug\Timer$853              Timer
+C:   00002A43  A$Timerebug\Timer$857              Timer
+C:   00002A43  C$Timer.c$35$1_0$12                Timer
+C:   00002A46  A$Timerebug\Timer$860              Timer
+ASxxxx Linker V03.00 + NoICE + sdld,  page 49.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002A46  C$Timer.c$36$1_0$12                Timer
+C:   00002A49  A$Timerebug\Timer$861              Timer
+C:   00002A4C  A$Timerebug\Timer$864              Timer
+C:   00002A4C  C$Timer.c$37$1_0$12                Timer
+C:   00002A4F  A$Timerebug\Timer$867              Timer
+C:   00002A4F  C$Timer.c$38$1_0$12                Timer
+C:   00002A52  A$Timerebug\Timer$868              Timer
+C:   00002A54  A$Timerebug\Timer$869              Timer
+C:   00002A55  A$Timerebug\Timer$874              Timer
+C:   00002A55  C$Timer.c$39$1_0$12                Timer
+C:   00002A55  XG$inttostr$0$0                    Timer
+C:   00002A56  A$UARTDebug\UART$704               UART
+C:   00002A56  C$UART.c$5$0_0$16                  UART
+C:   00002A56  C$UART.c$7$1_0$16                  UART
+C:   00002A56  G$uartinit$0$0                     UART
+C:   00002A56  _uartinit                          UART
+C:   00002A59  A$UARTDebug\UART$707               UART
+C:   00002A59  C$UART.c$8$1_0$16                  UART
+C:   00002A5C  A$UARTDebug\UART$710               UART
+C:   00002A5C  C$UART.c$9$1_0$16                  UART
+C:   00002A5F  A$UARTDebug\UART$714               UART
+C:   00002A5F  C$UART.c$10$1_0$16                 UART
+C:   00002A61  A$UARTDebug\UART$719               UART
+C:   00002A61  C$UART.c$11$1_0$16                 UART
+C:   00002A61  XG$uartinit$0$0                    UART
+C:   00002A62  A$UARTDebug\UART$732               UART
+C:   00002A62  C$UART.c$12$1_0$18                 UART
+C:   00002A62  G$putchar$0$0                      UART
+C:   00002A62  _putchar                           UART
+C:   00002A64  A$UARTDebug\UART$733               UART
+C:   00002A66  A$UARTDebug\UART$734               UART
+C:   00002A69  A$UARTDebug\UART$735               UART
+C:   00002A6A  A$UARTDebug\UART$736               UART
+C:   00002A6B  A$UARTDebug\UART$737               UART
+C:   00002A6C  A$UARTDebug\UART$738               UART
+C:   00002A6D  A$UARTDebug\UART$745               UART
+C:   00002A6D  C$UART.c$14$1_0$18                 UART
+C:   00002A6D  C$UART.c$15$1_0$18                 UART
+C:   00002A70  A$UARTDebug\UART$746               UART
+C:   00002A72  A$UARTDebug\UART$750               UART
+C:   00002A72  C$UART.c$16$1_0$18                 UART
+C:   00002A75  A$UARTDebug\UART$751               UART
+C:   00002A76  A$UARTDebug\UART$752               UART
+C:   00002A77  A$UARTDebug\UART$753               UART
+C:   00002A78  A$UARTDebug\UART$754               UART
+C:   00002A79  A$UARTDebug\UART$755               UART
+C:   00002A7B  A$UARTDebug\UART$758               UART
+C:   00002A7B  C$UART.c$17$1_0$18                 UART
+C:   00002A7E  A$UARTDebug\UART$763               UART
+C:   00002A7E  C$UART.c$18$1_0$18                 UART
+C:   00002A7E  XG$putchar$0$0                     UART
+ASxxxx Linker V03.00 + NoICE + sdld,  page 50.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000226D    00000B77 =        2935. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002A7F  A$UARTDebug\UART$777               UART
+C:   00002A7F  C$UART.c$19$1_0$19                 UART
+C:   00002A7F  C$UART.c$21$1_0$19                 UART
+C:   00002A7F  G$getchar$0$0                      UART
+C:   00002A7F  _getchar                           UART
+C:   00002A82  A$UARTDebug\UART$780               UART
+C:   00002A82  C$UART.c$23$2_0$20                 UART
+C:   00002A85  A$UARTDebug\UART$781               UART
+C:   00002A87  A$UARTDebug\UART$786               UART
+C:   00002A87  C$UART.c$25$1_0$19                 UART
+C:   00002A89  A$UARTDebug\UART$789               UART
+C:   00002A89  C$UART.c$26$1_0$19                 UART
+C:   00002A8B  A$UARTDebug\UART$790               UART
+C:   00002A8D  A$UARTDebug\UART$791               UART
+C:   00002A8F  A$UARTDebug\UART$792               UART
+C:   00002A91  A$UARTDebug\UART$797               UART
+C:   00002A91  C$UART.c$27$1_0$19                 UART
+C:   00002A91  XG$getchar$0$0                     UART
+C:   00002A92  A$UARTDebug\UART$813               UART
+C:   00002A92  C$UART.c$28$1_0$21                 UART
+C:   00002A92  C$UART.c$30$1_0$21                 UART
+C:   00002A92  C$UART.c$32$2_0$22                 UART
+C:   00002A92  G$getchar_nonblock$0$0             UART
+C:   00002A92  _getchar_nonblock                  UART
+C:   00002A95  A$UARTDebug\UART$814               UART
+C:   00002A97  A$UARTDebug\UART$818               UART
+C:   00002A97  C$UART.c$33$2_0$22                 UART
+C:   00002A99  A$UARTDebug\UART$819               UART
+C:   00002A9B  A$UARTDebug\UART$820               UART
+C:   00002A9D  A$UARTDebug\UART$821               UART
+C:   00002A9F  A$UARTDebug\UART$822               UART
+C:   00002AA1  A$UARTDebug\UART$826               UART
+C:   00002AA1  C$UART.c$38$2_0$23                 UART
+C:   00002AA4  A$UARTDebug\UART$829               UART
+C:   00002AA4  C$UART.c$39$2_0$23                 UART
+C:   00002AA7  A$UARTDebug\UART$835               UART
+C:   00002AA7  C$UART.c$42$1_0$21                 UART
+C:   00002AA7  XG$getchar_nonblock$0$0            UART
+C:   00002AA8  _printf_tiny                       printf_tiny
+C:   00002BB1  __modsint                          _modsint
+C:   00002C19  __moduint                          _moduint
+C:   00002CC5  __divsint                          _divsint
+C:   00002D37  __divuint                          _divuint
+C:   00002DC4  __gptrget                          _gptrget
+C:   00002DE0  __sdcc_external_startup            _startup
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 51.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CONST                               00002DE4    00000399 =         921. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002DE4  Fmain$__str_0$0_0$0                main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 52.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XINIT                               0000317D    00000010 =          16. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000317D  FLCD_Functions$__xinit_column_po   LCD_Functions
+C:   0000317F  FLCD_Functions$__xinit_row_pos$0   LCD_Functions
+C:   00003181  Fmain$__xinit_count$0_0$0          main
+C:   00003189  Fmain$__xinit_flag$0_0$0           main
+C:   0000318A  Fmain$__xinit_milli$0_0$0          main
+C:   0000318B  Fmain$__xinit_seconds$0_0$0        main
+C:   0000318C  Fmain$__xinit_minutes$0_0$0        main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 53.
 
 Files Linked                              [ module(s) ]
 
@@ -2062,7 +2521,7 @@ C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
 C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
                                           [ _startup.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 54.
 
 User Base Address Definitions
 

@@ -736,11 +736,11 @@
                            000244   736 	C$LCD_Functions.c$143$2_0$45 ==.
                                     737 ;	LCD_Functions.c:143: break;
                            000244   738 	C$LCD_Functions.c$144$2_0$45 ==.
-                                    739 ;	LCD_Functions.c:144: case 2: lcd_gotoaddr(40+column);
+                                    739 ;	LCD_Functions.c:144: case 2: lcd_gotoaddr(63+column);
       000244 80 20            [24]  740 	sjmp	00107$
       000246                        741 00102$:
       000246 8F 06            [24]  742 	mov	ar6,r7
-      000248 74 28            [12]  743 	mov	a,#0x28
+      000248 74 3F            [12]  743 	mov	a,#0x3f
       00024A 2E               [12]  744 	add	a,r6
       00024B F5 82            [12]  745 	mov	dpl,a
       00024D 12r01rF9         [24]  746 	lcall	_lcd_gotoaddr

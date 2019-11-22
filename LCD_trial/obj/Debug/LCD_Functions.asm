@@ -736,11 +736,11 @@ _lcd_gotoxy:
 	C$LCD_Functions.c$143$2_0$45 ==.
 ;	LCD_Functions.c:143: break;
 	C$LCD_Functions.c$144$2_0$45 ==.
-;	LCD_Functions.c:144: case 2: lcd_gotoaddr(40+column);
+;	LCD_Functions.c:144: case 2: lcd_gotoaddr(63+column);
 	sjmp	00107$
 00102$:
 	mov	ar6,r7
-	mov	a,#0x28
+	mov	a,#0x3f
 	add	a,r6
 	mov	dpl,a
 	lcall	_lcd_gotoaddr

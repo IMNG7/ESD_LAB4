@@ -141,7 +141,7 @@ void lcd_gotoxy(unsigned char row,unsigned char column)
     {
     case 1: lcd_gotoaddr(column);
             break;
-    case 2: lcd_gotoaddr(40+column);
+    case 2: lcd_gotoaddr(63+column);
             break;
     case 3: lcd_gotoaddr(15+column);
             break;

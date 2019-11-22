@@ -107,11 +107,11 @@
                                     107 ;--------------------------------------------------------
                                     108 	.area XISEG   (XDATA)
                            000000   109 G$column_pos$0_0$0==.
-      00044B                        110 _column_pos::
-      00044B                        111 	.ds 2
+      000450                        110 _column_pos::
+      000450                        111 	.ds 2
                            000002   112 G$row_pos$0_0$0==.
-      00044D                        113 _row_pos::
-      00044D                        114 	.ds 2
+      000452                        113 _row_pos::
+      000452                        114 	.ds 2
                                     115 	.area HOME    (CODE)
                                     116 	.area GSINIT0 (CODE)
                                     117 	.area GSINIT1 (CODE)
@@ -545,13 +545,13 @@
       0023F3 D0 07            [24]  545 	pop	ar7
                            000188   546 	C$LCD_Functions.c$112$2_0$37 ==.
                                     547 ;	LCD_Functions.c:112: column_pos++;
-      0023F5 90 04 4B         [24]  548 	mov	dptr,#_column_pos
+      0023F5 90 04 50         [24]  548 	mov	dptr,#_column_pos
       0023F8 E0               [24]  549 	movx	a,@dptr
       0023F9 FC               [12]  550 	mov	r4,a
       0023FA A3               [24]  551 	inc	dptr
       0023FB E0               [24]  552 	movx	a,@dptr
       0023FC FD               [12]  553 	mov	r5,a
-      0023FD 90 04 4B         [24]  554 	mov	dptr,#_column_pos
+      0023FD 90 04 50         [24]  554 	mov	dptr,#_column_pos
       002400 74 01            [12]  555 	mov	a,#0x01
       002402 2C               [12]  556 	add	a,r4
       002403 F0               [24]  557 	movx	@dptr,a
@@ -561,7 +561,7 @@
       002407 F0               [24]  561 	movx	@dptr,a
                            00019B   562 	C$LCD_Functions.c$113$2_0$37 ==.
                                     563 ;	LCD_Functions.c:113: if(column_pos==16)
-      002408 90 04 4B         [24]  564 	mov	dptr,#_column_pos
+      002408 90 04 50         [24]  564 	mov	dptr,#_column_pos
       00240B E0               [24]  565 	movx	a,@dptr
       00240C FC               [12]  566 	mov	r4,a
       00240D A3               [24]  567 	inc	dptr
@@ -571,13 +571,13 @@
       002413 BD 00 AA         [24]  571 	cjne	r5,#0x00,00103$
                            0001A9   572 	C$LCD_Functions.c$115$3_0$38 ==.
                                     573 ;	LCD_Functions.c:115: row_pos++;
-      002416 90 04 4D         [24]  574 	mov	dptr,#_row_pos
+      002416 90 04 52         [24]  574 	mov	dptr,#_row_pos
       002419 E0               [24]  575 	movx	a,@dptr
       00241A FC               [12]  576 	mov	r4,a
       00241B A3               [24]  577 	inc	dptr
       00241C E0               [24]  578 	movx	a,@dptr
       00241D FD               [12]  579 	mov	r5,a
-      00241E 90 04 4D         [24]  580 	mov	dptr,#_row_pos
+      00241E 90 04 52         [24]  580 	mov	dptr,#_row_pos
       002421 74 01            [12]  581 	mov	a,#0x01
       002423 2C               [12]  582 	add	a,r4
       002424 F0               [24]  583 	movx	@dptr,a
@@ -587,19 +587,19 @@
       002428 F0               [24]  587 	movx	@dptr,a
                            0001BC   588 	C$LCD_Functions.c$116$3_0$38 ==.
                                     589 ;	LCD_Functions.c:116: column_pos=0;
-      002429 90 04 4B         [24]  590 	mov	dptr,#_column_pos
+      002429 90 04 50         [24]  590 	mov	dptr,#_column_pos
       00242C E4               [12]  591 	clr	a
       00242D F0               [24]  592 	movx	@dptr,a
       00242E A3               [24]  593 	inc	dptr
       00242F F0               [24]  594 	movx	@dptr,a
                            0001C3   595 	C$LCD_Functions.c$117$3_0$38 ==.
                                     596 ;	LCD_Functions.c:117: lcd_gotoxy(row_pos,column_pos);
-      002430 90 04 4D         [24]  597 	mov	dptr,#_row_pos
+      002430 90 04 52         [24]  597 	mov	dptr,#_row_pos
       002433 E0               [24]  598 	movx	a,@dptr
       002434 FC               [12]  599 	mov	r4,a
       002435 A3               [24]  600 	inc	dptr
       002436 E0               [24]  601 	movx	a,@dptr
-      002437 90 04 4B         [24]  602 	mov	dptr,#_column_pos
+      002437 90 04 50         [24]  602 	mov	dptr,#_column_pos
       00243A E0               [24]  603 	movx	a,@dptr
       00243B FB               [12]  604 	mov	r3,a
       00243C A3               [24]  605 	inc	dptr
@@ -700,7 +700,7 @@
       002480 90 04 10         [24]  700 	mov	dptr,#_lcd_gotoxy_PARM_2
       002483 E0               [24]  701 	movx	a,@dptr
       002484 FF               [12]  702 	mov	r7,a
-      002485 90 04 4B         [24]  703 	mov	dptr,#_column_pos
+      002485 90 04 50         [24]  703 	mov	dptr,#_column_pos
       002488 F0               [24]  704 	movx	@dptr,a
       002489 E4               [12]  705 	clr	a
       00248A A3               [24]  706 	inc	dptr
@@ -710,7 +710,7 @@
       00248C 90 04 11         [24]  710 	mov	dptr,#_lcd_gotoxy_row_65536_43
       00248F E0               [24]  711 	movx	a,@dptr
       002490 FE               [12]  712 	mov	r6,a
-      002491 90 04 4D         [24]  713 	mov	dptr,#_row_pos
+      002491 90 04 52         [24]  713 	mov	dptr,#_row_pos
       002494 F0               [24]  714 	movx	@dptr,a
       002495 E4               [12]  715 	clr	a
       002496 A3               [24]  716 	inc	dptr
@@ -736,11 +736,11 @@
                            000244   736 	C$LCD_Functions.c$143$2_0$45 ==.
                                     737 ;	LCD_Functions.c:143: break;
                            000244   738 	C$LCD_Functions.c$144$2_0$45 ==.
-                                    739 ;	LCD_Functions.c:144: case 2: lcd_gotoaddr(40+column);
+                                    739 ;	LCD_Functions.c:144: case 2: lcd_gotoaddr(63+column);
       0024B1 80 20            [24]  740 	sjmp	00107$
       0024B3                        741 00102$:
       0024B3 8F 06            [24]  742 	mov	ar6,r7
-      0024B5 74 28            [12]  743 	mov	a,#0x28
+      0024B5 74 3F            [12]  743 	mov	a,#0x3f
       0024B7 2E               [12]  744 	add	a,r6
       0024B8 F5 82            [12]  745 	mov	dpl,a
       0024BA 12 24 66         [24]  746 	lcall	_lcd_gotoaddr
@@ -777,9 +777,9 @@
                                     777 	.area CONST   (CODE)
                                     778 	.area XINIT   (CODE)
                            000000   779 FLCD_Functions$__xinit_column_pos$0_0$0 == .
-      002B8A                        780 __xinit__column_pos:
-      002B8A 00 00                  781 	.byte #0x00, #0x00	; 0
+      00317D                        780 __xinit__column_pos:
+      00317D 00 00                  781 	.byte #0x00, #0x00	; 0
                            000002   782 FLCD_Functions$__xinit_row_pos$0_0$0 == .
-      002B8C                        783 __xinit__row_pos:
-      002B8C 00 00                  784 	.byte #0x00, #0x00	; 0
+      00317F                        783 __xinit__row_pos:
+      00317F 00 00                  784 	.byte #0x00, #0x00	; 0
                                     785 	.area CABS    (ABS,CODE)
