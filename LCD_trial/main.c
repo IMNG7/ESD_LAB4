@@ -58,7 +58,7 @@ void time_show()
             seconds=0;
         }
         hours=minutes/60;
-        lcd_gotoxy(4,6);
+        lcd_gotoxy(4,5);
         inttostr(hours);
         inttostr(minutes);
         inttostr(seconds);
@@ -107,15 +107,19 @@ void main(void)
         {   printf_tiny("\n\r Your Options Are:");
             printf_tiny("\n\r 1. Print the character at the starting.");
             printf_tiny("\n\r 2. Print the character at your place of choosing.");
-            printf_tiny("\n\r 3. Help Menu");
-            printf_tiny("\n\r 4. Clear the Screen.");
-            printf_tiny("\n\r 5. Exit");
+            printf_tiny("\n\r 3. Reset The clock.");
+            printf_tiny("\n\r 4. Stop The clock.");
+            printf_tiny("\n\r 5. Restart The clock.");
+            printf_tiny("\n\r 6. Clear the Screen.");
+            printf_tiny("\n\r 7. Help Menu");
+            printf_tiny("\n\r 8. Exit");
             printf_tiny("\n\r Enter your choice:");
         }
         choice=0;
-        choice=getchar_nonblock();
+        choice=getchar();
         switch(choice)
-        {   case '0':
+        {
+             case '0':
                         break;
             case '1':   printf_tiny("\n\rEnter the character:");
                         ch=getchar();
@@ -163,13 +167,24 @@ void main(void)
                         lcd_gotoxy(row_value-'0',column_value);
                         LCD_putch(ch);
                         break;
-            case '3': break;
-            case '4': break;
-            case '5': break;
+
+            case '3': milli=0,seconds=0,minutes=0;
+                        printf_tiny("\n\r Clock Successfully Reset");
+                        break;
+            case '4': TR0=0;
+                        printf_tiny("\n\r LCD Cleared Successfully ");
+                        break;
+            case '5':   TR0=1;
+                        break;
+            case '6' :  lcd_clear();
+                        break;
+            case '7' :  help();
+                        break;
+            case '8': printf_tiny("\n\r Thank You for Participating");
+                        break;
             default :
                         break;
         }
-        time_show();
-    }while(choice!='5');
+    }while(choice!='8');
 }
 

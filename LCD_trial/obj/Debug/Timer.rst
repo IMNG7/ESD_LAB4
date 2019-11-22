@@ -656,11 +656,11 @@
                            00F300   656 G$DR_READ$0_0$0 == 0xf300
                            00F300   657 _DR_READ	=	0xf300
                            000000   658 LTimer.inttostr$a$1_0$11==.
-      000436                        659 _inttostr_a_65536_11:
-      000436                        660 	.ds 1
+      000447                        659 _inttostr_a_65536_11:
+      000447                        660 	.ds 1
                            000001   661 LTimer.inttostr$b$1_0$12==.
-      000437                        662 _inttostr_b_65536_12:
-      000437                        663 	.ds 3
+      000448                        662 _inttostr_b_65536_12:
+      000448                        663 	.ds 3
                                     664 ;--------------------------------------------------------
                                     665 ; absolute external ram data
                                     666 ;--------------------------------------------------------
@@ -704,7 +704,7 @@
                                     704 ;	-----------------------------------------
                                     705 ;	 function timer_init
                                     706 ;	-----------------------------------------
-      0029AA                        707 _timer_init:
+      002AAD                        707 _timer_init:
                            000007   708 	ar7 = 0x07
                            000006   709 	ar6 = 0x06
                            000005   710 	ar5 = 0x05
@@ -715,38 +715,38 @@
                            000000   715 	ar0 = 0x00
                            000000   716 	C$Timer.c$16$1_0$10 ==.
                                     717 ;	Timer.c:16: TMOD|=0x01;
-      0029AA 43 89 01         [24]  718 	orl	_TMOD,#0x01
+      002AAD 43 89 01         [24]  718 	orl	_TMOD,#0x01
                            000003   719 	C$Timer.c$18$1_0$10 ==.
                                     720 ;	Timer.c:18: TH0=0x4B;
-      0029AD 75 8C 4B         [24]  721 	mov	_TH0,#0x4b
+      002AB0 75 8C 4B         [24]  721 	mov	_TH0,#0x4b
                            000006   722 	C$Timer.c$19$1_0$10 ==.
                                     723 ;	Timer.c:19: TL0=0xFC;
-      0029B0 75 8A FC         [24]  724 	mov	_TL0,#0xfc
+      002AB3 75 8A FC         [24]  724 	mov	_TL0,#0xfc
                            000009   725 	C$Timer.c$20$1_0$10 ==.
                                     726 ;	Timer.c:20: TR0=1;
                                     727 ;	assignBit
-      0029B3 D2 8C            [12]  728 	setb	_TR0
+      002AB6 D2 8C            [12]  728 	setb	_TR0
                            00000B   729 	C$Timer.c$21$1_0$10 ==.
                                     730 ;	Timer.c:21: ET0|=1;
-      0029B5 7F 01            [12]  731 	mov	r7,#0x01
-      0029B7 A2 A9            [12]  732 	mov	c,_ET0
+      002AB8 7F 01            [12]  731 	mov	r7,#0x01
+      002ABA A2 A9            [12]  732 	mov	c,_ET0
                                     733 ;	assignBit
-      0029B9 EF               [12]  734 	mov	a,r7
-      0029BA 24 FF            [12]  735 	add	a,#0xff
-      0029BC 92 A9            [24]  736 	mov	_ET0,c
+      002ABC EF               [12]  734 	mov	a,r7
+      002ABD 24 FF            [12]  735 	add	a,#0xff
+      002ABF 92 A9            [24]  736 	mov	_ET0,c
                            000014   737 	C$Timer.c$22$1_0$10 ==.
                                     738 ;	Timer.c:22: EA|=1;
-      0029BE 7F 01            [12]  739 	mov	r7,#0x01
-      0029C0 A2 AF            [12]  740 	mov	c,_EA
+      002AC1 7F 01            [12]  739 	mov	r7,#0x01
+      002AC3 A2 AF            [12]  740 	mov	c,_EA
                                     741 ;	assignBit
-      0029C2 EF               [12]  742 	mov	a,r7
-      0029C3 24 FF            [12]  743 	add	a,#0xff
-      0029C5 92 AF            [24]  744 	mov	_EA,c
+      002AC5 EF               [12]  742 	mov	a,r7
+      002AC6 24 FF            [12]  743 	add	a,#0xff
+      002AC8 92 AF            [24]  744 	mov	_EA,c
                            00001D   745 	C$Timer.c$23$1_0$10 ==.
                                     746 ;	Timer.c:23: }
                            00001D   747 	C$Timer.c$23$1_0$10 ==.
                            00001D   748 	XG$timer_init$0$0 ==.
-      0029C7 22               [24]  749 	ret
+      002ACA 22               [24]  749 	ret
                                     750 ;------------------------------------------------------------
                                     751 ;Allocation info for local variables in function 'inttostr'
                                     752 ;------------------------------------------------------------
@@ -761,117 +761,117 @@
                                     761 ;	-----------------------------------------
                                     762 ;	 function inttostr
                                     763 ;	-----------------------------------------
-      0029C8                        764 _inttostr:
-      0029C8 E5 82            [12]  765 	mov	a,dpl
-      0029CA 90 04 36         [24]  766 	mov	dptr,#_inttostr_a_65536_11
-      0029CD F0               [24]  767 	movx	@dptr,a
+      002ACB                        764 _inttostr:
+      002ACB E5 82            [12]  765 	mov	a,dpl
+      002ACD 90 04 47         [24]  766 	mov	dptr,#_inttostr_a_65536_11
+      002AD0 F0               [24]  767 	movx	@dptr,a
                            000024   768 	C$Timer.c$27$2_0$13 ==.
                                     769 ;	Timer.c:27: while(a!=0)
-      0029CE 7F 02            [12]  770 	mov	r7,#0x02
-      0029D0                        771 00101$:
-      0029D0 90 04 36         [24]  772 	mov	dptr,#_inttostr_a_65536_11
-      0029D3 E0               [24]  773 	movx	a,@dptr
-      0029D4 FE               [12]  774 	mov	r6,a
-      0029D5 E0               [24]  775 	movx	a,@dptr
-      0029D6 60 54            [24]  776 	jz	00103$
+      002AD1 7F 02            [12]  770 	mov	r7,#0x02
+      002AD3                        771 00101$:
+      002AD3 90 04 47         [24]  772 	mov	dptr,#_inttostr_a_65536_11
+      002AD6 E0               [24]  773 	movx	a,@dptr
+      002AD7 FE               [12]  774 	mov	r6,a
+      002AD8 E0               [24]  775 	movx	a,@dptr
+      002AD9 60 54            [24]  776 	jz	00103$
                            00002E   777 	C$Timer.c$28$2_0$13 ==.
                                     778 ;	Timer.c:28: {   i--;
-      0029D8 1F               [12]  779 	dec	r7
+      002ADB 1F               [12]  779 	dec	r7
                            00002F   780 	C$Timer.c$29$2_0$13 ==.
                                     781 ;	Timer.c:29: b[i]=(a%10)+'0';
-      0029D9 EF               [12]  782 	mov	a,r7
-      0029DA 24 37            [12]  783 	add	a,#_inttostr_b_65536_12
-      0029DC FC               [12]  784 	mov	r4,a
-      0029DD E4               [12]  785 	clr	a
-      0029DE 34 04            [12]  786 	addc	a,#(_inttostr_b_65536_12 >> 8)
-      0029E0 FD               [12]  787 	mov	r5,a
-      0029E1 7B 00            [12]  788 	mov	r3,#0x00
-      0029E3 90 04 3C         [24]  789 	mov	dptr,#__modsint_PARM_2
-      0029E6 74 0A            [12]  790 	mov	a,#0x0a
-      0029E8 F0               [24]  791 	movx	@dptr,a
-      0029E9 E4               [12]  792 	clr	a
-      0029EA A3               [24]  793 	inc	dptr
-      0029EB F0               [24]  794 	movx	@dptr,a
-      0029EC 8E 82            [24]  795 	mov	dpl,r6
-      0029EE 8B 83            [24]  796 	mov	dph,r3
-      0029F0 C0 07            [24]  797 	push	ar7
-      0029F2 C0 06            [24]  798 	push	ar6
-      0029F4 C0 05            [24]  799 	push	ar5
-      0029F6 C0 04            [24]  800 	push	ar4
-      0029F8 C0 03            [24]  801 	push	ar3
-      0029FA 12 2B B1         [24]  802 	lcall	__modsint
-      0029FD A9 82            [24]  803 	mov	r1,dpl
-      0029FF D0 03            [24]  804 	pop	ar3
-      002A01 D0 04            [24]  805 	pop	ar4
-      002A03 D0 05            [24]  806 	pop	ar5
-      002A05 D0 06            [24]  807 	pop	ar6
-      002A07 74 30            [12]  808 	mov	a,#0x30
-      002A09 29               [12]  809 	add	a,r1
-      002A0A 8C 82            [24]  810 	mov	dpl,r4
-      002A0C 8D 83            [24]  811 	mov	dph,r5
-      002A0E F0               [24]  812 	movx	@dptr,a
+      002ADC EF               [12]  782 	mov	a,r7
+      002ADD 24 48            [12]  783 	add	a,#_inttostr_b_65536_12
+      002ADF FC               [12]  784 	mov	r4,a
+      002AE0 E4               [12]  785 	clr	a
+      002AE1 34 04            [12]  786 	addc	a,#(_inttostr_b_65536_12 >> 8)
+      002AE3 FD               [12]  787 	mov	r5,a
+      002AE4 7B 00            [12]  788 	mov	r3,#0x00
+      002AE6 90 04 4D         [24]  789 	mov	dptr,#__modsint_PARM_2
+      002AE9 74 0A            [12]  790 	mov	a,#0x0a
+      002AEB F0               [24]  791 	movx	@dptr,a
+      002AEC E4               [12]  792 	clr	a
+      002AED A3               [24]  793 	inc	dptr
+      002AEE F0               [24]  794 	movx	@dptr,a
+      002AEF 8E 82            [24]  795 	mov	dpl,r6
+      002AF1 8B 83            [24]  796 	mov	dph,r3
+      002AF3 C0 07            [24]  797 	push	ar7
+      002AF5 C0 06            [24]  798 	push	ar6
+      002AF7 C0 05            [24]  799 	push	ar5
+      002AF9 C0 04            [24]  800 	push	ar4
+      002AFB C0 03            [24]  801 	push	ar3
+      002AFD 12 2C 9E         [24]  802 	lcall	__modsint
+      002B00 A9 82            [24]  803 	mov	r1,dpl
+      002B02 D0 03            [24]  804 	pop	ar3
+      002B04 D0 04            [24]  805 	pop	ar4
+      002B06 D0 05            [24]  806 	pop	ar5
+      002B08 D0 06            [24]  807 	pop	ar6
+      002B0A 74 30            [12]  808 	mov	a,#0x30
+      002B0C 29               [12]  809 	add	a,r1
+      002B0D 8C 82            [24]  810 	mov	dpl,r4
+      002B0F 8D 83            [24]  811 	mov	dph,r5
+      002B11 F0               [24]  812 	movx	@dptr,a
                            000065   813 	C$Timer.c$30$1_0$12 ==.
                                     814 ;	Timer.c:30: a=a/10;
-      002A0F 90 04 45         [24]  815 	mov	dptr,#__divsint_PARM_2
-      002A12 74 0A            [12]  816 	mov	a,#0x0a
-      002A14 F0               [24]  817 	movx	@dptr,a
-      002A15 E4               [12]  818 	clr	a
-      002A16 A3               [24]  819 	inc	dptr
-      002A17 F0               [24]  820 	movx	@dptr,a
-      002A18 8E 82            [24]  821 	mov	dpl,r6
-      002A1A 8B 83            [24]  822 	mov	dph,r3
-      002A1C 12 2C C5         [24]  823 	lcall	__divsint
-      002A1F AD 82            [24]  824 	mov	r5,dpl
-      002A21 AE 83            [24]  825 	mov	r6,dph
-      002A23 D0 07            [24]  826 	pop	ar7
-      002A25 90 04 36         [24]  827 	mov	dptr,#_inttostr_a_65536_11
-      002A28 ED               [12]  828 	mov	a,r5
-      002A29 F0               [24]  829 	movx	@dptr,a
-      002A2A 80 A4            [24]  830 	sjmp	00101$
-      002A2C                        831 00103$:
+      002B12 90 04 56         [24]  815 	mov	dptr,#__divsint_PARM_2
+      002B15 74 0A            [12]  816 	mov	a,#0x0a
+      002B17 F0               [24]  817 	movx	@dptr,a
+      002B18 E4               [12]  818 	clr	a
+      002B19 A3               [24]  819 	inc	dptr
+      002B1A F0               [24]  820 	movx	@dptr,a
+      002B1B 8E 82            [24]  821 	mov	dpl,r6
+      002B1D 8B 83            [24]  822 	mov	dph,r3
+      002B1F 12 2D B2         [24]  823 	lcall	__divsint
+      002B22 AD 82            [24]  824 	mov	r5,dpl
+      002B24 AE 83            [24]  825 	mov	r6,dph
+      002B26 D0 07            [24]  826 	pop	ar7
+      002B28 90 04 47         [24]  827 	mov	dptr,#_inttostr_a_65536_11
+      002B2B ED               [12]  828 	mov	a,r5
+      002B2C F0               [24]  829 	movx	@dptr,a
+      002B2D 80 A4            [24]  830 	sjmp	00101$
+      002B2F                        831 00103$:
                            000082   832 	C$Timer.c$32$3_0$15 ==.
                                     833 ;	Timer.c:32: for(j=0;j<i;j++)
-      002A2C 7E 00            [12]  834 	mov	r6,#0x00
-      002A2E                        835 00106$:
-      002A2E C3               [12]  836 	clr	c
-      002A2F EE               [12]  837 	mov	a,r6
-      002A30 9F               [12]  838 	subb	a,r7
-      002A31 50 10            [24]  839 	jnc	00104$
+      002B2F 7E 00            [12]  834 	mov	r6,#0x00
+      002B31                        835 00106$:
+      002B31 C3               [12]  836 	clr	c
+      002B32 EE               [12]  837 	mov	a,r6
+      002B33 9F               [12]  838 	subb	a,r7
+      002B34 50 10            [24]  839 	jnc	00104$
                            000089   840 	C$Timer.c$33$3_0$15 ==.
                                     841 ;	Timer.c:33: {   b[j]='0';
-      002A33 EE               [12]  842 	mov	a,r6
-      002A34 24 37            [12]  843 	add	a,#_inttostr_b_65536_12
-      002A36 F5 82            [12]  844 	mov	dpl,a
-      002A38 E4               [12]  845 	clr	a
-      002A39 34 04            [12]  846 	addc	a,#(_inttostr_b_65536_12 >> 8)
-      002A3B F5 83            [12]  847 	mov	dph,a
-      002A3D 74 30            [12]  848 	mov	a,#0x30
-      002A3F F0               [24]  849 	movx	@dptr,a
+      002B36 EE               [12]  842 	mov	a,r6
+      002B37 24 48            [12]  843 	add	a,#_inttostr_b_65536_12
+      002B39 F5 82            [12]  844 	mov	dpl,a
+      002B3B E4               [12]  845 	clr	a
+      002B3C 34 04            [12]  846 	addc	a,#(_inttostr_b_65536_12 >> 8)
+      002B3E F5 83            [12]  847 	mov	dph,a
+      002B40 74 30            [12]  848 	mov	a,#0x30
+      002B42 F0               [24]  849 	movx	@dptr,a
                            000096   850 	C$Timer.c$32$2_0$14 ==.
                                     851 ;	Timer.c:32: for(j=0;j<i;j++)
-      002A40 0E               [12]  852 	inc	r6
-      002A41 80 EB            [24]  853 	sjmp	00106$
-      002A43                        854 00104$:
+      002B43 0E               [12]  852 	inc	r6
+      002B44 80 EB            [24]  853 	sjmp	00106$
+      002B46                        854 00104$:
                            000099   855 	C$Timer.c$35$1_0$12 ==.
                                     856 ;	Timer.c:35: lcdbusywait();
-      002A43 12 22 6D         [24]  857 	lcall	_lcdbusywait
+      002B46 12 22 6D         [24]  857 	lcall	_lcdbusywait
                            00009C   858 	C$Timer.c$36$1_0$12 ==.
                                     859 ;	Timer.c:36: LCD_putstr(b);
-      002A46 90 04 37         [24]  860 	mov	dptr,#_inttostr_b_65536_12
-      002A49 12 23 AD         [24]  861 	lcall	_LCD_putstr
+      002B49 90 04 48         [24]  860 	mov	dptr,#_inttostr_b_65536_12
+      002B4C 12 23 AD         [24]  861 	lcall	_LCD_putstr
                            0000A2   862 	C$Timer.c$37$1_0$12 ==.
                                     863 ;	Timer.c:37: lcdbusywait();
-      002A4C 12 22 6D         [24]  864 	lcall	_lcdbusywait
+      002B4F 12 22 6D         [24]  864 	lcall	_lcdbusywait
                            0000A5   865 	C$Timer.c$38$1_0$12 ==.
                                     866 ;	Timer.c:38: DR_WRITE=':';
-      002A4F 90 F1 00         [24]  867 	mov	dptr,#_DR_WRITE
-      002A52 74 3A            [12]  868 	mov	a,#0x3a
-      002A54 F0               [24]  869 	movx	@dptr,a
+      002B52 90 F1 00         [24]  867 	mov	dptr,#_DR_WRITE
+      002B55 74 3A            [12]  868 	mov	a,#0x3a
+      002B57 F0               [24]  869 	movx	@dptr,a
                            0000AB   870 	C$Timer.c$39$1_0$12 ==.
                                     871 ;	Timer.c:39: }
                            0000AB   872 	C$Timer.c$39$1_0$12 ==.
                            0000AB   873 	XG$inttostr$0$0 ==.
-      002A55 22               [24]  874 	ret
+      002B58 22               [24]  874 	ret
                                     875 	.area CSEG    (CODE)
                                     876 	.area CONST   (CODE)
                                     877 	.area XINIT   (CODE)

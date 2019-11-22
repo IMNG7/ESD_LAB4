@@ -245,315 +245,447 @@ Symbol Table
 
  17 A$mainDebug\main$1301                                          00028B GR
  17 A$mainDebug\main$1302                                          00028E GR
- 17 A$mainDebug\main$1303                                          00028F GR
- 17 A$mainDebug\main$1306                                          000290 GR
- 17 A$mainDebug\main$1307                                          000293 GR
- 17 A$mainDebug\main$1308                                          000294 GR
- 17 A$mainDebug\main$1309                                          000297 GR
- 17 A$mainDebug\main$1310                                          000298 GR
- 17 A$mainDebug\main$1311                                          00029B GR
- 17 A$mainDebug\main$1314                                          00029C GR
- 17 A$mainDebug\main$1315                                          00029F GR
- 17 A$mainDebug\main$1316                                          0002A0 GR
- 17 A$mainDebug\main$1319                                          0002A1 GR
- 17 A$mainDebug\main$1322                                          0002A4 GR
- 17 A$mainDebug\main$1325                                          0002A7 GR
- 17 A$mainDebug\main$1331                                          0002AA GR
- 17 A$mainDebug\main$1332                                          0002AD GR
- 17 A$mainDebug\main$1333                                          0002AE GR
- 17 A$mainDebug\main$1336                                          0002B0 GR
- 17 A$mainDebug\main$1337                                          0002B2 GR
- 17 A$mainDebug\main$1338                                          0002B4 GR
- 17 A$mainDebug\main$1339                                          0002B6 GR
- 17 A$mainDebug\main$1340                                          0002B8 GR
- 17 A$mainDebug\main$1341                                          0002BB GR
- 17 A$mainDebug\main$1342                                          0002BD GR
- 17 A$mainDebug\main$1345                                          0002BF GR
- 17 A$mainDebug\main$1346                                          0002C1 GR
- 17 A$mainDebug\main$1347                                          0002C3 GR
- 17 A$mainDebug\main$1348                                          0002C5 GR
- 17 A$mainDebug\main$1349                                          0002C7 GR
- 17 A$mainDebug\main$1350                                          0002CA GR
- 17 A$mainDebug\main$1351                                          0002CC GR
- 17 A$mainDebug\main$1354                                          0002CE GR
- 17 A$mainDebug\main$1355                                          0002D0 GR
- 17 A$mainDebug\main$1356                                          0002D2 GR
- 17 A$mainDebug\main$1357                                          0002D4 GR
- 17 A$mainDebug\main$1358                                          0002D6 GR
- 17 A$mainDebug\main$1359                                          0002D9 GR
- 17 A$mainDebug\main$1360                                          0002DB GR
- 17 A$mainDebug\main$1363                                          0002DD GR
- 17 A$mainDebug\main$1364                                          0002DF GR
- 17 A$mainDebug\main$1365                                          0002E1 GR
- 17 A$mainDebug\main$1366                                          0002E3 GR
- 17 A$mainDebug\main$1367                                          0002E5 GR
- 17 A$mainDebug\main$1368                                          0002E8 GR
- 17 A$mainDebug\main$1369                                          0002EA GR
- 17 A$mainDebug\main$1372                                          0002EC GR
- 17 A$mainDebug\main$1373                                          0002EE GR
- 17 A$mainDebug\main$1374                                          0002F0 GR
- 17 A$mainDebug\main$1375                                          0002F2 GR
- 17 A$mainDebug\main$1376                                          0002F4 GR
- 17 A$mainDebug\main$1377                                          0002F7 GR
- 17 A$mainDebug\main$1378                                          0002F9 GR
- 17 A$mainDebug\main$1381                                          0002FB GR
- 17 A$mainDebug\main$1382                                          0002FD GR
+ 17 A$mainDebug\main$1303                                          000290 GR
+ 17 A$mainDebug\main$1304                                          000291 GR
+ 17 A$mainDebug\main$1305                                          000294 GR
+ 17 A$mainDebug\main$1306                                          000296 GR
+ 17 A$mainDebug\main$1307                                          000297 GR
+ 17 A$mainDebug\main$1308                                          00029A GR
+ 17 A$mainDebug\main$1309                                          00029C GR
+ 17 A$mainDebug\main$1310                                          00029D GR
+ 17 A$mainDebug\main$1311                                          0002A0 GR
+ 17 A$mainDebug\main$1312                                          0002A2 GR
+ 17 A$mainDebug\main$1313                                          0002A3 GR
+ 17 A$mainDebug\main$1314                                          0002A6 GR
+ 17 A$mainDebug\main$1315                                          0002A8 GR
+ 17 A$mainDebug\main$1316                                          0002A9 GR
+ 17 A$mainDebug\main$1317                                          0002AC GR
+ 17 A$mainDebug\main$1318                                          0002AE GR
+ 17 A$mainDebug\main$1319                                          0002AF GR
+ 17 A$mainDebug\main$1320                                          0002B2 GR
+ 17 A$mainDebug\main$1321                                          0002B4 GR
+ 17 A$mainDebug\main$1322                                          0002B5 GR
+ 17 A$mainDebug\main$1323                                          0002B8 GR
+ 17 A$mainDebug\main$1324                                          0002BA GR
+ 17 A$mainDebug\main$1325                                          0002BB GR
+ 17 A$mainDebug\main$1326                                          0002BE GR
+ 17 A$mainDebug\main$1327                                          0002C0 GR
+ 17 A$mainDebug\main$1328                                          0002C1 GR
+ 17 A$mainDebug\main$1329                                          0002C4 GR
+ 17 A$mainDebug\main$1330                                          0002C6 GR
+ 17 A$mainDebug\main$1331                                          0002C7 GR
+ 17 A$mainDebug\main$1332                                          0002CA GR
+ 17 A$mainDebug\main$1333                                          0002CC GR
+ 17 A$mainDebug\main$1334                                          0002CD GR
+ 17 A$mainDebug\main$1335                                          0002D0 GR
+ 17 A$mainDebug\main$1336                                          0002D2 GR
+ 17 A$mainDebug\main$1337                                          0002D3 GR
+ 17 A$mainDebug\main$1338                                          0002D6 GR
+ 17 A$mainDebug\main$1339                                          0002D8 GR
+ 17 A$mainDebug\main$1340                                          0002D9 GR
+ 17 A$mainDebug\main$1341                                          0002DC GR
+ 17 A$mainDebug\main$1342                                          0002DE GR
+ 17 A$mainDebug\main$1343                                          0002DF GR
+ 17 A$mainDebug\main$1344                                          0002E2 GR
+ 17 A$mainDebug\main$1345                                          0002E4 GR
+ 17 A$mainDebug\main$1346                                          0002E5 GR
+ 17 A$mainDebug\main$1347                                          0002E8 GR
+ 17 A$mainDebug\main$1348                                          0002EA GR
+ 17 A$mainDebug\main$1349                                          0002EB GR
+ 17 A$mainDebug\main$1350                                          0002EE GR
+ 17 A$mainDebug\main$1351                                          0002F0 GR
+ 17 A$mainDebug\main$1352                                          0002F1 GR
+ 17 A$mainDebug\main$1353                                          0002F4 GR
+ 17 A$mainDebug\main$1354                                          0002F5 GR
+ 17 A$mainDebug\main$1357                                          0002F6 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 6.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$mainDebug\main$1383                                          0002FF GR
- 17 A$mainDebug\main$1384                                          000301 GR
- 17 A$mainDebug\main$1385                                          000303 GR
- 17 A$mainDebug\main$1386                                          000306 GR
- 17 A$mainDebug\main$1387                                          000308 GR
- 17 A$mainDebug\main$1390                                          00030A GR
- 17 A$mainDebug\main$1391                                          00030C GR
- 17 A$mainDebug\main$1392                                          00030E GR
- 17 A$mainDebug\main$1393                                          000310 GR
- 17 A$mainDebug\main$1394                                          000312 GR
- 17 A$mainDebug\main$1395                                          000315 GR
- 17 A$mainDebug\main$1396                                          000317 GR
- 17 A$mainDebug\main$1400                                          000319 GR
- 17 A$mainDebug\main$1401                                          00031C GR
- 17 A$mainDebug\main$1402                                          00031D GR
- 17 A$mainDebug\main$1405                                          00031E GR
- 17 A$mainDebug\main$1406                                          000321 GR
- 17 A$mainDebug\main$1407                                          000323 GR
- 17 A$mainDebug\main$1408                                          000326 GR
- 17 A$mainDebug\main$1409                                          000327 GR
- 17 A$mainDebug\main$1412                                          000328 GR
- 17 A$mainDebug\main$1413                                          000329 GR
- 17 A$mainDebug\main$1414                                          00032A GR
- 17 A$mainDebug\main$1415                                          00032D GR
- 17 A$mainDebug\main$1417                                          000330 GR
- 17 A$mainDebug\main$1418                                          000333 GR
- 17 A$mainDebug\main$1420                                          000335 GR
- 17 A$mainDebug\main$1421                                          000338 GR
- 17 A$mainDebug\main$1423                                          00033A GR
- 17 A$mainDebug\main$1427                                          00033D GR
- 17 A$mainDebug\main$1428                                          00033F GR
- 17 A$mainDebug\main$1429                                          000341 GR
- 17 A$mainDebug\main$1430                                          000343 GR
- 17 A$mainDebug\main$1431                                          000345 GR
- 17 A$mainDebug\main$1432                                          000348 GR
- 17 A$mainDebug\main$1433                                          00034A GR
- 17 A$mainDebug\main$1436                                          00034C GR
- 17 A$mainDebug\main$1437                                          00034F GR
- 17 A$mainDebug\main$1440                                          000351 GR
- 17 A$mainDebug\main$1441                                          000353 GR
- 17 A$mainDebug\main$1442                                          000355 GR
- 17 A$mainDebug\main$1443                                          000357 GR
- 17 A$mainDebug\main$1444                                          000359 GR
- 17 A$mainDebug\main$1445                                          00035B GR
- 17 A$mainDebug\main$1446                                          00035D GR
- 17 A$mainDebug\main$1447                                          00035F GR
- 17 A$mainDebug\main$1448                                          000361 GR
- 17 A$mainDebug\main$1449                                          000363 GR
- 17 A$mainDebug\main$1450                                          000366 GR
- 17 A$mainDebug\main$1451                                          000368 GR
- 17 A$mainDebug\main$1452                                          00036A GR
- 17 A$mainDebug\main$1455                                          00036C GR
- 17 A$mainDebug\main$1456                                          00036F GR
- 17 A$mainDebug\main$1457                                          000371 GR
- 17 A$mainDebug\main$1458                                          000372 GR
+ 17 A$mainDebug\main$1358                                          0002F9 GR
+ 17 A$mainDebug\main$1359                                          0002FA GR
+ 17 A$mainDebug\main$1360                                          0002FD GR
+ 17 A$mainDebug\main$1361                                          0002FE GR
+ 17 A$mainDebug\main$1362                                          000301 GR
+ 17 A$mainDebug\main$1365                                          000302 GR
+ 17 A$mainDebug\main$1366                                          000305 GR
+ 17 A$mainDebug\main$1367                                          000306 GR
+ 17 A$mainDebug\main$1370                                          000307 GR
+ 17 A$mainDebug\main$1373                                          00030A GR
+ 17 A$mainDebug\main$1376                                          00030D GR
+ 17 A$mainDebug\main$1382                                          000310 GR
+ 17 A$mainDebug\main$1383                                          000313 GR
+ 17 A$mainDebug\main$1384                                          000314 GR
+ 17 A$mainDebug\main$1385                                          000316 GR
+ 17 A$mainDebug\main$1389                                          000319 GR
+ 17 A$mainDebug\main$1390                                          00031B GR
+ 17 A$mainDebug\main$1391                                          00031D GR
+ 17 A$mainDebug\main$1392                                          00031F GR
+ 17 A$mainDebug\main$1393                                          000321 GR
+ 17 A$mainDebug\main$1394                                          000324 GR
+ 17 A$mainDebug\main$1395                                          000326 GR
+ 17 A$mainDebug\main$1398                                          000328 GR
+ 17 A$mainDebug\main$1399                                          00032A GR
+ 17 A$mainDebug\main$1400                                          00032C GR
+ 17 A$mainDebug\main$1401                                          00032E GR
+ 17 A$mainDebug\main$1402                                          000330 GR
+ 17 A$mainDebug\main$1403                                          000333 GR
+ 17 A$mainDebug\main$1404                                          000335 GR
+ 17 A$mainDebug\main$1407                                          000337 GR
+ 17 A$mainDebug\main$1408                                          000339 GR
+ 17 A$mainDebug\main$1409                                          00033B GR
+ 17 A$mainDebug\main$1410                                          00033D GR
+ 17 A$mainDebug\main$1411                                          00033F GR
+ 17 A$mainDebug\main$1412                                          000342 GR
+ 17 A$mainDebug\main$1413                                          000344 GR
+ 17 A$mainDebug\main$1416                                          000346 GR
+ 17 A$mainDebug\main$1417                                          000348 GR
+ 17 A$mainDebug\main$1418                                          00034A GR
+ 17 A$mainDebug\main$1419                                          00034C GR
+ 17 A$mainDebug\main$1420                                          00034E GR
+ 17 A$mainDebug\main$1421                                          000351 GR
+ 17 A$mainDebug\main$1422                                          000353 GR
+ 17 A$mainDebug\main$1425                                          000355 GR
+ 17 A$mainDebug\main$1426                                          000357 GR
+ 17 A$mainDebug\main$1427                                          000359 GR
+ 17 A$mainDebug\main$1428                                          00035B GR
+ 17 A$mainDebug\main$1429                                          00035D GR
+ 17 A$mainDebug\main$1430                                          000360 GR
+ 17 A$mainDebug\main$1431                                          000362 GR
+ 17 A$mainDebug\main$1434                                          000364 GR
+ 17 A$mainDebug\main$1435                                          000366 GR
+ 17 A$mainDebug\main$1436                                          000368 GR
+ 17 A$mainDebug\main$1437                                          00036A GR
+ 17 A$mainDebug\main$1438                                          00036C GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 7.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$mainDebug\main$1459                                          000375 GR
- 17 A$mainDebug\main$1460                                          000378 GR
- 17 A$mainDebug\main$1463                                          00037A GR
- 17 A$mainDebug\main$1464                                          00037C GR
- 17 A$mainDebug\main$1467                                          00037F GR
- 17 A$mainDebug\main$1473                                          000382 GR
- 17 A$mainDebug\main$1474                                          000384 GR
- 17 A$mainDebug\main$1475                                          000386 GR
- 17 A$mainDebug\main$1476                                          000388 GR
- 17 A$mainDebug\main$1477                                          00038A GR
- 17 A$mainDebug\main$1478                                          00038D GR
- 17 A$mainDebug\main$1479                                          00038F GR
- 17 A$mainDebug\main$1485                                          000391 GR
- 17 A$mainDebug\main$1486                                          000394 GR
- 17 A$mainDebug\main$1487                                          000396 GR
- 17 A$mainDebug\main$1488                                          000399 GR
- 17 A$mainDebug\main$1489                                          00039A GR
- 17 A$mainDebug\main$1492                                          00039B GR
- 17 A$mainDebug\main$1493                                          00039C GR
- 17 A$mainDebug\main$1494                                          00039E GR
- 17 A$mainDebug\main$1495                                          0003A0 GR
- 17 A$mainDebug\main$1496                                          0003A3 GR
- 17 A$mainDebug\main$1497                                          0003A4 GR
- 17 A$mainDebug\main$1498                                          0003A5 GR
- 17 A$mainDebug\main$1502                                          0003A8 GR
- 17 A$mainDebug\main$1503                                          0003AA GR
- 17 A$mainDebug\main$1504                                          0003AC GR
- 17 A$mainDebug\main$1505                                          0003AE GR
- 17 A$mainDebug\main$1506                                          0003B0 GR
- 17 A$mainDebug\main$1507                                          0003B3 GR
- 17 A$mainDebug\main$1508                                          0003B5 GR
- 17 A$mainDebug\main$1512                                          0003B7 GR
- 17 A$mainDebug\main$1513                                          0003BA GR
- 17 A$mainDebug\main$1514                                          0003BB GR
- 17 A$mainDebug\main$1515                                          0003BC GR
- 17 A$mainDebug\main$1516                                          0003BE GR
- 17 A$mainDebug\main$1517                                          0003C0 GR
- 17 A$mainDebug\main$1518                                          0003C3 GR
- 17 A$mainDebug\main$1519                                          0003C4 GR
- 17 A$mainDebug\main$1520                                          0003C5 GR
- 17 A$mainDebug\main$1522                                          0003C8 GR
- 17 A$mainDebug\main$1525                                          0003CA GR
- 17 A$mainDebug\main$1526                                          0003CD GR
- 17 A$mainDebug\main$1527                                          0003CE GR
- 17 A$mainDebug\main$1528                                          0003CF GR
- 17 A$mainDebug\main$1529                                          0003D1 GR
- 17 A$mainDebug\main$1530                                          0003D3 GR
- 17 A$mainDebug\main$1531                                          0003D5 GR
- 17 A$mainDebug\main$1532                                          0003D7 GR
- 17 A$mainDebug\main$1533                                          0003D9 GR
- 17 A$mainDebug\main$1534                                          0003DB GR
- 17 A$mainDebug\main$1535                                          0003DD GR
- 17 A$mainDebug\main$1536                                          0003E0 GR
- 17 A$mainDebug\main$1537                                          0003E2 GR
- 17 A$mainDebug\main$1538                                          0003E4 GR
+ 17 A$mainDebug\main$1439                                          00036F GR
+ 17 A$mainDebug\main$1440                                          000371 GR
+ 17 A$mainDebug\main$1443                                          000373 GR
+ 17 A$mainDebug\main$1444                                          000375 GR
+ 17 A$mainDebug\main$1445                                          000377 GR
+ 17 A$mainDebug\main$1446                                          000379 GR
+ 17 A$mainDebug\main$1447                                          00037B GR
+ 17 A$mainDebug\main$1448                                          00037E GR
+ 17 A$mainDebug\main$1449                                          000380 GR
+ 17 A$mainDebug\main$1452                                          000382 GR
+ 17 A$mainDebug\main$1453                                          000384 GR
+ 17 A$mainDebug\main$1454                                          000386 GR
+ 17 A$mainDebug\main$1455                                          000388 GR
+ 17 A$mainDebug\main$1456                                          00038A GR
+ 17 A$mainDebug\main$1457                                          00038D GR
+ 17 A$mainDebug\main$1458                                          00038F GR
+ 17 A$mainDebug\main$1461                                          000391 GR
+ 17 A$mainDebug\main$1462                                          000393 GR
+ 17 A$mainDebug\main$1463                                          000395 GR
+ 17 A$mainDebug\main$1464                                          000397 GR
+ 17 A$mainDebug\main$1465                                          000399 GR
+ 17 A$mainDebug\main$1466                                          00039C GR
+ 17 A$mainDebug\main$1467                                          00039E GR
+ 17 A$mainDebug\main$1470                                          0003A0 GR
+ 17 A$mainDebug\main$1471                                          0003A2 GR
+ 17 A$mainDebug\main$1472                                          0003A4 GR
+ 17 A$mainDebug\main$1473                                          0003A6 GR
+ 17 A$mainDebug\main$1474                                          0003A8 GR
+ 17 A$mainDebug\main$1475                                          0003AB GR
+ 17 A$mainDebug\main$1476                                          0003AD GR
+ 17 A$mainDebug\main$1480                                          0003AF GR
+ 17 A$mainDebug\main$1481                                          0003B2 GR
+ 17 A$mainDebug\main$1482                                          0003B3 GR
+ 17 A$mainDebug\main$1485                                          0003B4 GR
+ 17 A$mainDebug\main$1486                                          0003B7 GR
+ 17 A$mainDebug\main$1487                                          0003B9 GR
+ 17 A$mainDebug\main$1488                                          0003BC GR
+ 17 A$mainDebug\main$1489                                          0003BD GR
+ 17 A$mainDebug\main$1492                                          0003BE GR
+ 17 A$mainDebug\main$1493                                          0003BF GR
+ 17 A$mainDebug\main$1494                                          0003C0 GR
+ 17 A$mainDebug\main$1496                                          0003C3 GR
+ 17 A$mainDebug\main$1497                                          0003C5 GR
+ 17 A$mainDebug\main$1499                                          0003C8 GR
+ 17 A$mainDebug\main$1500                                          0003C9 GR
+ 17 A$mainDebug\main$1501                                          0003CB GR
+ 17 A$mainDebug\main$1502                                          0003CD GR
+ 17 A$mainDebug\main$1504                                          0003D0 GR
+ 17 A$mainDebug\main$1505                                          0003D1 GR
+ 17 A$mainDebug\main$1506                                          0003D3 GR
+ 17 A$mainDebug\main$1507                                          0003D4 GR
+ 17 A$mainDebug\main$1508                                          0003D6 GR
+ 17 A$mainDebug\main$1509                                          0003D7 GR
+ 17 A$mainDebug\main$1510                                          0003D9 GR
+ 17 A$mainDebug\main$1511                                          0003DA GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 8.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$mainDebug\main$1541                                          0003E6 GR
- 17 A$mainDebug\main$1542                                          0003E8 GR
- 17 A$mainDebug\main$1543                                          0003EA GR
- 17 A$mainDebug\main$1544                                          0003EC GR
- 17 A$mainDebug\main$1545                                          0003EE GR
- 17 A$mainDebug\main$1546                                          0003F1 GR
- 17 A$mainDebug\main$1547                                          0003F3 GR
- 17 A$mainDebug\main$1553                                          0003F5 GR
- 17 A$mainDebug\main$1554                                          0003F8 GR
- 17 A$mainDebug\main$1555                                          0003FA GR
- 17 A$mainDebug\main$1556                                          0003FD GR
- 17 A$mainDebug\main$1557                                          0003FE GR
- 17 A$mainDebug\main$1560                                          0003FF GR
- 17 A$mainDebug\main$1561                                          000400 GR
- 17 A$mainDebug\main$1562                                          000402 GR
- 17 A$mainDebug\main$1565                                          000403 GR
- 17 A$mainDebug\main$1566                                          000404 GR
- 17 A$mainDebug\main$1567                                          000405 GR
- 17 A$mainDebug\main$1568                                          000408 GR
- 17 A$mainDebug\main$1570                                          00040A GR
- 17 A$mainDebug\main$1571                                          00040D GR
- 17 A$mainDebug\main$1572                                          00040E GR
- 17 A$mainDebug\main$1576                                          000410 GR
- 17 A$mainDebug\main$1577                                          000413 GR
- 17 A$mainDebug\main$1578                                          000415 GR
- 17 A$mainDebug\main$1579                                          000418 GR
- 17 A$mainDebug\main$1580                                          000419 GR
- 17 A$mainDebug\main$1583                                          00041A GR
- 17 A$mainDebug\main$1584                                          00041B GR
- 17 A$mainDebug\main$1585                                          00041D GR
- 17 A$mainDebug\main$1588                                          00041E GR
- 17 A$mainDebug\main$1589                                          000421 GR
- 17 A$mainDebug\main$1590                                          000422 GR
- 17 A$mainDebug\main$1591                                          000425 GR
- 17 A$mainDebug\main$1592                                          000426 GR
- 17 A$mainDebug\main$1593                                          000427 GR
- 17 A$mainDebug\main$1594                                          00042A GR
- 17 A$mainDebug\main$1595                                          00042B GR
- 17 A$mainDebug\main$1596                                          00042C GR
- 17 A$mainDebug\main$1597                                          00042F GR
- 17 A$mainDebug\main$1598                                          000430 GR
- 17 A$mainDebug\main$1599                                          000431 GR
- 17 A$mainDebug\main$1603                                          000433 GR
- 17 A$mainDebug\main$1604                                          000436 GR
- 17 A$mainDebug\main$1605                                          000437 GR
- 17 A$mainDebug\main$1608                                          000438 GR
- 17 A$mainDebug\main$1609                                          00043B GR
- 17 A$mainDebug\main$1610                                          00043C GR
- 17 A$mainDebug\main$1611                                          00043F GR
- 17 A$mainDebug\main$1615                                          000440 GR
- 17 A$mainDebug\main$1616                                          000443 GR
- 17 A$mainDebug\main$1617                                          000444 GR
- 17 A$mainDebug\main$1618                                          000446 GR
- 17 A$mainDebug\main$1621                                          000448 GR
- 17 A$mainDebug\main$1622                                          00044A GR
+ 17 A$mainDebug\main$1512                                          0003DC GR
+ 17 A$mainDebug\main$1513                                          0003DD GR
+ 17 A$mainDebug\main$1514                                          0003DF GR
+ 17 A$mainDebug\main$1515                                          0003E0 GR
+ 17 A$mainDebug\main$1539                                          0003F3 GR
+ 17 A$mainDebug\main$1540                                          0003F5 GR
+ 17 A$mainDebug\main$1541                                          0003F7 GR
+ 17 A$mainDebug\main$1542                                          0003F9 GR
+ 17 A$mainDebug\main$1543                                          0003FB GR
+ 17 A$mainDebug\main$1544                                          0003FE GR
+ 17 A$mainDebug\main$1545                                          000400 GR
+ 17 A$mainDebug\main$1548                                          000402 GR
+ 17 A$mainDebug\main$1549                                          000405 GR
+ 17 A$mainDebug\main$1552                                          000407 GR
+ 17 A$mainDebug\main$1553                                          000409 GR
+ 17 A$mainDebug\main$1554                                          00040B GR
+ 17 A$mainDebug\main$1555                                          00040D GR
+ 17 A$mainDebug\main$1556                                          00040F GR
+ 17 A$mainDebug\main$1557                                          000411 GR
+ 17 A$mainDebug\main$1558                                          000413 GR
+ 17 A$mainDebug\main$1559                                          000415 GR
+ 17 A$mainDebug\main$1560                                          000417 GR
+ 17 A$mainDebug\main$1561                                          000419 GR
+ 17 A$mainDebug\main$1562                                          00041C GR
+ 17 A$mainDebug\main$1563                                          00041E GR
+ 17 A$mainDebug\main$1564                                          000420 GR
+ 17 A$mainDebug\main$1567                                          000422 GR
+ 17 A$mainDebug\main$1568                                          000425 GR
+ 17 A$mainDebug\main$1569                                          000427 GR
+ 17 A$mainDebug\main$1570                                          000428 GR
+ 17 A$mainDebug\main$1571                                          00042B GR
+ 17 A$mainDebug\main$1572                                          00042E GR
+ 17 A$mainDebug\main$1575                                          000430 GR
+ 17 A$mainDebug\main$1576                                          000432 GR
+ 17 A$mainDebug\main$1579                                          000435 GR
+ 17 A$mainDebug\main$1585                                          000438 GR
+ 17 A$mainDebug\main$1586                                          00043A GR
+ 17 A$mainDebug\main$1587                                          00043C GR
+ 17 A$mainDebug\main$1588                                          00043E GR
+ 17 A$mainDebug\main$1589                                          000440 GR
+ 17 A$mainDebug\main$1590                                          000443 GR
+ 17 A$mainDebug\main$1591                                          000445 GR
+ 17 A$mainDebug\main$1597                                          000447 GR
+ 17 A$mainDebug\main$1598                                          00044A GR
+ 17 A$mainDebug\main$1599                                          00044C GR
+ 17 A$mainDebug\main$1600                                          00044F GR
+ 17 A$mainDebug\main$1601                                          000450 GR
+ 17 A$mainDebug\main$1604                                          000451 GR
+ 17 A$mainDebug\main$1605                                          000452 GR
+ 17 A$mainDebug\main$1606                                          000454 GR
+ 17 A$mainDebug\main$1607                                          000456 GR
+ 17 A$mainDebug\main$1608                                          000459 GR
+ 17 A$mainDebug\main$1609                                          00045A GR
+ 17 A$mainDebug\main$1610                                          00045B GR
+ 17 A$mainDebug\main$1614                                          00045E GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 9.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$mainDebug\main$1623                                          00044C GR
- 17 A$mainDebug\main$1624                                          00044E GR
- 17 A$mainDebug\main$1625                                          000450 GR
- 17 A$mainDebug\main$1626                                          000453 GR
- 17 A$mainDebug\main$1627                                          000455 GR
- 17 A$mainDebug\main$1631                                          000457 GR
- 17 A$mainDebug\main$1632                                          00045A GR
- 17 A$mainDebug\main$1633                                          00045B GR
- 17 A$mainDebug\main$1634                                          00045D GR
- 17 A$mainDebug\main$1637                                          00045F GR
- 17 A$mainDebug\main$1638                                          000462 GR
- 17 A$mainDebug\main$1639                                          000463 GR
- 17 A$mainDebug\main$1640                                          000464 GR
- 17 A$mainDebug\main$1641                                          000466 GR
- 17 A$mainDebug\main$1642                                          000468 GR
- 17 A$mainDebug\main$1643                                          00046A GR
- 17 A$mainDebug\main$1644                                          00046C GR
- 17 A$mainDebug\main$1645                                          00046E GR
- 17 A$mainDebug\main$1646                                          000470 GR
- 17 A$mainDebug\main$1647                                          000472 GR
- 17 A$mainDebug\main$1648                                          000475 GR
- 17 A$mainDebug\main$1649                                          000477 GR
- 17 A$mainDebug\main$1650                                          000479 GR
- 17 A$mainDebug\main$1653                                          00047B GR
- 17 A$mainDebug\main$1654                                          00047D GR
- 17 A$mainDebug\main$1655                                          00047F GR
- 17 A$mainDebug\main$1656                                          000481 GR
- 17 A$mainDebug\main$1657                                          000483 GR
- 17 A$mainDebug\main$1658                                          000486 GR
- 17 A$mainDebug\main$1659                                          000488 GR
- 17 A$mainDebug\main$1662                                          00048A GR
- 17 A$mainDebug\main$1663                                          00048D GR
- 17 A$mainDebug\main$1666                                          00048F GR
- 17 A$mainDebug\main$1667                                          000491 GR
- 17 A$mainDebug\main$1668                                          000493 GR
- 17 A$mainDebug\main$1669                                          000495 GR
- 17 A$mainDebug\main$1670                                          000497 GR
- 17 A$mainDebug\main$1671                                          000499 GR
- 17 A$mainDebug\main$1672                                          00049B GR
- 17 A$mainDebug\main$1673                                          00049D GR
- 17 A$mainDebug\main$1674                                          00049F GR
- 17 A$mainDebug\main$1675                                          0004A1 GR
- 17 A$mainDebug\main$1676                                          0004A4 GR
- 17 A$mainDebug\main$1677                                          0004A6 GR
- 17 A$mainDebug\main$1678                                          0004A8 GR
- 17 A$mainDebug\main$1681                                          0004AA GR
- 17 A$mainDebug\main$1682                                          0004AD GR
- 17 A$mainDebug\main$1683                                          0004AE GR
- 17 A$mainDebug\main$1684                                          0004B0 GR
- 17 A$mainDebug\main$1685                                          0004B1 GR
- 17 A$mainDebug\main$1686                                          0004B4 GR
- 17 A$mainDebug\main$1687                                          0004B5 GR
- 17 A$mainDebug\main$1688                                          0004B8 GR
- 17 A$mainDebug\main$1689                                          0004B9 GR
- 17 A$mainDebug\main$1690                                          0004BB GR
+ 17 A$mainDebug\main$1615                                          000460 GR
+ 17 A$mainDebug\main$1616                                          000462 GR
+ 17 A$mainDebug\main$1617                                          000464 GR
+ 17 A$mainDebug\main$1618                                          000466 GR
+ 17 A$mainDebug\main$1619                                          000469 GR
+ 17 A$mainDebug\main$1620                                          00046B GR
+ 17 A$mainDebug\main$1624                                          00046D GR
+ 17 A$mainDebug\main$1625                                          000470 GR
+ 17 A$mainDebug\main$1626                                          000471 GR
+ 17 A$mainDebug\main$1627                                          000472 GR
+ 17 A$mainDebug\main$1628                                          000474 GR
+ 17 A$mainDebug\main$1629                                          000476 GR
+ 17 A$mainDebug\main$1630                                          000479 GR
+ 17 A$mainDebug\main$1631                                          00047A GR
+ 17 A$mainDebug\main$1632                                          00047B GR
+ 17 A$mainDebug\main$1634                                          00047E GR
+ 17 A$mainDebug\main$1637                                          000480 GR
+ 17 A$mainDebug\main$1638                                          000483 GR
+ 17 A$mainDebug\main$1639                                          000484 GR
+ 17 A$mainDebug\main$1640                                          000485 GR
+ 17 A$mainDebug\main$1641                                          000487 GR
+ 17 A$mainDebug\main$1642                                          000489 GR
+ 17 A$mainDebug\main$1643                                          00048B GR
+ 17 A$mainDebug\main$1644                                          00048D GR
+ 17 A$mainDebug\main$1645                                          00048F GR
+ 17 A$mainDebug\main$1646                                          000491 GR
+ 17 A$mainDebug\main$1647                                          000493 GR
+ 17 A$mainDebug\main$1648                                          000496 GR
+ 17 A$mainDebug\main$1649                                          000498 GR
+ 17 A$mainDebug\main$1650                                          00049A GR
+ 17 A$mainDebug\main$1653                                          00049C GR
+ 17 A$mainDebug\main$1654                                          00049E GR
+ 17 A$mainDebug\main$1655                                          0004A0 GR
+ 17 A$mainDebug\main$1656                                          0004A2 GR
+ 17 A$mainDebug\main$1657                                          0004A4 GR
+ 17 A$mainDebug\main$1658                                          0004A7 GR
+ 17 A$mainDebug\main$1659                                          0004A9 GR
+ 17 A$mainDebug\main$1665                                          0004AB GR
+ 17 A$mainDebug\main$1666                                          0004AE GR
+ 17 A$mainDebug\main$1667                                          0004B0 GR
+ 17 A$mainDebug\main$1668                                          0004B3 GR
+ 17 A$mainDebug\main$1669                                          0004B4 GR
+ 17 A$mainDebug\main$1672                                          0004B5 GR
+ 17 A$mainDebug\main$1673                                          0004B6 GR
+ 17 A$mainDebug\main$1674                                          0004B8 GR
+ 17 A$mainDebug\main$1677                                          0004B9 GR
+ 17 A$mainDebug\main$1678                                          0004BA GR
+ 17 A$mainDebug\main$1679                                          0004BB GR
+ 17 A$mainDebug\main$1680                                          0004BE GR
+ 17 A$mainDebug\main$1682                                          0004C0 GR
+ 17 A$mainDebug\main$1683                                          0004C3 GR
+ 17 A$mainDebug\main$1684                                          0004C4 GR
+ 17 A$mainDebug\main$1688                                          0004C6 GR
+ 17 A$mainDebug\main$1689                                          0004C9 GR
+ 17 A$mainDebug\main$1690                                          0004CB GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 10.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$mainDebug\main$1691                                          0004BE GR
- 17 A$mainDebug\main$1694                                          0004C0 GR
- 17 A$mainDebug\main$1695                                          0004C2 GR
- 17 A$mainDebug\main$1701                                          0004C5 GR
- 17 A$mainDebug\main$1704                                          0004C8 GR
- 17 A$mainDebug\main$1705                                          0004CB GR
- 17 A$mainDebug\main$1706                                          0004CC GR
- 17 A$mainDebug\main$1707                                          0004CD GR
- 17 A$mainDebug\main$1708                                          0004D0 GR
- 17 A$mainDebug\main$1710                                          0004D2 GR
- 17 A$mainDebug\main$1716                                          0004D5 GR
+ 17 A$mainDebug\main$1691                                          0004CE GR
+ 17 A$mainDebug\main$1692                                          0004CF GR
+ 17 A$mainDebug\main$1695                                          0004D0 GR
+ 17 A$mainDebug\main$1696                                          0004D1 GR
+ 17 A$mainDebug\main$1697                                          0004D3 GR
+ 17 A$mainDebug\main$1700                                          0004D4 GR
+ 17 A$mainDebug\main$1701                                          0004D7 GR
+ 17 A$mainDebug\main$1702                                          0004D8 GR
+ 17 A$mainDebug\main$1703                                          0004DB GR
+ 17 A$mainDebug\main$1704                                          0004DC GR
+ 17 A$mainDebug\main$1705                                          0004DD GR
+ 17 A$mainDebug\main$1706                                          0004E0 GR
+ 17 A$mainDebug\main$1707                                          0004E1 GR
+ 17 A$mainDebug\main$1708                                          0004E2 GR
+ 17 A$mainDebug\main$1709                                          0004E5 GR
+ 17 A$mainDebug\main$1710                                          0004E6 GR
+ 17 A$mainDebug\main$1711                                          0004E7 GR
+ 17 A$mainDebug\main$1715                                          0004E9 GR
+ 17 A$mainDebug\main$1716                                          0004EC GR
+ 17 A$mainDebug\main$1717                                          0004ED GR
+ 17 A$mainDebug\main$1720                                          0004EE GR
+ 17 A$mainDebug\main$1721                                          0004F1 GR
+ 17 A$mainDebug\main$1722                                          0004F2 GR
+ 17 A$mainDebug\main$1723                                          0004F5 GR
+ 17 A$mainDebug\main$1727                                          0004F6 GR
+ 17 A$mainDebug\main$1728                                          0004F9 GR
+ 17 A$mainDebug\main$1729                                          0004FA GR
+ 17 A$mainDebug\main$1730                                          0004FC GR
+ 17 A$mainDebug\main$1733                                          0004FE GR
+ 17 A$mainDebug\main$1734                                          000500 GR
+ 17 A$mainDebug\main$1735                                          000502 GR
+ 17 A$mainDebug\main$1736                                          000504 GR
+ 17 A$mainDebug\main$1737                                          000506 GR
+ 17 A$mainDebug\main$1738                                          000509 GR
+ 17 A$mainDebug\main$1739                                          00050B GR
+ 17 A$mainDebug\main$1743                                          00050D GR
+ 17 A$mainDebug\main$1744                                          000510 GR
+ 17 A$mainDebug\main$1745                                          000511 GR
+ 17 A$mainDebug\main$1746                                          000513 GR
+ 17 A$mainDebug\main$1749                                          000515 GR
+ 17 A$mainDebug\main$1750                                          000518 GR
+ 17 A$mainDebug\main$1751                                          000519 GR
+ 17 A$mainDebug\main$1752                                          00051A GR
+ 17 A$mainDebug\main$1753                                          00051C GR
+ 17 A$mainDebug\main$1754                                          00051E GR
+ 17 A$mainDebug\main$1755                                          000520 GR
+ 17 A$mainDebug\main$1756                                          000522 GR
+ 17 A$mainDebug\main$1757                                          000524 GR
+ 17 A$mainDebug\main$1758                                          000526 GR
+ 17 A$mainDebug\main$1759                                          000528 GR
+ 17 A$mainDebug\main$1760                                          00052B GR
+ 17 A$mainDebug\main$1761                                          00052D GR
+ 17 A$mainDebug\main$1762                                          00052F GR
+ 17 A$mainDebug\main$1765                                          000531 GR
+ 17 A$mainDebug\main$1766                                          000533 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 11.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$mainDebug\main$1767                                          000535 GR
+ 17 A$mainDebug\main$1768                                          000537 GR
+ 17 A$mainDebug\main$1769                                          000539 GR
+ 17 A$mainDebug\main$1770                                          00053C GR
+ 17 A$mainDebug\main$1771                                          00053E GR
+ 17 A$mainDebug\main$1774                                          000540 GR
+ 17 A$mainDebug\main$1775                                          000543 GR
+ 17 A$mainDebug\main$1778                                          000545 GR
+ 17 A$mainDebug\main$1779                                          000547 GR
+ 17 A$mainDebug\main$1780                                          000549 GR
+ 17 A$mainDebug\main$1781                                          00054B GR
+ 17 A$mainDebug\main$1782                                          00054D GR
+ 17 A$mainDebug\main$1783                                          00054F GR
+ 17 A$mainDebug\main$1784                                          000551 GR
+ 17 A$mainDebug\main$1785                                          000553 GR
+ 17 A$mainDebug\main$1786                                          000555 GR
+ 17 A$mainDebug\main$1787                                          000557 GR
+ 17 A$mainDebug\main$1788                                          00055A GR
+ 17 A$mainDebug\main$1789                                          00055C GR
+ 17 A$mainDebug\main$1790                                          00055E GR
+ 17 A$mainDebug\main$1793                                          000560 GR
+ 17 A$mainDebug\main$1794                                          000563 GR
+ 17 A$mainDebug\main$1795                                          000564 GR
+ 17 A$mainDebug\main$1796                                          000566 GR
+ 17 A$mainDebug\main$1797                                          000567 GR
+ 17 A$mainDebug\main$1798                                          00056A GR
+ 17 A$mainDebug\main$1799                                          00056B GR
+ 17 A$mainDebug\main$1800                                          00056E GR
+ 17 A$mainDebug\main$1801                                          00056F GR
+ 17 A$mainDebug\main$1802                                          000571 GR
+ 17 A$mainDebug\main$1803                                          000574 GR
+ 17 A$mainDebug\main$1806                                          000576 GR
+ 17 A$mainDebug\main$1807                                          000578 GR
+ 17 A$mainDebug\main$1812                                          00057B GR
+ 17 A$mainDebug\main$1814                                          00057D GR
+ 17 A$mainDebug\main$1815                                          000580 GR
+ 17 A$mainDebug\main$1816                                          000581 GR
+ 17 A$mainDebug\main$1817                                          000582 GR
+ 17 A$mainDebug\main$1818                                          000585 GR
+ 17 A$mainDebug\main$1819                                          000586 GR
+ 17 A$mainDebug\main$1820                                          000589 GR
+ 17 A$mainDebug\main$1823                                          00058A GR
+ 17 A$mainDebug\main$1824                                          00058C GR
+ 17 A$mainDebug\main$1825                                          00058E GR
+ 17 A$mainDebug\main$1826                                          000590 GR
+ 17 A$mainDebug\main$1827                                          000592 GR
+ 17 A$mainDebug\main$1828                                          000595 GR
+ 17 A$mainDebug\main$1829                                          000597 GR
+ 17 A$mainDebug\main$1834                                          000599 GR
+ 17 A$mainDebug\main$1837                                          00059B GR
+ 17 A$mainDebug\main$1840                                          00059D GR
+ 17 A$mainDebug\main$1841                                          00059F GR
+ 17 A$mainDebug\main$1842                                          0005A1 GR
+ 17 A$mainDebug\main$1843                                          0005A3 GR
+ 17 A$mainDebug\main$1844                                          0005A5 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 12.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$mainDebug\main$1845                                          0005A8 GR
+ 17 A$mainDebug\main$1846                                          0005AA GR
+ 17 A$mainDebug\main$1851                                          0005AC GR
+ 17 A$mainDebug\main$1854                                          0005AE GR
+ 17 A$mainDebug\main$1859                                          0005B0 GR
+ 17 A$mainDebug\main$1861                                          0005B2 GR
+ 17 A$mainDebug\main$1866                                          0005B5 GR
+ 17 A$mainDebug\main$1868                                          0005B7 GR
+ 17 A$mainDebug\main$1873                                          0005BA GR
+ 17 A$mainDebug\main$1875                                          0005BC GR
+ 17 A$mainDebug\main$1876                                          0005BE GR
+ 17 A$mainDebug\main$1877                                          0005C0 GR
+ 17 A$mainDebug\main$1878                                          0005C2 GR
+ 17 A$mainDebug\main$1879                                          0005C4 GR
+ 17 A$mainDebug\main$1880                                          0005C7 GR
+ 17 A$mainDebug\main$1881                                          0005C9 GR
+ 17 A$mainDebug\main$1887                                          0005CB GR
+ 17 A$mainDebug\main$1888                                          0005CE GR
+ 17 A$mainDebug\main$1889                                          0005CF GR
+ 17 A$mainDebug\main$1890                                          0005D0 GR
+ 17 A$mainDebug\main$1891                                          0005D3 GR
+ 17 A$mainDebug\main$1893                                          0005D5 GR
+ 17 A$mainDebug\main$1899                                          0005D8 GR
   E A$mainDebug\main$741                                           000000 GR
   E A$mainDebug\main$742                                           000003 GR
   E A$mainDebug\main$744                                           00000B GR
@@ -586,6 +718,11 @@ Symbol Table
  17 A$mainDebug\main$837                                           000032 GR
  17 A$mainDebug\main$838                                           000033 GR
  17 A$mainDebug\main$839                                           000034 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 13.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
  17 A$mainDebug\main$840                                           000035 GR
  17 A$mainDebug\main$841                                           000036 GR
  17 A$mainDebug\main$842                                           000037 GR
@@ -598,11 +735,6 @@ Symbol Table
  17 A$mainDebug\main$849                                           00003E GR
  17 A$mainDebug\main$850                                           00003F GR
  17 A$mainDebug\main$851                                           000040 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 11.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
  17 A$mainDebug\main$852                                           000041 GR
  17 A$mainDebug\main$853                                           000042 GR
  17 A$mainDebug\main$854                                           000043 GR
@@ -646,6 +778,11 @@ Symbol Table
  17 A$mainDebug\main$894                                           00006E GR
  17 A$mainDebug\main$895                                           00006F GR
  17 A$mainDebug\main$896                                           000070 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 14.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
  17 A$mainDebug\main$897                                           000071 GR
  17 A$mainDebug\main$898                                           000072 GR
  17 A$mainDebug\main$899                                           000073 GR
@@ -658,11 +795,6 @@ Symbol Table
  17 A$mainDebug\main$906                                           00007A GR
  17 A$mainDebug\main$907                                           00007B GR
  17 A$mainDebug\main$908                                           00007C GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 12.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
  17 A$mainDebug\main$909                                           00007D GR
  17 A$mainDebug\main$910                                           00007E GR
  17 A$mainDebug\main$913                                           000081 GR
@@ -706,6 +838,11 @@ Symbol Table
  17 A$mainDebug\main$974                                           0000BD GR
  17 A$mainDebug\main$975                                           0000BE GR
  17 A$mainDebug\main$976                                           0000BF GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
  17 A$mainDebug\main$977                                           0000C2 GR
  17 A$mainDebug\main$979                                           0000C4 GR
  17 A$mainDebug\main$983                                           0000C7 GR
@@ -718,11 +855,6 @@ Symbol Table
  17 A$mainDebug\main$994                                           0000D2 GR
  17 A$mainDebug\main$995                                           0000D3 GR
  17 A$mainDebug\main$996                                           0000D4 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 13.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
  17 A$mainDebug\main$999                                           0000D7 GR
     A.0                                                         =  0000E0 L
     A.1                                                         =  0000E1 L
@@ -751,65 +883,86 @@ Symbol Table
     B.5                                                         =  0000F5 L
     B.6                                                         =  0000F6 L
     B.7                                                         =  0000F7 L
- 17 C$main.c$105$1_1$35                                         =  0002AA GR
- 17 C$main.c$106$2_1$36                                         =  0002AA GR
- 17 C$main.c$107$3_1$37                                         =  0002B0 GR
- 17 C$main.c$108$3_1$37                                         =  0002BF GR
- 17 C$main.c$109$3_1$37                                         =  0002CE GR
- 17 C$main.c$110$3_1$37                                         =  0002DD GR
- 17 C$main.c$111$3_1$37                                         =  0002EC GR
- 17 C$main.c$112$3_1$37                                         =  0002FB GR
- 17 C$main.c$113$3_1$37                                         =  00030A GR
- 17 C$main.c$115$2_1$36                                         =  000319 GR
- 17 C$main.c$116$2_1$36                                         =  00031E GR
- 17 C$main.c$117$2_1$36                                         =  000328 GR
- 17 C$main.c$120$3_1$38                                         =  00033D GR
- 17 C$main.c$121$3_1$38                                         =  00034C GR
- 17 C$main.c$122$3_1$38                                         =  000351 GR
- 17 C$main.c$123$3_1$38                                         =  00036C GR
- 17 C$main.c$124$3_1$38                                         =  00037A GR
- 17 C$main.c$125$3_1$38                                         =  00037F GR
- 17 C$main.c$126$3_1$38                                         =  000382 GR
- 17 C$main.c$127$3_1$38                                         =  000382 GR
- 17 C$main.c$128$3_1$38                                         =  000391 GR
- 17 C$main.c$130$4_1$39                                         =  000391 GR
- 17 C$main.c$131$4_1$39                                         =  00039B GR
- 17 C$main.c$133$5_1$40                                         =  0003A8 GR
- 17 C$main.c$135$3_1$38                                         =  0003B7 GR
- 17 C$main.c$136$3_1$38                                         =  0003CA GR
- 17 C$main.c$137$3_1$38                                         =  0003E6 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 14.
+ 17 C$main.c$105$1_1$35                                         =  000310 GR
+ 17 C$main.c$106$2_1$36                                         =  000310 GR
+ 17 C$main.c$107$3_1$37                                         =  000319 GR
+ 17 C$main.c$108$3_1$37                                         =  000328 GR
+ 17 C$main.c$109$3_1$37                                         =  000337 GR
+ 17 C$main.c$110$3_1$37                                         =  000346 GR
+ 17 C$main.c$111$3_1$37                                         =  000355 GR
+ 17 C$main.c$112$3_1$37                                         =  000364 GR
+ 17 C$main.c$113$3_1$37                                         =  000373 GR
+ 17 C$main.c$114$3_1$37                                         =  000382 GR
+ 17 C$main.c$115$3_1$37                                         =  000391 GR
+ 17 C$main.c$116$3_1$37                                         =  0003A0 GR
+ 17 C$main.c$118$2_1$36                                         =  0003AF GR
+ 17 C$main.c$119$2_1$36                                         =  0003B4 GR
+ 17 C$main.c$120$2_1$36                                         =  0003BE GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 C$main.c$138$3_1$38                                         =  0003F5 GR
- 17 C$main.c$140$4_1$41                                         =  0003F5 GR
- 17 C$main.c$141$4_1$41                                         =  0003FF GR
- 17 C$main.c$142$4_1$41                                         =  000403 GR
- 17 C$main.c$143$5_1$42                                         =  000410 GR
- 17 C$main.c$144$5_1$42                                         =  00041A GR
- 17 C$main.c$145$5_1$42                                         =  00041E GR
- 17 C$main.c$149$5_1$43                                         =  000433 GR
- 17 C$main.c$150$5_1$43                                         =  000438 GR
- 17 C$main.c$154$4_1$41                                         =  000440 GR
- 17 C$main.c$156$5_1$44                                         =  000448 GR
- 17 C$main.c$158$3_1$38                                         =  000457 GR
- 17 C$main.c$159$3_1$38                                         =  00045F GR
- 17 C$main.c$160$3_1$38                                         =  00047B GR
- 17 C$main.c$161$3_1$38                                         =  00048A GR
- 17 C$main.c$162$3_1$38                                         =  00048F GR
- 17 C$main.c$163$3_1$38                                         =  0004AA GR
- 17 C$main.c$164$3_1$38                                         =  0004C0 GR
- 17 C$main.c$171$2_1$36                                         =  0004C5 GR
- 17 C$main.c$172$2_1$36                                         =  0004C5 GR
- 17 C$main.c$173$1_1$35                                         =  0004C8 GR
- 17 C$main.c$175$1_1$34                                         =  0004D5 GR
+ 17 C$main.c$124$3_1$38                                         =  0003F3 GR
+ 17 C$main.c$125$3_1$38                                         =  000402 GR
+ 17 C$main.c$126$3_1$38                                         =  000407 GR
+ 17 C$main.c$127$3_1$38                                         =  000422 GR
+ 17 C$main.c$128$3_1$38                                         =  000430 GR
+ 17 C$main.c$129$3_1$38                                         =  000435 GR
+ 17 C$main.c$130$3_1$38                                         =  000438 GR
+ 17 C$main.c$131$3_1$38                                         =  000438 GR
+ 17 C$main.c$132$3_1$38                                         =  000447 GR
+ 17 C$main.c$134$4_1$39                                         =  000447 GR
+ 17 C$main.c$135$4_1$39                                         =  000451 GR
+ 17 C$main.c$137$5_1$40                                         =  00045E GR
+ 17 C$main.c$139$3_1$38                                         =  00046D GR
+ 17 C$main.c$140$3_1$38                                         =  000480 GR
+ 17 C$main.c$141$3_1$38                                         =  00049C GR
+ 17 C$main.c$142$3_1$38                                         =  0004AB GR
+ 17 C$main.c$144$4_1$41                                         =  0004AB GR
+ 17 C$main.c$145$4_1$41                                         =  0004B5 GR
+ 17 C$main.c$146$4_1$41                                         =  0004B9 GR
+ 17 C$main.c$147$5_1$42                                         =  0004C6 GR
+ 17 C$main.c$148$5_1$42                                         =  0004D0 GR
+ 17 C$main.c$149$5_1$42                                         =  0004D4 GR
+ 17 C$main.c$153$5_1$43                                         =  0004E9 GR
+ 17 C$main.c$154$5_1$43                                         =  0004EE GR
+ 17 C$main.c$158$4_1$41                                         =  0004F6 GR
+ 17 C$main.c$160$5_1$44                                         =  0004FE GR
+ 17 C$main.c$162$3_1$38                                         =  00050D GR
+ 17 C$main.c$163$3_1$38                                         =  000515 GR
+ 17 C$main.c$164$3_1$38                                         =  000531 GR
+ 17 C$main.c$165$3_1$38                                         =  000540 GR
+ 17 C$main.c$166$3_1$38                                         =  000545 GR
+ 17 C$main.c$167$3_1$38                                         =  000560 GR
+ 17 C$main.c$168$3_1$38                                         =  000576 GR
+ 17 C$main.c$169$3_1$38                                         =  00057B GR
+ 17 C$main.c$171$3_1$38                                         =  00057B GR
+ 17 C$main.c$172$3_1$38                                         =  00058A GR
+ 17 C$main.c$173$3_1$38                                         =  000599 GR
+ 17 C$main.c$174$3_1$38                                         =  000599 GR
+ 17 C$main.c$175$3_1$38                                         =  00059D GR
+ 17 C$main.c$176$3_1$38                                         =  0005AC GR
+ 17 C$main.c$177$3_1$38                                         =  0005AC GR
+ 17 C$main.c$178$3_1$38                                         =  0005B0 GR
+ 17 C$main.c$179$3_1$38                                         =  0005B0 GR
+ 17 C$main.c$180$3_1$38                                         =  0005B5 GR
+ 17 C$main.c$181$3_1$38                                         =  0005B5 GR
+ 17 C$main.c$182$3_1$38                                         =  0005BA GR
+ 17 C$main.c$183$3_1$38                                         =  0005BA GR
+ 17 C$main.c$187$1_1$35                                         =  0005CB GR
+ 17 C$main.c$188$1_1$35                                         =  0005CB GR
+ 17 C$main.c$189$1_1$34                                         =  0005D8 GR
  17 C$main.c$24$0_0$25                                          =  000000 GR
  17 C$main.c$25$1_0$25                                          =  00001B GR
  17 C$main.c$26$1_0$25                                          =  00001D GR
  17 C$main.c$27$1_0$25                                          =  00001F GR
  17 C$main.c$28$1_0$25                                          =  000021 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
  17 C$main.c$29$1_0$25                                          =  000024 GR
  17 C$main.c$30$1_0$25                                          =  000027 GR
  17 C$main.c$31$1_0$25                                          =  000029 GR
@@ -838,11 +991,6 @@ Symbol Table
  17 C$main.c$65$2_0$29                                          =  00013A GR
  17 C$main.c$67$1_0$28                                          =  000143 GR
  17 C$main.c$68$1_0$32                                          =  000144 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
  17 C$main.c$70$1_0$32                                          =  000144 GR
  17 C$main.c$71$1_0$32                                          =  000153 GR
  17 C$main.c$72$1_0$32                                          =  000162 GR
@@ -858,11 +1006,11 @@ Symbol Table
  17 C$main.c$82$1_0$34                                          =  0001DE GR
  17 C$main.c$83$2_0$34                                          =  0001DE GR
  17 C$main.c$84$2_0$34                                          =  00026D GR
- 17 C$main.c$86$1_0$34                                          =  000290 GR
- 17 C$main.c$87$2_0$35                                          =  00029C GR
- 17 C$main.c$88$1_1$35                                          =  0002A1 GR
- 17 C$main.c$89$1_1$35                                          =  0002A4 GR
- 17 C$main.c$93$1_1$35                                          =  0002A7 GR
+ 17 C$main.c$86$1_0$34                                          =  0002F6 GR
+ 17 C$main.c$87$2_0$35                                          =  000302 GR
+ 17 C$main.c$88$1_1$35                                          =  000307 GR
+ 17 C$main.c$89$1_1$35                                          =  00030A GR
+ 17 C$main.c$93$1_1$35                                          =  00030D GR
     CPRL2                                                       =  0000C8 L
     CT2                                                         =  0000C9 L
     CY                                                          =  0000D7 L
@@ -870,6 +1018,11 @@ Symbol Table
     DPL                                                         =  000082 L
     EA                                                          =  0000AF L
     ES                                                          =  0000AC L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 18.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     ET0                                                         =  0000A9 L
     ET1                                                         =  0000AB L
     ET2                                                         =  0000AD L
@@ -879,33 +1032,34 @@ Symbol Table
     EXF2                                                        =  0000CE L
     F0                                                          =  0000D5 L
  18 Fmain$__str_0$0_0$0                                         =  000000 GR
- 17 Fmain$__str_1$0_0$0                                         =  0004D6 GR
- 17 Fmain$__str_12$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_13$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_14$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_15$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_16$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_17$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_18$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_19$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_2$0_0$0                                         =  0004D6 GR
- 17 Fmain$__str_20$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_21$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_22$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_23$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_24$0_0$0                                        =  0004D6 GR
- 17 Fmain$__str_3$0_0$0                                         =  0004D6 GR
- 17 Fmain$__str_4$0_0$0                                         =  0004D6 GR
- 17 Fmain$__str_5$0_0$0                                         =  0004D6 GR
- 17 Fmain$__str_6$0_0$0                                         =  0004D6 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
- 17 Fmain$__str_7$0_0$0                                         =  0004D6 GR
- 17 Fmain$__str_8$0_0$0                                         =  0004D6 GR
- 17 Fmain$__str_9$0_0$0                                         =  0004D6 GR
+ 17 Fmain$__str_1$0_0$0                                         =  0005D9 GR
+ 17 Fmain$__str_12$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_13$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_14$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_15$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_16$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_17$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_18$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_19$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_2$0_0$0                                         =  0005D9 GR
+ 17 Fmain$__str_20$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_21$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_22$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_23$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_24$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_25$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_26$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_27$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_28$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_29$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_3$0_0$0                                         =  0005D9 GR
+ 17 Fmain$__str_30$0_0$0                                        =  0005D9 GR
+ 17 Fmain$__str_4$0_0$0                                         =  0005D9 GR
+ 17 Fmain$__str_5$0_0$0                                         =  0005D9 GR
+ 17 Fmain$__str_6$0_0$0                                         =  0005D9 GR
+ 17 Fmain$__str_7$0_0$0                                         =  0005D9 GR
+ 17 Fmain$__str_8$0_0$0                                         =  0005D9 GR
+ 17 Fmain$__str_9$0_0$0                                         =  0005D9 GR
  19 Fmain$__xinit_count$0_0$0                                   =  000000 GR
  19 Fmain$__xinit_flag$0_0$0                                    =  000008 GR
  19 Fmain$__xinit_milli$0_0$0                                   =  000009 GR
@@ -924,6 +1078,11 @@ Symbol Table
     G$CCAP1H$0_0$0                                              =  0000FB G
     G$CCAP1L$0_0$0                                              =  0000EB G
     G$CCAP2H$0_0$0                                              =  0000FC G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 19.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$CCAP2L$0_0$0                                              =  0000EC G
     G$CCAP3H$0_0$0                                              =  0000FD G
     G$CCAP3L$0_0$0                                              =  0000ED G
@@ -958,11 +1117,6 @@ Symbol Table
     G$EA$0_0$0                                                  =  0000AF G
     G$EC$0_0$0                                                  =  0000AE G
     G$EECON$0_0$0                                               =  0000D2 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$ES$0_0$0                                                  =  0000AC G
     G$ET0$0_0$0                                                 =  0000A9 G
     G$ET1$0_0$0                                                 =  0000AB G
@@ -984,6 +1138,11 @@ Symbol Table
     G$IPH0$0_0$0                                                =  0000B7 G
     G$IPH1$0_0$0                                                =  0000B3 G
     G$IPL0$0_0$0                                                =  0000B8 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 20.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$IPL1$0_0$0                                                =  0000B2 G
     G$IR_Write$0_0$0                                            =  00F000 G
     G$IT0$0_0$0                                                 =  000088 G
@@ -1018,11 +1177,6 @@ Symbol Table
     G$P2_3$0_0$0                                                =  0000A3 G
     G$P2_4$0_0$0                                                =  0000A4 G
     G$P2_5$0_0$0                                                =  0000A5 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 18.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$P2_6$0_0$0                                                =  0000A6 G
     G$P2_7$0_0$0                                                =  0000A7 G
     G$P3$0_0$0                                                  =  0000B0 G
@@ -1044,6 +1198,11 @@ Symbol Table
     G$P4_6$0_0$0                                                =  0000C6 G
     G$P4_7$0_0$0                                                =  0000C7 G
     G$P5$0_0$0                                                  =  0000E8 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 21.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$P5_0$0_0$0                                                =  0000E8 G
     G$P5_1$0_0$0                                                =  0000E9 G
     G$P5_2$0_0$0                                                =  0000EA G
@@ -1078,11 +1237,6 @@ Symbol Table
     G$RS1$0_0$0                                                 =  0000D4 G
     G$RXD$0_0$0                                                 =  0000B0 G
     G$SADDR$0_0$0                                               =  0000A9 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 19.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$SADEN$0_0$0                                               =  0000B9 G
     G$SBUF$0_0$0                                                =  000099 G
     G$SCON$0_0$0                                                =  000098 G
@@ -1104,6 +1258,11 @@ Symbol Table
     G$T2CON_5$0_0$0                                             =  0000CD G
     G$T2CON_6$0_0$0                                             =  0000CE G
     G$T2CON_7$0_0$0                                             =  0000CF G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 22.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$T2MOD$0_0$0                                               =  0000C9 G
     G$TB8$0_0$0                                                 =  00009B G
     G$TCLK$0_0$0                                                =  0000CC G
@@ -1138,11 +1297,6 @@ Symbol Table
  17 G$timer0_ISR$0$0                                            =  000000 GR
     IE                                                          =  0000A8 L
     IE.0                                                        =  0000A8 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 20.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     IE.1                                                        =  0000A9 L
     IE.2                                                        =  0000AA L
     IE.3                                                        =  0000AB L
@@ -1164,11 +1318,16 @@ Symbol Table
     IT1                                                         =  00008A L
   B Lmain.main$a$1_0$34                                         =  000001 GR
   B Lmain.main$b$1_0$34                                         =  000019 GR
-  B Lmain.main$choice$1_1$35                                    =  00001F GR
-  B Lmain.main$column1$1_1$35                                   =  000021 GR
-  B Lmain.main$column2$1_1$35                                   =  000022 GR
-  B Lmain.main$column_value$1_1$35                              =  000023 GR
-  B Lmain.main$row_value$1_1$35                                 =  000020 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 23.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  B Lmain.main$choice$1_1$35                                    =  000030 GR
+  B Lmain.main$column1$1_1$35                                   =  000032 GR
+  B Lmain.main$column2$1_1$35                                   =  000033 GR
+  B Lmain.main$column_value$1_1$35                              =  000034 GR
+  B Lmain.main$row_value$1_1$35                                 =  000031 GR
     OV                                                          =  0000D2 L
     P                                                           =  0000D0 L
     P0                                                          =  000080 L
@@ -1198,11 +1357,6 @@ Symbol Table
     P2.5                                                        =  0000A5 L
     P2.6                                                        =  0000A6 L
     P2.7                                                        =  0000A7 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 21.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     P3                                                          =  0000B0 L
     P3.0                                                        =  0000B0 L
     P3.1                                                        =  0000B1 L
@@ -1224,6 +1378,11 @@ Symbol Table
     PSW.6                                                       =  0000D6 L
     PSW.7                                                       =  0000D7 L
     PT0                                                         =  0000B9 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 24.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     PT1                                                         =  0000BB L
     PT2                                                         =  0000BD L
     PX0                                                         =  0000B8 L
@@ -1258,11 +1417,6 @@ Symbol Table
     T2CON.3                                                     =  0000CB L
     T2CON.4                                                     =  0000CC L
     T2CON.5                                                     =  0000CD L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 22.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     T2CON.6                                                     =  0000CE L
     T2CON.7                                                     =  0000CF L
     TB8                                                         =  00009B L
@@ -1284,6 +1438,11 @@ Symbol Table
     TH2                                                         =  0000CD L
     TI                                                          =  000099 L
     TL0                                                         =  00008A L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 25.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     TL1                                                         =  00008B L
     TL2                                                         =  0000CC L
     TMOD                                                        =  000089 L
@@ -1292,7 +1451,7 @@ Symbol Table
     TR2                                                         =  0000CA L
     TXD                                                         =  0000B1 L
  17 XG$help$0$0                                                 =  0001DD GR
- 17 XG$main$0$0                                                 =  0004D5 GR
+ 17 XG$main$0$0                                                 =  0005D8 GR
  17 XG$time_show$0$0                                            =  000143 GR
  17 XG$timer0_ISR$0$0                                           =  0000B9 GR
     _AC                                                         =  0000D6 G
@@ -1318,11 +1477,6 @@ Symbol Table
     _CCAPM2                                                     =  0000DC G
     _CCAPM3                                                     =  0000DD G
     _CCAPM4                                                     =  0000DE G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 23.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _CCF0                                                       =  0000D8 G
     _CCF1                                                       =  0000D9 G
     _CCF2                                                       =  0000DA G
@@ -1344,6 +1498,11 @@ Symbol Table
     _DPL                                                        =  000082 G
     _DR_READ                                                    =  00F300 G
     _DR_WRITE                                                   =  00F100 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 26.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _EA                                                         =  0000AF G
     _EC                                                         =  0000AE G
     _EECON                                                      =  0000D2 G
@@ -1378,11 +1537,6 @@ Symbol Table
     _LCD_Init                                                      ****** GX
     _LCD_putch                                                     ****** GX
     _OV                                                         =  0000D2 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 24.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _P                                                          =  0000D0 G
     _P0                                                         =  000080 G
     _P0_0                                                       =  000080 G
@@ -1404,6 +1558,11 @@ Symbol Table
     _P1_7                                                       =  000097 G
     _P2                                                         =  0000A0 G
     _P2_0                                                       =  0000A0 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 27.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _P2_1                                                       =  0000A1 G
     _P2_2                                                       =  0000A2 G
     _P2_3                                                       =  0000A3 G
@@ -1438,11 +1597,6 @@ Symbol Table
     _P5_5                                                       =  0000ED G
     _P5_6                                                       =  0000EE G
     _P5_7                                                       =  0000EF G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 25.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _PCON                                                       =  000087 G
     _PPCL                                                       =  0000BE G
     _PS                                                         =  0000BC G
@@ -1464,6 +1618,11 @@ Symbol Table
     _RCLK                                                       =  0000CD G
     _RD                                                         =  0000B7 G
     _REN                                                        =  00009C G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 28.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _RI                                                         =  000098 G
     _RS0                                                        =  0000D3 G
     _RS1                                                        =  0000D4 G
@@ -1498,11 +1657,6 @@ Symbol Table
     _TF1                                                        =  00008F G
     _TF2                                                        =  0000CF G
     _TH0                                                        =  00008C G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 26.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _TH1                                                        =  00008D G
     _TH2                                                        =  0000CD G
     _TI                                                         =  000099 G
@@ -1523,17 +1677,28 @@ Symbol Table
  18 ___str_13                                                      000272 R
  18 ___str_14                                                      00029D R
  18 ___str_15                                                      0002D2 R
- 18 ___str_16                                                      0002FA R
- 18 ___str_17                                                      000312 R
- 18 ___str_18                                                      00031D R
- 18 ___str_19                                                      000333 R
+ 18 ___str_16                                                      0002E9 R
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 29.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 18 ___str_17                                                      0002FF R
+ 18 ___str_18                                                      000318 R
+ 18 ___str_19                                                      000330 R
  18 ___str_2                                                       000069 R
- 18 ___str_20                                                      00034A R
- 18 ___str_21                                                      00034D R
- 18 ___str_22                                                      00035E R
- 18 ___str_23                                                      000382 R
- 18 ___str_24                                                      000396 R
+ 18 ___str_20                                                      000340 R
+ 18 ___str_21                                                      00034B R
+ 18 ___str_22                                                      000361 R
+ 18 ___str_23                                                      000378 R
+ 18 ___str_24                                                      00037B R
+ 18 ___str_25                                                      00038C R
+ 18 ___str_26                                                      0003B0 R
+ 18 ___str_27                                                      0003C4 R
+ 18 ___str_28                                                      0003C7 R
+ 18 ___str_29                                                      0003E3 R
  18 ___str_3                                                       0000BD R
+ 18 ___str_30                                                      000400 R
  18 ___str_4                                                       0000E3 R
  18 ___str_5                                                       000117 R
  18 ___str_6                                                       000157 R
@@ -1557,27 +1722,27 @@ Symbol Table
   D _count                                                         000000 GR
   D _flag                                                          000008 GR
     _getchar                                                       ****** GX
-    _getchar_nonblock                                              ****** GX
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 27.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
  17 _help                                                          000144 GR
   B _hours                                                         000000 GR
     _inttostr                                                      ****** GX
+    _lcd_clear                                                     ****** GX
     _lcd_gotoxy                                                    ****** GX
     _lcd_gotoxy_PARM_2                                             ****** GX
  17 _main                                                          0001DE GR
   B _main_a_65536_34                                               000001 R
   B _main_b_65536_34                                               000019 R
-  B _main_choice_65537_35                                          00001F R
-  B _main_column1_65537_35                                         000021 R
-  B _main_column2_65537_35                                         000022 R
-  B _main_column_value_65537_35                                    000023 R
-  B _main_row_value_65537_35                                       000020 R
+  B _main_choice_65537_35                                          000030 R
+  B _main_column1_65537_35                                         000032 R
+  B _main_column2_65537_35                                         000033 R
+  B _main_column_value_65537_35                                    000034 R
+  B _main_row_value_65537_35                                       000031 R
   D _milli                                                         000009 GR
   D _minutes                                                       00000B GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 30.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _printf_tiny                                                   ****** GX
   D _seconds                                                       00000A GR
  17 _time_show                                                     0000BA GR
@@ -1618,11 +1783,6 @@ Symbol Table
     b.4                                                         =  0000F4 L
     b.5                                                         =  0000F5 L
     b.6                                                         =  0000F6 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 28.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     b.7                                                         =  0000F7 L
     cprl2                                                       =  0000C8 L
     ct2                                                         =  0000C9 L
@@ -1638,6 +1798,11 @@ Symbol Table
     ex1                                                         =  0000AA L
     exen2                                                       =  0000CB L
     exf2                                                        =  0000CE L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 31.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     f0                                                          =  0000D5 L
     ie                                                          =  0000A8 L
     ie.0                                                        =  0000A8 L
@@ -1678,11 +1843,6 @@ Symbol Table
     p1.3                                                        =  000093 L
     p1.4                                                        =  000094 L
     p1.5                                                        =  000095 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 29.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     p1.6                                                        =  000096 L
     p1.7                                                        =  000097 L
     p2                                                          =  0000A0 L
@@ -1698,6 +1858,11 @@ Symbol Table
     p3.0                                                        =  0000B0 L
     p3.1                                                        =  0000B1 L
     p3.2                                                        =  0000B2 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 32.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     p3.3                                                        =  0000B3 L
     p3.4                                                        =  0000B4 L
     p3.5                                                        =  0000B5 L
@@ -1738,11 +1903,6 @@ Symbol Table
     scon.5                                                      =  00009D L
     scon.6                                                      =  00009E L
     scon.7                                                      =  00009F L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 30.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     sm0                                                         =  00009F L
     sm1                                                         =  00009E L
     sm2                                                         =  00009D L
@@ -1758,6 +1918,11 @@ Symbol Table
     t2con.7                                                     =  0000CF L
     tb8                                                         =  00009B L
     tclk                                                        =  0000CC L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 33.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     tcon                                                        =  000088 L
     tcon.0                                                      =  000088 L
     tcon.1                                                      =  000089 L
@@ -1784,7 +1949,7 @@ Symbol Table
     txd                                                         =  0000B1 L
 
 
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 31.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 34.
 Hexadecimal [24-Bits]
 
 Area Table
@@ -1800,7 +1965,7 @@ Area Table
    8 IABS                                       size      0   flags    8
    9 BSEG                                       size      0   flags   80
    A PSEG                                       size      0   flags   50
-   B XSEG                                       size     24   flags   40
+   B XSEG                                       size     35   flags   40
    C XABS                                       size      0   flags   48
    D XISEG                                      size      C   flags   40
    E HOME                                       size     11   flags   20
@@ -1812,8 +1977,8 @@ Area Table
   14 GSINIT5                                    size      0   flags   20
   15 GSINIT                                     size      0   flags   20
   16 GSFINAL                                    size      3   flags   20
-  17 CSEG                                       size    4D6   flags   20
-  18 CONST                                      size    399   flags   20
+  17 CSEG                                       size    5D9   flags   20
+  18 CONST                                      size    41F   flags   20
   19 XINIT                                      size      C   flags   20
   1A CABS                                       size      0   flags   28
 

@@ -2,7 +2,6 @@ M:UART
 F:G$uartinit$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 F:G$putchar$0_0$0({2}DF,SI:S),Z,0,0,0,0,0
 F:G$getchar$0_0$0({2}DF,SI:S),Z,0,0,0,0,0
-F:G$getchar_nonblock$0_0$0({2}DF,SI:S),C,0,0,0,0,0
 S:LUART.putchar$c$1_0$17({2}SI:S),F,0,0
 S:G$P0$0_0$0({1}SC:U),I,0,0
 S:G$SP$0_0$0({1}SC:U),I,0,0
@@ -215,4 +214,3 @@ S:G$timer_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$time_show$0_0$0({2}DF,SV:S),C,0,0
 S:G$inttostr$0_0$0({2}DF,SV:S),C,0,0
 S:G$uartinit$0_0$0({2}DF,SV:S),C,0,0
-S:G$getchar_nonblock$0_0$0({2}DF,SI:S),C,0,0

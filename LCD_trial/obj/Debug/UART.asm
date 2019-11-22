@@ -8,7 +8,6 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
-	.globl _getchar_nonblock
 	.globl _uartinit
 	.globl _time_show
 	.globl _P5_7
@@ -794,44 +793,6 @@ _getchar:
 ;	UART.c:27: }
 	C$UART.c$27$1_0$19 ==.
 	XG$getchar$0$0 ==.
-	ret
-;------------------------------------------------------------
-;Allocation info for local variables in function 'getchar_nonblock'
-;------------------------------------------------------------
-	G$getchar_nonblock$0$0 ==.
-	C$UART.c$28$1_0$21 ==.
-;	UART.c:28: int getchar_nonblock()
-;	-----------------------------------------
-;	 function getchar_nonblock
-;	-----------------------------------------
-_getchar_nonblock:
-	C$UART.c$30$1_0$21 ==.
-;	UART.c:30: if(RI)
-	C$UART.c$32$2_0$22 ==.
-;	UART.c:32: RI=0;
-;	assignBit
-	jbc	_RI,00110$
-	sjmp	00102$
-00110$:
-	C$UART.c$33$2_0$22 ==.
-;	UART.c:33: return SBUF;
-	mov	r6,_SBUF
-	mov	r7,#0x00
-	mov	dpl,r6
-	mov	dph,r7
-	sjmp	00104$
-00102$:
-	C$UART.c$38$2_0$23 ==.
-;	UART.c:38: time_show();
-	lcall	_time_show
-	C$UART.c$39$2_0$23 ==.
-;	UART.c:39: return 0;
-	mov	dptr,#0x0000
-00104$:
-	C$UART.c$42$1_0$21 ==.
-;	UART.c:42: }
-	C$UART.c$42$1_0$21 ==.
-	XG$getchar_nonblock$0$0 ==.
 	ret
 	.area CSEG    (CODE)
 	.area CONST   (CODE)
