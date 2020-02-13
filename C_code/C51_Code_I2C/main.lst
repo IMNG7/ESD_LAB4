@@ -1,0 +1,1208 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.9.0 #11195 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module main
+                                      6 	.optsdcc -mmcs51 --model-large
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl _help
+                                     13 	.globl _eereset
+                                     14 	.globl _get_block
+                                     15 	.globl _getstr_data
+                                     16 	.globl _getstr_addr
+                                     17 	.globl _getchar
+                                     18 	.globl _delay
+                                     19 	.globl _dummy_write
+                                     20 	.globl _dummy_read
+                                     21 	.globl _reeprom_seq
+                                     22 	.globl _reeprom
+                                     23 	.globl _weeprom
+                                     24 	.globl _printf_tiny
+                                     25 ;--------------------------------------------------------
+                                     26 ; special function registers
+                                     27 ;--------------------------------------------------------
+                                     28 	.area RSEG    (ABS,DATA)
+      000000                         29 	.org 0x0000
+                                     30 ;--------------------------------------------------------
+                                     31 ; special function bits
+                                     32 ;--------------------------------------------------------
+                                     33 	.area RSEG    (ABS,DATA)
+      000000                         34 	.org 0x0000
+                                     35 ;--------------------------------------------------------
+                                     36 ; overlayable register banks
+                                     37 ;--------------------------------------------------------
+                                     38 	.area REG_BANK_0	(REL,OVR,DATA)
+      000000                         39 	.ds 8
+                                     40 ;--------------------------------------------------------
+                                     41 ; internal ram data
+                                     42 ;--------------------------------------------------------
+                                     43 	.area DSEG    (DATA)
+                                     44 ;--------------------------------------------------------
+                                     45 ; overlayable items in internal ram 
+                                     46 ;--------------------------------------------------------
+                                     47 ;--------------------------------------------------------
+                                     48 ; Stack segment in internal ram 
+                                     49 ;--------------------------------------------------------
+                                     50 	.area	SSEG
+      000000                         51 __start__stack:
+      000000                         52 	.ds	1
+                                     53 
+                                     54 ;--------------------------------------------------------
+                                     55 ; indirectly addressable internal ram data
+                                     56 ;--------------------------------------------------------
+                                     57 	.area ISEG    (DATA)
+                                     58 ;--------------------------------------------------------
+                                     59 ; absolute internal ram data
+                                     60 ;--------------------------------------------------------
+                                     61 	.area IABS    (ABS,DATA)
+                                     62 	.area IABS    (ABS,DATA)
+                                     63 ;--------------------------------------------------------
+                                     64 ; bit data
+                                     65 ;--------------------------------------------------------
+                                     66 	.area BSEG    (BIT)
+                                     67 ;--------------------------------------------------------
+                                     68 ; paged external ram data
+                                     69 ;--------------------------------------------------------
+                                     70 	.area PSEG    (PAG,XDATA)
+                                     71 ;--------------------------------------------------------
+                                     72 ; external ram data
+                                     73 ;--------------------------------------------------------
+                                     74 	.area XSEG    (XDATA)
+                           000000    75 Lmain.main$choice$1_0$29==.
+      000000                         76 _main_choice_65536_29:
+      000000                         77 	.ds 1
+                                     78 ;--------------------------------------------------------
+                                     79 ; absolute external ram data
+                                     80 ;--------------------------------------------------------
+                                     81 	.area XABS    (ABS,XDATA)
+                                     82 ;--------------------------------------------------------
+                                     83 ; external initialized ram data
+                                     84 ;--------------------------------------------------------
+                                     85 	.area XISEG   (XDATA)
+                                     86 	.area HOME    (CODE)
+                                     87 	.area GSINIT0 (CODE)
+                                     88 	.area GSINIT1 (CODE)
+                                     89 	.area GSINIT2 (CODE)
+                                     90 	.area GSINIT3 (CODE)
+                                     91 	.area GSINIT4 (CODE)
+                                     92 	.area GSINIT5 (CODE)
+                                     93 	.area GSINIT  (CODE)
+                                     94 	.area GSFINAL (CODE)
+                                     95 	.area CSEG    (CODE)
+                                     96 ;--------------------------------------------------------
+                                     97 ; interrupt vector 
+                                     98 ;--------------------------------------------------------
+                                     99 	.area HOME    (CODE)
+      000000                        100 __interrupt_vect:
+      000000 02r00r00         [24]  101 	ljmp	__sdcc_gsinit_startup
+                                    102 ;--------------------------------------------------------
+                                    103 ; global & static initialisations
+                                    104 ;--------------------------------------------------------
+                                    105 	.area HOME    (CODE)
+                                    106 	.area GSINIT  (CODE)
+                                    107 	.area GSFINAL (CODE)
+                                    108 	.area GSINIT  (CODE)
+                                    109 	.globl __sdcc_gsinit_startup
+                                    110 	.globl __sdcc_program_startup
+                                    111 	.globl __start__stack
+                                    112 	.globl __mcs51_genXINIT
+                                    113 	.globl __mcs51_genXRAMCLEAR
+                                    114 	.globl __mcs51_genRAMCLEAR
+                                    115 	.area GSFINAL (CODE)
+      000000 02r00r03         [24]  116 	ljmp	__sdcc_program_startup
+                                    117 ;--------------------------------------------------------
+                                    118 ; Home
+                                    119 ;--------------------------------------------------------
+                                    120 	.area HOME    (CODE)
+                                    121 	.area HOME    (CODE)
+      000003                        122 __sdcc_program_startup:
+      000003 02r00rA9         [24]  123 	ljmp	_main
+                                    124 ;	return from main will return to caller
+                                    125 ;--------------------------------------------------------
+                                    126 ; code
+                                    127 ;--------------------------------------------------------
+                                    128 	.area CSEG    (CODE)
+                                    129 ;------------------------------------------------------------
+                                    130 ;Allocation info for local variables in function 'help'
+                                    131 ;------------------------------------------------------------
+                           000000   132 	G$help$0$0 ==.
+                           000000   133 	C$main.c$7$0_0$27 ==.
+                                    134 ;	main.c:7: void help()
+                                    135 ;	-----------------------------------------
+                                    136 ;	 function help
+                                    137 ;	-----------------------------------------
+      000000                        138 _help:
+                           000007   139 	ar7 = 0x07
+                           000006   140 	ar6 = 0x06
+                           000005   141 	ar5 = 0x05
+                           000004   142 	ar4 = 0x04
+                           000003   143 	ar3 = 0x03
+                           000002   144 	ar2 = 0x02
+                           000001   145 	ar1 = 0x01
+                           000000   146 	ar0 = 0x00
+                           000000   147 	C$main.c$10$1_0$27 ==.
+                                    148 ;	main.c:10: printf_tiny("\n\rWelcome Teaching Assistant to the Demo of the I2C on the AT89C51 board ");
+      000000 74r00            [12]  149 	mov	a,#___str_0
+      000002 C0 E0            [24]  150 	push	acc
+      000004 74s00            [12]  151 	mov	a,#(___str_0 >> 8)
+      000006 C0 E0            [24]  152 	push	acc
+      000008 12r00r00         [24]  153 	lcall	_printf_tiny
+      00000B 15 81            [12]  154 	dec	sp
+      00000D 15 81            [12]  155 	dec	sp
+                           00000F   156 	C$main.c$11$1_0$27 ==.
+                                    157 ;	main.c:11: printf_tiny("\n\rBefore Starting the program, I have some rules for you");
+      00000F 74r4A            [12]  158 	mov	a,#___str_1
+      000011 C0 E0            [24]  159 	push	acc
+      000013 74s00            [12]  160 	mov	a,#(___str_1 >> 8)
+      000015 C0 E0            [24]  161 	push	acc
+      000017 12r00r00         [24]  162 	lcall	_printf_tiny
+      00001A 15 81            [12]  163 	dec	sp
+      00001C 15 81            [12]  164 	dec	sp
+                           00001E   165 	C$main.c$12$1_0$27 ==.
+                                    166 ;	main.c:12: printf_tiny("\n\r ->Please try to enter valid values, extensive testing hurts me a lot and might even break me.");
+      00001E 74r83            [12]  167 	mov	a,#___str_2
+      000020 C0 E0            [24]  168 	push	acc
+      000022 74s00            [12]  169 	mov	a,#(___str_2 >> 8)
+      000024 C0 E0            [24]  170 	push	acc
+      000026 12r00r00         [24]  171 	lcall	_printf_tiny
+      000029 15 81            [12]  172 	dec	sp
+      00002B 15 81            [12]  173 	dec	sp
+                           00002D   174 	C$main.c$13$1_0$27 ==.
+                                    175 ;	main.c:13: printf_tiny("\n\r ->Please make sure before entering a hex value don't add 0x before it.");
+      00002D 74rE4            [12]  176 	mov	a,#___str_3
+      00002F C0 E0            [24]  177 	push	acc
+      000031 74s00            [12]  178 	mov	a,#(___str_3 >> 8)
+      000033 C0 E0            [24]  179 	push	acc
+      000035 12r00r00         [24]  180 	lcall	_printf_tiny
+      000038 15 81            [12]  181 	dec	sp
+      00003A 15 81            [12]  182 	dec	sp
+                           00003C   183 	C$main.c$14$1_0$27 ==.
+                                    184 ;	main.c:14: printf_tiny("\n\r ->As Described in the assignment, all values are in hexadecimal, any decimal entered will be treated as hex.");
+      00003C 74r2E            [12]  185 	mov	a,#___str_4
+      00003E C0 E0            [24]  186 	push	acc
+      000040 74s01            [12]  187 	mov	a,#(___str_4 >> 8)
+      000042 C0 E0            [24]  188 	push	acc
+      000044 12r00r00         [24]  189 	lcall	_printf_tiny
+      000047 15 81            [12]  190 	dec	sp
+      000049 15 81            [12]  191 	dec	sp
+                           00004B   192 	C$main.c$15$1_0$27 ==.
+                                    193 ;	main.c:15: printf_tiny("\n\r ->Please look at all the choices and give the choice number as described.");
+      00004B 74r9E            [12]  194 	mov	a,#___str_5
+      00004D C0 E0            [24]  195 	push	acc
+      00004F 74s01            [12]  196 	mov	a,#(___str_5 >> 8)
+      000051 C0 E0            [24]  197 	push	acc
+      000053 12r00r00         [24]  198 	lcall	_printf_tiny
+      000056 15 81            [12]  199 	dec	sp
+      000058 15 81            [12]  200 	dec	sp
+                           00005A   201 	C$main.c$16$1_0$27 ==.
+                                    202 ;	main.c:16: printf_tiny("\n\r ->The Maximum address that can be entered is 7FF.");
+      00005A 74rEB            [12]  203 	mov	a,#___str_6
+      00005C C0 E0            [24]  204 	push	acc
+      00005E 74s01            [12]  205 	mov	a,#(___str_6 >> 8)
+      000060 C0 E0            [24]  206 	push	acc
+      000062 12r00r00         [24]  207 	lcall	_printf_tiny
+      000065 15 81            [12]  208 	dec	sp
+      000067 15 81            [12]  209 	dec	sp
+                           000069   210 	C$main.c$17$1_0$27 ==.
+                                    211 ;	main.c:17: printf_tiny("\n\r ->Please Enter the First Address greater than last address(duh!!).");
+      000069 74r20            [12]  212 	mov	a,#___str_7
+      00006B C0 E0            [24]  213 	push	acc
+      00006D 74s02            [12]  214 	mov	a,#(___str_7 >> 8)
+      00006F C0 E0            [24]  215 	push	acc
+      000071 12r00r00         [24]  216 	lcall	_printf_tiny
+      000074 15 81            [12]  217 	dec	sp
+      000076 15 81            [12]  218 	dec	sp
+                           000078   219 	C$main.c$18$1_0$27 ==.
+                                    220 ;	main.c:18: printf_tiny("\n\r ->I will try to give as many error condition as possible.");
+      000078 74r66            [12]  221 	mov	a,#___str_8
+      00007A C0 E0            [24]  222 	push	acc
+      00007C 74s02            [12]  223 	mov	a,#(___str_8 >> 8)
+      00007E C0 E0            [24]  224 	push	acc
+      000080 12r00r00         [24]  225 	lcall	_printf_tiny
+      000083 15 81            [12]  226 	dec	sp
+      000085 15 81            [12]  227 	dec	sp
+                           000087   228 	C$main.c$19$1_0$27 ==.
+                                    229 ;	main.c:19: printf_tiny("\n\r ->Enough Chit-Chat and lets start with the program.");
+      000087 74rA3            [12]  230 	mov	a,#___str_9
+      000089 C0 E0            [24]  231 	push	acc
+      00008B 74s02            [12]  232 	mov	a,#(___str_9 >> 8)
+      00008D C0 E0            [24]  233 	push	acc
+      00008F 12r00r00         [24]  234 	lcall	_printf_tiny
+      000092 15 81            [12]  235 	dec	sp
+      000094 15 81            [12]  236 	dec	sp
+                           000096   237 	C$main.c$20$1_0$27 ==.
+                                    238 ;	main.c:20: printf_tiny("\n\n\n\r \t\t\tPRESS ANY KEY TO CONTINUE");
+      000096 74rDA            [12]  239 	mov	a,#___str_10
+      000098 C0 E0            [24]  240 	push	acc
+      00009A 74s02            [12]  241 	mov	a,#(___str_10 >> 8)
+      00009C C0 E0            [24]  242 	push	acc
+      00009E 12r00r00         [24]  243 	lcall	_printf_tiny
+      0000A1 15 81            [12]  244 	dec	sp
+      0000A3 15 81            [12]  245 	dec	sp
+                           0000A5   246 	C$main.c$22$1_0$27 ==.
+                                    247 ;	main.c:22: getchar();
+      0000A5 12r00r00         [24]  248 	lcall	_getchar
+                           0000A8   249 	C$main.c$23$1_0$27 ==.
+                                    250 ;	main.c:23: }
+                           0000A8   251 	C$main.c$23$1_0$27 ==.
+                           0000A8   252 	XG$help$0$0 ==.
+      0000A8 22               [24]  253 	ret
+                                    254 ;------------------------------------------------------------
+                                    255 ;Allocation info for local variables in function 'main'
+                                    256 ;------------------------------------------------------------
+                                    257 ;choice                    Allocated with name '_main_choice_65536_29'
+                                    258 ;Address1                  Allocated with name '_main_Address1_65536_29'
+                                    259 ;Address2                  Allocated with name '_main_Address2_65536_29'
+                                    260 ;Data                      Allocated with name '_main_Data_65536_29'
+                                    261 ;block                     Allocated with name '_main_block_65536_29'
+                                    262 ;DataR                     Allocated with name '_main_DataR_65536_29'
+                                    263 ;------------------------------------------------------------
+                           0000A9   264 	G$main$0$0 ==.
+                           0000A9   265 	C$main.c$24$1_0$29 ==.
+                                    266 ;	main.c:24: void main(void)
+                                    267 ;	-----------------------------------------
+                                    268 ;	 function main
+                                    269 ;	-----------------------------------------
+      0000A9                        270 _main:
+                           0000A9   271 	C$main.c$29$1_0$29 ==.
+                                    272 ;	main.c:29: help();
+      0000A9 12r00r00         [24]  273 	lcall	_help
+                           0000AC   274 	C$main.c$30$1_0$29 ==.
+                                    275 ;	main.c:30: do
+      0000AC                        276 00115$:
+                           0000AC   277 	C$main.c$32$2_0$30 ==.
+                                    278 ;	main.c:32: printf_tiny("\n\n\n\r So, Your Choices for the Program are:");
+      0000AC 74rFC            [12]  279 	mov	a,#___str_11
+      0000AE C0 E0            [24]  280 	push	acc
+      0000B0 74s02            [12]  281 	mov	a,#(___str_11 >> 8)
+      0000B2 C0 E0            [24]  282 	push	acc
+      0000B4 12r00r00         [24]  283 	lcall	_printf_tiny
+      0000B7 15 81            [12]  284 	dec	sp
+      0000B9 15 81            [12]  285 	dec	sp
+                           0000BB   286 	C$main.c$33$2_0$30 ==.
+                                    287 ;	main.c:33: printf_tiny("\n\r1.Write a Byte value in the EEPROM.");
+      0000BB 74r27            [12]  288 	mov	a,#___str_12
+      0000BD C0 E0            [24]  289 	push	acc
+      0000BF 74s03            [12]  290 	mov	a,#(___str_12 >> 8)
+      0000C1 C0 E0            [24]  291 	push	acc
+      0000C3 12r00r00         [24]  292 	lcall	_printf_tiny
+      0000C6 15 81            [12]  293 	dec	sp
+      0000C8 15 81            [12]  294 	dec	sp
+                           0000CA   295 	C$main.c$34$2_0$30 ==.
+                                    296 ;	main.c:34: printf_tiny("\n\r2.Read a Byte value in the EEPROM.");
+      0000CA 74r4D            [12]  297 	mov	a,#___str_13
+      0000CC C0 E0            [24]  298 	push	acc
+      0000CE 74s03            [12]  299 	mov	a,#(___str_13 >> 8)
+      0000D0 C0 E0            [24]  300 	push	acc
+      0000D2 12r00r00         [24]  301 	lcall	_printf_tiny
+      0000D5 15 81            [12]  302 	dec	sp
+      0000D7 15 81            [12]  303 	dec	sp
+                           0000D9   304 	C$main.c$35$2_0$30 ==.
+                                    305 ;	main.c:35: printf_tiny("\n\r3.Dump the values in the EEPROM between the given addresses using Sequential Read.");
+      0000D9 74r72            [12]  306 	mov	a,#___str_14
+      0000DB C0 E0            [24]  307 	push	acc
+      0000DD 74s03            [12]  308 	mov	a,#(___str_14 >> 8)
+      0000DF C0 E0            [24]  309 	push	acc
+      0000E1 12r00r00         [24]  310 	lcall	_printf_tiny
+      0000E4 15 81            [12]  311 	dec	sp
+      0000E6 15 81            [12]  312 	dec	sp
+                           0000E8   313 	C$main.c$36$2_0$30 ==.
+                                    314 ;	main.c:36: printf_tiny("\n\r4.Reset the EEPROM.");
+      0000E8 74rC7            [12]  315 	mov	a,#___str_15
+      0000EA C0 E0            [24]  316 	push	acc
+      0000EC 74s03            [12]  317 	mov	a,#(___str_15 >> 8)
+      0000EE C0 E0            [24]  318 	push	acc
+      0000F0 12r00r00         [24]  319 	lcall	_printf_tiny
+      0000F3 15 81            [12]  320 	dec	sp
+      0000F5 15 81            [12]  321 	dec	sp
+                           0000F7   322 	C$main.c$37$2_0$30 ==.
+                                    323 ;	main.c:37: printf_tiny("\n\r5.Help Menu.");
+      0000F7 74rDD            [12]  324 	mov	a,#___str_16
+      0000F9 C0 E0            [24]  325 	push	acc
+      0000FB 74s03            [12]  326 	mov	a,#(___str_16 >> 8)
+      0000FD C0 E0            [24]  327 	push	acc
+      0000FF 12r00r00         [24]  328 	lcall	_printf_tiny
+      000102 15 81            [12]  329 	dec	sp
+      000104 15 81            [12]  330 	dec	sp
+                           000106   331 	C$main.c$38$2_0$30 ==.
+                                    332 ;	main.c:38: printf_tiny("\n\r6.Exit the program");
+      000106 74rEC            [12]  333 	mov	a,#___str_17
+      000108 C0 E0            [24]  334 	push	acc
+      00010A 74s03            [12]  335 	mov	a,#(___str_17 >> 8)
+      00010C C0 E0            [24]  336 	push	acc
+      00010E 12r00r00         [24]  337 	lcall	_printf_tiny
+      000111 15 81            [12]  338 	dec	sp
+      000113 15 81            [12]  339 	dec	sp
+                           000115   340 	C$main.c$39$2_0$30 ==.
+                                    341 ;	main.c:39: printf_tiny("\n\rEnter the valid choice:");
+      000115 74r01            [12]  342 	mov	a,#___str_18
+      000117 C0 E0            [24]  343 	push	acc
+      000119 74s04            [12]  344 	mov	a,#(___str_18 >> 8)
+      00011B C0 E0            [24]  345 	push	acc
+      00011D 12r00r00         [24]  346 	lcall	_printf_tiny
+      000120 15 81            [12]  347 	dec	sp
+      000122 15 81            [12]  348 	dec	sp
+                           000124   349 	C$main.c$40$2_0$30 ==.
+                                    350 ;	main.c:40: choice=getchar();
+      000124 12r00r00         [24]  351 	lcall	_getchar
+      000127 AE 82            [24]  352 	mov	r6,dpl
+      000129 90r00r00         [24]  353 	mov	dptr,#_main_choice_65536_29
+      00012C EE               [12]  354 	mov	a,r6
+      00012D F0               [24]  355 	movx	@dptr,a
+                           00012E   356 	C$main.c$41$2_0$30 ==.
+                                    357 ;	main.c:41: switch(choice)
+      00012E E0               [24]  358 	movx	a,@dptr
+      00012F FF               [12]  359 	mov	r7,a
+      000130 BF 31 02         [24]  360 	cjne	r7,#0x31,00167$
+      000133 80 21            [24]  361 	sjmp	00101$
+      000135                        362 00167$:
+      000135 BF 32 03         [24]  363 	cjne	r7,#0x32,00168$
+      000138 02r02r1A         [24]  364 	ljmp	00105$
+      00013B                        365 00168$:
+      00013B BF 33 03         [24]  366 	cjne	r7,#0x33,00169$
+      00013E 02r02r73         [24]  367 	ljmp	00106$
+      000141                        368 00169$:
+      000141 BF 34 03         [24]  369 	cjne	r7,#0x34,00170$
+      000144 02r03r05         [24]  370 	ljmp	00110$
+      000147                        371 00170$:
+      000147 BF 35 03         [24]  372 	cjne	r7,#0x35,00171$
+      00014A 02r03r19         [24]  373 	ljmp	00111$
+      00014D                        374 00171$:
+      00014D BF 36 03         [24]  375 	cjne	r7,#0x36,00172$
+      000150 02r03r2D         [24]  376 	ljmp	00114$
+      000153                        377 00172$:
+      000153 02r03r1E         [24]  378 	ljmp	00113$
+                           000156   379 	C$main.c$43$3_0$31 ==.
+                                    380 ;	main.c:43: case '1' :
+      000156                        381 00101$:
+                           000156   382 	C$main.c$44$3_0$31 ==.
+                                    383 ;	main.c:44: printf_tiny("\n\r Enter the Address where the Data is to be Stored:");
+      000156 74r1B            [12]  384 	mov	a,#___str_19
+      000158 C0 E0            [24]  385 	push	acc
+      00015A 74s04            [12]  386 	mov	a,#(___str_19 >> 8)
+      00015C C0 E0            [24]  387 	push	acc
+      00015E 12r00r00         [24]  388 	lcall	_printf_tiny
+      000161 15 81            [12]  389 	dec	sp
+      000163 15 81            [12]  390 	dec	sp
+                           000165   391 	C$main.c$45$3_0$31 ==.
+                                    392 ;	main.c:45: Address1=getstr_addr();
+      000165 12r00r00         [24]  393 	lcall	_getstr_addr
+      000168 AE 82            [24]  394 	mov	r6,dpl
+      00016A AF 83            [24]  395 	mov	r7,dph
+                           00016C   396 	C$main.c$46$3_0$31 ==.
+                                    397 ;	main.c:46: block=get_block();
+      00016C C0 07            [24]  398 	push	ar7
+      00016E C0 06            [24]  399 	push	ar6
+      000170 12r00r00         [24]  400 	lcall	_get_block
+      000173 AC 82            [24]  401 	mov	r4,dpl
+      000175 AD 83            [24]  402 	mov	r5,dph
+                           000177   403 	C$main.c$47$3_0$31 ==.
+                                    404 ;	main.c:47: printf_tiny("\n\r Enter the Data to be stored:");
+      000177 C0 05            [24]  405 	push	ar5
+      000179 C0 04            [24]  406 	push	ar4
+      00017B 74r50            [12]  407 	mov	a,#___str_20
+      00017D C0 E0            [24]  408 	push	acc
+      00017F 74s04            [12]  409 	mov	a,#(___str_20 >> 8)
+      000181 C0 E0            [24]  410 	push	acc
+      000183 12r00r00         [24]  411 	lcall	_printf_tiny
+      000186 15 81            [12]  412 	dec	sp
+      000188 15 81            [12]  413 	dec	sp
+                           00018A   414 	C$main.c$48$3_0$31 ==.
+                                    415 ;	main.c:48: Data=getstr_data();
+      00018A 12r00r00         [24]  416 	lcall	_getstr_data
+      00018D AA 82            [24]  417 	mov	r2,dpl
+      00018F AB 83            [24]  418 	mov	r3,dph
+                           000191   419 	C$main.c$49$3_0$31 ==.
+                                    420 ;	main.c:49: dummy_write(0,0);
+      000191 90r00r00         [24]  421 	mov	dptr,#_dummy_write_PARM_2
+      000194 E4               [12]  422 	clr	a
+      000195 F0               [24]  423 	movx	@dptr,a
+      000196 A3               [24]  424 	inc	dptr
+      000197 F0               [24]  425 	movx	@dptr,a
+      000198 90 00 00         [24]  426 	mov	dptr,#0x0000
+      00019B C0 03            [24]  427 	push	ar3
+      00019D C0 02            [24]  428 	push	ar2
+      00019F 12r00r00         [24]  429 	lcall	_dummy_write
+                           0001A2   430 	C$main.c$50$3_0$31 ==.
+                                    431 ;	main.c:50: delay();
+      0001A2 12r00r00         [24]  432 	lcall	_delay
+      0001A5 D0 02            [24]  433 	pop	ar2
+      0001A7 D0 03            [24]  434 	pop	ar3
+      0001A9 D0 04            [24]  435 	pop	ar4
+      0001AB D0 05            [24]  436 	pop	ar5
+      0001AD D0 06            [24]  437 	pop	ar6
+      0001AF D0 07            [24]  438 	pop	ar7
+                           0001B1   439 	C$main.c$51$3_0$31 ==.
+                                    440 ;	main.c:51: weeprom(block,Address1,Data);
+      0001B1 8A 07            [24]  441 	mov	ar7,r2
+      0001B3 90r00r00         [24]  442 	mov	dptr,#_weeprom_PARM_2
+      0001B6 EE               [12]  443 	mov	a,r6
+      0001B7 F0               [24]  444 	movx	@dptr,a
+      0001B8 90r00r00         [24]  445 	mov	dptr,#_weeprom_PARM_3
+      0001BB EF               [12]  446 	mov	a,r7
+      0001BC F0               [24]  447 	movx	@dptr,a
+      0001BD 8C 82            [24]  448 	mov	dpl,r4
+      0001BF C0 06            [24]  449 	push	ar6
+      0001C1 C0 04            [24]  450 	push	ar4
+      0001C3 C0 03            [24]  451 	push	ar3
+      0001C5 C0 02            [24]  452 	push	ar2
+      0001C7 12r00r00         [24]  453 	lcall	_weeprom
+                           0001CA   454 	C$main.c$52$3_0$31 ==.
+                                    455 ;	main.c:52: dummy_read();
+      0001CA 12r00r00         [24]  456 	lcall	_dummy_read
+                           0001CD   457 	C$main.c$53$3_0$31 ==.
+                                    458 ;	main.c:53: delay();
+      0001CD 12r00r00         [24]  459 	lcall	_delay
+      0001D0 D0 02            [24]  460 	pop	ar2
+      0001D2 D0 03            [24]  461 	pop	ar3
+      0001D4 D0 04            [24]  462 	pop	ar4
+      0001D6 D0 06            [24]  463 	pop	ar6
+                           0001D8   464 	C$main.c$54$3_0$31 ==.
+                                    465 ;	main.c:54: DataR=reeprom(block,Address1);
+      0001D8 90r00r00         [24]  466 	mov	dptr,#_reeprom_PARM_2
+      0001DB EE               [12]  467 	mov	a,r6
+      0001DC F0               [24]  468 	movx	@dptr,a
+      0001DD 8C 82            [24]  469 	mov	dpl,r4
+      0001DF C0 03            [24]  470 	push	ar3
+      0001E1 C0 02            [24]  471 	push	ar2
+      0001E3 12r00r00         [24]  472 	lcall	_reeprom
+      0001E6 AF 82            [24]  473 	mov	r7,dpl
+      0001E8 D0 02            [24]  474 	pop	ar2
+      0001EA D0 03            [24]  475 	pop	ar3
+      0001EC 7E 00            [12]  476 	mov	r6,#0x00
+                           0001EE   477 	C$main.c$55$3_0$31 ==.
+                                    478 ;	main.c:55: if(DataR==Data)
+      0001EE EF               [12]  479 	mov	a,r7
+      0001EF B5 02 16         [24]  480 	cjne	a,ar2,00103$
+      0001F2 EE               [12]  481 	mov	a,r6
+      0001F3 B5 03 12         [24]  482 	cjne	a,ar3,00103$
+                           0001F6   483 	C$main.c$57$4_0$32 ==.
+                                    484 ;	main.c:57: printf_tiny("\n\r Data Entered Successfully.");
+      0001F6 74r70            [12]  485 	mov	a,#___str_21
+      0001F8 C0 E0            [24]  486 	push	acc
+      0001FA 74s04            [12]  487 	mov	a,#(___str_21 >> 8)
+      0001FC C0 E0            [24]  488 	push	acc
+      0001FE 12r00r00         [24]  489 	lcall	_printf_tiny
+      000201 15 81            [12]  490 	dec	sp
+      000203 15 81            [12]  491 	dec	sp
+      000205 02r03r2D         [24]  492 	ljmp	00114$
+      000208                        493 00103$:
+                           000208   494 	C$main.c$62$4_0$33 ==.
+                                    495 ;	main.c:62: printf_tiny("\n\r Data Writing Failed.");
+      000208 74r8E            [12]  496 	mov	a,#___str_22
+      00020A C0 E0            [24]  497 	push	acc
+      00020C 74s04            [12]  498 	mov	a,#(___str_22 >> 8)
+      00020E C0 E0            [24]  499 	push	acc
+      000210 12r00r00         [24]  500 	lcall	_printf_tiny
+      000213 15 81            [12]  501 	dec	sp
+      000215 15 81            [12]  502 	dec	sp
+                           000217   503 	C$main.c$64$3_0$31 ==.
+                                    504 ;	main.c:64: break;
+      000217 02r03r2D         [24]  505 	ljmp	00114$
+                           00021A   506 	C$main.c$65$3_0$31 ==.
+                                    507 ;	main.c:65: case '2' :  printf_tiny("\n\r Enter the Address where the Data is to be Searched:");
+      00021A                        508 00105$:
+      00021A 74rA6            [12]  509 	mov	a,#___str_23
+      00021C C0 E0            [24]  510 	push	acc
+      00021E 74s04            [12]  511 	mov	a,#(___str_23 >> 8)
+      000220 C0 E0            [24]  512 	push	acc
+      000222 12r00r00         [24]  513 	lcall	_printf_tiny
+      000225 15 81            [12]  514 	dec	sp
+      000227 15 81            [12]  515 	dec	sp
+                           000229   516 	C$main.c$66$3_0$31 ==.
+                                    517 ;	main.c:66: Address1=getstr_addr();
+      000229 12r00r00         [24]  518 	lcall	_getstr_addr
+      00022C AE 82            [24]  519 	mov	r6,dpl
+      00022E AF 83            [24]  520 	mov	r7,dph
+                           000230   521 	C$main.c$67$3_0$31 ==.
+                                    522 ;	main.c:67: block=get_block();
+      000230 C0 07            [24]  523 	push	ar7
+      000232 C0 06            [24]  524 	push	ar6
+      000234 12r00r00         [24]  525 	lcall	_get_block
+      000237 AC 82            [24]  526 	mov	r4,dpl
+      000239 AD 83            [24]  527 	mov	r5,dph
+                           00023B   528 	C$main.c$68$3_0$31 ==.
+                                    529 ;	main.c:68: dummy_read();
+      00023B C0 05            [24]  530 	push	ar5
+      00023D C0 04            [24]  531 	push	ar4
+      00023F 12r00r00         [24]  532 	lcall	_dummy_read
+                           000242   533 	C$main.c$69$3_0$31 ==.
+                                    534 ;	main.c:69: delay();
+      000242 12r00r00         [24]  535 	lcall	_delay
+      000245 D0 04            [24]  536 	pop	ar4
+      000247 D0 05            [24]  537 	pop	ar5
+      000249 D0 06            [24]  538 	pop	ar6
+      00024B D0 07            [24]  539 	pop	ar7
+                           00024D   540 	C$main.c$70$3_0$31 ==.
+                                    541 ;	main.c:70: Data=reeprom(block,Address1);
+      00024D 90r00r00         [24]  542 	mov	dptr,#_reeprom_PARM_2
+      000250 EE               [12]  543 	mov	a,r6
+      000251 F0               [24]  544 	movx	@dptr,a
+      000252 8C 82            [24]  545 	mov	dpl,r4
+      000254 12r00r00         [24]  546 	lcall	_reeprom
+      000257 AF 82            [24]  547 	mov	r7,dpl
+      000259 7E 00            [12]  548 	mov	r6,#0x00
+                           00025B   549 	C$main.c$71$3_0$31 ==.
+                                    550 ;	main.c:71: printf_tiny("\n\rData=%x",Data);
+      00025B C0 07            [24]  551 	push	ar7
+      00025D C0 06            [24]  552 	push	ar6
+      00025F 74rDD            [12]  553 	mov	a,#___str_24
+      000261 C0 E0            [24]  554 	push	acc
+      000263 74s04            [12]  555 	mov	a,#(___str_24 >> 8)
+      000265 C0 E0            [24]  556 	push	acc
+      000267 12r00r00         [24]  557 	lcall	_printf_tiny
+      00026A E5 81            [12]  558 	mov	a,sp
+      00026C 24 FC            [12]  559 	add	a,#0xfc
+      00026E F5 81            [12]  560 	mov	sp,a
+                           000270   561 	C$main.c$72$3_0$31 ==.
+                                    562 ;	main.c:72: break;
+      000270 02r03r2D         [24]  563 	ljmp	00114$
+                           000273   564 	C$main.c$73$3_0$31 ==.
+                                    565 ;	main.c:73: case '3' :  printf_tiny("\n\rEnter the First Address:");
+      000273                        566 00106$:
+      000273 74rE7            [12]  567 	mov	a,#___str_25
+      000275 C0 E0            [24]  568 	push	acc
+      000277 74s04            [12]  569 	mov	a,#(___str_25 >> 8)
+      000279 C0 E0            [24]  570 	push	acc
+      00027B 12r00r00         [24]  571 	lcall	_printf_tiny
+      00027E 15 81            [12]  572 	dec	sp
+      000280 15 81            [12]  573 	dec	sp
+                           000282   574 	C$main.c$74$3_0$31 ==.
+                                    575 ;	main.c:74: Address1=getstr_addr();
+      000282 12r00r00         [24]  576 	lcall	_getstr_addr
+      000285 AE 82            [24]  577 	mov	r6,dpl
+      000287 AF 83            [24]  578 	mov	r7,dph
+                           000289   579 	C$main.c$75$3_0$31 ==.
+                                    580 ;	main.c:75: block=get_block();
+      000289 C0 07            [24]  581 	push	ar7
+      00028B C0 06            [24]  582 	push	ar6
+      00028D 12r00r00         [24]  583 	lcall	_get_block
+      000290 AC 82            [24]  584 	mov	r4,dpl
+      000292 AD 83            [24]  585 	mov	r5,dph
+                           000294   586 	C$main.c$76$3_0$31 ==.
+                                    587 ;	main.c:76: printf_tiny("\n\rEnter the Last Address:");
+      000294 C0 05            [24]  588 	push	ar5
+      000296 C0 04            [24]  589 	push	ar4
+      000298 74r02            [12]  590 	mov	a,#___str_26
+      00029A C0 E0            [24]  591 	push	acc
+      00029C 74s05            [12]  592 	mov	a,#(___str_26 >> 8)
+      00029E C0 E0            [24]  593 	push	acc
+      0002A0 12r00r00         [24]  594 	lcall	_printf_tiny
+      0002A3 15 81            [12]  595 	dec	sp
+      0002A5 15 81            [12]  596 	dec	sp
+                           0002A7   597 	C$main.c$77$3_0$31 ==.
+                                    598 ;	main.c:77: Address2=getstr_addr();
+      0002A7 12r00r00         [24]  599 	lcall	_getstr_addr
+      0002AA AA 82            [24]  600 	mov	r2,dpl
+      0002AC AB 83            [24]  601 	mov	r3,dph
+      0002AE D0 04            [24]  602 	pop	ar4
+      0002B0 D0 05            [24]  603 	pop	ar5
+      0002B2 D0 06            [24]  604 	pop	ar6
+      0002B4 D0 07            [24]  605 	pop	ar7
+                           0002B6   606 	C$main.c$78$3_0$31 ==.
+                                    607 ;	main.c:78: if(Address1>=Address2)
+      0002B6 C3               [12]  608 	clr	c
+      0002B7 EE               [12]  609 	mov	a,r6
+      0002B8 9A               [12]  610 	subb	a,r2
+      0002B9 EF               [12]  611 	mov	a,r7
+      0002BA 9B               [12]  612 	subb	a,r3
+      0002BB 40 11            [24]  613 	jc	00108$
+                           0002BD   614 	C$main.c$80$4_0$34 ==.
+                                    615 ;	main.c:80: printf_tiny("\n\r Sorry, The First Address is greater than or equal to last address,Please select the Option Again.");
+      0002BD 74r1C            [12]  616 	mov	a,#___str_27
+      0002BF C0 E0            [24]  617 	push	acc
+      0002C1 74s05            [12]  618 	mov	a,#(___str_27 >> 8)
+      0002C3 C0 E0            [24]  619 	push	acc
+      0002C5 12r00r00         [24]  620 	lcall	_printf_tiny
+      0002C8 15 81            [12]  621 	dec	sp
+      0002CA 15 81            [12]  622 	dec	sp
+      0002CC 80 5F            [24]  623 	sjmp	00114$
+      0002CE                        624 00108$:
+                           0002CE   625 	C$main.c$84$4_0$35 ==.
+                                    626 ;	main.c:84: dummy_read();
+      0002CE C0 07            [24]  627 	push	ar7
+      0002D0 C0 06            [24]  628 	push	ar6
+      0002D2 C0 05            [24]  629 	push	ar5
+      0002D4 C0 04            [24]  630 	push	ar4
+      0002D6 C0 03            [24]  631 	push	ar3
+      0002D8 C0 02            [24]  632 	push	ar2
+      0002DA 12r00r00         [24]  633 	lcall	_dummy_read
+                           0002DD   634 	C$main.c$85$4_0$35 ==.
+                                    635 ;	main.c:85: delay();
+      0002DD 12r00r00         [24]  636 	lcall	_delay
+      0002E0 D0 02            [24]  637 	pop	ar2
+      0002E2 D0 03            [24]  638 	pop	ar3
+      0002E4 D0 04            [24]  639 	pop	ar4
+      0002E6 D0 05            [24]  640 	pop	ar5
+      0002E8 D0 06            [24]  641 	pop	ar6
+      0002EA D0 07            [24]  642 	pop	ar7
+                           0002EC   643 	C$main.c$86$4_0$35 ==.
+                                    644 ;	main.c:86: reeprom_seq(block,Address1,Address2);
+      0002EC 90r00r00         [24]  645 	mov	dptr,#_reeprom_seq_PARM_2
+      0002EF EE               [12]  646 	mov	a,r6
+      0002F0 F0               [24]  647 	movx	@dptr,a
+      0002F1 EF               [12]  648 	mov	a,r7
+      0002F2 A3               [24]  649 	inc	dptr
+      0002F3 F0               [24]  650 	movx	@dptr,a
+      0002F4 90r00r00         [24]  651 	mov	dptr,#_reeprom_seq_PARM_3
+      0002F7 EA               [12]  652 	mov	a,r2
+      0002F8 F0               [24]  653 	movx	@dptr,a
+      0002F9 EB               [12]  654 	mov	a,r3
+      0002FA A3               [24]  655 	inc	dptr
+      0002FB F0               [24]  656 	movx	@dptr,a
+      0002FC 8C 82            [24]  657 	mov	dpl,r4
+      0002FE 8D 83            [24]  658 	mov	dph,r5
+      000300 12r00r00         [24]  659 	lcall	_reeprom_seq
+                           000303   660 	C$main.c$88$3_0$31 ==.
+                                    661 ;	main.c:88: break;
+                           000303   662 	C$main.c$89$3_0$31 ==.
+                                    663 ;	main.c:89: case '4' :  eereset();
+      000303 80 28            [24]  664 	sjmp	00114$
+      000305                        665 00110$:
+      000305 12r00r00         [24]  666 	lcall	_eereset
+                           000308   667 	C$main.c$90$3_0$31 ==.
+                                    668 ;	main.c:90: printf_tiny("\n\rReset Successfully");
+      000308 74r81            [12]  669 	mov	a,#___str_28
+      00030A C0 E0            [24]  670 	push	acc
+      00030C 74s05            [12]  671 	mov	a,#(___str_28 >> 8)
+      00030E C0 E0            [24]  672 	push	acc
+      000310 12r00r00         [24]  673 	lcall	_printf_tiny
+      000313 15 81            [12]  674 	dec	sp
+      000315 15 81            [12]  675 	dec	sp
+                           000317   676 	C$main.c$91$3_0$31 ==.
+                                    677 ;	main.c:91: break;
+                           000317   678 	C$main.c$92$3_0$31 ==.
+                                    679 ;	main.c:92: case '5' :  help();
+      000317 80 14            [24]  680 	sjmp	00114$
+      000319                        681 00111$:
+      000319 12r00r00         [24]  682 	lcall	_help
+                           00031C   683 	C$main.c$93$3_0$31 ==.
+                                    684 ;	main.c:93: break;
+                           00031C   685 	C$main.c$95$3_0$31 ==.
+                                    686 ;	main.c:95: default  :  printf_tiny("\n\rWrong Choice Selected Please Enter Again");
+      00031C 80 0F            [24]  687 	sjmp	00114$
+      00031E                        688 00113$:
+      00031E 74r96            [12]  689 	mov	a,#___str_29
+      000320 C0 E0            [24]  690 	push	acc
+      000322 74s05            [12]  691 	mov	a,#(___str_29 >> 8)
+      000324 C0 E0            [24]  692 	push	acc
+      000326 12r00r00         [24]  693 	lcall	_printf_tiny
+      000329 15 81            [12]  694 	dec	sp
+      00032B 15 81            [12]  695 	dec	sp
+                           00032D   696 	C$main.c$97$2_0$30 ==.
+                                    697 ;	main.c:97: }
+      00032D                        698 00114$:
+                           00032D   699 	C$main.c$98$2_0$30 ==.
+                                    700 ;	main.c:98: printf_tiny("\n\n\n\r \t\t\t\t\tPRESS ANY KEY TO CONTINUE");
+      00032D 74rC1            [12]  701 	mov	a,#___str_30
+      00032F C0 E0            [24]  702 	push	acc
+      000331 74s05            [12]  703 	mov	a,#(___str_30 >> 8)
+      000333 C0 E0            [24]  704 	push	acc
+      000335 12r00r00         [24]  705 	lcall	_printf_tiny
+      000338 15 81            [12]  706 	dec	sp
+      00033A 15 81            [12]  707 	dec	sp
+                           00033C   708 	C$main.c$99$2_0$30 ==.
+                                    709 ;	main.c:99: getchar();
+      00033C 12r00r00         [24]  710 	lcall	_getchar
+                           00033F   711 	C$main.c$100$1_0$29 ==.
+                                    712 ;	main.c:100: }while(choice!='7');
+      00033F 90r00r00         [24]  713 	mov	dptr,#_main_choice_65536_29
+      000342 E0               [24]  714 	movx	a,@dptr
+      000343 FF               [12]  715 	mov	r7,a
+      000344 BF 37 02         [24]  716 	cjne	r7,#0x37,00176$
+      000347 80 03            [24]  717 	sjmp	00177$
+      000349                        718 00176$:
+      000349 02r00rAC         [24]  719 	ljmp	00115$
+      00034C                        720 00177$:
+                           00034C   721 	C$main.c$101$1_0$29 ==.
+                                    722 ;	main.c:101: printf_tiny("\n\r Thank you for your patience and Handling. Please visit again.");
+      00034C 74rE5            [12]  723 	mov	a,#___str_31
+      00034E C0 E0            [24]  724 	push	acc
+      000350 74s05            [12]  725 	mov	a,#(___str_31 >> 8)
+      000352 C0 E0            [24]  726 	push	acc
+      000354 12r00r00         [24]  727 	lcall	_printf_tiny
+      000357 15 81            [12]  728 	dec	sp
+      000359 15 81            [12]  729 	dec	sp
+                           00035B   730 	C$main.c$102$1_0$29 ==.
+                                    731 ;	main.c:102: while(1);
+      00035B                        732 00119$:
+      00035B 80 FE            [24]  733 	sjmp	00119$
+                           00035D   734 	C$main.c$103$1_0$29 ==.
+                                    735 ;	main.c:103: }
+                           00035D   736 	C$main.c$103$1_0$29 ==.
+                           00035D   737 	XG$main$0$0 ==.
+      00035D 22               [24]  738 	ret
+                                    739 	.area CSEG    (CODE)
+                                    740 	.area CONST   (CODE)
+                           000000   741 Fmain$__str_0$0_0$0 == .
+                                    742 	.area CONST   (CODE)
+      000000                        743 ___str_0:
+      000000 0A                     744 	.db 0x0a
+      000001 0D                     745 	.db 0x0d
+      000002 57 65 6C 63 6F 6D 65   746 	.ascii "Welcome Teaching Assistant to the Demo of the I2C on the AT8"
+             20 54 65 61 63 68 69
+             6E 67 20 41 73 73 69
+             73 74 61 6E 74 20 74
+             6F 20 74 68 65 20 44
+             65 6D 6F 20 6F 66 20
+             74 68 65 20 49 32 43
+             20 6F 6E 20 74 68 65
+             20 41 54 38
+      00003E 39 43 35 31 20 62 6F   747 	.ascii "9C51 board "
+             61 72 64 20
+      000049 00                     748 	.db 0x00
+                                    749 	.area CSEG    (CODE)
+                           00035E   750 Fmain$__str_1$0_0$0 == .
+                                    751 	.area CONST   (CODE)
+      00004A                        752 ___str_1:
+      00004A 0A                     753 	.db 0x0a
+      00004B 0D                     754 	.db 0x0d
+      00004C 42 65 66 6F 72 65 20   755 	.ascii "Before Starting the program, I have some rules for you"
+             53 74 61 72 74 69 6E
+             67 20 74 68 65 20 70
+             72 6F 67 72 61 6D 2C
+             20 49 20 68 61 76 65
+             20 73 6F 6D 65 20 72
+             75 6C 65 73 20 66 6F
+             72 20 79 6F 75
+      000082 00                     756 	.db 0x00
+                                    757 	.area CSEG    (CODE)
+                           00035E   758 Fmain$__str_2$0_0$0 == .
+                                    759 	.area CONST   (CODE)
+      000083                        760 ___str_2:
+      000083 0A                     761 	.db 0x0a
+      000084 0D                     762 	.db 0x0d
+      000085 20 2D 3E 50 6C 65 61   763 	.ascii " ->Please try to enter valid values, extensive testing hurts"
+             73 65 20 74 72 79 20
+             74 6F 20 65 6E 74 65
+             72 20 76 61 6C 69 64
+             20 76 61 6C 75 65 73
+             2C 20 65 78 74 65 6E
+             73 69 76 65 20 74 65
+             73 74 69 6E 67 20 68
+             75 72 74 73
+      0000C1 20 6D 65 20 61 20 6C   764 	.ascii " me a lot and might even break me."
+             6F 74 20 61 6E 64 20
+             6D 69 67 68 74 20 65
+             76 65 6E 20 62 72 65
+             61 6B 20 6D 65 2E
+      0000E3 00                     765 	.db 0x00
+                                    766 	.area CSEG    (CODE)
+                           00035E   767 Fmain$__str_3$0_0$0 == .
+                                    768 	.area CONST   (CODE)
+      0000E4                        769 ___str_3:
+      0000E4 0A                     770 	.db 0x0a
+      0000E5 0D                     771 	.db 0x0d
+      0000E6 20 2D 3E 50 6C 65 61   772 	.ascii " ->Please make sure before entering a hex value don't add 0x"
+             73 65 20 6D 61 6B 65
+             20 73 75 72 65 20 62
+             65 66 6F 72 65 20 65
+             6E 74 65 72 69 6E 67
+             20 61 20 68 65 78 20
+             76 61 6C 75 65 20 64
+             6F 6E 27 74 20 61 64
+             64 20 30 78
+      000122 20 62 65 66 6F 72 65   773 	.ascii " before it."
+             20 69 74 2E
+      00012D 00                     774 	.db 0x00
+                                    775 	.area CSEG    (CODE)
+                           00035E   776 Fmain$__str_4$0_0$0 == .
+                                    777 	.area CONST   (CODE)
+      00012E                        778 ___str_4:
+      00012E 0A                     779 	.db 0x0a
+      00012F 0D                     780 	.db 0x0d
+      000130 20 2D 3E 41 73 20 44   781 	.ascii " ->As Described in the assignment, all values are in hexadec"
+             65 73 63 72 69 62 65
+             64 20 69 6E 20 74 68
+             65 20 61 73 73 69 67
+             6E 6D 65 6E 74 2C 20
+             61 6C 6C 20 76 61 6C
+             75 65 73 20 61 72 65
+             20 69 6E 20 68 65 78
+             61 64 65 63
+      00016C 69 6D 61 6C 2C 20 61   782 	.ascii "imal, any decimal entered will be treated as hex."
+             6E 79 20 64 65 63 69
+             6D 61 6C 20 65 6E 74
+             65 72 65 64 20 77 69
+             6C 6C 20 62 65 20 74
+             72 65 61 74 65 64 20
+             61 73 20 68 65 78 2E
+      00019D 00                     783 	.db 0x00
+                                    784 	.area CSEG    (CODE)
+                           00035E   785 Fmain$__str_5$0_0$0 == .
+                                    786 	.area CONST   (CODE)
+      00019E                        787 ___str_5:
+      00019E 0A                     788 	.db 0x0a
+      00019F 0D                     789 	.db 0x0d
+      0001A0 20 2D 3E 50 6C 65 61   790 	.ascii " ->Please look at all the choices and give the choice number"
+             73 65 20 6C 6F 6F 6B
+             20 61 74 20 61 6C 6C
+             20 74 68 65 20 63 68
+             6F 69 63 65 73 20 61
+             6E 64 20 67 69 76 65
+             20 74 68 65 20 63 68
+             6F 69 63 65 20 6E 75
+             6D 62 65 72
+      0001DC 20 61 73 20 64 65 73   791 	.ascii " as described."
+             63 72 69 62 65 64 2E
+      0001EA 00                     792 	.db 0x00
+                                    793 	.area CSEG    (CODE)
+                           00035E   794 Fmain$__str_6$0_0$0 == .
+                                    795 	.area CONST   (CODE)
+      0001EB                        796 ___str_6:
+      0001EB 0A                     797 	.db 0x0a
+      0001EC 0D                     798 	.db 0x0d
+      0001ED 20 2D 3E 54 68 65 20   799 	.ascii " ->The Maximum address that can be entered is 7FF."
+             4D 61 78 69 6D 75 6D
+             20 61 64 64 72 65 73
+             73 20 74 68 61 74 20
+             63 61 6E 20 62 65 20
+             65 6E 74 65 72 65 64
+             20 69 73 20 37 46 46
+             2E
+      00021F 00                     800 	.db 0x00
+                                    801 	.area CSEG    (CODE)
+                           00035E   802 Fmain$__str_7$0_0$0 == .
+                                    803 	.area CONST   (CODE)
+      000220                        804 ___str_7:
+      000220 0A                     805 	.db 0x0a
+      000221 0D                     806 	.db 0x0d
+      000222 20 2D 3E 50 6C 65 61   807 	.ascii " ->Please Enter the First Address greater than last address("
+             73 65 20 45 6E 74 65
+             72 20 74 68 65 20 46
+             69 72 73 74 20 41 64
+             64 72 65 73 73 20 67
+             72 65 61 74 65 72 20
+             74 68 61 6E 20 6C 61
+             73 74 20 61 64 64 72
+             65 73 73 28
+      00025E 64 75 68 21 21 29 2E   808 	.ascii "duh!!)."
+      000265 00                     809 	.db 0x00
+                                    810 	.area CSEG    (CODE)
+                           00035E   811 Fmain$__str_8$0_0$0 == .
+                                    812 	.area CONST   (CODE)
+      000266                        813 ___str_8:
+      000266 0A                     814 	.db 0x0a
+      000267 0D                     815 	.db 0x0d
+      000268 20 2D 3E 49 20 77 69   816 	.ascii " ->I will try to give as many error condition as possible."
+             6C 6C 20 74 72 79 20
+             74 6F 20 67 69 76 65
+             20 61 73 20 6D 61 6E
+             79 20 65 72 72 6F 72
+             20 63 6F 6E 64 69 74
+             69 6F 6E 20 61 73 20
+             70 6F 73 73 69 62 6C
+             65 2E
+      0002A2 00                     817 	.db 0x00
+                                    818 	.area CSEG    (CODE)
+                           00035E   819 Fmain$__str_9$0_0$0 == .
+                                    820 	.area CONST   (CODE)
+      0002A3                        821 ___str_9:
+      0002A3 0A                     822 	.db 0x0a
+      0002A4 0D                     823 	.db 0x0d
+      0002A5 20 2D 3E 45 6E 6F 75   824 	.ascii " ->Enough Chit-Chat and lets start with the program."
+             67 68 20 43 68 69 74
+             2D 43 68 61 74 20 61
+             6E 64 20 6C 65 74 73
+             20 73 74 61 72 74 20
+             77 69 74 68 20 74 68
+             65 20 70 72 6F 67 72
+             61 6D 2E
+      0002D9 00                     825 	.db 0x00
+                                    826 	.area CSEG    (CODE)
+                           00035E   827 Fmain$__str_10$0_0$0 == .
+                                    828 	.area CONST   (CODE)
+      0002DA                        829 ___str_10:
+      0002DA 0A                     830 	.db 0x0a
+      0002DB 0A                     831 	.db 0x0a
+      0002DC 0A                     832 	.db 0x0a
+      0002DD 0D                     833 	.db 0x0d
+      0002DE 20                     834 	.ascii " "
+      0002DF 09                     835 	.db 0x09
+      0002E0 09                     836 	.db 0x09
+      0002E1 09                     837 	.db 0x09
+      0002E2 50 52 45 53 53 20 41   838 	.ascii "PRESS ANY KEY TO CONTINUE"
+             4E 59 20 4B 45 59 20
+             54 4F 20 43 4F 4E 54
+             49 4E 55 45
+      0002FB 00                     839 	.db 0x00
+                                    840 	.area CSEG    (CODE)
+                           00035E   841 Fmain$__str_11$0_0$0 == .
+                                    842 	.area CONST   (CODE)
+      0002FC                        843 ___str_11:
+      0002FC 0A                     844 	.db 0x0a
+      0002FD 0A                     845 	.db 0x0a
+      0002FE 0A                     846 	.db 0x0a
+      0002FF 0D                     847 	.db 0x0d
+      000300 20 53 6F 2C 20 59 6F   848 	.ascii " So, Your Choices for the Program are:"
+             75 72 20 43 68 6F 69
+             63 65 73 20 66 6F 72
+             20 74 68 65 20 50 72
+             6F 67 72 61 6D 20 61
+             72 65 3A
+      000326 00                     849 	.db 0x00
+                                    850 	.area CSEG    (CODE)
+                           00035E   851 Fmain$__str_12$0_0$0 == .
+                                    852 	.area CONST   (CODE)
+      000327                        853 ___str_12:
+      000327 0A                     854 	.db 0x0a
+      000328 0D                     855 	.db 0x0d
+      000329 31 2E 57 72 69 74 65   856 	.ascii "1.Write a Byte value in the EEPROM."
+             20 61 20 42 79 74 65
+             20 76 61 6C 75 65 20
+             69 6E 20 74 68 65 20
+             45 45 50 52 4F 4D 2E
+      00034C 00                     857 	.db 0x00
+                                    858 	.area CSEG    (CODE)
+                           00035E   859 Fmain$__str_13$0_0$0 == .
+                                    860 	.area CONST   (CODE)
+      00034D                        861 ___str_13:
+      00034D 0A                     862 	.db 0x0a
+      00034E 0D                     863 	.db 0x0d
+      00034F 32 2E 52 65 61 64 20   864 	.ascii "2.Read a Byte value in the EEPROM."
+             61 20 42 79 74 65 20
+             76 61 6C 75 65 20 69
+             6E 20 74 68 65 20 45
+             45 50 52 4F 4D 2E
+      000371 00                     865 	.db 0x00
+                                    866 	.area CSEG    (CODE)
+                           00035E   867 Fmain$__str_14$0_0$0 == .
+                                    868 	.area CONST   (CODE)
+      000372                        869 ___str_14:
+      000372 0A                     870 	.db 0x0a
+      000373 0D                     871 	.db 0x0d
+      000374 33 2E 44 75 6D 70 20   872 	.ascii "3.Dump the values in the EEPROM between the given addresses "
+             74 68 65 20 76 61 6C
+             75 65 73 20 69 6E 20
+             74 68 65 20 45 45 50
+             52 4F 4D 20 62 65 74
+             77 65 65 6E 20 74 68
+             65 20 67 69 76 65 6E
+             20 61 64 64 72 65 73
+             73 65 73 20
+      0003B0 75 73 69 6E 67 20 53   873 	.ascii "using Sequential Read."
+             65 71 75 65 6E 74 69
+             61 6C 20 52 65 61 64
+             2E
+      0003C6 00                     874 	.db 0x00
+                                    875 	.area CSEG    (CODE)
+                           00035E   876 Fmain$__str_15$0_0$0 == .
+                                    877 	.area CONST   (CODE)
+      0003C7                        878 ___str_15:
+      0003C7 0A                     879 	.db 0x0a
+      0003C8 0D                     880 	.db 0x0d
+      0003C9 34 2E 52 65 73 65 74   881 	.ascii "4.Reset the EEPROM."
+             20 74 68 65 20 45 45
+             50 52 4F 4D 2E
+      0003DC 00                     882 	.db 0x00
+                                    883 	.area CSEG    (CODE)
+                           00035E   884 Fmain$__str_16$0_0$0 == .
+                                    885 	.area CONST   (CODE)
+      0003DD                        886 ___str_16:
+      0003DD 0A                     887 	.db 0x0a
+      0003DE 0D                     888 	.db 0x0d
+      0003DF 35 2E 48 65 6C 70 20   889 	.ascii "5.Help Menu."
+             4D 65 6E 75 2E
+      0003EB 00                     890 	.db 0x00
+                                    891 	.area CSEG    (CODE)
+                           00035E   892 Fmain$__str_17$0_0$0 == .
+                                    893 	.area CONST   (CODE)
+      0003EC                        894 ___str_17:
+      0003EC 0A                     895 	.db 0x0a
+      0003ED 0D                     896 	.db 0x0d
+      0003EE 36 2E 45 78 69 74 20   897 	.ascii "6.Exit the program"
+             74 68 65 20 70 72 6F
+             67 72 61 6D
+      000400 00                     898 	.db 0x00
+                                    899 	.area CSEG    (CODE)
+                           00035E   900 Fmain$__str_18$0_0$0 == .
+                                    901 	.area CONST   (CODE)
+      000401                        902 ___str_18:
+      000401 0A                     903 	.db 0x0a
+      000402 0D                     904 	.db 0x0d
+      000403 45 6E 74 65 72 20 74   905 	.ascii "Enter the valid choice:"
+             68 65 20 76 61 6C 69
+             64 20 63 68 6F 69 63
+             65 3A
+      00041A 00                     906 	.db 0x00
+                                    907 	.area CSEG    (CODE)
+                           00035E   908 Fmain$__str_19$0_0$0 == .
+                                    909 	.area CONST   (CODE)
+      00041B                        910 ___str_19:
+      00041B 0A                     911 	.db 0x0a
+      00041C 0D                     912 	.db 0x0d
+      00041D 20 45 6E 74 65 72 20   913 	.ascii " Enter the Address where the Data is to be Stored:"
+             74 68 65 20 41 64 64
+             72 65 73 73 20 77 68
+             65 72 65 20 74 68 65
+             20 44 61 74 61 20 69
+             73 20 74 6F 20 62 65
+             20 53 74 6F 72 65 64
+             3A
+      00044F 00                     914 	.db 0x00
+                                    915 	.area CSEG    (CODE)
+                           00035E   916 Fmain$__str_20$0_0$0 == .
+                                    917 	.area CONST   (CODE)
+      000450                        918 ___str_20:
+      000450 0A                     919 	.db 0x0a
+      000451 0D                     920 	.db 0x0d
+      000452 20 45 6E 74 65 72 20   921 	.ascii " Enter the Data to be stored:"
+             74 68 65 20 44 61 74
+             61 20 74 6F 20 62 65
+             20 73 74 6F 72 65 64
+             3A
+      00046F 00                     922 	.db 0x00
+                                    923 	.area CSEG    (CODE)
+                           00035E   924 Fmain$__str_21$0_0$0 == .
+                                    925 	.area CONST   (CODE)
+      000470                        926 ___str_21:
+      000470 0A                     927 	.db 0x0a
+      000471 0D                     928 	.db 0x0d
+      000472 20 44 61 74 61 20 45   929 	.ascii " Data Entered Successfully."
+             6E 74 65 72 65 64 20
+             53 75 63 63 65 73 73
+             66 75 6C 6C 79 2E
+      00048D 00                     930 	.db 0x00
+                                    931 	.area CSEG    (CODE)
+                           00035E   932 Fmain$__str_22$0_0$0 == .
+                                    933 	.area CONST   (CODE)
+      00048E                        934 ___str_22:
+      00048E 0A                     935 	.db 0x0a
+      00048F 0D                     936 	.db 0x0d
+      000490 20 44 61 74 61 20 57   937 	.ascii " Data Writing Failed."
+             72 69 74 69 6E 67 20
+             46 61 69 6C 65 64 2E
+      0004A5 00                     938 	.db 0x00
+                                    939 	.area CSEG    (CODE)
+                           00035E   940 Fmain$__str_23$0_0$0 == .
+                                    941 	.area CONST   (CODE)
+      0004A6                        942 ___str_23:
+      0004A6 0A                     943 	.db 0x0a
+      0004A7 0D                     944 	.db 0x0d
+      0004A8 20 45 6E 74 65 72 20   945 	.ascii " Enter the Address where the Data is to be Searched:"
+             74 68 65 20 41 64 64
+             72 65 73 73 20 77 68
+             65 72 65 20 74 68 65
+             20 44 61 74 61 20 69
+             73 20 74 6F 20 62 65
+             20 53 65 61 72 63 68
+             65 64 3A
+      0004DC 00                     946 	.db 0x00
+                                    947 	.area CSEG    (CODE)
+                           00035E   948 Fmain$__str_24$0_0$0 == .
+                                    949 	.area CONST   (CODE)
+      0004DD                        950 ___str_24:
+      0004DD 0A                     951 	.db 0x0a
+      0004DE 0D                     952 	.db 0x0d
+      0004DF 44 61 74 61 3D 25 78   953 	.ascii "Data=%x"
+      0004E6 00                     954 	.db 0x00
+                                    955 	.area CSEG    (CODE)
+                           00035E   956 Fmain$__str_25$0_0$0 == .
+                                    957 	.area CONST   (CODE)
+      0004E7                        958 ___str_25:
+      0004E7 0A                     959 	.db 0x0a
+      0004E8 0D                     960 	.db 0x0d
+      0004E9 45 6E 74 65 72 20 74   961 	.ascii "Enter the First Address:"
+             68 65 20 46 69 72 73
+             74 20 41 64 64 72 65
+             73 73 3A
+      000501 00                     962 	.db 0x00
+                                    963 	.area CSEG    (CODE)
+                           00035E   964 Fmain$__str_26$0_0$0 == .
+                                    965 	.area CONST   (CODE)
+      000502                        966 ___str_26:
+      000502 0A                     967 	.db 0x0a
+      000503 0D                     968 	.db 0x0d
+      000504 45 6E 74 65 72 20 74   969 	.ascii "Enter the Last Address:"
+             68 65 20 4C 61 73 74
+             20 41 64 64 72 65 73
+             73 3A
+      00051B 00                     970 	.db 0x00
+                                    971 	.area CSEG    (CODE)
+                           00035E   972 Fmain$__str_27$0_0$0 == .
+                                    973 	.area CONST   (CODE)
+      00051C                        974 ___str_27:
+      00051C 0A                     975 	.db 0x0a
+      00051D 0D                     976 	.db 0x0d
+      00051E 20 53 6F 72 72 79 2C   977 	.ascii " Sorry, The First Address is greater than or equal to last a"
+             20 54 68 65 20 46 69
+             72 73 74 20 41 64 64
+             72 65 73 73 20 69 73
+             20 67 72 65 61 74 65
+             72 20 74 68 61 6E 20
+             6F 72 20 65 71 75 61
+             6C 20 74 6F 20 6C 61
+             73 74 20 61
+      00055A 64 64 72 65 73 73 2C   978 	.ascii "ddress,Please select the Option Again."
+             50 6C 65 61 73 65 20
+             73 65 6C 65 63 74 20
+             74 68 65 20 4F 70 74
+             69 6F 6E 20 41 67 61
+             69 6E 2E
+      000580 00                     979 	.db 0x00
+                                    980 	.area CSEG    (CODE)
+                           00035E   981 Fmain$__str_28$0_0$0 == .
+                                    982 	.area CONST   (CODE)
+      000581                        983 ___str_28:
+      000581 0A                     984 	.db 0x0a
+      000582 0D                     985 	.db 0x0d
+      000583 52 65 73 65 74 20 53   986 	.ascii "Reset Successfully"
+             75 63 63 65 73 73 66
+             75 6C 6C 79
+      000595 00                     987 	.db 0x00
+                                    988 	.area CSEG    (CODE)
+                           00035E   989 Fmain$__str_29$0_0$0 == .
+                                    990 	.area CONST   (CODE)
+      000596                        991 ___str_29:
+      000596 0A                     992 	.db 0x0a
+      000597 0D                     993 	.db 0x0d
+      000598 57 72 6F 6E 67 20 43   994 	.ascii "Wrong Choice Selected Please Enter Again"
+             68 6F 69 63 65 20 53
+             65 6C 65 63 74 65 64
+             20 50 6C 65 61 73 65
+             20 45 6E 74 65 72 20
+             41 67 61 69 6E
+      0005C0 00                     995 	.db 0x00
+                                    996 	.area CSEG    (CODE)
+                           00035E   997 Fmain$__str_30$0_0$0 == .
+                                    998 	.area CONST   (CODE)
+      0005C1                        999 ___str_30:
+      0005C1 0A                    1000 	.db 0x0a
+      0005C2 0A                    1001 	.db 0x0a
+      0005C3 0A                    1002 	.db 0x0a
+      0005C4 0D                    1003 	.db 0x0d
+      0005C5 20                    1004 	.ascii " "
+      0005C6 09                    1005 	.db 0x09
+      0005C7 09                    1006 	.db 0x09
+      0005C8 09                    1007 	.db 0x09
+      0005C9 09                    1008 	.db 0x09
+      0005CA 09                    1009 	.db 0x09
+      0005CB 50 52 45 53 53 20 41  1010 	.ascii "PRESS ANY KEY TO CONTINUE"
+             4E 59 20 4B 45 59 20
+             54 4F 20 43 4F 4E 54
+             49 4E 55 45
+      0005E4 00                    1011 	.db 0x00
+                                   1012 	.area CSEG    (CODE)
+                           00035E  1013 Fmain$__str_31$0_0$0 == .
+                                   1014 	.area CONST   (CODE)
+      0005E5                       1015 ___str_31:
+      0005E5 0A                    1016 	.db 0x0a
+      0005E6 0D                    1017 	.db 0x0d
+      0005E7 20 54 68 61 6E 6B 20  1018 	.ascii " Thank you for your patience and Handling. Please visit agai"
+             79 6F 75 20 66 6F 72
+             20 79 6F 75 72 20 70
+             61 74 69 65 6E 63 65
+             20 61 6E 64 20 48 61
+             6E 64 6C 69 6E 67 2E
+             20 50 6C 65 61 73 65
+             20 76 69 73 69 74 20
+             61 67 61 69
+      000623 6E 2E                 1019 	.ascii "n."
+      000625 00                    1020 	.db 0x00
+                                   1021 	.area CSEG    (CODE)
+                                   1022 	.area XINIT   (CODE)
+                                   1023 	.area CABS    (ABS,CODE)

@@ -1,0 +1,2325 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.9.0 #11195 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module I2C_Functions
+                                      6 	.optsdcc -mmcs51 --model-large
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _get_blocknumber
+                                     12 	.globl _delay1
+                                     13 	.globl _ack
+                                     14 	.globl _eereset
+                                     15 	.globl _start
+                                     16 	.globl _printf_tiny
+                                     17 	.globl _printf
+                                     18 	.globl _P5_7
+                                     19 	.globl _P5_6
+                                     20 	.globl _P5_5
+                                     21 	.globl _P5_4
+                                     22 	.globl _P5_3
+                                     23 	.globl _P5_2
+                                     24 	.globl _P5_1
+                                     25 	.globl _P5_0
+                                     26 	.globl _P4_7
+                                     27 	.globl _P4_6
+                                     28 	.globl _P4_5
+                                     29 	.globl _P4_4
+                                     30 	.globl _P4_3
+                                     31 	.globl _P4_2
+                                     32 	.globl _P4_1
+                                     33 	.globl _P4_0
+                                     34 	.globl _PX0L
+                                     35 	.globl _PT0L
+                                     36 	.globl _PX1L
+                                     37 	.globl _PT1L
+                                     38 	.globl _PSL
+                                     39 	.globl _PT2L
+                                     40 	.globl _PPCL
+                                     41 	.globl _EC
+                                     42 	.globl _CCF0
+                                     43 	.globl _CCF1
+                                     44 	.globl _CCF2
+                                     45 	.globl _CCF3
+                                     46 	.globl _CCF4
+                                     47 	.globl _CR
+                                     48 	.globl _CF
+                                     49 	.globl _TF2
+                                     50 	.globl _EXF2
+                                     51 	.globl _RCLK
+                                     52 	.globl _TCLK
+                                     53 	.globl _EXEN2
+                                     54 	.globl _TR2
+                                     55 	.globl _C_T2
+                                     56 	.globl _CP_RL2
+                                     57 	.globl _T2CON_7
+                                     58 	.globl _T2CON_6
+                                     59 	.globl _T2CON_5
+                                     60 	.globl _T2CON_4
+                                     61 	.globl _T2CON_3
+                                     62 	.globl _T2CON_2
+                                     63 	.globl _T2CON_1
+                                     64 	.globl _T2CON_0
+                                     65 	.globl _PT2
+                                     66 	.globl _ET2
+                                     67 	.globl _CY
+                                     68 	.globl _AC
+                                     69 	.globl _F0
+                                     70 	.globl _RS1
+                                     71 	.globl _RS0
+                                     72 	.globl _OV
+                                     73 	.globl _F1
+                                     74 	.globl _P
+                                     75 	.globl _PS
+                                     76 	.globl _PT1
+                                     77 	.globl _PX1
+                                     78 	.globl _PT0
+                                     79 	.globl _PX0
+                                     80 	.globl _RD
+                                     81 	.globl _WR
+                                     82 	.globl _T1
+                                     83 	.globl _T0
+                                     84 	.globl _INT1
+                                     85 	.globl _INT0
+                                     86 	.globl _TXD
+                                     87 	.globl _RXD
+                                     88 	.globl _P3_7
+                                     89 	.globl _P3_6
+                                     90 	.globl _P3_5
+                                     91 	.globl _P3_4
+                                     92 	.globl _P3_3
+                                     93 	.globl _P3_2
+                                     94 	.globl _P3_1
+                                     95 	.globl _P3_0
+                                     96 	.globl _EA
+                                     97 	.globl _ES
+                                     98 	.globl _ET1
+                                     99 	.globl _EX1
+                                    100 	.globl _ET0
+                                    101 	.globl _EX0
+                                    102 	.globl _P2_7
+                                    103 	.globl _P2_6
+                                    104 	.globl _P2_5
+                                    105 	.globl _P2_4
+                                    106 	.globl _P2_3
+                                    107 	.globl _P2_2
+                                    108 	.globl _P2_1
+                                    109 	.globl _P2_0
+                                    110 	.globl _SM0
+                                    111 	.globl _SM1
+                                    112 	.globl _SM2
+                                    113 	.globl _REN
+                                    114 	.globl _TB8
+                                    115 	.globl _RB8
+                                    116 	.globl _TI
+                                    117 	.globl _RI
+                                    118 	.globl _P1_7
+                                    119 	.globl _P1_6
+                                    120 	.globl _P1_5
+                                    121 	.globl _P1_4
+                                    122 	.globl _P1_3
+                                    123 	.globl _P1_2
+                                    124 	.globl _P1_1
+                                    125 	.globl _P1_0
+                                    126 	.globl _TF1
+                                    127 	.globl _TR1
+                                    128 	.globl _TF0
+                                    129 	.globl _TR0
+                                    130 	.globl _IE1
+                                    131 	.globl _IT1
+                                    132 	.globl _IE0
+                                    133 	.globl _IT0
+                                    134 	.globl _P0_7
+                                    135 	.globl _P0_6
+                                    136 	.globl _P0_5
+                                    137 	.globl _P0_4
+                                    138 	.globl _P0_3
+                                    139 	.globl _P0_2
+                                    140 	.globl _P0_1
+                                    141 	.globl _P0_0
+                                    142 	.globl _EECON
+                                    143 	.globl _KBF
+                                    144 	.globl _KBE
+                                    145 	.globl _KBLS
+                                    146 	.globl _BRL
+                                    147 	.globl _BDRCON
+                                    148 	.globl _T2MOD
+                                    149 	.globl _SPDAT
+                                    150 	.globl _SPSTA
+                                    151 	.globl _SPCON
+                                    152 	.globl _SADEN
+                                    153 	.globl _SADDR
+                                    154 	.globl _WDTPRG
+                                    155 	.globl _WDTRST
+                                    156 	.globl _P5
+                                    157 	.globl _P4
+                                    158 	.globl _IPH1
+                                    159 	.globl _IPL1
+                                    160 	.globl _IPH0
+                                    161 	.globl _IPL0
+                                    162 	.globl _IEN1
+                                    163 	.globl _IEN0
+                                    164 	.globl _CMOD
+                                    165 	.globl _CL
+                                    166 	.globl _CH
+                                    167 	.globl _CCON
+                                    168 	.globl _CCAPM4
+                                    169 	.globl _CCAPM3
+                                    170 	.globl _CCAPM2
+                                    171 	.globl _CCAPM1
+                                    172 	.globl _CCAPM0
+                                    173 	.globl _CCAP4L
+                                    174 	.globl _CCAP3L
+                                    175 	.globl _CCAP2L
+                                    176 	.globl _CCAP1L
+                                    177 	.globl _CCAP0L
+                                    178 	.globl _CCAP4H
+                                    179 	.globl _CCAP3H
+                                    180 	.globl _CCAP2H
+                                    181 	.globl _CCAP1H
+                                    182 	.globl _CCAP0H
+                                    183 	.globl _CKCON1
+                                    184 	.globl _CKCON0
+                                    185 	.globl _CKRL
+                                    186 	.globl _AUXR1
+                                    187 	.globl _AUXR
+                                    188 	.globl _TH2
+                                    189 	.globl _TL2
+                                    190 	.globl _RCAP2H
+                                    191 	.globl _RCAP2L
+                                    192 	.globl _T2CON
+                                    193 	.globl _B
+                                    194 	.globl _ACC
+                                    195 	.globl _PSW
+                                    196 	.globl _IP
+                                    197 	.globl _P3
+                                    198 	.globl _IE
+                                    199 	.globl _P2
+                                    200 	.globl _SBUF
+                                    201 	.globl _SCON
+                                    202 	.globl _P1
+                                    203 	.globl _TH1
+                                    204 	.globl _TH0
+                                    205 	.globl _TL1
+                                    206 	.globl _TL0
+                                    207 	.globl _TMOD
+                                    208 	.globl _TCON
+                                    209 	.globl _PCON
+                                    210 	.globl _DPH
+                                    211 	.globl _DPL
+                                    212 	.globl _SP
+                                    213 	.globl _P0
+                                    214 	.globl _dummy_write_PARM_2
+                                    215 	.globl _reeprom_seq_PARM_3
+                                    216 	.globl _reeprom_seq_PARM_2
+                                    217 	.globl _reeprom_PARM_2
+                                    218 	.globl _weeprom_PARM_3
+                                    219 	.globl _weeprom_PARM_2
+                                    220 	.globl _weeprom
+                                    221 	.globl _reeprom
+                                    222 	.globl _read
+                                    223 	.globl _outs
+                                    224 	.globl _out
+                                    225 	.globl _in
+                                    226 	.globl _stop
+                                    227 	.globl _reeprom_seq
+                                    228 	.globl _dummy_read
+                                    229 	.globl _dummy_write
+                                    230 ;--------------------------------------------------------
+                                    231 ; special function registers
+                                    232 ;--------------------------------------------------------
+                                    233 	.area RSEG    (ABS,DATA)
+      000000                        234 	.org 0x0000
+                           000080   235 G$P0$0_0$0 == 0x0080
+                           000080   236 _P0	=	0x0080
+                           000081   237 G$SP$0_0$0 == 0x0081
+                           000081   238 _SP	=	0x0081
+                           000082   239 G$DPL$0_0$0 == 0x0082
+                           000082   240 _DPL	=	0x0082
+                           000083   241 G$DPH$0_0$0 == 0x0083
+                           000083   242 _DPH	=	0x0083
+                           000087   243 G$PCON$0_0$0 == 0x0087
+                           000087   244 _PCON	=	0x0087
+                           000088   245 G$TCON$0_0$0 == 0x0088
+                           000088   246 _TCON	=	0x0088
+                           000089   247 G$TMOD$0_0$0 == 0x0089
+                           000089   248 _TMOD	=	0x0089
+                           00008A   249 G$TL0$0_0$0 == 0x008a
+                           00008A   250 _TL0	=	0x008a
+                           00008B   251 G$TL1$0_0$0 == 0x008b
+                           00008B   252 _TL1	=	0x008b
+                           00008C   253 G$TH0$0_0$0 == 0x008c
+                           00008C   254 _TH0	=	0x008c
+                           00008D   255 G$TH1$0_0$0 == 0x008d
+                           00008D   256 _TH1	=	0x008d
+                           000090   257 G$P1$0_0$0 == 0x0090
+                           000090   258 _P1	=	0x0090
+                           000098   259 G$SCON$0_0$0 == 0x0098
+                           000098   260 _SCON	=	0x0098
+                           000099   261 G$SBUF$0_0$0 == 0x0099
+                           000099   262 _SBUF	=	0x0099
+                           0000A0   263 G$P2$0_0$0 == 0x00a0
+                           0000A0   264 _P2	=	0x00a0
+                           0000A8   265 G$IE$0_0$0 == 0x00a8
+                           0000A8   266 _IE	=	0x00a8
+                           0000B0   267 G$P3$0_0$0 == 0x00b0
+                           0000B0   268 _P3	=	0x00b0
+                           0000B8   269 G$IP$0_0$0 == 0x00b8
+                           0000B8   270 _IP	=	0x00b8
+                           0000D0   271 G$PSW$0_0$0 == 0x00d0
+                           0000D0   272 _PSW	=	0x00d0
+                           0000E0   273 G$ACC$0_0$0 == 0x00e0
+                           0000E0   274 _ACC	=	0x00e0
+                           0000F0   275 G$B$0_0$0 == 0x00f0
+                           0000F0   276 _B	=	0x00f0
+                           0000C8   277 G$T2CON$0_0$0 == 0x00c8
+                           0000C8   278 _T2CON	=	0x00c8
+                           0000CA   279 G$RCAP2L$0_0$0 == 0x00ca
+                           0000CA   280 _RCAP2L	=	0x00ca
+                           0000CB   281 G$RCAP2H$0_0$0 == 0x00cb
+                           0000CB   282 _RCAP2H	=	0x00cb
+                           0000CC   283 G$TL2$0_0$0 == 0x00cc
+                           0000CC   284 _TL2	=	0x00cc
+                           0000CD   285 G$TH2$0_0$0 == 0x00cd
+                           0000CD   286 _TH2	=	0x00cd
+                           00008E   287 G$AUXR$0_0$0 == 0x008e
+                           00008E   288 _AUXR	=	0x008e
+                           0000A2   289 G$AUXR1$0_0$0 == 0x00a2
+                           0000A2   290 _AUXR1	=	0x00a2
+                           000097   291 G$CKRL$0_0$0 == 0x0097
+                           000097   292 _CKRL	=	0x0097
+                           00008F   293 G$CKCON0$0_0$0 == 0x008f
+                           00008F   294 _CKCON0	=	0x008f
+                           0000AF   295 G$CKCON1$0_0$0 == 0x00af
+                           0000AF   296 _CKCON1	=	0x00af
+                           0000FA   297 G$CCAP0H$0_0$0 == 0x00fa
+                           0000FA   298 _CCAP0H	=	0x00fa
+                           0000FB   299 G$CCAP1H$0_0$0 == 0x00fb
+                           0000FB   300 _CCAP1H	=	0x00fb
+                           0000FC   301 G$CCAP2H$0_0$0 == 0x00fc
+                           0000FC   302 _CCAP2H	=	0x00fc
+                           0000FD   303 G$CCAP3H$0_0$0 == 0x00fd
+                           0000FD   304 _CCAP3H	=	0x00fd
+                           0000FE   305 G$CCAP4H$0_0$0 == 0x00fe
+                           0000FE   306 _CCAP4H	=	0x00fe
+                           0000EA   307 G$CCAP0L$0_0$0 == 0x00ea
+                           0000EA   308 _CCAP0L	=	0x00ea
+                           0000EB   309 G$CCAP1L$0_0$0 == 0x00eb
+                           0000EB   310 _CCAP1L	=	0x00eb
+                           0000EC   311 G$CCAP2L$0_0$0 == 0x00ec
+                           0000EC   312 _CCAP2L	=	0x00ec
+                           0000ED   313 G$CCAP3L$0_0$0 == 0x00ed
+                           0000ED   314 _CCAP3L	=	0x00ed
+                           0000EE   315 G$CCAP4L$0_0$0 == 0x00ee
+                           0000EE   316 _CCAP4L	=	0x00ee
+                           0000DA   317 G$CCAPM0$0_0$0 == 0x00da
+                           0000DA   318 _CCAPM0	=	0x00da
+                           0000DB   319 G$CCAPM1$0_0$0 == 0x00db
+                           0000DB   320 _CCAPM1	=	0x00db
+                           0000DC   321 G$CCAPM2$0_0$0 == 0x00dc
+                           0000DC   322 _CCAPM2	=	0x00dc
+                           0000DD   323 G$CCAPM3$0_0$0 == 0x00dd
+                           0000DD   324 _CCAPM3	=	0x00dd
+                           0000DE   325 G$CCAPM4$0_0$0 == 0x00de
+                           0000DE   326 _CCAPM4	=	0x00de
+                           0000D8   327 G$CCON$0_0$0 == 0x00d8
+                           0000D8   328 _CCON	=	0x00d8
+                           0000F9   329 G$CH$0_0$0 == 0x00f9
+                           0000F9   330 _CH	=	0x00f9
+                           0000E9   331 G$CL$0_0$0 == 0x00e9
+                           0000E9   332 _CL	=	0x00e9
+                           0000D9   333 G$CMOD$0_0$0 == 0x00d9
+                           0000D9   334 _CMOD	=	0x00d9
+                           0000A8   335 G$IEN0$0_0$0 == 0x00a8
+                           0000A8   336 _IEN0	=	0x00a8
+                           0000B1   337 G$IEN1$0_0$0 == 0x00b1
+                           0000B1   338 _IEN1	=	0x00b1
+                           0000B8   339 G$IPL0$0_0$0 == 0x00b8
+                           0000B8   340 _IPL0	=	0x00b8
+                           0000B7   341 G$IPH0$0_0$0 == 0x00b7
+                           0000B7   342 _IPH0	=	0x00b7
+                           0000B2   343 G$IPL1$0_0$0 == 0x00b2
+                           0000B2   344 _IPL1	=	0x00b2
+                           0000B3   345 G$IPH1$0_0$0 == 0x00b3
+                           0000B3   346 _IPH1	=	0x00b3
+                           0000C0   347 G$P4$0_0$0 == 0x00c0
+                           0000C0   348 _P4	=	0x00c0
+                           0000E8   349 G$P5$0_0$0 == 0x00e8
+                           0000E8   350 _P5	=	0x00e8
+                           0000A6   351 G$WDTRST$0_0$0 == 0x00a6
+                           0000A6   352 _WDTRST	=	0x00a6
+                           0000A7   353 G$WDTPRG$0_0$0 == 0x00a7
+                           0000A7   354 _WDTPRG	=	0x00a7
+                           0000A9   355 G$SADDR$0_0$0 == 0x00a9
+                           0000A9   356 _SADDR	=	0x00a9
+                           0000B9   357 G$SADEN$0_0$0 == 0x00b9
+                           0000B9   358 _SADEN	=	0x00b9
+                           0000C3   359 G$SPCON$0_0$0 == 0x00c3
+                           0000C3   360 _SPCON	=	0x00c3
+                           0000C4   361 G$SPSTA$0_0$0 == 0x00c4
+                           0000C4   362 _SPSTA	=	0x00c4
+                           0000C5   363 G$SPDAT$0_0$0 == 0x00c5
+                           0000C5   364 _SPDAT	=	0x00c5
+                           0000C9   365 G$T2MOD$0_0$0 == 0x00c9
+                           0000C9   366 _T2MOD	=	0x00c9
+                           00009B   367 G$BDRCON$0_0$0 == 0x009b
+                           00009B   368 _BDRCON	=	0x009b
+                           00009A   369 G$BRL$0_0$0 == 0x009a
+                           00009A   370 _BRL	=	0x009a
+                           00009C   371 G$KBLS$0_0$0 == 0x009c
+                           00009C   372 _KBLS	=	0x009c
+                           00009D   373 G$KBE$0_0$0 == 0x009d
+                           00009D   374 _KBE	=	0x009d
+                           00009E   375 G$KBF$0_0$0 == 0x009e
+                           00009E   376 _KBF	=	0x009e
+                           0000D2   377 G$EECON$0_0$0 == 0x00d2
+                           0000D2   378 _EECON	=	0x00d2
+                                    379 ;--------------------------------------------------------
+                                    380 ; special function bits
+                                    381 ;--------------------------------------------------------
+                                    382 	.area RSEG    (ABS,DATA)
+      000000                        383 	.org 0x0000
+                           000080   384 G$P0_0$0_0$0 == 0x0080
+                           000080   385 _P0_0	=	0x0080
+                           000081   386 G$P0_1$0_0$0 == 0x0081
+                           000081   387 _P0_1	=	0x0081
+                           000082   388 G$P0_2$0_0$0 == 0x0082
+                           000082   389 _P0_2	=	0x0082
+                           000083   390 G$P0_3$0_0$0 == 0x0083
+                           000083   391 _P0_3	=	0x0083
+                           000084   392 G$P0_4$0_0$0 == 0x0084
+                           000084   393 _P0_4	=	0x0084
+                           000085   394 G$P0_5$0_0$0 == 0x0085
+                           000085   395 _P0_5	=	0x0085
+                           000086   396 G$P0_6$0_0$0 == 0x0086
+                           000086   397 _P0_6	=	0x0086
+                           000087   398 G$P0_7$0_0$0 == 0x0087
+                           000087   399 _P0_7	=	0x0087
+                           000088   400 G$IT0$0_0$0 == 0x0088
+                           000088   401 _IT0	=	0x0088
+                           000089   402 G$IE0$0_0$0 == 0x0089
+                           000089   403 _IE0	=	0x0089
+                           00008A   404 G$IT1$0_0$0 == 0x008a
+                           00008A   405 _IT1	=	0x008a
+                           00008B   406 G$IE1$0_0$0 == 0x008b
+                           00008B   407 _IE1	=	0x008b
+                           00008C   408 G$TR0$0_0$0 == 0x008c
+                           00008C   409 _TR0	=	0x008c
+                           00008D   410 G$TF0$0_0$0 == 0x008d
+                           00008D   411 _TF0	=	0x008d
+                           00008E   412 G$TR1$0_0$0 == 0x008e
+                           00008E   413 _TR1	=	0x008e
+                           00008F   414 G$TF1$0_0$0 == 0x008f
+                           00008F   415 _TF1	=	0x008f
+                           000090   416 G$P1_0$0_0$0 == 0x0090
+                           000090   417 _P1_0	=	0x0090
+                           000091   418 G$P1_1$0_0$0 == 0x0091
+                           000091   419 _P1_1	=	0x0091
+                           000092   420 G$P1_2$0_0$0 == 0x0092
+                           000092   421 _P1_2	=	0x0092
+                           000093   422 G$P1_3$0_0$0 == 0x0093
+                           000093   423 _P1_3	=	0x0093
+                           000094   424 G$P1_4$0_0$0 == 0x0094
+                           000094   425 _P1_4	=	0x0094
+                           000095   426 G$P1_5$0_0$0 == 0x0095
+                           000095   427 _P1_5	=	0x0095
+                           000096   428 G$P1_6$0_0$0 == 0x0096
+                           000096   429 _P1_6	=	0x0096
+                           000097   430 G$P1_7$0_0$0 == 0x0097
+                           000097   431 _P1_7	=	0x0097
+                           000098   432 G$RI$0_0$0 == 0x0098
+                           000098   433 _RI	=	0x0098
+                           000099   434 G$TI$0_0$0 == 0x0099
+                           000099   435 _TI	=	0x0099
+                           00009A   436 G$RB8$0_0$0 == 0x009a
+                           00009A   437 _RB8	=	0x009a
+                           00009B   438 G$TB8$0_0$0 == 0x009b
+                           00009B   439 _TB8	=	0x009b
+                           00009C   440 G$REN$0_0$0 == 0x009c
+                           00009C   441 _REN	=	0x009c
+                           00009D   442 G$SM2$0_0$0 == 0x009d
+                           00009D   443 _SM2	=	0x009d
+                           00009E   444 G$SM1$0_0$0 == 0x009e
+                           00009E   445 _SM1	=	0x009e
+                           00009F   446 G$SM0$0_0$0 == 0x009f
+                           00009F   447 _SM0	=	0x009f
+                           0000A0   448 G$P2_0$0_0$0 == 0x00a0
+                           0000A0   449 _P2_0	=	0x00a0
+                           0000A1   450 G$P2_1$0_0$0 == 0x00a1
+                           0000A1   451 _P2_1	=	0x00a1
+                           0000A2   452 G$P2_2$0_0$0 == 0x00a2
+                           0000A2   453 _P2_2	=	0x00a2
+                           0000A3   454 G$P2_3$0_0$0 == 0x00a3
+                           0000A3   455 _P2_3	=	0x00a3
+                           0000A4   456 G$P2_4$0_0$0 == 0x00a4
+                           0000A4   457 _P2_4	=	0x00a4
+                           0000A5   458 G$P2_5$0_0$0 == 0x00a5
+                           0000A5   459 _P2_5	=	0x00a5
+                           0000A6   460 G$P2_6$0_0$0 == 0x00a6
+                           0000A6   461 _P2_6	=	0x00a6
+                           0000A7   462 G$P2_7$0_0$0 == 0x00a7
+                           0000A7   463 _P2_7	=	0x00a7
+                           0000A8   464 G$EX0$0_0$0 == 0x00a8
+                           0000A8   465 _EX0	=	0x00a8
+                           0000A9   466 G$ET0$0_0$0 == 0x00a9
+                           0000A9   467 _ET0	=	0x00a9
+                           0000AA   468 G$EX1$0_0$0 == 0x00aa
+                           0000AA   469 _EX1	=	0x00aa
+                           0000AB   470 G$ET1$0_0$0 == 0x00ab
+                           0000AB   471 _ET1	=	0x00ab
+                           0000AC   472 G$ES$0_0$0 == 0x00ac
+                           0000AC   473 _ES	=	0x00ac
+                           0000AF   474 G$EA$0_0$0 == 0x00af
+                           0000AF   475 _EA	=	0x00af
+                           0000B0   476 G$P3_0$0_0$0 == 0x00b0
+                           0000B0   477 _P3_0	=	0x00b0
+                           0000B1   478 G$P3_1$0_0$0 == 0x00b1
+                           0000B1   479 _P3_1	=	0x00b1
+                           0000B2   480 G$P3_2$0_0$0 == 0x00b2
+                           0000B2   481 _P3_2	=	0x00b2
+                           0000B3   482 G$P3_3$0_0$0 == 0x00b3
+                           0000B3   483 _P3_3	=	0x00b3
+                           0000B4   484 G$P3_4$0_0$0 == 0x00b4
+                           0000B4   485 _P3_4	=	0x00b4
+                           0000B5   486 G$P3_5$0_0$0 == 0x00b5
+                           0000B5   487 _P3_5	=	0x00b5
+                           0000B6   488 G$P3_6$0_0$0 == 0x00b6
+                           0000B6   489 _P3_6	=	0x00b6
+                           0000B7   490 G$P3_7$0_0$0 == 0x00b7
+                           0000B7   491 _P3_7	=	0x00b7
+                           0000B0   492 G$RXD$0_0$0 == 0x00b0
+                           0000B0   493 _RXD	=	0x00b0
+                           0000B1   494 G$TXD$0_0$0 == 0x00b1
+                           0000B1   495 _TXD	=	0x00b1
+                           0000B2   496 G$INT0$0_0$0 == 0x00b2
+                           0000B2   497 _INT0	=	0x00b2
+                           0000B3   498 G$INT1$0_0$0 == 0x00b3
+                           0000B3   499 _INT1	=	0x00b3
+                           0000B4   500 G$T0$0_0$0 == 0x00b4
+                           0000B4   501 _T0	=	0x00b4
+                           0000B5   502 G$T1$0_0$0 == 0x00b5
+                           0000B5   503 _T1	=	0x00b5
+                           0000B6   504 G$WR$0_0$0 == 0x00b6
+                           0000B6   505 _WR	=	0x00b6
+                           0000B7   506 G$RD$0_0$0 == 0x00b7
+                           0000B7   507 _RD	=	0x00b7
+                           0000B8   508 G$PX0$0_0$0 == 0x00b8
+                           0000B8   509 _PX0	=	0x00b8
+                           0000B9   510 G$PT0$0_0$0 == 0x00b9
+                           0000B9   511 _PT0	=	0x00b9
+                           0000BA   512 G$PX1$0_0$0 == 0x00ba
+                           0000BA   513 _PX1	=	0x00ba
+                           0000BB   514 G$PT1$0_0$0 == 0x00bb
+                           0000BB   515 _PT1	=	0x00bb
+                           0000BC   516 G$PS$0_0$0 == 0x00bc
+                           0000BC   517 _PS	=	0x00bc
+                           0000D0   518 G$P$0_0$0 == 0x00d0
+                           0000D0   519 _P	=	0x00d0
+                           0000D1   520 G$F1$0_0$0 == 0x00d1
+                           0000D1   521 _F1	=	0x00d1
+                           0000D2   522 G$OV$0_0$0 == 0x00d2
+                           0000D2   523 _OV	=	0x00d2
+                           0000D3   524 G$RS0$0_0$0 == 0x00d3
+                           0000D3   525 _RS0	=	0x00d3
+                           0000D4   526 G$RS1$0_0$0 == 0x00d4
+                           0000D4   527 _RS1	=	0x00d4
+                           0000D5   528 G$F0$0_0$0 == 0x00d5
+                           0000D5   529 _F0	=	0x00d5
+                           0000D6   530 G$AC$0_0$0 == 0x00d6
+                           0000D6   531 _AC	=	0x00d6
+                           0000D7   532 G$CY$0_0$0 == 0x00d7
+                           0000D7   533 _CY	=	0x00d7
+                           0000AD   534 G$ET2$0_0$0 == 0x00ad
+                           0000AD   535 _ET2	=	0x00ad
+                           0000BD   536 G$PT2$0_0$0 == 0x00bd
+                           0000BD   537 _PT2	=	0x00bd
+                           0000C8   538 G$T2CON_0$0_0$0 == 0x00c8
+                           0000C8   539 _T2CON_0	=	0x00c8
+                           0000C9   540 G$T2CON_1$0_0$0 == 0x00c9
+                           0000C9   541 _T2CON_1	=	0x00c9
+                           0000CA   542 G$T2CON_2$0_0$0 == 0x00ca
+                           0000CA   543 _T2CON_2	=	0x00ca
+                           0000CB   544 G$T2CON_3$0_0$0 == 0x00cb
+                           0000CB   545 _T2CON_3	=	0x00cb
+                           0000CC   546 G$T2CON_4$0_0$0 == 0x00cc
+                           0000CC   547 _T2CON_4	=	0x00cc
+                           0000CD   548 G$T2CON_5$0_0$0 == 0x00cd
+                           0000CD   549 _T2CON_5	=	0x00cd
+                           0000CE   550 G$T2CON_6$0_0$0 == 0x00ce
+                           0000CE   551 _T2CON_6	=	0x00ce
+                           0000CF   552 G$T2CON_7$0_0$0 == 0x00cf
+                           0000CF   553 _T2CON_7	=	0x00cf
+                           0000C8   554 G$CP_RL2$0_0$0 == 0x00c8
+                           0000C8   555 _CP_RL2	=	0x00c8
+                           0000C9   556 G$C_T2$0_0$0 == 0x00c9
+                           0000C9   557 _C_T2	=	0x00c9
+                           0000CA   558 G$TR2$0_0$0 == 0x00ca
+                           0000CA   559 _TR2	=	0x00ca
+                           0000CB   560 G$EXEN2$0_0$0 == 0x00cb
+                           0000CB   561 _EXEN2	=	0x00cb
+                           0000CC   562 G$TCLK$0_0$0 == 0x00cc
+                           0000CC   563 _TCLK	=	0x00cc
+                           0000CD   564 G$RCLK$0_0$0 == 0x00cd
+                           0000CD   565 _RCLK	=	0x00cd
+                           0000CE   566 G$EXF2$0_0$0 == 0x00ce
+                           0000CE   567 _EXF2	=	0x00ce
+                           0000CF   568 G$TF2$0_0$0 == 0x00cf
+                           0000CF   569 _TF2	=	0x00cf
+                           0000DF   570 G$CF$0_0$0 == 0x00df
+                           0000DF   571 _CF	=	0x00df
+                           0000DE   572 G$CR$0_0$0 == 0x00de
+                           0000DE   573 _CR	=	0x00de
+                           0000DC   574 G$CCF4$0_0$0 == 0x00dc
+                           0000DC   575 _CCF4	=	0x00dc
+                           0000DB   576 G$CCF3$0_0$0 == 0x00db
+                           0000DB   577 _CCF3	=	0x00db
+                           0000DA   578 G$CCF2$0_0$0 == 0x00da
+                           0000DA   579 _CCF2	=	0x00da
+                           0000D9   580 G$CCF1$0_0$0 == 0x00d9
+                           0000D9   581 _CCF1	=	0x00d9
+                           0000D8   582 G$CCF0$0_0$0 == 0x00d8
+                           0000D8   583 _CCF0	=	0x00d8
+                           0000AE   584 G$EC$0_0$0 == 0x00ae
+                           0000AE   585 _EC	=	0x00ae
+                           0000BE   586 G$PPCL$0_0$0 == 0x00be
+                           0000BE   587 _PPCL	=	0x00be
+                           0000BD   588 G$PT2L$0_0$0 == 0x00bd
+                           0000BD   589 _PT2L	=	0x00bd
+                           0000BC   590 G$PSL$0_0$0 == 0x00bc
+                           0000BC   591 _PSL	=	0x00bc
+                           0000BB   592 G$PT1L$0_0$0 == 0x00bb
+                           0000BB   593 _PT1L	=	0x00bb
+                           0000BA   594 G$PX1L$0_0$0 == 0x00ba
+                           0000BA   595 _PX1L	=	0x00ba
+                           0000B9   596 G$PT0L$0_0$0 == 0x00b9
+                           0000B9   597 _PT0L	=	0x00b9
+                           0000B8   598 G$PX0L$0_0$0 == 0x00b8
+                           0000B8   599 _PX0L	=	0x00b8
+                           0000C0   600 G$P4_0$0_0$0 == 0x00c0
+                           0000C0   601 _P4_0	=	0x00c0
+                           0000C1   602 G$P4_1$0_0$0 == 0x00c1
+                           0000C1   603 _P4_1	=	0x00c1
+                           0000C2   604 G$P4_2$0_0$0 == 0x00c2
+                           0000C2   605 _P4_2	=	0x00c2
+                           0000C3   606 G$P4_3$0_0$0 == 0x00c3
+                           0000C3   607 _P4_3	=	0x00c3
+                           0000C4   608 G$P4_4$0_0$0 == 0x00c4
+                           0000C4   609 _P4_4	=	0x00c4
+                           0000C5   610 G$P4_5$0_0$0 == 0x00c5
+                           0000C5   611 _P4_5	=	0x00c5
+                           0000C6   612 G$P4_6$0_0$0 == 0x00c6
+                           0000C6   613 _P4_6	=	0x00c6
+                           0000C7   614 G$P4_7$0_0$0 == 0x00c7
+                           0000C7   615 _P4_7	=	0x00c7
+                           0000E8   616 G$P5_0$0_0$0 == 0x00e8
+                           0000E8   617 _P5_0	=	0x00e8
+                           0000E9   618 G$P5_1$0_0$0 == 0x00e9
+                           0000E9   619 _P5_1	=	0x00e9
+                           0000EA   620 G$P5_2$0_0$0 == 0x00ea
+                           0000EA   621 _P5_2	=	0x00ea
+                           0000EB   622 G$P5_3$0_0$0 == 0x00eb
+                           0000EB   623 _P5_3	=	0x00eb
+                           0000EC   624 G$P5_4$0_0$0 == 0x00ec
+                           0000EC   625 _P5_4	=	0x00ec
+                           0000ED   626 G$P5_5$0_0$0 == 0x00ed
+                           0000ED   627 _P5_5	=	0x00ed
+                           0000EE   628 G$P5_6$0_0$0 == 0x00ee
+                           0000EE   629 _P5_6	=	0x00ee
+                           0000EF   630 G$P5_7$0_0$0 == 0x00ef
+                           0000EF   631 _P5_7	=	0x00ef
+                                    632 ;--------------------------------------------------------
+                                    633 ; overlayable register banks
+                                    634 ;--------------------------------------------------------
+                                    635 	.area REG_BANK_0	(REL,OVR,DATA)
+      000000                        636 	.ds 8
+                                    637 ;--------------------------------------------------------
+                                    638 ; internal ram data
+                                    639 ;--------------------------------------------------------
+                                    640 	.area DSEG    (DATA)
+                                    641 ;--------------------------------------------------------
+                                    642 ; overlayable items in internal ram 
+                                    643 ;--------------------------------------------------------
+                                    644 ;--------------------------------------------------------
+                                    645 ; indirectly addressable internal ram data
+                                    646 ;--------------------------------------------------------
+                                    647 	.area ISEG    (DATA)
+                                    648 ;--------------------------------------------------------
+                                    649 ; absolute internal ram data
+                                    650 ;--------------------------------------------------------
+                                    651 	.area IABS    (ABS,DATA)
+                                    652 	.area IABS    (ABS,DATA)
+                                    653 ;--------------------------------------------------------
+                                    654 ; bit data
+                                    655 ;--------------------------------------------------------
+                                    656 	.area BSEG    (BIT)
+                                    657 ;--------------------------------------------------------
+                                    658 ; paged external ram data
+                                    659 ;--------------------------------------------------------
+                                    660 	.area PSEG    (PAG,XDATA)
+                                    661 ;--------------------------------------------------------
+                                    662 ; external ram data
+                                    663 ;--------------------------------------------------------
+                                    664 	.area XSEG    (XDATA)
+                           000000   665 LI2C_Functions.weeprom$address$1_0$25==.
+      000000                        666 _weeprom_PARM_2:
+      000000                        667 	.ds 1
+                           000001   668 LI2C_Functions.weeprom$datum$1_0$25==.
+      000001                        669 _weeprom_PARM_3:
+      000001                        670 	.ds 1
+                           000002   671 LI2C_Functions.weeprom$page$1_0$25==.
+      000002                        672 _weeprom_page_65536_25:
+      000002                        673 	.ds 1
+                           000003   674 LI2C_Functions.reeprom$address$1_0$27==.
+      000003                        675 _reeprom_PARM_2:
+      000003                        676 	.ds 1
+                           000004   677 LI2C_Functions.reeprom$page$1_0$27==.
+      000004                        678 _reeprom_page_65536_27:
+      000004                        679 	.ds 1
+                           000005   680 LI2C_Functions.read$readcmd$1_0$29==.
+      000005                        681 _read_readcmd_65536_29:
+      000005                        682 	.ds 1
+                           000006   683 LI2C_Functions.outs$datum$1_0$31==.
+      000006                        684 _outs_datum_65536_31:
+      000006                        685 	.ds 1
+                           000007   686 LI2C_Functions.out$datum$1_0$35==.
+      000007                        687 _out_datum_65536_35:
+      000007                        688 	.ds 1
+                           000008   689 LI2C_Functions.in$aux$1_0$40==.
+      000008                        690 _in_aux_65536_40:
+      000008                        691 	.ds 1
+                           000009   692 LI2C_Functions.reeprom_seq$Start_Address$1_0$54==.
+      000009                        693 _reeprom_seq_PARM_2:
+      000009                        694 	.ds 2
+                           00000B   695 LI2C_Functions.reeprom_seq$End_Address$1_0$54==.
+      00000B                        696 _reeprom_seq_PARM_3:
+      00000B                        697 	.ds 2
+                           00000D   698 LI2C_Functions.reeprom_seq$block$1_0$54==.
+      00000D                        699 _reeprom_seq_block_65536_54:
+      00000D                        700 	.ds 2
+                           00000F   701 LI2C_Functions.reeprom_seq$a$1_0$55==.
+      00000F                        702 _reeprom_seq_a_65536_55:
+      00000F                        703 	.ds 1
+                           000010   704 LI2C_Functions.reeprom_seq$i$1_0$55==.
+      000010                        705 _reeprom_seq_i_65536_55:
+      000010                        706 	.ds 2
+                           000012   707 LI2C_Functions.reeprom_seq$res$1_0$55==.
+      000012                        708 _reeprom_seq_res_65536_55:
+      000012                        709 	.ds 2
+                           000014   710 LI2C_Functions.reeprom_seq$j$1_0$55==.
+      000014                        711 _reeprom_seq_j_65536_55:
+      000014                        712 	.ds 2
+                           000016   713 LI2C_Functions.reeprom_seq$aux$1_0$55==.
+      000016                        714 _reeprom_seq_aux_65536_55:
+      000016                        715 	.ds 1
+                           000017   716 LI2C_Functions.reeprom_seq$WRCMD$1_0$55==.
+      000017                        717 _reeprom_seq_WRCMD_65536_55:
+      000017                        718 	.ds 1
+                           000018   719 LI2C_Functions.dummy_write$Address$1_0$68==.
+      000018                        720 _dummy_write_PARM_2:
+      000018                        721 	.ds 2
+                           00001A   722 LI2C_Functions.dummy_write$block$1_0$68==.
+      00001A                        723 _dummy_write_block_65536_68:
+      00001A                        724 	.ds 2
+                           00001C   725 LI2C_Functions.get_blocknumber$Add$1_0$70==.
+      00001C                        726 _get_blocknumber_Add_65536_70:
+      00001C                        727 	.ds 2
+                                    728 ;--------------------------------------------------------
+                                    729 ; absolute external ram data
+                                    730 ;--------------------------------------------------------
+                                    731 	.area XABS    (ABS,XDATA)
+                                    732 ;--------------------------------------------------------
+                                    733 ; external initialized ram data
+                                    734 ;--------------------------------------------------------
+                                    735 	.area XISEG   (XDATA)
+                                    736 	.area HOME    (CODE)
+                                    737 	.area GSINIT0 (CODE)
+                                    738 	.area GSINIT1 (CODE)
+                                    739 	.area GSINIT2 (CODE)
+                                    740 	.area GSINIT3 (CODE)
+                                    741 	.area GSINIT4 (CODE)
+                                    742 	.area GSINIT5 (CODE)
+                                    743 	.area GSINIT  (CODE)
+                                    744 	.area GSFINAL (CODE)
+                                    745 	.area CSEG    (CODE)
+                                    746 ;--------------------------------------------------------
+                                    747 ; global & static initialisations
+                                    748 ;--------------------------------------------------------
+                                    749 	.area HOME    (CODE)
+                                    750 	.area GSINIT  (CODE)
+                                    751 	.area GSFINAL (CODE)
+                                    752 	.area GSINIT  (CODE)
+                                    753 ;--------------------------------------------------------
+                                    754 ; Home
+                                    755 ;--------------------------------------------------------
+                                    756 	.area HOME    (CODE)
+                                    757 	.area HOME    (CODE)
+                                    758 ;--------------------------------------------------------
+                                    759 ; code
+                                    760 ;--------------------------------------------------------
+                                    761 	.area CSEG    (CODE)
+                                    762 ;------------------------------------------------------------
+                                    763 ;Allocation info for local variables in function 'weeprom'
+                                    764 ;------------------------------------------------------------
+                                    765 ;address                   Allocated with name '_weeprom_PARM_2'
+                                    766 ;datum                     Allocated with name '_weeprom_PARM_3'
+                                    767 ;page                      Allocated with name '_weeprom_page_65536_25'
+                                    768 ;WRCMD                     Allocated with name '_weeprom_WRCMD_65536_26'
+                                    769 ;------------------------------------------------------------
+                           000000   770 	G$weeprom$0$0 ==.
+                           000000   771 	C$I2C_Functions.c$23$0_0$26 ==.
+                                    772 ;	I2C_Functions.c:23: void weeprom (char page, char address, char datum)
+                                    773 ;	-----------------------------------------
+                                    774 ;	 function weeprom
+                                    775 ;	-----------------------------------------
+      000000                        776 _weeprom:
+                           000007   777 	ar7 = 0x07
+                           000006   778 	ar6 = 0x06
+                           000005   779 	ar5 = 0x05
+                           000004   780 	ar4 = 0x04
+                           000003   781 	ar3 = 0x03
+                           000002   782 	ar2 = 0x02
+                           000001   783 	ar1 = 0x01
+                           000000   784 	ar0 = 0x00
+      000000 E5 82            [12]  785 	mov	a,dpl
+      000002 90r00r02         [24]  786 	mov	dptr,#_weeprom_page_65536_25
+      000005 F0               [24]  787 	movx	@dptr,a
+                           000006   788 	C$I2C_Functions.c$26$1_0$26 ==.
+                                    789 ;	I2C_Functions.c:26: page = page << 1; // move A0, A1 & A2 to their positions
+      000006 E0               [24]  790 	movx	a,@dptr
+      000007 25 E0            [12]  791 	add	a,acc
+      000009 F0               [24]  792 	movx	@dptr,a
+                           00000A   793 	C$I2C_Functions.c$27$1_0$26 ==.
+                                    794 ;	I2C_Functions.c:27: page = page & 0xFE; // clear r/w bit
+      00000A E0               [24]  795 	movx	a,@dptr
+      00000B 53 E0 FE         [24]  796 	anl	acc,#0xfe
+      00000E F0               [24]  797 	movx	@dptr,a
+                           00000F   798 	C$I2C_Functions.c$28$1_0$26 ==.
+                                    799 ;	I2C_Functions.c:28: WRCMD = page | 0xA0; // build the write command
+      00000F 90r00r02         [24]  800 	mov	dptr,#_weeprom_page_65536_25
+      000012 E0               [24]  801 	movx	a,@dptr
+      000013 44 A0            [12]  802 	orl	a,#0xa0
+                           000015   803 	C$I2C_Functions.c$29$1_0$26 ==.
+                                    804 ;	I2C_Functions.c:29: outs (WRCMD); // send the write command with start condition
+      000015 F5 82            [12]  805 	mov	dpl,a
+      000017 12r00r75         [24]  806 	lcall	_outs
+                           00001A   807 	C$I2C_Functions.c$30$1_0$26 ==.
+                                    808 ;	I2C_Functions.c:30: out (address); // send address
+      00001A 90r00r00         [24]  809 	mov	dptr,#_weeprom_PARM_2
+      00001D E0               [24]  810 	movx	a,@dptr
+      00001E F5 82            [12]  811 	mov	dpl,a
+      000020 12r00rC2         [24]  812 	lcall	_out
+                           000023   813 	C$I2C_Functions.c$31$1_0$26 ==.
+                                    814 ;	I2C_Functions.c:31: out (datum); // send data
+      000023 90r00r01         [24]  815 	mov	dptr,#_weeprom_PARM_3
+      000026 E0               [24]  816 	movx	a,@dptr
+      000027 F5 82            [12]  817 	mov	dpl,a
+      000029 12r00rC2         [24]  818 	lcall	_out
+                           00002C   819 	C$I2C_Functions.c$32$1_0$26 ==.
+                                    820 ;	I2C_Functions.c:32: stop (); // send stop condition
+      00002C 12r01r3C         [24]  821 	lcall	_stop
+                           00002F   822 	C$I2C_Functions.c$33$1_0$26 ==.
+                                    823 ;	I2C_Functions.c:33: }
+                           00002F   824 	C$I2C_Functions.c$33$1_0$26 ==.
+                           00002F   825 	XG$weeprom$0$0 ==.
+      00002F 22               [24]  826 	ret
+                                    827 ;------------------------------------------------------------
+                                    828 ;Allocation info for local variables in function 'reeprom'
+                                    829 ;------------------------------------------------------------
+                                    830 ;address                   Allocated with name '_reeprom_PARM_2'
+                                    831 ;page                      Allocated with name '_reeprom_page_65536_27'
+                                    832 ;aux                       Allocated with name '_reeprom_aux_65536_28'
+                                    833 ;WRCMD                     Allocated with name '_reeprom_WRCMD_65536_28'
+                                    834 ;------------------------------------------------------------
+                           000030   835 	G$reeprom$0$0 ==.
+                           000030   836 	C$I2C_Functions.c$49$1_0$28 ==.
+                                    837 ;	I2C_Functions.c:49: char reeprom (char page, char address)
+                                    838 ;	-----------------------------------------
+                                    839 ;	 function reeprom
+                                    840 ;	-----------------------------------------
+      000030                        841 _reeprom:
+      000030 E5 82            [12]  842 	mov	a,dpl
+      000032 90r00r04         [24]  843 	mov	dptr,#_reeprom_page_65536_27
+      000035 F0               [24]  844 	movx	@dptr,a
+                           000036   845 	C$I2C_Functions.c$53$1_0$28 ==.
+                                    846 ;	I2C_Functions.c:53: aux = page; // preparing the write command
+      000036 E0               [24]  847 	movx	a,@dptr
+                           000037   848 	C$I2C_Functions.c$54$1_0$28 ==.
+                                    849 ;	I2C_Functions.c:54: aux = aux << 1; // move A0, A1 & A2 to their positions
+      000037 25 E0            [12]  850 	add	a,acc
+      000039 FF               [12]  851 	mov	r7,a
+                           00003A   852 	C$I2C_Functions.c$55$1_0$28 ==.
+                                    853 ;	I2C_Functions.c:55: aux = aux & 0xFE; // clear r/w bit
+      00003A 74 FE            [12]  854 	mov	a,#0xfe
+      00003C 5F               [12]  855 	anl	a,r7
+                           00003D   856 	C$I2C_Functions.c$56$1_0$28 ==.
+                                    857 ;	I2C_Functions.c:56: WRCMD = aux | 0xA0; // build the write command
+      00003D 44 A0            [12]  858 	orl	a,#0xa0
+                           00003F   859 	C$I2C_Functions.c$57$1_0$28 ==.
+                                    860 ;	I2C_Functions.c:57: outs (WRCMD); // send the write command with start condition
+      00003F FF               [12]  861 	mov	r7,a
+      000040 F5 82            [12]  862 	mov	dpl,a
+      000042 C0 07            [24]  863 	push	ar7
+      000044 12r00r75         [24]  864 	lcall	_outs
+                           000047   865 	C$I2C_Functions.c$58$1_0$28 ==.
+                                    866 ;	I2C_Functions.c:58: out (address); // send address
+      000047 90r00r03         [24]  867 	mov	dptr,#_reeprom_PARM_2
+      00004A E0               [24]  868 	movx	a,@dptr
+      00004B F5 82            [12]  869 	mov	dpl,a
+      00004D 12r00rC2         [24]  870 	lcall	_out
+      000050 D0 07            [24]  871 	pop	ar7
+                           000052   872 	C$I2C_Functions.c$59$1_0$28 ==.
+                                    873 ;	I2C_Functions.c:59: aux = read (WRCMD); // send read command and receive data
+      000052 8F 82            [24]  874 	mov	dpl,r7
+      000054 12r00r58         [24]  875 	lcall	_read
+                           000057   876 	C$I2C_Functions.c$60$1_0$28 ==.
+                                    877 ;	I2C_Functions.c:60: return (aux); // return solicited data
+                           000057   878 	C$I2C_Functions.c$61$1_0$28 ==.
+                                    879 ;	I2C_Functions.c:61: }
+                           000057   880 	C$I2C_Functions.c$61$1_0$28 ==.
+                           000057   881 	XG$reeprom$0$0 ==.
+      000057 22               [24]  882 	ret
+                                    883 ;------------------------------------------------------------
+                                    884 ;Allocation info for local variables in function 'read'
+                                    885 ;------------------------------------------------------------
+                                    886 ;readcmd                   Allocated with name '_read_readcmd_65536_29'
+                                    887 ;RDCMD                     Allocated with name '_read_RDCMD_65536_30'
+                                    888 ;aux                       Allocated with name '_read_aux_65536_30'
+                                    889 ;------------------------------------------------------------
+                           000058   890 	G$read$0$0 ==.
+                           000058   891 	C$I2C_Functions.c$78$1_0$30 ==.
+                                    892 ;	I2C_Functions.c:78: char read (char readcmd)
+                                    893 ;	-----------------------------------------
+                                    894 ;	 function read
+                                    895 ;	-----------------------------------------
+      000058                        896 _read:
+      000058 E5 82            [12]  897 	mov	a,dpl
+      00005A 90r00r05         [24]  898 	mov	dptr,#_read_readcmd_65536_29
+      00005D F0               [24]  899 	movx	@dptr,a
+                           00005E   900 	C$I2C_Functions.c$82$1_0$30 ==.
+                                    901 ;	I2C_Functions.c:82: RDCMD = readcmd | 0x01; // set r/w bit
+      00005E E0               [24]  902 	movx	a,@dptr
+      00005F 44 01            [12]  903 	orl	a,#0x01
+                           000061   904 	C$I2C_Functions.c$83$1_0$30 ==.
+                                    905 ;	I2C_Functions.c:83: outs (RDCMD); // send read command with start condition
+      000061 F5 82            [12]  906 	mov	dpl,a
+      000063 12r00r75         [24]  907 	lcall	_outs
+                           000066   908 	C$I2C_Functions.c$84$1_0$30 ==.
+                                    909 ;	I2C_Functions.c:84: aux = in(); // read current position
+      000066 12r00rFD         [24]  910 	lcall	_in
+      000069 AF 82            [24]  911 	mov	r7,dpl
+                           00006B   912 	C$I2C_Functions.c$85$1_0$30 ==.
+                                    913 ;	I2C_Functions.c:85: stop (); // send stop condition
+      00006B C0 07            [24]  914 	push	ar7
+      00006D 12r01r3C         [24]  915 	lcall	_stop
+      000070 D0 07            [24]  916 	pop	ar7
+                           000072   917 	C$I2C_Functions.c$86$1_0$30 ==.
+                                    918 ;	I2C_Functions.c:86: return (aux); // return current position data
+      000072 8F 82            [24]  919 	mov	dpl,r7
+                           000074   920 	C$I2C_Functions.c$87$1_0$30 ==.
+                                    921 ;	I2C_Functions.c:87: }
+                           000074   922 	C$I2C_Functions.c$87$1_0$30 ==.
+                           000074   923 	XG$read$0$0 ==.
+      000074 22               [24]  924 	ret
+                                    925 ;------------------------------------------------------------
+                                    926 ;Allocation info for local variables in function 'outs'
+                                    927 ;------------------------------------------------------------
+                                    928 ;datum                     Allocated with name '_outs_datum_65536_31'
+                                    929 ;i                         Allocated with name '_outs_i_65536_32'
+                                    930 ;aux                       Allocated with name '_outs_aux_65536_32'
+                                    931 ;------------------------------------------------------------
+                           000075   932 	G$outs$0$0 ==.
+                           000075   933 	C$I2C_Functions.c$102$1_0$32 ==.
+                                    934 ;	I2C_Functions.c:102: void outs (char datum)
+                                    935 ;	-----------------------------------------
+                                    936 ;	 function outs
+                                    937 ;	-----------------------------------------
+      000075                        938 _outs:
+      000075 E5 82            [12]  939 	mov	a,dpl
+      000077 90r00r06         [24]  940 	mov	dptr,#_outs_datum_65536_31
+      00007A F0               [24]  941 	movx	@dptr,a
+                           00007B   942 	C$I2C_Functions.c$106$1_0$32 ==.
+                                    943 ;	I2C_Functions.c:106: SDA = 1; // set port pin SDA to insure data is HI
+                                    944 ;	assignBit
+      00007B D2 97            [12]  945 	setb	_P1_7
+                           00007D   946 	C$I2C_Functions.c$107$1_0$32 ==.
+                                    947 ;	I2C_Functions.c:107: SCK = 1; // set port pin SCK to insure clock is HI
+                                    948 ;	assignBit
+      00007D D2 96            [12]  949 	setb	_P1_6
+                           00007F   950 	C$I2C_Functions.c$114$1_0$32 ==.
+                                    951 ;	I2C_Functions.c:114: __endasm;
+      00007F 00               [12]  952 	nop
+      000080 00               [12]  953 	nop
+      000081 00               [12]  954 	nop
+      000082 00               [12]  955 	nop
+      000083 00               [12]  956 	nop
+                           000084   957 	C$I2C_Functions.c$115$1_0$32 ==.
+                                    958 ;	I2C_Functions.c:115: SDA = 0; // start condition, data = 0
+                                    959 ;	assignBit
+      000084 C2 97            [12]  960 	clr	_P1_7
+                           000086   961 	C$I2C_Functions.c$122$1_0$32 ==.
+                                    962 ;	I2C_Functions.c:122: __endasm;
+      000086 00               [12]  963 	nop
+      000087 00               [12]  964 	nop
+      000088 00               [12]  965 	nop
+      000089 00               [12]  966 	nop
+      00008A 00               [12]  967 	nop
+                           00008B   968 	C$I2C_Functions.c$124$1_0$32 ==.
+                                    969 ;	I2C_Functions.c:124: SCK = 0; // clock = 0
+                                    970 ;	assignBit
+      00008B C2 96            [12]  971 	clr	_P1_6
+                           00008D   972 	C$I2C_Functions.c$130$1_0$32 ==.
+                                    973 ;	I2C_Functions.c:130: for (i = 0; i < 8; i++) // bit shifting cycle
+      00008D 7F 00            [12]  974 	mov	r7,#0x00
+      00008F                        975 00105$:
+                           00008F   976 	C$I2C_Functions.c$132$3_0$34 ==.
+                                    977 ;	I2C_Functions.c:132: aux = datum & 0x80; // check MSB bit
+      00008F 90r00r06         [24]  978 	mov	dptr,#_outs_datum_65536_31
+      000092 E0               [24]  979 	movx	a,@dptr
+      000093 20 E7 04         [24]  980 	jb	acc.7,00102$
+                           000096   981 	C$I2C_Functions.c$133$3_0$34 ==.
+                                    982 ;	I2C_Functions.c:133: if (aux == 0) // MSB = 0
+                           000096   983 	C$I2C_Functions.c$134$3_0$34 ==.
+                                    984 ;	I2C_Functions.c:134: SDA = 0; // then SDA = 0
+                                    985 ;	assignBit
+      000096 C2 97            [12]  986 	clr	_P1_7
+      000098 80 02            [24]  987 	sjmp	00103$
+      00009A                        988 00102$:
+                           00009A   989 	C$I2C_Functions.c$136$3_0$34 ==.
+                                    990 ;	I2C_Functions.c:136: SDA = 1; // else MSB =1, then SDA = 1
+                                    991 ;	assignBit
+      00009A D2 97            [12]  992 	setb	_P1_7
+      00009C                        993 00103$:
+                           00009C   994 	C$I2C_Functions.c$137$3_0$34 ==.
+                                    995 ;	I2C_Functions.c:137: SCK = 1; // clock = 1
+                                    996 ;	assignBit
+      00009C D2 96            [12]  997 	setb	_P1_6
+                           00009E   998 	C$I2C_Functions.c$148$3_0$34 ==.
+                                    999 ;	I2C_Functions.c:148: __endasm;
+      00009E 00               [12] 1000 	nop
+      00009F 00               [12] 1001 	nop
+      0000A0 00               [12] 1002 	nop
+      0000A1 00               [12] 1003 	nop
+      0000A2 00               [12] 1004 	nop
+                           0000A3  1005 	C$I2C_Functions.c$152$3_0$34 ==.
+                                   1006 ;	I2C_Functions.c:152: SCK = 0; // clock = 0
+                                   1007 ;	assignBit
+      0000A3 C2 96            [12] 1008 	clr	_P1_6
+                           0000A5  1009 	C$I2C_Functions.c$153$3_0$34 ==.
+                                   1010 ;	I2C_Functions.c:153: datum = datum << 1; // rotate for next bit
+      0000A5 90r00r06         [24] 1011 	mov	dptr,#_outs_datum_65536_31
+      0000A8 E0               [24] 1012 	movx	a,@dptr
+      0000A9 25 E0            [12] 1013 	add	a,acc
+      0000AB FE               [12] 1014 	mov	r6,a
+      0000AC F0               [24] 1015 	movx	@dptr,a
+                           0000AD  1016 	C$I2C_Functions.c$130$2_0$33 ==.
+                                   1017 ;	I2C_Functions.c:130: for (i = 0; i < 8; i++) // bit shifting cycle
+      0000AD 0F               [12] 1018 	inc	r7
+      0000AE BF 08 00         [24] 1019 	cjne	r7,#0x08,00123$
+      0000B1                       1020 00123$:
+      0000B1 40 DC            [24] 1021 	jc	00105$
+                           0000B3  1022 	C$I2C_Functions.c$156$1_0$32 ==.
+                                   1023 ;	I2C_Functions.c:156: SDA = 1; // set port pin for ack
+                                   1024 ;	assignBit
+      0000B3 D2 97            [12] 1025 	setb	_P1_7
+                           0000B5  1026 	C$I2C_Functions.c$162$1_0$32 ==.
+                                   1027 ;	I2C_Functions.c:162: __endasm;
+      0000B5 00               [12] 1028 	nop
+      0000B6 00               [12] 1029 	nop
+      0000B7 00               [12] 1030 	nop
+                           0000B8  1031 	C$I2C_Functions.c$163$1_0$32 ==.
+                                   1032 ;	I2C_Functions.c:163: SCK = 1; // clock ack
+                                   1033 ;	assignBit
+      0000B8 D2 96            [12] 1034 	setb	_P1_6
+                           0000BA  1035 	C$I2C_Functions.c$170$1_0$32 ==.
+                                   1036 ;	I2C_Functions.c:170: __endasm;
+      0000BA 00               [12] 1037 	nop
+      0000BB 00               [12] 1038 	nop
+      0000BC 00               [12] 1039 	nop
+      0000BD 00               [12] 1040 	nop
+      0000BE 00               [12] 1041 	nop
+                           0000BF  1042 	C$I2C_Functions.c$171$1_0$32 ==.
+                                   1043 ;	I2C_Functions.c:171: SCK = 0; // clock = 0
+                                   1044 ;	assignBit
+      0000BF C2 96            [12] 1045 	clr	_P1_6
+                           0000C1  1046 	C$I2C_Functions.c$172$1_0$32 ==.
+                                   1047 ;	I2C_Functions.c:172: }
+                           0000C1  1048 	C$I2C_Functions.c$172$1_0$32 ==.
+                           0000C1  1049 	XG$outs$0$0 ==.
+      0000C1 22               [24] 1050 	ret
+                                   1051 ;------------------------------------------------------------
+                                   1052 ;Allocation info for local variables in function 'out'
+                                   1053 ;------------------------------------------------------------
+                                   1054 ;datum                     Allocated with name '_out_datum_65536_35'
+                                   1055 ;i                         Allocated with name '_out_i_65536_36'
+                                   1056 ;aux                       Allocated with name '_out_aux_65536_36'
+                                   1057 ;------------------------------------------------------------
+                           0000C2  1058 	G$out$0$0 ==.
+                           0000C2  1059 	C$I2C_Functions.c$188$1_0$36 ==.
+                                   1060 ;	I2C_Functions.c:188: void out (char datum)
+                                   1061 ;	-----------------------------------------
+                                   1062 ;	 function out
+                                   1063 ;	-----------------------------------------
+      0000C2                       1064 _out:
+      0000C2 E5 82            [12] 1065 	mov	a,dpl
+      0000C4 90r00r07         [24] 1066 	mov	dptr,#_out_datum_65536_35
+      0000C7 F0               [24] 1067 	movx	@dptr,a
+                           0000C8  1068 	C$I2C_Functions.c$192$1_0$36 ==.
+                                   1069 ;	I2C_Functions.c:192: for (i = 0; i < 8; i++) // bit shifting cycle
+      0000C8 7F 00            [12] 1070 	mov	r7,#0x00
+      0000CA                       1071 00105$:
+                           0000CA  1072 	C$I2C_Functions.c$194$3_0$38 ==.
+                                   1073 ;	I2C_Functions.c:194: aux = datum & 0x80; // check MSB bit
+      0000CA 90r00r07         [24] 1074 	mov	dptr,#_out_datum_65536_35
+      0000CD E0               [24] 1075 	movx	a,@dptr
+      0000CE 20 E7 04         [24] 1076 	jb	acc.7,00102$
+                           0000D1  1077 	C$I2C_Functions.c$195$3_0$38 ==.
+                                   1078 ;	I2C_Functions.c:195: if (aux == 0) // MSB = 0
+                           0000D1  1079 	C$I2C_Functions.c$196$3_0$38 ==.
+                                   1080 ;	I2C_Functions.c:196: SDA = 0; // then SDA = 0
+                                   1081 ;	assignBit
+      0000D1 C2 97            [12] 1082 	clr	_P1_7
+      0000D3 80 02            [24] 1083 	sjmp	00103$
+      0000D5                       1084 00102$:
+                           0000D5  1085 	C$I2C_Functions.c$198$3_0$38 ==.
+                                   1086 ;	I2C_Functions.c:198: SDA = 1; // else MSB = 1, the SDA = 1
+                                   1087 ;	assignBit
+      0000D5 D2 97            [12] 1088 	setb	_P1_7
+      0000D7                       1089 00103$:
+                           0000D7  1090 	C$I2C_Functions.c$199$3_0$38 ==.
+                                   1091 ;	I2C_Functions.c:199: SCK = 1; // clock = 1
+                                   1092 ;	assignBit
+      0000D7 D2 96            [12] 1093 	setb	_P1_6
+                           0000D9  1094 	C$I2C_Functions.c$206$3_0$38 ==.
+                                   1095 ;	I2C_Functions.c:206: __endasm;
+      0000D9 00               [12] 1096 	nop
+      0000DA 00               [12] 1097 	nop
+      0000DB 00               [12] 1098 	nop
+      0000DC 00               [12] 1099 	nop
+      0000DD 00               [12] 1100 	nop
+                           0000DE  1101 	C$I2C_Functions.c$207$3_0$38 ==.
+                                   1102 ;	I2C_Functions.c:207: SCK = 0; // clock = 0
+                                   1103 ;	assignBit
+      0000DE C2 96            [12] 1104 	clr	_P1_6
+                           0000E0  1105 	C$I2C_Functions.c$208$3_0$38 ==.
+                                   1106 ;	I2C_Functions.c:208: datum = datum << 1; // rotate for next bit
+      0000E0 90r00r07         [24] 1107 	mov	dptr,#_out_datum_65536_35
+      0000E3 E0               [24] 1108 	movx	a,@dptr
+      0000E4 25 E0            [12] 1109 	add	a,acc
+      0000E6 FE               [12] 1110 	mov	r6,a
+      0000E7 F0               [24] 1111 	movx	@dptr,a
+                           0000E8  1112 	C$I2C_Functions.c$192$2_0$37 ==.
+                                   1113 ;	I2C_Functions.c:192: for (i = 0; i < 8; i++) // bit shifting cycle
+      0000E8 0F               [12] 1114 	inc	r7
+      0000E9 BF 08 00         [24] 1115 	cjne	r7,#0x08,00123$
+      0000EC                       1116 00123$:
+      0000EC 40 DC            [24] 1117 	jc	00105$
+                           0000EE  1118 	C$I2C_Functions.c$210$1_0$36 ==.
+                                   1119 ;	I2C_Functions.c:210: SDA = 1; // set port pin for ack
+                                   1120 ;	assignBit
+      0000EE D2 97            [12] 1121 	setb	_P1_7
+                           0000F0  1122 	C$I2C_Functions.c$215$1_0$36 ==.
+                                   1123 ;	I2C_Functions.c:215: __endasm;
+      0000F0 00               [12] 1124 	nop
+      0000F1 00               [12] 1125 	nop
+      0000F2 00               [12] 1126 	nop
+                           0000F3  1127 	C$I2C_Functions.c$216$1_0$36 ==.
+                                   1128 ;	I2C_Functions.c:216: SCK = 1; // clock ack
+                                   1129 ;	assignBit
+      0000F3 D2 96            [12] 1130 	setb	_P1_6
+                           0000F5  1131 	C$I2C_Functions.c$223$1_0$36 ==.
+                                   1132 ;	I2C_Functions.c:223: __endasm;
+      0000F5 00               [12] 1133 	nop
+      0000F6 00               [12] 1134 	nop
+      0000F7 00               [12] 1135 	nop
+      0000F8 00               [12] 1136 	nop
+      0000F9 00               [12] 1137 	nop
+                           0000FA  1138 	C$I2C_Functions.c$224$1_0$36 ==.
+                                   1139 ;	I2C_Functions.c:224: SCK = 0; // clock = 0
+                                   1140 ;	assignBit
+      0000FA C2 96            [12] 1141 	clr	_P1_6
+                           0000FC  1142 	C$I2C_Functions.c$225$1_0$36 ==.
+                                   1143 ;	I2C_Functions.c:225: }
+                           0000FC  1144 	C$I2C_Functions.c$225$1_0$36 ==.
+                           0000FC  1145 	XG$out$0$0 ==.
+      0000FC 22               [24] 1146 	ret
+                                   1147 ;------------------------------------------------------------
+                                   1148 ;Allocation info for local variables in function 'in'
+                                   1149 ;------------------------------------------------------------
+                                   1150 ;i                         Allocated with name '_in_i_65536_40'
+                                   1151 ;aux                       Allocated with name '_in_aux_65536_40'
+                                   1152 ;------------------------------------------------------------
+                           0000FD  1153 	G$in$0$0 ==.
+                           0000FD  1154 	C$I2C_Functions.c$240$1_0$40 ==.
+                                   1155 ;	I2C_Functions.c:240: char in (void)
+                                   1156 ;	-----------------------------------------
+                                   1157 ;	 function in
+                                   1158 ;	-----------------------------------------
+      0000FD                       1159 _in:
+                           0000FD  1160 	C$I2C_Functions.c$243$2_0$40 ==.
+                                   1161 ;	I2C_Functions.c:243: char aux = 0; // auxiliary storage
+      0000FD 90r00r08         [24] 1162 	mov	dptr,#_in_aux_65536_40
+      000100 E4               [12] 1163 	clr	a
+      000101 F0               [24] 1164 	movx	@dptr,a
+                           000102  1165 	C$I2C_Functions.c$244$1_0$40 ==.
+                                   1166 ;	I2C_Functions.c:244: SDA = 1; // insure port pin = 1 for input
+                                   1167 ;	assignBit
+      000102 D2 97            [12] 1168 	setb	_P1_7
+                           000104  1169 	C$I2C_Functions.c$245$1_0$40 ==.
+                                   1170 ;	I2C_Functions.c:245: for (i = 0; i < 8; i++) // bit shifting cycle
+      000104 7F 00            [12] 1171 	mov	r7,#0x00
+      000106                       1172 00105$:
+                           000106  1173 	C$I2C_Functions.c$247$3_0$42 ==.
+                                   1174 ;	I2C_Functions.c:247: SCK = 0; // clock = 0
+                                   1175 ;	assignBit
+      000106 C2 96            [12] 1176 	clr	_P1_6
+                           000108  1177 	C$I2C_Functions.c$255$3_0$42 ==.
+                                   1178 ;	I2C_Functions.c:255: __endasm;
+      000108 00               [12] 1179 	nop
+      000109 00               [12] 1180 	nop
+      00010A 00               [12] 1181 	nop
+      00010B 00               [12] 1182 	nop
+      00010C 00               [12] 1183 	nop
+      00010D 00               [12] 1184 	nop
+                           00010E  1185 	C$I2C_Functions.c$256$3_0$42 ==.
+                                   1186 ;	I2C_Functions.c:256: SCK = 1; // clock = 1
+                                   1187 ;	assignBit
+      00010E D2 96            [12] 1188 	setb	_P1_6
+                           000110  1189 	C$I2C_Functions.c$257$3_0$42 ==.
+                                   1190 ;	I2C_Functions.c:257: aux = aux << 1; // load bit position
+      000110 90r00r08         [24] 1191 	mov	dptr,#_in_aux_65536_40
+      000113 E0               [24] 1192 	movx	a,@dptr
+      000114 25 E0            [12] 1193 	add	a,acc
+      000116 FE               [12] 1194 	mov	r6,a
+      000117 F0               [24] 1195 	movx	@dptr,a
+                           000118  1196 	C$I2C_Functions.c$258$3_0$42 ==.
+                                   1197 ;	I2C_Functions.c:258: if (SDA) // check SDA data from port pin
+      000118 30 97 0A         [24] 1198 	jnb	_P1_7,00102$
+                           00011B  1199 	C$I2C_Functions.c$259$3_0$42 ==.
+                                   1200 ;	I2C_Functions.c:259: aux = aux | 0x01; // if port pin = 1, set LSB (bit position)
+      00011B 90r00r08         [24] 1201 	mov	dptr,#_in_aux_65536_40
+      00011E E0               [24] 1202 	movx	a,@dptr
+      00011F 43 E0 01         [24] 1203 	orl	acc,#0x01
+      000122 F0               [24] 1204 	movx	@dptr,a
+      000123 80 08            [24] 1205 	sjmp	00106$
+      000125                       1206 00102$:
+                           000125  1207 	C$I2C_Functions.c$261$3_0$42 ==.
+                                   1208 ;	I2C_Functions.c:261: aux = aux & 0xFE; // else port pin = ,clear LSB (bit position)
+      000125 90r00r08         [24] 1209 	mov	dptr,#_in_aux_65536_40
+      000128 E0               [24] 1210 	movx	a,@dptr
+      000129 53 E0 FE         [24] 1211 	anl	acc,#0xfe
+      00012C F0               [24] 1212 	movx	@dptr,a
+      00012D                       1213 00106$:
+                           00012D  1214 	C$I2C_Functions.c$245$2_0$41 ==.
+                                   1215 ;	I2C_Functions.c:245: for (i = 0; i < 8; i++) // bit shifting cycle
+      00012D 0F               [12] 1216 	inc	r7
+      00012E BF 08 00         [24] 1217 	cjne	r7,#0x08,00123$
+      000131                       1218 00123$:
+      000131 40 D3            [24] 1219 	jc	00105$
+                           000133  1220 	C$I2C_Functions.c$263$1_0$40 ==.
+                                   1221 ;	I2C_Functions.c:263: SCK = 0; // clock = 0
+                                   1222 ;	assignBit
+      000133 C2 96            [12] 1223 	clr	_P1_6
+                           000135  1224 	C$I2C_Functions.c$264$1_0$40 ==.
+                                   1225 ;	I2C_Functions.c:264: return (aux); // return data received
+      000135 90r00r08         [24] 1226 	mov	dptr,#_in_aux_65536_40
+      000138 E0               [24] 1227 	movx	a,@dptr
+                           000139  1228 	C$I2C_Functions.c$265$1_0$40 ==.
+                                   1229 ;	I2C_Functions.c:265: }
+                           000139  1230 	C$I2C_Functions.c$265$1_0$40 ==.
+                           000139  1231 	XG$in$0$0 ==.
+      000139 F5 82            [12] 1232 	mov	dpl,a
+      00013B 22               [24] 1233 	ret
+                                   1234 ;------------------------------------------------------------
+                                   1235 ;Allocation info for local variables in function 'stop'
+                                   1236 ;------------------------------------------------------------
+                           00013C  1237 	G$stop$0$0 ==.
+                           00013C  1238 	C$I2C_Functions.c$279$1_0$44 ==.
+                                   1239 ;	I2C_Functions.c:279: void stop (void)
+                                   1240 ;	-----------------------------------------
+                                   1241 ;	 function stop
+                                   1242 ;	-----------------------------------------
+      00013C                       1243 _stop:
+                           00013C  1244 	C$I2C_Functions.c$281$1_0$44 ==.
+                                   1245 ;	I2C_Functions.c:281: SDA = 0; // stop condition, data = 0
+                                   1246 ;	assignBit
+      00013C C2 97            [12] 1247 	clr	_P1_7
+                           00013E  1248 	C$I2C_Functions.c$288$1_0$44 ==.
+                                   1249 ;	I2C_Functions.c:288: __endasm;
+      00013E 00               [12] 1250 	nop
+      00013F 00               [12] 1251 	nop
+      000140 00               [12] 1252 	nop
+      000141 00               [12] 1253 	nop
+      000142 00               [12] 1254 	nop
+                           000143  1255 	C$I2C_Functions.c$289$1_0$44 ==.
+                                   1256 ;	I2C_Functions.c:289: SCK = 1; // clock = 1
+                                   1257 ;	assignBit
+      000143 D2 96            [12] 1258 	setb	_P1_6
+                           000145  1259 	C$I2C_Functions.c$296$1_0$44 ==.
+                                   1260 ;	I2C_Functions.c:296: __endasm;
+      000145 00               [12] 1261 	nop
+      000146 00               [12] 1262 	nop
+      000147 00               [12] 1263 	nop
+      000148 00               [12] 1264 	nop
+      000149 00               [12] 1265 	nop
+                           00014A  1266 	C$I2C_Functions.c$297$1_0$44 ==.
+                                   1267 ;	I2C_Functions.c:297: SDA = 1; // data = 1
+                                   1268 ;	assignBit
+      00014A D2 97            [12] 1269 	setb	_P1_7
+                           00014C  1270 	C$I2C_Functions.c$298$1_0$44 ==.
+                                   1271 ;	I2C_Functions.c:298: }
+                           00014C  1272 	C$I2C_Functions.c$298$1_0$44 ==.
+                           00014C  1273 	XG$stop$0$0 ==.
+      00014C 22               [24] 1274 	ret
+                                   1275 ;------------------------------------------------------------
+                                   1276 ;Allocation info for local variables in function 'start'
+                                   1277 ;------------------------------------------------------------
+                           00014D  1278 	G$start$0$0 ==.
+                           00014D  1279 	C$I2C_Functions.c$299$1_0$46 ==.
+                                   1280 ;	I2C_Functions.c:299: void start(void)
+                                   1281 ;	-----------------------------------------
+                                   1282 ;	 function start
+                                   1283 ;	-----------------------------------------
+      00014D                       1284 _start:
+                           00014D  1285 	C$I2C_Functions.c$301$1_0$46 ==.
+                                   1286 ;	I2C_Functions.c:301: SDA=1;
+                                   1287 ;	assignBit
+      00014D D2 97            [12] 1288 	setb	_P1_7
+                           00014F  1289 	C$I2C_Functions.c$302$1_0$46 ==.
+                                   1290 ;	I2C_Functions.c:302: SCK = 1;
+                                   1291 ;	assignBit
+      00014F D2 96            [12] 1292 	setb	_P1_6
+                           000151  1293 	C$I2C_Functions.c$309$1_0$46 ==.
+                                   1294 ;	I2C_Functions.c:309: __endasm;
+      000151 00               [12] 1295 	nop
+      000152 00               [12] 1296 	nop
+      000153 00               [12] 1297 	nop
+      000154 00               [12] 1298 	nop
+      000155 00               [12] 1299 	nop
+                           000156  1300 	C$I2C_Functions.c$310$1_0$46 ==.
+                                   1301 ;	I2C_Functions.c:310: SDA=0;	 // clock = 1
+                                   1302 ;	assignBit
+      000156 C2 97            [12] 1303 	clr	_P1_7
+                           000158  1304 	C$I2C_Functions.c$317$1_0$46 ==.
+                                   1305 ;	I2C_Functions.c:317: __endasm;
+      000158 00               [12] 1306 	nop
+      000159 00               [12] 1307 	nop
+      00015A 00               [12] 1308 	nop
+      00015B 00               [12] 1309 	nop
+      00015C 00               [12] 1310 	nop
+                           00015D  1311 	C$I2C_Functions.c$318$1_0$46 ==.
+                                   1312 ;	I2C_Functions.c:318: SCK = 0; // data = 1
+                                   1313 ;	assignBit
+      00015D C2 96            [12] 1314 	clr	_P1_6
+                           00015F  1315 	C$I2C_Functions.c$319$1_0$46 ==.
+                                   1316 ;	I2C_Functions.c:319: }
+                           00015F  1317 	C$I2C_Functions.c$319$1_0$46 ==.
+                           00015F  1318 	XG$start$0$0 ==.
+      00015F 22               [24] 1319 	ret
+                                   1320 ;------------------------------------------------------------
+                                   1321 ;Allocation info for local variables in function 'eereset'
+                                   1322 ;------------------------------------------------------------
+                                   1323 ;i                         Allocated with name '_eereset_i_131072_48'
+                                   1324 ;------------------------------------------------------------
+                           000160  1325 	G$eereset$0$0 ==.
+                           000160  1326 	C$I2C_Functions.c$320$1_0$47 ==.
+                                   1327 ;	I2C_Functions.c:320: void eereset()
+                                   1328 ;	-----------------------------------------
+                                   1329 ;	 function eereset
+                                   1330 ;	-----------------------------------------
+      000160                       1331 _eereset:
+                           000160  1332 	C$I2C_Functions.c$322$1_0$47 ==.
+                                   1333 ;	I2C_Functions.c:322: start();
+      000160 12r01r4D         [24] 1334 	lcall	_start
+                           000163  1335 	C$I2C_Functions.c$323$1_0$47 ==.
+                                   1336 ;	I2C_Functions.c:323: for(uint8_t i=0;i<9;i++)
+      000163 7F 00            [12] 1337 	mov	r7,#0x00
+      000165                       1338 00103$:
+      000165 BF 09 00         [24] 1339 	cjne	r7,#0x09,00116$
+      000168                       1340 00116$:
+      000168 50 0E            [24] 1341 	jnc	00101$
+                           00016A  1342 	C$I2C_Functions.c$324$3_0$49 ==.
+                                   1343 ;	I2C_Functions.c:324: {   SDA=1;
+                                   1344 ;	assignBit
+      00016A D2 97            [12] 1345 	setb	_P1_7
+                           00016C  1346 	C$I2C_Functions.c$325$3_0$49 ==.
+                                   1347 ;	I2C_Functions.c:325: SCK=1;
+                                   1348 ;	assignBit
+      00016C D2 96            [12] 1349 	setb	_P1_6
+                           00016E  1350 	C$I2C_Functions.c$332$3_0$49 ==.
+                                   1351 ;	I2C_Functions.c:332: __endasm;
+      00016E 00               [12] 1352 	nop
+      00016F 00               [12] 1353 	nop
+      000170 00               [12] 1354 	nop
+      000171 00               [12] 1355 	nop
+      000172 00               [12] 1356 	nop
+                           000173  1357 	C$I2C_Functions.c$333$3_0$49 ==.
+                                   1358 ;	I2C_Functions.c:333: SCK=0;
+                                   1359 ;	assignBit
+      000173 C2 96            [12] 1360 	clr	_P1_6
+                           000175  1361 	C$I2C_Functions.c$323$2_0$48 ==.
+                                   1362 ;	I2C_Functions.c:323: for(uint8_t i=0;i<9;i++)
+      000175 0F               [12] 1363 	inc	r7
+      000176 80 ED            [24] 1364 	sjmp	00103$
+      000178                       1365 00101$:
+                           000178  1366 	C$I2C_Functions.c$335$1_0$47 ==.
+                                   1367 ;	I2C_Functions.c:335: start();
+      000178 12r01r4D         [24] 1368 	lcall	_start
+                           00017B  1369 	C$I2C_Functions.c$336$1_0$47 ==.
+                                   1370 ;	I2C_Functions.c:336: stop();
+      00017B 12r01r3C         [24] 1371 	lcall	_stop
+                           00017E  1372 	C$I2C_Functions.c$337$1_0$47 ==.
+                                   1373 ;	I2C_Functions.c:337: }
+                           00017E  1374 	C$I2C_Functions.c$337$1_0$47 ==.
+                           00017E  1375 	XG$eereset$0$0 ==.
+      00017E 22               [24] 1376 	ret
+                                   1377 ;------------------------------------------------------------
+                                   1378 ;Allocation info for local variables in function 'ack'
+                                   1379 ;------------------------------------------------------------
+                           00017F  1380 	G$ack$0$0 ==.
+                           00017F  1381 	C$I2C_Functions.c$338$1_0$51 ==.
+                                   1382 ;	I2C_Functions.c:338: void ack(void)
+                                   1383 ;	-----------------------------------------
+                                   1384 ;	 function ack
+                                   1385 ;	-----------------------------------------
+      00017F                       1386 _ack:
+                           00017F  1387 	C$I2C_Functions.c$340$1_0$51 ==.
+                                   1388 ;	I2C_Functions.c:340: SDA = 0; // 8051 Pulls SDA low to ACK
+                                   1389 ;	assignBit
+      00017F C2 97            [12] 1390 	clr	_P1_7
+                           000181  1391 	C$I2C_Functions.c$345$1_0$51 ==.
+                                   1392 ;	I2C_Functions.c:345: __endasm;
+      000181 00               [12] 1393 	nop
+      000182 00               [12] 1394 	nop
+      000183 00               [12] 1395 	nop
+                           000184  1396 	C$I2C_Functions.c$346$1_0$51 ==.
+                                   1397 ;	I2C_Functions.c:346: SCK = 1; // clock ack
+                                   1398 ;	assignBit
+      000184 D2 96            [12] 1399 	setb	_P1_6
+                           000186  1400 	C$I2C_Functions.c$353$1_0$51 ==.
+                                   1401 ;	I2C_Functions.c:353: __endasm;
+      000186 00               [12] 1402 	nop
+      000187 00               [12] 1403 	nop
+      000188 00               [12] 1404 	nop
+      000189 00               [12] 1405 	nop
+      00018A 00               [12] 1406 	nop
+                           00018B  1407 	C$I2C_Functions.c$354$1_0$51 ==.
+                                   1408 ;	I2C_Functions.c:354: SCK = 0; // clock = 0
+                                   1409 ;	assignBit
+      00018B C2 96            [12] 1410 	clr	_P1_6
+                           00018D  1411 	C$I2C_Functions.c$355$1_0$51 ==.
+                                   1412 ;	I2C_Functions.c:355: SDA = 1; // Pulling it back up now
+                                   1413 ;	assignBit
+      00018D D2 97            [12] 1414 	setb	_P1_7
+                           00018F  1415 	C$I2C_Functions.c$356$1_0$51 ==.
+                                   1416 ;	I2C_Functions.c:356: }
+                           00018F  1417 	C$I2C_Functions.c$356$1_0$51 ==.
+                           00018F  1418 	XG$ack$0$0 ==.
+      00018F 22               [24] 1419 	ret
+                                   1420 ;------------------------------------------------------------
+                                   1421 ;Allocation info for local variables in function 'delay1'
+                                   1422 ;------------------------------------------------------------
+                                   1423 ;i                         Allocated with name '_delay1_i_65536_52'
+                                   1424 ;------------------------------------------------------------
+                           000190  1425 	G$delay1$0$0 ==.
+                           000190  1426 	C$I2C_Functions.c$357$1_0$52 ==.
+                                   1427 ;	I2C_Functions.c:357: void delay1()
+                                   1428 ;	-----------------------------------------
+                                   1429 ;	 function delay1
+                                   1430 ;	-----------------------------------------
+      000190                       1431 _delay1:
+                           000190  1432 	C$I2C_Functions.c$359$1_0$52 ==.
+                                   1433 ;	I2C_Functions.c:359: while(i!=1000)
+      000190 7E 00            [12] 1434 	mov	r6,#0x00
+      000192 7F 00            [12] 1435 	mov	r7,#0x00
+      000194                       1436 00101$:
+      000194 BE E8 05         [24] 1437 	cjne	r6,#0xe8,00115$
+      000197 BF 03 02         [24] 1438 	cjne	r7,#0x03,00115$
+      00019A 80 07            [24] 1439 	sjmp	00104$
+      00019C                       1440 00115$:
+                           00019C  1441 	C$I2C_Functions.c$361$2_0$53 ==.
+                                   1442 ;	I2C_Functions.c:361: ++i;
+      00019C 0E               [12] 1443 	inc	r6
+      00019D BE 00 F4         [24] 1444 	cjne	r6,#0x00,00101$
+      0001A0 0F               [12] 1445 	inc	r7
+      0001A1 80 F1            [24] 1446 	sjmp	00101$
+      0001A3                       1447 00104$:
+                           0001A3  1448 	C$I2C_Functions.c$363$1_0$52 ==.
+                                   1449 ;	I2C_Functions.c:363: }
+                           0001A3  1450 	C$I2C_Functions.c$363$1_0$52 ==.
+                           0001A3  1451 	XG$delay1$0$0 ==.
+      0001A3 22               [24] 1452 	ret
+                                   1453 ;------------------------------------------------------------
+                                   1454 ;Allocation info for local variables in function 'reeprom_seq'
+                                   1455 ;------------------------------------------------------------
+                                   1456 ;Start_Address             Allocated with name '_reeprom_seq_PARM_2'
+                                   1457 ;End_Address               Allocated with name '_reeprom_seq_PARM_3'
+                                   1458 ;block                     Allocated with name '_reeprom_seq_block_65536_54'
+                                   1459 ;a                         Allocated with name '_reeprom_seq_a_65536_55'
+                                   1460 ;b                         Allocated with name '_reeprom_seq_b_65536_55'
+                                   1461 ;i                         Allocated with name '_reeprom_seq_i_65536_55'
+                                   1462 ;res                       Allocated with name '_reeprom_seq_res_65536_55'
+                                   1463 ;j                         Allocated with name '_reeprom_seq_j_65536_55'
+                                   1464 ;aux                       Allocated with name '_reeprom_seq_aux_65536_55'
+                                   1465 ;WRCMD                     Allocated with name '_reeprom_seq_WRCMD_65536_55'
+                                   1466 ;------------------------------------------------------------
+                           0001A4  1467 	G$reeprom_seq$0$0 ==.
+                           0001A4  1468 	C$I2C_Functions.c$364$1_0$55 ==.
+                                   1469 ;	I2C_Functions.c:364: void reeprom_seq(uint16_t block,int Start_Address,int End_Address)
+                                   1470 ;	-----------------------------------------
+                                   1471 ;	 function reeprom_seq
+                                   1472 ;	-----------------------------------------
+      0001A4                       1473 _reeprom_seq:
+      0001A4 AF 83            [24] 1474 	mov	r7,dph
+      0001A6 E5 82            [12] 1475 	mov	a,dpl
+      0001A8 90r00r0D         [24] 1476 	mov	dptr,#_reeprom_seq_block_65536_54
+      0001AB F0               [24] 1477 	movx	@dptr,a
+      0001AC EF               [12] 1478 	mov	a,r7
+      0001AD A3               [24] 1479 	inc	dptr
+      0001AE F0               [24] 1480 	movx	@dptr,a
+                           0001AF  1481 	C$I2C_Functions.c$366$1_0$55 ==.
+                                   1482 ;	I2C_Functions.c:366: volatile uint8_t a=Start_Address%16;
+      0001AF 90r00r09         [24] 1483 	mov	dptr,#_reeprom_seq_PARM_2
+      0001B2 E0               [24] 1484 	movx	a,@dptr
+      0001B3 FE               [12] 1485 	mov	r6,a
+      0001B4 A3               [24] 1486 	inc	dptr
+      0001B5 E0               [24] 1487 	movx	a,@dptr
+      0001B6 FF               [12] 1488 	mov	r7,a
+      0001B7 90r00r00         [24] 1489 	mov	dptr,#__modsint_PARM_2
+      0001BA 74 10            [12] 1490 	mov	a,#0x10
+      0001BC F0               [24] 1491 	movx	@dptr,a
+      0001BD E4               [12] 1492 	clr	a
+      0001BE A3               [24] 1493 	inc	dptr
+      0001BF F0               [24] 1494 	movx	@dptr,a
+      0001C0 8E 82            [24] 1495 	mov	dpl,r6
+      0001C2 8F 83            [24] 1496 	mov	dph,r7
+      0001C4 C0 07            [24] 1497 	push	ar7
+      0001C6 C0 06            [24] 1498 	push	ar6
+      0001C8 12r00r00         [24] 1499 	lcall	__modsint
+      0001CB AC 82            [24] 1500 	mov	r4,dpl
+      0001CD 90r00r0F         [24] 1501 	mov	dptr,#_reeprom_seq_a_65536_55
+      0001D0 EC               [12] 1502 	mov	a,r4
+      0001D1 F0               [24] 1503 	movx	@dptr,a
+                           0001D2  1504 	C$I2C_Functions.c$367$1_0$55 ==.
+                                   1505 ;	I2C_Functions.c:367: uint8_t b=End_Address%16;
+      0001D2 90r00r0B         [24] 1506 	mov	dptr,#_reeprom_seq_PARM_3
+      0001D5 E0               [24] 1507 	movx	a,@dptr
+      0001D6 FC               [12] 1508 	mov	r4,a
+      0001D7 A3               [24] 1509 	inc	dptr
+      0001D8 E0               [24] 1510 	movx	a,@dptr
+      0001D9 FD               [12] 1511 	mov	r5,a
+      0001DA 90r00r00         [24] 1512 	mov	dptr,#__modsint_PARM_2
+      0001DD 74 10            [12] 1513 	mov	a,#0x10
+      0001DF F0               [24] 1514 	movx	@dptr,a
+      0001E0 E4               [12] 1515 	clr	a
+      0001E1 A3               [24] 1516 	inc	dptr
+      0001E2 F0               [24] 1517 	movx	@dptr,a
+      0001E3 8C 82            [24] 1518 	mov	dpl,r4
+      0001E5 8D 83            [24] 1519 	mov	dph,r5
+      0001E7 C0 05            [24] 1520 	push	ar5
+      0001E9 C0 04            [24] 1521 	push	ar4
+      0001EB 12r00r00         [24] 1522 	lcall	__modsint
+      0001EE AA 82            [24] 1523 	mov	r2,dpl
+      0001F0 D0 04            [24] 1524 	pop	ar4
+      0001F2 D0 05            [24] 1525 	pop	ar5
+      0001F4 D0 06            [24] 1526 	pop	ar6
+      0001F6 D0 07            [24] 1527 	pop	ar7
+                           0001F8  1528 	C$I2C_Functions.c$368$1_0$55 ==.
+                                   1529 ;	I2C_Functions.c:368: volatile uint16_t i,res=0,j;
+      0001F8 90r00r12         [24] 1530 	mov	dptr,#_reeprom_seq_res_65536_55
+      0001FB E4               [12] 1531 	clr	a
+      0001FC F0               [24] 1532 	movx	@dptr,a
+      0001FD A3               [24] 1533 	inc	dptr
+      0001FE F0               [24] 1534 	movx	@dptr,a
+                           0001FF  1535 	C$I2C_Functions.c$371$1_0$55 ==.
+                                   1536 ;	I2C_Functions.c:371: Start_Address=Start_Address-a;
+      0001FF 90r00r0F         [24] 1537 	mov	dptr,#_reeprom_seq_a_65536_55
+      000202 E0               [24] 1538 	movx	a,@dptr
+      000203 F9               [12] 1539 	mov	r1,a
+      000204 7B 00            [12] 1540 	mov	r3,#0x00
+      000206 90r00r09         [24] 1541 	mov	dptr,#_reeprom_seq_PARM_2
+      000209 EE               [12] 1542 	mov	a,r6
+      00020A C3               [12] 1543 	clr	c
+      00020B 99               [12] 1544 	subb	a,r1
+      00020C F0               [24] 1545 	movx	@dptr,a
+      00020D EF               [12] 1546 	mov	a,r7
+      00020E 9B               [12] 1547 	subb	a,r3
+      00020F A3               [24] 1548 	inc	dptr
+      000210 F0               [24] 1549 	movx	@dptr,a
+                           000211  1550 	C$I2C_Functions.c$372$1_0$55 ==.
+                                   1551 ;	I2C_Functions.c:372: End_Address=End_Address+16-b;
+      000211 74 10            [12] 1552 	mov	a,#0x10
+      000213 2C               [12] 1553 	add	a,r4
+      000214 FC               [12] 1554 	mov	r4,a
+      000215 E4               [12] 1555 	clr	a
+      000216 3D               [12] 1556 	addc	a,r5
+      000217 FD               [12] 1557 	mov	r5,a
+      000218 7F 00            [12] 1558 	mov	r7,#0x00
+      00021A 90r00r0B         [24] 1559 	mov	dptr,#_reeprom_seq_PARM_3
+      00021D EC               [12] 1560 	mov	a,r4
+      00021E C3               [12] 1561 	clr	c
+      00021F 9A               [12] 1562 	subb	a,r2
+      000220 F0               [24] 1563 	movx	@dptr,a
+      000221 ED               [12] 1564 	mov	a,r5
+      000222 9F               [12] 1565 	subb	a,r7
+      000223 A3               [24] 1566 	inc	dptr
+      000224 F0               [24] 1567 	movx	@dptr,a
+                           000225  1568 	C$I2C_Functions.c$378$1_0$55 ==.
+                                   1569 ;	I2C_Functions.c:378: aux = block; // preparing the write command
+      000225 90r00r0D         [24] 1570 	mov	dptr,#_reeprom_seq_block_65536_54
+      000228 E0               [24] 1571 	movx	a,@dptr
+      000229 FE               [12] 1572 	mov	r6,a
+      00022A A3               [24] 1573 	inc	dptr
+      00022B E0               [24] 1574 	movx	a,@dptr
+      00022C 90r00r16         [24] 1575 	mov	dptr,#_reeprom_seq_aux_65536_55
+      00022F EE               [12] 1576 	mov	a,r6
+      000230 F0               [24] 1577 	movx	@dptr,a
+                           000231  1578 	C$I2C_Functions.c$379$1_0$55 ==.
+                                   1579 ;	I2C_Functions.c:379: aux = aux << 1; // move A0, A1 & A2 to their positions
+      000231 E0               [24] 1580 	movx	a,@dptr
+      000232 25 E0            [12] 1581 	add	a,acc
+      000234 F0               [24] 1582 	movx	@dptr,a
+                           000235  1583 	C$I2C_Functions.c$380$1_0$55 ==.
+                                   1584 ;	I2C_Functions.c:380: aux = aux & 0xFE; // clear r/w bit
+      000235 E0               [24] 1585 	movx	a,@dptr
+      000236 53 E0 FE         [24] 1586 	anl	acc,#0xfe
+      000239 F0               [24] 1587 	movx	@dptr,a
+                           00023A  1588 	C$I2C_Functions.c$381$1_0$55 ==.
+                                   1589 ;	I2C_Functions.c:381: WRCMD = aux | 0xA0; // build the write command
+      00023A 90r00r16         [24] 1590 	mov	dptr,#_reeprom_seq_aux_65536_55
+      00023D E0               [24] 1591 	movx	a,@dptr
+      00023E 90r00r17         [24] 1592 	mov	dptr,#_reeprom_seq_WRCMD_65536_55
+      000241 44 A0            [12] 1593 	orl	a,#0xa0
+      000243 F0               [24] 1594 	movx	@dptr,a
+                           000244  1595 	C$I2C_Functions.c$382$1_0$55 ==.
+                                   1596 ;	I2C_Functions.c:382: outs(WRCMD); // send the write command with start condition
+      000244 E0               [24] 1597 	movx	a,@dptr
+      000245 F5 82            [12] 1598 	mov	dpl,a
+      000247 12r00r75         [24] 1599 	lcall	_outs
+                           00024A  1600 	C$I2C_Functions.c$383$1_0$55 ==.
+                                   1601 ;	I2C_Functions.c:383: out(Start_Address); // send address
+      00024A 90r00r09         [24] 1602 	mov	dptr,#_reeprom_seq_PARM_2
+      00024D E0               [24] 1603 	movx	a,@dptr
+      00024E FE               [12] 1604 	mov	r6,a
+      00024F A3               [24] 1605 	inc	dptr
+      000250 E0               [24] 1606 	movx	a,@dptr
+      000251 FF               [12] 1607 	mov	r7,a
+      000252 8E 05            [24] 1608 	mov	ar5,r6
+      000254 8D 82            [24] 1609 	mov	dpl,r5
+      000256 C0 07            [24] 1610 	push	ar7
+      000258 C0 06            [24] 1611 	push	ar6
+      00025A 12r00rC2         [24] 1612 	lcall	_out
+                           00025D  1613 	C$I2C_Functions.c$384$1_0$55 ==.
+                                   1614 ;	I2C_Functions.c:384: aux = aux << 1; // move A0, A1 & A2 to their positions
+      00025D 90r00r16         [24] 1615 	mov	dptr,#_reeprom_seq_aux_65536_55
+      000260 E0               [24] 1616 	movx	a,@dptr
+      000261 25 E0            [12] 1617 	add	a,acc
+      000263 F0               [24] 1618 	movx	@dptr,a
+                           000264  1619 	C$I2C_Functions.c$385$1_0$55 ==.
+                                   1620 ;	I2C_Functions.c:385: aux = aux & 0xFE; // clear r/w bit
+      000264 E0               [24] 1621 	movx	a,@dptr
+      000265 53 E0 FE         [24] 1622 	anl	acc,#0xfe
+      000268 F0               [24] 1623 	movx	@dptr,a
+                           000269  1624 	C$I2C_Functions.c$386$1_0$55 ==.
+                                   1625 ;	I2C_Functions.c:386: WRCMD = aux | 0xA1; // Make R/W = 1 ///There is another start in outs
+      000269 90r00r16         [24] 1626 	mov	dptr,#_reeprom_seq_aux_65536_55
+      00026C E0               [24] 1627 	movx	a,@dptr
+      00026D 90r00r17         [24] 1628 	mov	dptr,#_reeprom_seq_WRCMD_65536_55
+      000270 44 A1            [12] 1629 	orl	a,#0xa1
+      000272 F0               [24] 1630 	movx	@dptr,a
+                           000273  1631 	C$I2C_Functions.c$387$1_0$55 ==.
+                                   1632 ;	I2C_Functions.c:387: outs(WRCMD); // send the write command with start condition/// Pulling up SCK
+      000273 E0               [24] 1633 	movx	a,@dptr
+      000274 F5 82            [12] 1634 	mov	dpl,a
+      000276 12r00r75         [24] 1635 	lcall	_outs
+                           000279  1636 	C$I2C_Functions.c$388$1_0$55 ==.
+                                   1637 ;	I2C_Functions.c:388: delay1();
+      000279 12r01r90         [24] 1638 	lcall	_delay1
+      00027C D0 06            [24] 1639 	pop	ar6
+      00027E D0 07            [24] 1640 	pop	ar7
+                           000280  1641 	C$I2C_Functions.c$389$1_0$55 ==.
+                                   1642 ;	I2C_Functions.c:389: i=Start_Address;
+      000280 90r00r10         [24] 1643 	mov	dptr,#_reeprom_seq_i_65536_55
+      000283 EE               [12] 1644 	mov	a,r6
+      000284 F0               [24] 1645 	movx	@dptr,a
+      000285 EF               [12] 1646 	mov	a,r7
+      000286 A3               [24] 1647 	inc	dptr
+      000287 F0               [24] 1648 	movx	@dptr,a
+                           000288  1649 	C$I2C_Functions.c$390$4_0$64 ==.
+                                   1650 ;	I2C_Functions.c:390: while(i!=End_Address)
+      000288 90r00r0B         [24] 1651 	mov	dptr,#_reeprom_seq_PARM_3
+      00028B E0               [24] 1652 	movx	a,@dptr
+      00028C FE               [12] 1653 	mov	r6,a
+      00028D A3               [24] 1654 	inc	dptr
+      00028E E0               [24] 1655 	movx	a,@dptr
+      00028F FF               [12] 1656 	mov	r7,a
+      000290                       1657 00117$:
+      000290 90r00r10         [24] 1658 	mov	dptr,#_reeprom_seq_i_65536_55
+      000293 E0               [24] 1659 	movx	a,@dptr
+      000294 FC               [12] 1660 	mov	r4,a
+      000295 A3               [24] 1661 	inc	dptr
+      000296 E0               [24] 1662 	movx	a,@dptr
+      000297 FD               [12] 1663 	mov	r5,a
+      000298 8E 02            [24] 1664 	mov	ar2,r6
+      00029A 8F 03            [24] 1665 	mov	ar3,r7
+      00029C EC               [12] 1666 	mov	a,r4
+      00029D B5 02 07         [24] 1667 	cjne	a,ar2,00165$
+      0002A0 ED               [12] 1668 	mov	a,r5
+      0002A1 B5 03 03         [24] 1669 	cjne	a,ar3,00165$
+      0002A4 02r04rB6         [24] 1670 	ljmp	00119$
+      0002A7                       1671 00165$:
+                           0002A7  1672 	C$I2C_Functions.c$391$2_0$56 ==.
+                                   1673 ;	I2C_Functions.c:391: {   if(i%(0x100)==0)
+      0002A7 90r00r10         [24] 1674 	mov	dptr,#_reeprom_seq_i_65536_55
+      0002AA E0               [24] 1675 	movx	a,@dptr
+      0002AB FC               [12] 1676 	mov	r4,a
+      0002AC A3               [24] 1677 	inc	dptr
+      0002AD E0               [24] 1678 	movx	a,@dptr
+      0002AE FD               [12] 1679 	mov	r5,a
+      0002AF EC               [12] 1680 	mov	a,r4
+      0002B0 60 03            [24] 1681 	jz	00167$
+      0002B2 02r03r89         [24] 1682 	ljmp	00105$
+      0002B5                       1683 00167$:
+                           0002B5  1684 	C$I2C_Functions.c$393$3_0$57 ==.
+                                   1685 ;	I2C_Functions.c:393: printf_tiny("\n\r    ");
+      0002B5 C0 07            [24] 1686 	push	ar7
+      0002B7 C0 06            [24] 1687 	push	ar6
+      0002B9 74r00            [12] 1688 	mov	a,#___str_0
+      0002BB C0 E0            [24] 1689 	push	acc
+      0002BD 74s00            [12] 1690 	mov	a,#(___str_0 >> 8)
+      0002BF C0 E0            [24] 1691 	push	acc
+      0002C1 12r00r00         [24] 1692 	lcall	_printf_tiny
+      0002C4 15 81            [12] 1693 	dec	sp
+      0002C6 15 81            [12] 1694 	dec	sp
+                           0002C8  1695 	C$I2C_Functions.c$394$3_0$57 ==.
+                                   1696 ;	I2C_Functions.c:394: printf_tiny("\n\r********************************************************************");
+      0002C8 74r07            [12] 1697 	mov	a,#___str_1
+      0002CA C0 E0            [24] 1698 	push	acc
+      0002CC 74s00            [12] 1699 	mov	a,#(___str_1 >> 8)
+      0002CE C0 E0            [24] 1700 	push	acc
+      0002D0 12r00r00         [24] 1701 	lcall	_printf_tiny
+      0002D3 15 81            [12] 1702 	dec	sp
+      0002D5 15 81            [12] 1703 	dec	sp
+                           0002D7  1704 	C$I2C_Functions.c$395$3_0$57 ==.
+                                   1705 ;	I2C_Functions.c:395: printf_tiny("\n\rAddr");
+      0002D7 74r4E            [12] 1706 	mov	a,#___str_2
+      0002D9 C0 E0            [24] 1707 	push	acc
+      0002DB 74s00            [12] 1708 	mov	a,#(___str_2 >> 8)
+      0002DD C0 E0            [24] 1709 	push	acc
+      0002DF 12r00r00         [24] 1710 	lcall	_printf_tiny
+      0002E2 15 81            [12] 1711 	dec	sp
+      0002E4 15 81            [12] 1712 	dec	sp
+                           0002E6  1713 	C$I2C_Functions.c$396$3_0$57 ==.
+                                   1714 ;	I2C_Functions.c:396: printf_tiny("                               DATA");
+      0002E6 74r55            [12] 1715 	mov	a,#___str_3
+      0002E8 C0 E0            [24] 1716 	push	acc
+      0002EA 74s00            [12] 1717 	mov	a,#(___str_3 >> 8)
+      0002EC C0 E0            [24] 1718 	push	acc
+      0002EE 12r00r00         [24] 1719 	lcall	_printf_tiny
+      0002F1 15 81            [12] 1720 	dec	sp
+      0002F3 15 81            [12] 1721 	dec	sp
+                           0002F5  1722 	C$I2C_Functions.c$397$3_0$57 ==.
+                                   1723 ;	I2C_Functions.c:397: printf_tiny("\n\r********************************************************************\n\r");
+      0002F5 74r79            [12] 1724 	mov	a,#___str_4
+      0002F7 C0 E0            [24] 1725 	push	acc
+      0002F9 74s00            [12] 1726 	mov	a,#(___str_4 >> 8)
+      0002FB C0 E0            [24] 1727 	push	acc
+      0002FD 12r00r00         [24] 1728 	lcall	_printf_tiny
+      000300 15 81            [12] 1729 	dec	sp
+      000302 15 81            [12] 1730 	dec	sp
+      000304 D0 06            [24] 1731 	pop	ar6
+      000306 D0 07            [24] 1732 	pop	ar7
+                           000308  1733 	C$I2C_Functions.c$398$4_0$58 ==.
+                                   1734 ;	I2C_Functions.c:398: for(j=0;j<16;j++)
+      000308 90r00r14         [24] 1735 	mov	dptr,#_reeprom_seq_j_65536_55
+      00030B E4               [12] 1736 	clr	a
+      00030C F0               [24] 1737 	movx	@dptr,a
+      00030D A3               [24] 1738 	inc	dptr
+      00030E F0               [24] 1739 	movx	@dptr,a
+      00030F                       1740 00121$:
+      00030F 90r00r14         [24] 1741 	mov	dptr,#_reeprom_seq_j_65536_55
+      000312 E0               [24] 1742 	movx	a,@dptr
+      000313 FC               [12] 1743 	mov	r4,a
+      000314 A3               [24] 1744 	inc	dptr
+      000315 E0               [24] 1745 	movx	a,@dptr
+      000316 FD               [12] 1746 	mov	r5,a
+      000317 C3               [12] 1747 	clr	c
+      000318 EC               [12] 1748 	mov	a,r4
+      000319 94 10            [12] 1749 	subb	a,#0x10
+      00031B ED               [12] 1750 	mov	a,r5
+      00031C 94 00            [12] 1751 	subb	a,#0x00
+      00031E 50 69            [24] 1752 	jnc	00105$
+                           000320  1753 	C$I2C_Functions.c$400$5_0$59 ==.
+                                   1754 ;	I2C_Functions.c:400: if(j==0)
+      000320 90r00r14         [24] 1755 	mov	dptr,#_reeprom_seq_j_65536_55
+      000323 E0               [24] 1756 	movx	a,@dptr
+      000324 FC               [12] 1757 	mov	r4,a
+      000325 A3               [24] 1758 	inc	dptr
+      000326 E0               [24] 1759 	movx	a,@dptr
+      000327 4C               [12] 1760 	orl	a,r4
+      000328 70 25            [24] 1761 	jnz	00102$
+                           00032A  1762 	C$I2C_Functions.c$402$6_0$60 ==.
+                                   1763 ;	I2C_Functions.c:402: printf_tiny("       ",j);
+      00032A 90r00r14         [24] 1764 	mov	dptr,#_reeprom_seq_j_65536_55
+      00032D E0               [24] 1765 	movx	a,@dptr
+      00032E FC               [12] 1766 	mov	r4,a
+      00032F A3               [24] 1767 	inc	dptr
+      000330 E0               [24] 1768 	movx	a,@dptr
+      000331 FD               [12] 1769 	mov	r5,a
+      000332 C0 07            [24] 1770 	push	ar7
+      000334 C0 06            [24] 1771 	push	ar6
+      000336 C0 04            [24] 1772 	push	ar4
+      000338 C0 05            [24] 1773 	push	ar5
+      00033A 74rC2            [12] 1774 	mov	a,#___str_5
+      00033C C0 E0            [24] 1775 	push	acc
+      00033E 74s00            [12] 1776 	mov	a,#(___str_5 >> 8)
+      000340 C0 E0            [24] 1777 	push	acc
+      000342 12r00r00         [24] 1778 	lcall	_printf_tiny
+      000345 E5 81            [12] 1779 	mov	a,sp
+      000347 24 FC            [12] 1780 	add	a,#0xfc
+      000349 F5 81            [12] 1781 	mov	sp,a
+      00034B D0 06            [24] 1782 	pop	ar6
+      00034D D0 07            [24] 1783 	pop	ar7
+      00034F                       1784 00102$:
+                           00034F  1785 	C$I2C_Functions.c$404$5_0$59 ==.
+                                   1786 ;	I2C_Functions.c:404: printf_tiny("%x   ",j);
+      00034F 90r00r14         [24] 1787 	mov	dptr,#_reeprom_seq_j_65536_55
+      000352 E0               [24] 1788 	movx	a,@dptr
+      000353 FC               [12] 1789 	mov	r4,a
+      000354 A3               [24] 1790 	inc	dptr
+      000355 E0               [24] 1791 	movx	a,@dptr
+      000356 FD               [12] 1792 	mov	r5,a
+      000357 C0 07            [24] 1793 	push	ar7
+      000359 C0 06            [24] 1794 	push	ar6
+      00035B C0 04            [24] 1795 	push	ar4
+      00035D C0 05            [24] 1796 	push	ar5
+      00035F 74rCA            [12] 1797 	mov	a,#___str_6
+      000361 C0 E0            [24] 1798 	push	acc
+      000363 74s00            [12] 1799 	mov	a,#(___str_6 >> 8)
+      000365 C0 E0            [24] 1800 	push	acc
+      000367 12r00r00         [24] 1801 	lcall	_printf_tiny
+      00036A E5 81            [12] 1802 	mov	a,sp
+      00036C 24 FC            [12] 1803 	add	a,#0xfc
+      00036E F5 81            [12] 1804 	mov	sp,a
+      000370 D0 06            [24] 1805 	pop	ar6
+      000372 D0 07            [24] 1806 	pop	ar7
+                           000374  1807 	C$I2C_Functions.c$398$4_0$58 ==.
+                                   1808 ;	I2C_Functions.c:398: for(j=0;j<16;j++)
+      000374 90r00r14         [24] 1809 	mov	dptr,#_reeprom_seq_j_65536_55
+      000377 E0               [24] 1810 	movx	a,@dptr
+      000378 FC               [12] 1811 	mov	r4,a
+      000379 A3               [24] 1812 	inc	dptr
+      00037A E0               [24] 1813 	movx	a,@dptr
+      00037B FD               [12] 1814 	mov	r5,a
+      00037C 90r00r14         [24] 1815 	mov	dptr,#_reeprom_seq_j_65536_55
+      00037F 74 01            [12] 1816 	mov	a,#0x01
+      000381 2C               [12] 1817 	add	a,r4
+      000382 F0               [24] 1818 	movx	@dptr,a
+      000383 E4               [12] 1819 	clr	a
+      000384 3D               [12] 1820 	addc	a,r5
+      000385 A3               [24] 1821 	inc	dptr
+      000386 F0               [24] 1822 	movx	@dptr,a
+      000387 80 86            [24] 1823 	sjmp	00121$
+      000389                       1824 00105$:
+                           000389  1825 	C$I2C_Functions.c$407$2_0$56 ==.
+                                   1826 ;	I2C_Functions.c:407: if(i%16==0)
+      000389 90r00r10         [24] 1827 	mov	dptr,#_reeprom_seq_i_65536_55
+      00038C E0               [24] 1828 	movx	a,@dptr
+      00038D FC               [12] 1829 	mov	r4,a
+      00038E A3               [24] 1830 	inc	dptr
+      00038F E0               [24] 1831 	movx	a,@dptr
+      000390 FD               [12] 1832 	mov	r5,a
+      000391 EC               [12] 1833 	mov	a,r4
+      000392 54 0F            [12] 1834 	anl	a,#0x0f
+      000394 60 03            [24] 1835 	jz	00171$
+      000396 02r04r2D         [24] 1836 	ljmp	00113$
+      000399                       1837 00171$:
+                           000399  1838 	C$I2C_Functions.c$408$3_0$61 ==.
+                                   1839 ;	I2C_Functions.c:408: {   if(i==0)
+      000399 90r00r10         [24] 1840 	mov	dptr,#_reeprom_seq_i_65536_55
+      00039C E0               [24] 1841 	movx	a,@dptr
+      00039D FC               [12] 1842 	mov	r4,a
+      00039E A3               [24] 1843 	inc	dptr
+      00039F E0               [24] 1844 	movx	a,@dptr
+      0003A0 4C               [12] 1845 	orl	a,r4
+      0003A1 70 2B            [24] 1846 	jnz	00110$
+                           0003A3  1847 	C$I2C_Functions.c$410$4_0$62 ==.
+                                   1848 ;	I2C_Functions.c:410: printf("\n\r0x00%x:",i);
+      0003A3 90r00r10         [24] 1849 	mov	dptr,#_reeprom_seq_i_65536_55
+      0003A6 E0               [24] 1850 	movx	a,@dptr
+      0003A7 FC               [12] 1851 	mov	r4,a
+      0003A8 A3               [24] 1852 	inc	dptr
+      0003A9 E0               [24] 1853 	movx	a,@dptr
+      0003AA FD               [12] 1854 	mov	r5,a
+      0003AB C0 07            [24] 1855 	push	ar7
+      0003AD C0 06            [24] 1856 	push	ar6
+      0003AF C0 04            [24] 1857 	push	ar4
+      0003B1 C0 05            [24] 1858 	push	ar5
+      0003B3 74rD0            [12] 1859 	mov	a,#___str_7
+      0003B5 C0 E0            [24] 1860 	push	acc
+      0003B7 74s00            [12] 1861 	mov	a,#(___str_7 >> 8)
+      0003B9 C0 E0            [24] 1862 	push	acc
+      0003BB 74 80            [12] 1863 	mov	a,#0x80
+      0003BD C0 E0            [24] 1864 	push	acc
+      0003BF 12r00r00         [24] 1865 	lcall	_printf
+      0003C2 E5 81            [12] 1866 	mov	a,sp
+      0003C4 24 FB            [12] 1867 	add	a,#0xfb
+      0003C6 F5 81            [12] 1868 	mov	sp,a
+      0003C8 D0 06            [24] 1869 	pop	ar6
+      0003CA D0 07            [24] 1870 	pop	ar7
+      0003CC 80 5F            [24] 1871 	sjmp	00113$
+      0003CE                       1872 00110$:
+                           0003CE  1873 	C$I2C_Functions.c$412$3_0$61 ==.
+                                   1874 ;	I2C_Functions.c:412: else if(i<(0x100))
+      0003CE 90r00r10         [24] 1875 	mov	dptr,#_reeprom_seq_i_65536_55
+      0003D1 E0               [24] 1876 	movx	a,@dptr
+      0003D2 A3               [24] 1877 	inc	dptr
+      0003D3 E0               [24] 1878 	movx	a,@dptr
+      0003D4 C3               [12] 1879 	clr	c
+      0003D5 94 01            [12] 1880 	subb	a,#0x01
+      0003D7 50 2B            [24] 1881 	jnc	00107$
+                           0003D9  1882 	C$I2C_Functions.c$414$4_0$63 ==.
+                                   1883 ;	I2C_Functions.c:414: printf("\n\r0x0%x:",i);
+      0003D9 90r00r10         [24] 1884 	mov	dptr,#_reeprom_seq_i_65536_55
+      0003DC E0               [24] 1885 	movx	a,@dptr
+      0003DD FC               [12] 1886 	mov	r4,a
+      0003DE A3               [24] 1887 	inc	dptr
+      0003DF E0               [24] 1888 	movx	a,@dptr
+      0003E0 FD               [12] 1889 	mov	r5,a
+      0003E1 C0 07            [24] 1890 	push	ar7
+      0003E3 C0 06            [24] 1891 	push	ar6
+      0003E5 C0 04            [24] 1892 	push	ar4
+      0003E7 C0 05            [24] 1893 	push	ar5
+      0003E9 74rDA            [12] 1894 	mov	a,#___str_8
+      0003EB C0 E0            [24] 1895 	push	acc
+      0003ED 74s00            [12] 1896 	mov	a,#(___str_8 >> 8)
+      0003EF C0 E0            [24] 1897 	push	acc
+      0003F1 74 80            [12] 1898 	mov	a,#0x80
+      0003F3 C0 E0            [24] 1899 	push	acc
+      0003F5 12r00r00         [24] 1900 	lcall	_printf
+      0003F8 E5 81            [12] 1901 	mov	a,sp
+      0003FA 24 FB            [12] 1902 	add	a,#0xfb
+      0003FC F5 81            [12] 1903 	mov	sp,a
+      0003FE D0 06            [24] 1904 	pop	ar6
+      000400 D0 07            [24] 1905 	pop	ar7
+      000402 80 29            [24] 1906 	sjmp	00113$
+      000404                       1907 00107$:
+                           000404  1908 	C$I2C_Functions.c$418$4_0$64 ==.
+                                   1909 ;	I2C_Functions.c:418: printf("\n\r0x%x:",i);
+      000404 90r00r10         [24] 1910 	mov	dptr,#_reeprom_seq_i_65536_55
+      000407 E0               [24] 1911 	movx	a,@dptr
+      000408 FC               [12] 1912 	mov	r4,a
+      000409 A3               [24] 1913 	inc	dptr
+      00040A E0               [24] 1914 	movx	a,@dptr
+      00040B FD               [12] 1915 	mov	r5,a
+      00040C C0 07            [24] 1916 	push	ar7
+      00040E C0 06            [24] 1917 	push	ar6
+      000410 C0 04            [24] 1918 	push	ar4
+      000412 C0 05            [24] 1919 	push	ar5
+      000414 74rE3            [12] 1920 	mov	a,#___str_9
+      000416 C0 E0            [24] 1921 	push	acc
+      000418 74s00            [12] 1922 	mov	a,#(___str_9 >> 8)
+      00041A C0 E0            [24] 1923 	push	acc
+      00041C 74 80            [12] 1924 	mov	a,#0x80
+      00041E C0 E0            [24] 1925 	push	acc
+      000420 12r00r00         [24] 1926 	lcall	_printf
+      000423 E5 81            [12] 1927 	mov	a,sp
+      000425 24 FB            [12] 1928 	add	a,#0xfb
+      000427 F5 81            [12] 1929 	mov	sp,a
+      000429 D0 06            [24] 1930 	pop	ar6
+      00042B D0 07            [24] 1931 	pop	ar7
+      00042D                       1932 00113$:
+                           00042D  1933 	C$I2C_Functions.c$421$2_0$56 ==.
+                                   1934 ;	I2C_Functions.c:421: aux=in();
+      00042D C0 07            [24] 1935 	push	ar7
+      00042F C0 06            [24] 1936 	push	ar6
+      000431 12r00rFD         [24] 1937 	lcall	_in
+      000434 E5 82            [12] 1938 	mov	a,dpl
+      000436 90r00r16         [24] 1939 	mov	dptr,#_reeprom_seq_aux_65536_55
+      000439 F0               [24] 1940 	movx	@dptr,a
+                           00043A  1941 	C$I2C_Functions.c$422$2_0$56 ==.
+                                   1942 ;	I2C_Functions.c:422: ack();
+      00043A 12r01r7F         [24] 1943 	lcall	_ack
+                           00043D  1944 	C$I2C_Functions.c$423$2_0$56 ==.
+                                   1945 ;	I2C_Functions.c:423: delay1();
+      00043D 12r01r90         [24] 1946 	lcall	_delay1
+      000440 D0 06            [24] 1947 	pop	ar6
+      000442 D0 07            [24] 1948 	pop	ar7
+                           000444  1949 	C$I2C_Functions.c$424$2_0$56 ==.
+                                   1950 ;	I2C_Functions.c:424: if(aux<0x10)
+      000444 90r00r16         [24] 1951 	mov	dptr,#_reeprom_seq_aux_65536_55
+      000447 E0               [24] 1952 	movx	a,@dptr
+      000448 FD               [12] 1953 	mov	r5,a
+      000449 BD 10 00         [24] 1954 	cjne	r5,#0x10,00174$
+      00044C                       1955 00174$:
+      00044C 50 2A            [24] 1956 	jnc	00115$
+                           00044E  1957 	C$I2C_Functions.c$426$3_0$65 ==.
+                                   1958 ;	I2C_Functions.c:426: printf("0%x  ",aux);
+      00044E 90r00r16         [24] 1959 	mov	dptr,#_reeprom_seq_aux_65536_55
+      000451 E0               [24] 1960 	movx	a,@dptr
+      000452 FD               [12] 1961 	mov	r5,a
+      000453 7C 00            [12] 1962 	mov	r4,#0x00
+      000455 C0 07            [24] 1963 	push	ar7
+      000457 C0 06            [24] 1964 	push	ar6
+      000459 C0 05            [24] 1965 	push	ar5
+      00045B C0 04            [24] 1966 	push	ar4
+      00045D 74rEB            [12] 1967 	mov	a,#___str_10
+      00045F C0 E0            [24] 1968 	push	acc
+      000461 74s00            [12] 1969 	mov	a,#(___str_10 >> 8)
+      000463 C0 E0            [24] 1970 	push	acc
+      000465 74 80            [12] 1971 	mov	a,#0x80
+      000467 C0 E0            [24] 1972 	push	acc
+      000469 12r00r00         [24] 1973 	lcall	_printf
+      00046C E5 81            [12] 1974 	mov	a,sp
+      00046E 24 FB            [12] 1975 	add	a,#0xfb
+      000470 F5 81            [12] 1976 	mov	sp,a
+      000472 D0 06            [24] 1977 	pop	ar6
+      000474 D0 07            [24] 1978 	pop	ar7
+      000476 80 28            [24] 1979 	sjmp	00116$
+      000478                       1980 00115$:
+                           000478  1981 	C$I2C_Functions.c$430$3_0$66 ==.
+                                   1982 ;	I2C_Functions.c:430: printf("%x  ",aux);
+      000478 90r00r16         [24] 1983 	mov	dptr,#_reeprom_seq_aux_65536_55
+      00047B E0               [24] 1984 	movx	a,@dptr
+      00047C FD               [12] 1985 	mov	r5,a
+      00047D 7C 00            [12] 1986 	mov	r4,#0x00
+      00047F C0 07            [24] 1987 	push	ar7
+      000481 C0 06            [24] 1988 	push	ar6
+      000483 C0 05            [24] 1989 	push	ar5
+      000485 C0 04            [24] 1990 	push	ar4
+      000487 74rF1            [12] 1991 	mov	a,#___str_11
+      000489 C0 E0            [24] 1992 	push	acc
+      00048B 74s00            [12] 1993 	mov	a,#(___str_11 >> 8)
+      00048D C0 E0            [24] 1994 	push	acc
+      00048F 74 80            [12] 1995 	mov	a,#0x80
+      000491 C0 E0            [24] 1996 	push	acc
+      000493 12r00r00         [24] 1997 	lcall	_printf
+      000496 E5 81            [12] 1998 	mov	a,sp
+      000498 24 FB            [12] 1999 	add	a,#0xfb
+      00049A F5 81            [12] 2000 	mov	sp,a
+      00049C D0 06            [24] 2001 	pop	ar6
+      00049E D0 07            [24] 2002 	pop	ar7
+      0004A0                       2003 00116$:
+                           0004A0  2004 	C$I2C_Functions.c$433$2_0$56 ==.
+                                   2005 ;	I2C_Functions.c:433: i++;
+      0004A0 90r00r10         [24] 2006 	mov	dptr,#_reeprom_seq_i_65536_55
+      0004A3 E0               [24] 2007 	movx	a,@dptr
+      0004A4 FC               [12] 2008 	mov	r4,a
+      0004A5 A3               [24] 2009 	inc	dptr
+      0004A6 E0               [24] 2010 	movx	a,@dptr
+      0004A7 FD               [12] 2011 	mov	r5,a
+      0004A8 90r00r10         [24] 2012 	mov	dptr,#_reeprom_seq_i_65536_55
+      0004AB 74 01            [12] 2013 	mov	a,#0x01
+      0004AD 2C               [12] 2014 	add	a,r4
+      0004AE F0               [24] 2015 	movx	@dptr,a
+      0004AF E4               [12] 2016 	clr	a
+      0004B0 3D               [12] 2017 	addc	a,r5
+      0004B1 A3               [24] 2018 	inc	dptr
+      0004B2 F0               [24] 2019 	movx	@dptr,a
+      0004B3 02r02r90         [24] 2020 	ljmp	00117$
+      0004B6                       2021 00119$:
+                           0004B6  2022 	C$I2C_Functions.c$435$1_0$55 ==.
+                                   2023 ;	I2C_Functions.c:435: stop();
+      0004B6 12r01r3C         [24] 2024 	lcall	_stop
+                           0004B9  2025 	C$I2C_Functions.c$436$1_0$55 ==.
+                                   2026 ;	I2C_Functions.c:436: }
+                           0004B9  2027 	C$I2C_Functions.c$436$1_0$55 ==.
+                           0004B9  2028 	XG$reeprom_seq$0$0 ==.
+      0004B9 22               [24] 2029 	ret
+                                   2030 ;------------------------------------------------------------
+                                   2031 ;Allocation info for local variables in function 'dummy_read'
+                                   2032 ;------------------------------------------------------------
+                           0004BA  2033 	G$dummy_read$0$0 ==.
+                           0004BA  2034 	C$I2C_Functions.c$437$1_0$67 ==.
+                                   2035 ;	I2C_Functions.c:437: void dummy_read()
+                                   2036 ;	-----------------------------------------
+                                   2037 ;	 function dummy_read
+                                   2038 ;	-----------------------------------------
+      0004BA                       2039 _dummy_read:
+                           0004BA  2040 	C$I2C_Functions.c$439$1_0$67 ==.
+                                   2041 ;	I2C_Functions.c:439: reeprom(0x00,0x00);
+      0004BA 90r00r03         [24] 2042 	mov	dptr,#_reeprom_PARM_2
+      0004BD E4               [12] 2043 	clr	a
+      0004BE F0               [24] 2044 	movx	@dptr,a
+      0004BF 75 82 00         [24] 2045 	mov	dpl,#0x00
+      0004C2 12r00r30         [24] 2046 	lcall	_reeprom
+                           0004C5  2047 	C$I2C_Functions.c$440$1_0$67 ==.
+                                   2048 ;	I2C_Functions.c:440: }
+                           0004C5  2049 	C$I2C_Functions.c$440$1_0$67 ==.
+                           0004C5  2050 	XG$dummy_read$0$0 ==.
+      0004C5 22               [24] 2051 	ret
+                                   2052 ;------------------------------------------------------------
+                                   2053 ;Allocation info for local variables in function 'dummy_write'
+                                   2054 ;------------------------------------------------------------
+                                   2055 ;Address                   Allocated with name '_dummy_write_PARM_2'
+                                   2056 ;block                     Allocated with name '_dummy_write_block_65536_68'
+                                   2057 ;------------------------------------------------------------
+                           0004C6  2058 	G$dummy_write$0$0 ==.
+                           0004C6  2059 	C$I2C_Functions.c$441$1_0$69 ==.
+                                   2060 ;	I2C_Functions.c:441: void dummy_write(uint16_t block,uint16_t Address)
+                                   2061 ;	-----------------------------------------
+                                   2062 ;	 function dummy_write
+                                   2063 ;	-----------------------------------------
+      0004C6                       2064 _dummy_write:
+      0004C6 AF 83            [24] 2065 	mov	r7,dph
+      0004C8 E5 82            [12] 2066 	mov	a,dpl
+      0004CA 90r00r1A         [24] 2067 	mov	dptr,#_dummy_write_block_65536_68
+      0004CD F0               [24] 2068 	movx	@dptr,a
+      0004CE EF               [12] 2069 	mov	a,r7
+      0004CF A3               [24] 2070 	inc	dptr
+      0004D0 F0               [24] 2071 	movx	@dptr,a
+                           0004D1  2072 	C$I2C_Functions.c$443$1_0$69 ==.
+                                   2073 ;	I2C_Functions.c:443: weeprom(block,Address,0x00);
+      0004D1 90r00r1A         [24] 2074 	mov	dptr,#_dummy_write_block_65536_68
+      0004D4 E0               [24] 2075 	movx	a,@dptr
+      0004D5 FE               [12] 2076 	mov	r6,a
+      0004D6 A3               [24] 2077 	inc	dptr
+      0004D7 E0               [24] 2078 	movx	a,@dptr
+      0004D8 90r00r18         [24] 2079 	mov	dptr,#_dummy_write_PARM_2
+      0004DB E0               [24] 2080 	movx	a,@dptr
+      0004DC FD               [12] 2081 	mov	r5,a
+      0004DD A3               [24] 2082 	inc	dptr
+      0004DE E0               [24] 2083 	movx	a,@dptr
+      0004DF 90r00r00         [24] 2084 	mov	dptr,#_weeprom_PARM_2
+      0004E2 ED               [12] 2085 	mov	a,r5
+      0004E3 F0               [24] 2086 	movx	@dptr,a
+      0004E4 90r00r01         [24] 2087 	mov	dptr,#_weeprom_PARM_3
+      0004E7 E4               [12] 2088 	clr	a
+      0004E8 F0               [24] 2089 	movx	@dptr,a
+      0004E9 8E 82            [24] 2090 	mov	dpl,r6
+      0004EB 12r00r00         [24] 2091 	lcall	_weeprom
+                           0004EE  2092 	C$I2C_Functions.c$444$1_0$69 ==.
+                                   2093 ;	I2C_Functions.c:444: }
+                           0004EE  2094 	C$I2C_Functions.c$444$1_0$69 ==.
+                           0004EE  2095 	XG$dummy_write$0$0 ==.
+      0004EE 22               [24] 2096 	ret
+                                   2097 ;------------------------------------------------------------
+                                   2098 ;Allocation info for local variables in function 'get_blocknumber'
+                                   2099 ;------------------------------------------------------------
+                                   2100 ;Add                       Allocated with name '_get_blocknumber_Add_65536_70'
+                                   2101 ;------------------------------------------------------------
+                           0004EF  2102 	G$get_blocknumber$0$0 ==.
+                           0004EF  2103 	C$I2C_Functions.c$445$1_0$71 ==.
+                                   2104 ;	I2C_Functions.c:445: uint8_t get_blocknumber(uint16_t Add)
+                                   2105 ;	-----------------------------------------
+                                   2106 ;	 function get_blocknumber
+                                   2107 ;	-----------------------------------------
+      0004EF                       2108 _get_blocknumber:
+      0004EF AF 83            [24] 2109 	mov	r7,dph
+      0004F1 E5 82            [12] 2110 	mov	a,dpl
+      0004F3 90r00r1C         [24] 2111 	mov	dptr,#_get_blocknumber_Add_65536_70
+      0004F6 F0               [24] 2112 	movx	@dptr,a
+      0004F7 EF               [12] 2113 	mov	a,r7
+      0004F8 A3               [24] 2114 	inc	dptr
+      0004F9 F0               [24] 2115 	movx	@dptr,a
+                           0004FA  2116 	C$I2C_Functions.c$447$1_0$71 ==.
+                                   2117 ;	I2C_Functions.c:447: if(Add<0x100)
+      0004FA 90r00r1C         [24] 2118 	mov	dptr,#_get_blocknumber_Add_65536_70
+      0004FD E0               [24] 2119 	movx	a,@dptr
+      0004FE A3               [24] 2120 	inc	dptr
+      0004FF E0               [24] 2121 	movx	a,@dptr
+      000500 FF               [12] 2122 	mov	r7,a
+      000501 C3               [12] 2123 	clr	c
+      000502 94 01            [12] 2124 	subb	a,#0x01
+      000504 50 05            [24] 2125 	jnc	00123$
+                           000506  2126 	C$I2C_Functions.c$448$1_0$71 ==.
+                                   2127 ;	I2C_Functions.c:448: return 0;
+      000506 75 82 00         [24] 2128 	mov	dpl,#0x00
+      000509 80 49            [24] 2129 	sjmp	00125$
+      00050B                       2130 00123$:
+                           00050B  2131 	C$I2C_Functions.c$449$1_0$71 ==.
+                                   2132 ;	I2C_Functions.c:449: else if(Add<0x200)
+      00050B 74 FE            [12] 2133 	mov	a,#0x100 - 0x02
+      00050D 2F               [12] 2134 	add	a,r7
+      00050E 40 05            [24] 2135 	jc	00120$
+                           000510  2136 	C$I2C_Functions.c$450$1_0$71 ==.
+                                   2137 ;	I2C_Functions.c:450: return 1;
+      000510 75 82 01         [24] 2138 	mov	dpl,#0x01
+      000513 80 3F            [24] 2139 	sjmp	00125$
+      000515                       2140 00120$:
+                           000515  2141 	C$I2C_Functions.c$451$1_0$71 ==.
+                                   2142 ;	I2C_Functions.c:451: else if(Add<0x300)
+      000515 74 FD            [12] 2143 	mov	a,#0x100 - 0x03
+      000517 2F               [12] 2144 	add	a,r7
+      000518 40 05            [24] 2145 	jc	00117$
+                           00051A  2146 	C$I2C_Functions.c$452$1_0$71 ==.
+                                   2147 ;	I2C_Functions.c:452: return 2;
+      00051A 75 82 02         [24] 2148 	mov	dpl,#0x02
+      00051D 80 35            [24] 2149 	sjmp	00125$
+      00051F                       2150 00117$:
+                           00051F  2151 	C$I2C_Functions.c$453$1_0$71 ==.
+                                   2152 ;	I2C_Functions.c:453: else if(Add<0x400)
+      00051F 74 FC            [12] 2153 	mov	a,#0x100 - 0x04
+      000521 2F               [12] 2154 	add	a,r7
+      000522 40 05            [24] 2155 	jc	00114$
+                           000524  2156 	C$I2C_Functions.c$454$1_0$71 ==.
+                                   2157 ;	I2C_Functions.c:454: return 3;
+      000524 75 82 03         [24] 2158 	mov	dpl,#0x03
+      000527 80 2B            [24] 2159 	sjmp	00125$
+      000529                       2160 00114$:
+                           000529  2161 	C$I2C_Functions.c$455$1_0$71 ==.
+                                   2162 ;	I2C_Functions.c:455: else if(Add<0x500)
+      000529 74 FB            [12] 2163 	mov	a,#0x100 - 0x05
+      00052B 2F               [12] 2164 	add	a,r7
+      00052C 40 05            [24] 2165 	jc	00111$
+                           00052E  2166 	C$I2C_Functions.c$456$1_0$71 ==.
+                                   2167 ;	I2C_Functions.c:456: return 4;
+      00052E 75 82 04         [24] 2168 	mov	dpl,#0x04
+      000531 80 21            [24] 2169 	sjmp	00125$
+      000533                       2170 00111$:
+                           000533  2171 	C$I2C_Functions.c$457$1_0$71 ==.
+                                   2172 ;	I2C_Functions.c:457: else if(Add<0x600)
+      000533 74 FA            [12] 2173 	mov	a,#0x100 - 0x06
+      000535 2F               [12] 2174 	add	a,r7
+      000536 40 05            [24] 2175 	jc	00108$
+                           000538  2176 	C$I2C_Functions.c$458$1_0$71 ==.
+                                   2177 ;	I2C_Functions.c:458: return 5;
+      000538 75 82 05         [24] 2178 	mov	dpl,#0x05
+      00053B 80 17            [24] 2179 	sjmp	00125$
+      00053D                       2180 00108$:
+                           00053D  2181 	C$I2C_Functions.c$459$1_0$71 ==.
+                                   2182 ;	I2C_Functions.c:459: else if(Add<0x700)
+      00053D 74 F9            [12] 2183 	mov	a,#0x100 - 0x07
+      00053F 2F               [12] 2184 	add	a,r7
+      000540 40 05            [24] 2185 	jc	00105$
+                           000542  2186 	C$I2C_Functions.c$460$1_0$71 ==.
+                                   2187 ;	I2C_Functions.c:460: return 6;
+      000542 75 82 06         [24] 2188 	mov	dpl,#0x06
+      000545 80 0D            [24] 2189 	sjmp	00125$
+      000547                       2190 00105$:
+                           000547  2191 	C$I2C_Functions.c$461$1_0$71 ==.
+                                   2192 ;	I2C_Functions.c:461: else if(Add<0x800)
+      000547 74 F8            [12] 2193 	mov	a,#0x100 - 0x08
+      000549 2F               [12] 2194 	add	a,r7
+      00054A 40 05            [24] 2195 	jc	00102$
+                           00054C  2196 	C$I2C_Functions.c$462$1_0$71 ==.
+                                   2197 ;	I2C_Functions.c:462: return 7;
+      00054C 75 82 07         [24] 2198 	mov	dpl,#0x07
+      00054F 80 03            [24] 2199 	sjmp	00125$
+      000551                       2200 00102$:
+                           000551  2201 	C$I2C_Functions.c$464$1_0$71 ==.
+                                   2202 ;	I2C_Functions.c:464: return 8;
+      000551 75 82 08         [24] 2203 	mov	dpl,#0x08
+      000554                       2204 00125$:
+                           000554  2205 	C$I2C_Functions.c$465$1_0$71 ==.
+                                   2206 ;	I2C_Functions.c:465: }
+                           000554  2207 	C$I2C_Functions.c$465$1_0$71 ==.
+                           000554  2208 	XG$get_blocknumber$0$0 ==.
+      000554 22               [24] 2209 	ret
+                                   2210 	.area CSEG    (CODE)
+                                   2211 	.area CONST   (CODE)
+                           000000  2212 FI2C_Functions$__str_0$0_0$0 == .
+                                   2213 	.area CONST   (CODE)
+      000000                       2214 ___str_0:
+      000000 0A                    2215 	.db 0x0a
+      000001 0D                    2216 	.db 0x0d
+      000002 20 20 20 20           2217 	.ascii "    "
+      000006 00                    2218 	.db 0x00
+                                   2219 	.area CSEG    (CODE)
+                           000555  2220 FI2C_Functions$__str_1$0_0$0 == .
+                                   2221 	.area CONST   (CODE)
+      000007                       2222 ___str_1:
+      000007 0A                    2223 	.db 0x0a
+      000008 0D                    2224 	.db 0x0d
+      000009 2A 2A 2A 2A 2A 2A 2A  2225 	.ascii "************************************************************"
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A
+      000045 2A 2A 2A 2A 2A 2A 2A  2226 	.ascii "********"
+             2A
+      00004D 00                    2227 	.db 0x00
+                                   2228 	.area CSEG    (CODE)
+                           000555  2229 FI2C_Functions$__str_2$0_0$0 == .
+                                   2230 	.area CONST   (CODE)
+      00004E                       2231 ___str_2:
+      00004E 0A                    2232 	.db 0x0a
+      00004F 0D                    2233 	.db 0x0d
+      000050 41 64 64 72           2234 	.ascii "Addr"
+      000054 00                    2235 	.db 0x00
+                                   2236 	.area CSEG    (CODE)
+                           000555  2237 FI2C_Functions$__str_3$0_0$0 == .
+                                   2238 	.area CONST   (CODE)
+      000055                       2239 ___str_3:
+      000055 20 20 20 20 20 20 20  2240 	.ascii "                               DATA"
+             20 20 20 20 20 20 20
+             20 20 20 20 20 20 20
+             20 20 20 20 20 20 20
+             20 20 20 44 41 54 41
+      000078 00                    2241 	.db 0x00
+                                   2242 	.area CSEG    (CODE)
+                           000555  2243 FI2C_Functions$__str_4$0_0$0 == .
+                                   2244 	.area CONST   (CODE)
+      000079                       2245 ___str_4:
+      000079 0A                    2246 	.db 0x0a
+      00007A 0D                    2247 	.db 0x0d
+      00007B 2A 2A 2A 2A 2A 2A 2A  2248 	.ascii "************************************************************"
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A 2A 2A 2A
+             2A 2A 2A 2A
+      0000B7 2A 2A 2A 2A 2A 2A 2A  2249 	.ascii "********"
+             2A
+      0000BF 0A                    2250 	.db 0x0a
+      0000C0 0D                    2251 	.db 0x0d
+      0000C1 00                    2252 	.db 0x00
+                                   2253 	.area CSEG    (CODE)
+                           000555  2254 FI2C_Functions$__str_5$0_0$0 == .
+                                   2255 	.area CONST   (CODE)
+      0000C2                       2256 ___str_5:
+      0000C2 20 20 20 20 20 20 20  2257 	.ascii "       "
+      0000C9 00                    2258 	.db 0x00
+                                   2259 	.area CSEG    (CODE)
+                           000555  2260 FI2C_Functions$__str_6$0_0$0 == .
+                                   2261 	.area CONST   (CODE)
+      0000CA                       2262 ___str_6:
+      0000CA 25 78 20 20 20        2263 	.ascii "%x   "
+      0000CF 00                    2264 	.db 0x00
+                                   2265 	.area CSEG    (CODE)
+                           000555  2266 FI2C_Functions$__str_7$0_0$0 == .
+                                   2267 	.area CONST   (CODE)
+      0000D0                       2268 ___str_7:
+      0000D0 0A                    2269 	.db 0x0a
+      0000D1 0D                    2270 	.db 0x0d
+      0000D2 30 78 30 30 25 78 3A  2271 	.ascii "0x00%x:"
+      0000D9 00                    2272 	.db 0x00
+                                   2273 	.area CSEG    (CODE)
+                           000555  2274 FI2C_Functions$__str_8$0_0$0 == .
+                                   2275 	.area CONST   (CODE)
+      0000DA                       2276 ___str_8:
+      0000DA 0A                    2277 	.db 0x0a
+      0000DB 0D                    2278 	.db 0x0d
+      0000DC 30 78 30 25 78 3A     2279 	.ascii "0x0%x:"
+      0000E2 00                    2280 	.db 0x00
+                                   2281 	.area CSEG    (CODE)
+                           000555  2282 FI2C_Functions$__str_9$0_0$0 == .
+                                   2283 	.area CONST   (CODE)
+      0000E3                       2284 ___str_9:
+      0000E3 0A                    2285 	.db 0x0a
+      0000E4 0D                    2286 	.db 0x0d
+      0000E5 30 78 25 78 3A        2287 	.ascii "0x%x:"
+      0000EA 00                    2288 	.db 0x00
+                                   2289 	.area CSEG    (CODE)
+                           000555  2290 FI2C_Functions$__str_10$0_0$0 == .
+                                   2291 	.area CONST   (CODE)
+      0000EB                       2292 ___str_10:
+      0000EB 30 25 78 20 20        2293 	.ascii "0%x  "
+      0000F0 00                    2294 	.db 0x00
+                                   2295 	.area CSEG    (CODE)
+                           000555  2296 FI2C_Functions$__str_11$0_0$0 == .
+                                   2297 	.area CONST   (CODE)
+      0000F1                       2298 ___str_11:
+      0000F1 25 78 20 20           2299 	.ascii "%x  "
+      0000F5 00                    2300 	.db 0x00
+                                   2301 	.area CSEG    (CODE)
+                                   2302 	.area XINIT   (CODE)
+                                   2303 	.area CABS    (ABS,CODE)

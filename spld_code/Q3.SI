@@ -1,0 +1,16 @@
+Name     Q3 ;
+PartNo   ESD001 ;
+Date     9/1/2019 ;
+Revision 01 ;
+Designer Engineer ;
+Company  University of Colorado ;
+Assembly None ;
+Location None ;
+Device   g16v8 ;
+
+
+ORDER: A10, A11, A12, A13, A14, A15, CSPROM; 
+
+
+VECTORS:
+000000*
